@@ -1,0 +1,207 @@
+/* ============================================================
+   HOW IT WORKS SECTION
+   ============================================================ */
+.hiw {
+  padding: 120px 0;
+  background: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.hiw__header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.hiw__header h2 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1A2B4A;
+  letter-spacing: -0.02em;
+}
+
+.hiw__header p {
+  font-size: 18px;
+  color: #6B7280;
+  margin-top: 16px;
+}
+
+.hiw__timeline-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* ── SVG Timeline ── */
+.hiw__svg-container {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hiw__svg-line {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hiw__svg-line path[stroke="var(--orange)"] {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ── Steps ── */
+.hiw__steps {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 160px; /* Space between rows */
+}
+
+.hiw__step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+}
+
+.hiw__step--even {
+  flex-direction: row-reverse;
+}
+
+/* ── Text Content ── */
+.hiw__step-content {
+  flex: 1;
+  position: relative;
+  max-width: 480px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.3, 1, 0.3, 1), transform 0.8s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.hiw__step-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.3, 1, 0.3, 1), transform 0.8s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.hiw__step--visible .hiw__step-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.hiw__step--visible .hiw__step-image-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.hiw__step-number {
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--orange);
+  opacity: 0.15;
+  position: absolute;
+  top: -60px;
+  left: -30px;
+  z-index: -1;
+  line-height: 1;
+  user-select: none;
+}
+
+.hiw__step-emoji {
+  font-size: 48px;
+  margin-bottom: 24px;
+  display: inline-block;
+  background: #FFF;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(26,43,74,0.08);
+}
+
+.hiw__step-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1A2B4A;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.hiw__step-desc {
+  font-size: 18px;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* ── Image Placeholder ── */
+.hiw__image-placeholder {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4/3;
+  background: #F9FAFB;
+  border: 2px dashed #D1D5DB;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.02);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hiw__image-placeholder:hover {
+  transform: translateY(-5px);
+  border-color: #9CA3AF;
+}
+
+.hiw__image-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hiw__image-placeholder-inner span {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hiw__step { gap: 40px; }
+  .hiw__step-number { font-size: 80px; top: -40px; }
+  .hiw__step-title { font-size: 28px; }
+  .hiw__svg-container { max-width: 600px; }
+}
+
+@media (max-width: 768px) {
+  .hiw__svg-container { display: none; /* Hide curve on mobile */ }
+  .hiw__step, .hiw__step--even {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .hiw__step-content {
+    max-width: 100%;
+  }
+  .hiw__step-number {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .hiw__steps {
+    gap: 80px;
+  }
+}
