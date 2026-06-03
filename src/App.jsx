@@ -8,6 +8,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        {/* Next sections get top padding to clear the overlapping stats bar */}
+        <div style={{ paddingTop: '80px' }} />
       </main>
     </>
   )
