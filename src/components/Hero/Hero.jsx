@@ -141,9 +141,13 @@ function StatItem({ stat, index, total }) {
 /* ─── Main Hero ────────────────────────────────────────────── */
 export default function Hero() {
   const videoRef = useRef(null)
+  const videoContainerRef = useRef(null)
   const [muted, setMuted]         = useState(true)
   const [playing, setPlaying]     = useState(true)
   const [showModal, setShowModal] = useState(false)
+  const [scrollTransform, setScrollTransform] = useState({})
+  const [blobStyles, setBlobStyles] = useState({ blob1: {}, blob2: {}, blob3: {} })
+  const [bgStyle, setBgStyle] = useState({ backgroundColor: 'var(--bg)' })
   const { display, isTyping }     = useTypewriter(WORDS)
 
   const toggleMute = () => {
@@ -167,14 +171,54 @@ export default function Hero() {
     return () => window.removeEventListener('keydown', fn)
   }, [])
 
+  // Scroll-linked 3D Unfold Animation
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!videoContainerRef.current) return
+      
+      const rect = videoContainerRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      
+      // Video Unfold Animation
+      const targetPoint = windowHeight * 0.35
+      let progress = 1 - ((rect.top - targetPoint) / (windowHeight - targetPoint))
+      progress = Math.min(Math.max(progress, 0), 1)
+      const ease = 1 - (1 - progress) * (1 - progress)
+      
+      const scale = 0.85 + (0.25 * ease)
+      const rotateX = 20 - (20 * ease)
+      const translateY = 60 - (60 * ease)
+      
+      setScrollTransform({
+        transform: `perspective(1200px) translateY(${translateY}px) rotateX(${rotateX}deg) scale(${scale})`,
+        transition: 'transform 0.1s cubic-bezier(0.2, 0, 0.2, 1)'
+      })
+
+      // Background Blobs Parallax Animation
+      const scrollY = window.scrollY
+      // Dynamic Background Gradient Animation
+      // Rotates the gradient and increases the theme color intensity as you scroll down to the video
+      const angle = 135 + (scrollY * 0.08)
+      const orangeAlpha = Math.min(scrollY / 800, 1) * 0.12
+      const navyAlpha = Math.min(scrollY / 800, 1) * 0.06
+      setBgStyle({
+        background: `linear-gradient(${angle}deg, rgba(255,107,44,${orangeAlpha}) 0%, rgba(26,43,74,${navyAlpha}) 100%), var(--bg)`
+      })
+    }
+    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initialize on mount
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <>
-      <section className="hero" id="hero">
+      <section className="hero" id="hero" style={bgStyle}>
 
         {/* Background blobs */}
-        <div className="hero__blob hero__blob--1" aria-hidden="true" />
-        <div className="hero__blob hero__blob--2" aria-hidden="true" />
-        <div className="hero__blob hero__blob--3" aria-hidden="true" />
+        <div className="hero__blob hero__blob--1" aria-hidden="true" style={blobStyles.blob1} />
+        <div className="hero__blob hero__blob--2" aria-hidden="true" style={blobStyles.blob2} />
+        <div className="hero__blob hero__blob--3" aria-hidden="true" style={blobStyles.blob3} />
 
         <div className="hero__inner container">
 
@@ -214,19 +258,18 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Trust strip */}
+            {/* Trust strip (Infinite slider) */}
             <div className="hero__trust animate-fade-up delay-300" style={{ opacity: 0 }}>
               <span className="hero__trust-label">Trusted by teams at</span>
-              <div className="hero__trust-logos">
-                {trustBadges.map((name, i) => (
-                  <span
-                    key={name}
-                    className="hero__trust-pill"
-                    style={{ animationDelay: `${i * 80 + 600}ms` }}
-                  >
-                    {name}
-                  </span>
-                ))}
+              <div className="hero__trust-slider-container">
+                <div className="hero__trust-slider">
+                  {/* Duplicate 3 times for seamless infinite scroll */}
+                  {[...trustBadges, ...trustBadges, ...trustBadges].map((name, i) => (
+                    <span key={i} className="hero__trust-pill">
+                      {name}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -234,7 +277,11 @@ export default function Hero() {
 
           {/* ── Video frame ── */}
           <div className="hero__video-section animate-fade-up delay-300" style={{ opacity: 0 }}>
-            <div className="video-frame">
+            <div 
+              className="video-frame" 
+              ref={videoContainerRef}
+              style={{ ...scrollTransform, transformOrigin: 'top center' }}
+            >
               <div className="video-frame__bar">
                 <div className="video-frame__dots">
                   <span style={{ background: '#FF5F57' }} />
