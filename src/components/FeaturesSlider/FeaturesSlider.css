@@ -2,8 +2,8 @@
    FEATURES SLIDER
    ============================================================ */
 .features {
-  padding: 100px 0;
-  background-color: #FAFAFA; /* Very light warm gray to contrast with white hero */
+  padding: 120px 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%); /* Cool light gradient */
   overflow: hidden;
 }
 

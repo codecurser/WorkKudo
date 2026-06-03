@@ -3,7 +3,7 @@
    ============================================================ */
 .hiw {
   padding: 120px 0;
-  background: #FFFFFF;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFF5F0 30%, #FFFFFF 100%);
   position: relative;
   overflow: hidden;
 }
