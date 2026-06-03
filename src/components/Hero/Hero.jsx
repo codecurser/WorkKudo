@@ -5,13 +5,7 @@ import heroVideo from '../../assets/hero-video.mp4'
 /* ─── Typewriter words ─────────────────────────────────────── */
 const WORDS = ['Recognition', 'Appreciation', 'Culture', 'Engagement', 'Connection']
 
-/* ─── Stats with count-up ──────────────────────────────────── */
-const stats = [
-  { target: 10, suffix: 'K+', label: 'Teams worldwide',    emoji: '🌍' },
-  { target: 98, suffix: '%',  label: 'Employee happiness', emoji: '😊' },
-  { target: 3,  suffix: 'x',  label: 'Engagement boost',   emoji: '🚀' },
-  { target: 50, suffix: 'K+', label: 'Kudos sent daily',   emoji: '💌' },
-]
+
 
 const trustBadges = ['Slack', 'Notion', 'Figma', 'Stripe', 'Shopify', 'Atlassian']
 
@@ -54,40 +48,6 @@ function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseMs = 18
   return { display, isTyping: phase === 'typing' || phase === 'pausing' }
 }
 
-/* ─── Hook: Count-up on visibility ────────────────────────── */
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const started = useRef(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true
-          const start = performance.now()
-          const tick = (now) => {
-            const elapsed = now - start
-            const progress = Math.min(elapsed / duration, 1)
-            // ease-out cubic
-            const ease = 1 - Math.pow(1 - progress, 3)
-            setCount(Math.floor(ease * target))
-            if (progress < 1) requestAnimationFrame(tick)
-            else setCount(target)
-          }
-          requestAnimationFrame(tick)
-        }
-      },
-      { threshold: 0.5 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [target, duration])
-
-  return { count, ref }
-}
 
 /* ─── Subtext word-reveal ──────────────────────────────────── */
 const SUBTEXT = 'Build a culture of appreciation that drives real engagement, reduces turnover, and makes your people feel genuinely valued — every day.'
@@ -116,27 +76,13 @@ function AnimatedSubtext() {
           className={`hero__word ${visible ? 'hero__word--visible' : ''}`}
           style={{ transitionDelay: `${i * 40}ms` }}
         >
-          {word}{' '}
+          {word}
         </span>
       ))}
     </p>
   )
 }
 
-/* ─── Stat item with count-up ──────────────────────────────── */
-function StatItem({ stat, index, total }) {
-  const { count, ref } = useCountUp(stat.target)
-  return (
-    <div className="hero__stat" ref={ref}>
-      <span className="hero__stat-emoji">{stat.emoji}</span>
-      <div>
-        <p className="hero__stat-value">{count}{stat.suffix}</p>
-        <p className="hero__stat-label">{stat.label}</p>
-      </div>
-      {index < total - 1 && <div className="hero__stat-sep" />}
-    </div>
-  )
-}
 
 /* ─── Main Hero ────────────────────────────────────────────── */
 export default function Hero() {
@@ -144,10 +90,7 @@ export default function Hero() {
   const videoContainerRef = useRef(null)
   const [muted, setMuted]         = useState(true)
   const [playing, setPlaying]     = useState(true)
-  const [showModal, setShowModal] = useState(false)
   const [scrollTransform, setScrollTransform] = useState({})
-  const [blobStyles, setBlobStyles] = useState({ blob1: {}, blob2: {}, blob3: {} })
-  const [bgStyle, setBgStyle] = useState({ backgroundColor: 'var(--bg)' })
   const { display, isTyping }     = useTypewriter(WORDS)
 
   const toggleMute = () => {
@@ -164,13 +107,6 @@ export default function Hero() {
     }
   }
 
-  // Close modal on Esc
-  useEffect(() => {
-    const fn = e => e.key === 'Escape' && setShowModal(false)
-    window.addEventListener('keydown', fn)
-    return () => window.removeEventListener('keydown', fn)
-  }, [])
-
   // Scroll-linked 3D Unfold Animation
   useEffect(() => {
     const handleScroll = () => {
@@ -185,24 +121,13 @@ export default function Hero() {
       progress = Math.min(Math.max(progress, 0), 1)
       const ease = 1 - (1 - progress) * (1 - progress)
       
-      const scale = 0.85 + (0.25 * ease)
+      const scale = 0.85 + (0.30 * ease)
       const rotateX = 20 - (20 * ease)
       const translateY = 60 - (60 * ease)
       
       setScrollTransform({
         transform: `perspective(1200px) translateY(${translateY}px) rotateX(${rotateX}deg) scale(${scale})`,
         transition: 'transform 0.1s cubic-bezier(0.2, 0, 0.2, 1)'
-      })
-
-      // Background Blobs Parallax Animation
-      const scrollY = window.scrollY
-      // Dynamic Background Gradient Animation
-      // Rotates the gradient and increases the theme color intensity as you scroll down to the video
-      const angle = 135 + (scrollY * 0.08)
-      const orangeAlpha = Math.min(scrollY / 800, 1) * 0.12
-      const navyAlpha = Math.min(scrollY / 800, 1) * 0.06
-      setBgStyle({
-        background: `linear-gradient(${angle}deg, rgba(255,107,44,${orangeAlpha}) 0%, rgba(26,43,74,${navyAlpha}) 100%), var(--bg)`
       })
     }
     
@@ -213,12 +138,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="hero" id="hero" style={bgStyle}>
-
-        {/* Background blobs */}
-        <div className="hero__blob hero__blob--1" aria-hidden="true" style={blobStyles.blob1} />
-        <div className="hero__blob hero__blob--2" aria-hidden="true" style={blobStyles.blob2} />
-        <div className="hero__blob hero__blob--3" aria-hidden="true" style={blobStyles.blob3} />
+      <section className="hero" id="hero">
 
         <div className="hero__inner container">
 
@@ -248,14 +168,6 @@ export default function Hero() {
                         strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <button className="hero__btn-ghost" onClick={() => setShowModal(true)}>
-                <span className="hero__play-dot">
-                  <svg width="11" height="11" viewBox="0 0 11 11" fill="white">
-                    <path d="M1.5 1l8 4.5-8 4.5V1z"/>
-                  </svg>
-                </span>
-                Watch Demo
-              </button>
             </div>
 
             {/* Trust strip (Infinite slider) */}
@@ -316,58 +228,21 @@ export default function Hero() {
                       </svg>
                     )}
                   </button>
-                  <button className="video-frame__ctrl video-frame__ctrl--expand"
-                          onClick={() => setShowModal(true)} aria-label="fullscreen">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                         stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                      <path d="M1 4.5V1h3.5M10.5 1H7.5M7.5 11h3v-3.5M1 7.5V11h3.5"/>
-                    </svg>
-                  </button>
                 </div>
               </div>
 
               <div className="video-frame__screen">
                 <video ref={videoRef} src={heroVideo} autoPlay loop muted playsInline
                        preload="auto" className="video-frame__video" />
-                <div className="video-frame__overlay" onClick={() => setShowModal(true)}
-                     role="button" aria-label="Open full screen video" tabIndex={0}>
-                  <div className="video-frame__play-hint">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                      <path d="M4 3l13 7-13 7V3z"/>
-                    </svg>
-                    <span>Watch full demo</span>
-                  </div>
-                </div>
               </div>
 
               <div className="video-frame__glow" aria-hidden="true" />
             </div>
           </div>
 
-          {/* ── Stats ── */}
-          <div className="hero__stats animate-fade-up delay-500" style={{ opacity: 0 }}>
-            {stats.map((s, i) => (
-              <StatItem key={s.label} stat={s} index={i} total={stats.length} />
-            ))}
-          </div>
 
         </div>
       </section>
-
-      {/* Fullscreen modal */}
-      {showModal && (
-        <div className="video-modal" onClick={() => setShowModal(false)} role="dialog" aria-modal="true">
-          <div className="video-modal__box" onClick={e => e.stopPropagation()}>
-            <button className="video-modal__close" onClick={() => setShowModal(false)}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                   stroke="white" strokeWidth="2" strokeLinecap="round">
-                <path d="M1 1l14 14M15 1L1 15"/>
-              </svg>
-            </button>
-            <video src={heroVideo} controls autoPlay className="video-modal__video" />
-          </div>
-        </div>
-      )}
     </>
   )
 }

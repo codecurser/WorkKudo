@@ -4,39 +4,10 @@
 
 .hero {
   position: relative;
-  background: var(--bg);
+  background: #ffffff;
   overflow: hidden;
   padding-top: 100px;
   padding-bottom: 60px;
-}
-
-/* ─── Background Blobs ─────────────────────────────────────── */
-.hero__blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  opacity: 0.45;
-}
-
-.hero__blob--1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, #FFE4D5 0%, transparent 70%);
-  top: -200px; left: -180px;
-}
-
-.hero__blob--2 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, #EDE9FE 0%, transparent 70%);
-  top: -100px; right: -120px;
-  opacity: 0.35;
-}
-
-.hero__blob--3 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, #DBEAFE 0%, transparent 70%);
-  bottom: 200px; left: 35%;
-  opacity: 0.3;
 }
 
 /* ─── Inner wrapper ─────────────────────────────────────────── */
@@ -148,6 +119,7 @@
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 350ms ease, transform 350ms ease;
+  margin-right: 0.25em; /* Preserves word spacing for inline-blocks */
 }
 
 .hero__word--visible {
@@ -207,44 +179,7 @@
   box-shadow: 0 12px 36px rgba(255,107,44,0.50);
 }
 
-.hero__btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 24px;
-  background: #fff;
-  color: var(--navy);
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 14px;
-  border: 1.5px solid var(--border);
-  cursor: pointer;
-  font-family: inherit;
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
-}
 
-.hero__btn-ghost:hover {
-  border-color: var(--gray-300);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
-}
-
-.hero__play-dot {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: background 200ms ease, transform 200ms ease;
-  box-shadow: 0 4px 12px rgba(255,107,44,0.35);
-}
-
-.hero__btn-ghost:hover .hero__play-dot {
-  background: var(--orange-dark);
-  transform: scale(1.1);
-}
 
 /* Trust strip */
 .hero__trust {

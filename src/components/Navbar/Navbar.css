@@ -8,8 +8,8 @@
   top: 0; left: 0; right: 0;
   z-index: 1000;
   height: 80px;
-  background: #ffffff;
-  transition: box-shadow 280ms ease, background 280ms ease;
+  background: transparent;
+  transition: box-shadow 280ms ease, background 280ms ease, backdrop-filter 280ms ease;
 }
 
 .navbar--scrolled {
