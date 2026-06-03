@@ -1,6 +1,7 @@
 import './index.css'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
+import FeaturesSlider from './components/FeaturesSlider/FeaturesSlider'
 
 export default function App() {
   return (
@@ -8,8 +9,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        {/* Next sections get top padding to clear the overlapping stats bar */}
-        <div style={{ paddingTop: '80px' }} />
+        <FeaturesSlider />
       </main>
     </>
   )
