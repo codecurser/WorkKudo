@@ -1,24 +1,31 @@
 import { useEffect, useRef, useState } from 'react'
 import './HowItWorks.css'
 
+import imgBoard from '../../assets/new-board.png'
+import imgInvite from '../../assets/invite-people.png'
+import imgSurprise from '../../assets/surprise-them.png'
+
 const STEPS = [
   {
     id: 1,
     emoji: '🎨',
     title: 'Create a board',
     desc: 'Pick the occasion, name the person, set a deadline. Done in under a minute.',
+    image: imgBoard
   },
   {
     id: 2,
     emoji: '📬',
     title: 'Invite your team',
     desc: 'Share a link or email contributors directly. No accounts needed to add a message.',
+    image: imgInvite
   },
   {
     id: 3,
     emoji: '🥳',
     title: 'Surprise them',
     desc: 'Reveal the board when the moment comes. Download, share, or just send the link.',
+    image: imgSurprise
   }
 ]
 
@@ -36,8 +43,8 @@ export default function HowItWorks() {
       
       // Start drawing when the top of container is 70% down the screen
       const startPoint = windowHeight * 0.7
-      // Finish drawing when the bottom of container is 30% from bottom of screen
-      const endPoint = -rect.height * 0.3
+      // Finish drawing exactly when the bottom of the container reaches 60% of the screen height
+      const endPoint = (windowHeight * 0.6) - rect.height
       
       let progress = (startPoint - rect.top) / (startPoint - endPoint)
       progress = Math.min(Math.max(progress, 0), 1) // Clamp 0 to 1
@@ -124,17 +131,18 @@ export default function HowItWorks() {
                     <p className="hiw__step-desc">{step.desc}</p>
                   </div>
 
-                  {/* Image Placeholder */}
+                  {/* Image */}
                   <div className="hiw__step-image-wrapper">
-                    <div className="hiw__image-placeholder">
-                      <div className="hiw__image-placeholder-inner">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                          <circle cx="8.5" cy="8.5" r="1.5"/>
-                          <polyline points="21 15 16 10 5 21"/>
-                        </svg>
-                        <span>Placeholder for Step {step.id} Image</span>
+                    <div className="hiw__mac-window">
+                      <div className="hiw__mac-bar">
+                        <div className="hiw__mac-dots">
+                          <span style={{ background: '#FF5F57' }} />
+                          <span style={{ background: '#FEBC2E' }} />
+                          <span style={{ background: '#28C840' }} />
+                        </div>
+                        <div className="hiw__mac-url">workkudo.app</div>
                       </div>
+                      <img src={step.image} alt={step.title} className="hiw__mac-img" />
                     </div>
                   </div>
 
