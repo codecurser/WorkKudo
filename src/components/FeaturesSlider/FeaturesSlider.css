@@ -19,7 +19,7 @@
 
 .features__slider {
   position: relative;
-  height: 520px;
+  height: 580px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -29,8 +29,8 @@
 
 .feature-card {
   position: absolute;
-  width: 500px; /* Size of the image wrapper */
-  transition: transform 0.6s cubic-bezier(0.3, 1, 0.3, 1), opacity 0.6s ease;
+  width: 540px; /* Increased size of the image wrapper */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
   will-change: transform, opacity;
   cursor: pointer;
   display: flex;
@@ -100,14 +100,14 @@
 }
 
 .feature-card--prev {
-  transform: translateX(-480px) scale(0.85);
+  transform: translateX(-520px) scale(0.8);
   z-index: 2;
   opacity: 0.6;
 }
 .feature-card--prev:hover { opacity: 0.8; }
 
 .feature-card--next {
-  transform: translateX(480px) scale(0.85);
+  transform: translateX(520px) scale(0.8);
   z-index: 2;
   opacity: 0.6;
 }
@@ -117,7 +117,7 @@
 .feature-card__content {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   visibility: hidden;
   padding: 0 4px;
   width: 100%;
