@@ -1,0 +1,314 @@
+/* ============================================================
+   PRIVACY POLICY PAGE — WorkKudo
+   ============================================================ */
+
+.pp {
+  min-height: 100vh;
+  background: #F8FAFC;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1A2B4A;
+}
+
+/* ─── Header Bar ─────────────────────────────────────────────── */
+.pp__header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E5E7EB;
+}
+.pp__header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pp__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6B7280;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: color 150ms ease, background 150ms ease;
+}
+.pp__back:hover { color: #F67021; background: #FFF3EE; }
+.pp__logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.pp__logo-img { height: 28px; width: auto; }
+.pp__logo-name { font-size: 16px; font-weight: 800; color: #1A2B4A; letter-spacing: -0.3px; }
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.pp__layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────── */
+.pp__sidebar { position: sticky; top: 80px; }
+.pp__toc-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #9CA3AF;
+  margin-bottom: 12px; padding: 0 12px;
+}
+.pp__toc { display: flex; flex-direction: column; gap: 2px; }
+.pp__toc-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  font-size: 13px; font-weight: 500; color: #6B7280;
+  text-decoration: none; line-height: 1.3;
+  transition: color 150ms ease, background 150ms ease;
+}
+.pp__toc-link:hover { color: #F67021; background: #FFF3EE; }
+.pp__toc-num {
+  font-size: 10px; font-weight: 700; color: #D1D5DB;
+  flex-shrink: 0; min-width: 18px;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.pp__hero {
+  margin-bottom: 56px;
+  padding-bottom: 48px;
+  border-bottom: 2px solid #F3F4F6;
+}
+.pp__badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px;
+  background: #EFF6FF; color: #3B82F6;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-radius: 20px; border: 1px solid #BFDBFE;
+  margin-bottom: 20px;
+}
+.pp__title {
+  font-size: 48px; font-weight: 900;
+  color: #1A2B4A; letter-spacing: -0.03em;
+  line-height: 1.1; margin-bottom: 12px;
+}
+.pp__meta { font-size: 13.5px; color: #9CA3AF; margin-bottom: 24px; }
+.pp__intro {
+  font-size: 16px; line-height: 1.75; color: #4B5563;
+  max-width: 680px; padding: 20px 24px;
+  background: #fff; border-radius: 14px;
+  border-left: 4px solid #3B82F6;
+  box-shadow: 0 2px 12px rgba(26,43,74,0.06);
+}
+
+/* ─── Sections ───────────────────────────────────────────────── */
+.pp__section {
+  margin-bottom: 56px; padding-bottom: 56px;
+  border-bottom: 1px solid #F3F4F6;
+  scroll-margin-top: 90px; position: relative;
+}
+.pp__section:last-of-type { border-bottom: none; }
+.pp__section-num {
+  font-size: 64px; font-weight: 900;
+  color: #3B82F6; opacity: 0.07;
+  position: absolute; top: -18px; left: -8px;
+  line-height: 1; user-select: none; pointer-events: none;
+}
+.pp__section-title {
+  font-size: 22px; font-weight: 800; color: #1A2B4A;
+  margin-bottom: 18px; letter-spacing: -0.3px; padding-left: 2px;
+}
+.pp__section p {
+  font-size: 15px; line-height: 1.8; color: #4B5563; margin-bottom: 16px;
+}
+.pp__section p:last-child { margin-bottom: 0; }
+
+.pp__inline-link {
+  color: #F67021; font-weight: 600; text-decoration: none;
+  border-bottom: 1.5px solid #FED7AA;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+.pp__inline-link:hover { color: #D95E10; border-color: #F67021; }
+
+/* ─── Data Collection Cards ──────────────────────────────────── */
+.pp__data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+.pp__data-card {
+  background: #fff;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 8px rgba(26,43,74,0.04);
+}
+.pp__data-card-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.pp__data-icon { font-size: 22px; }
+.pp__data-title {
+  font-size: 14px; font-weight: 700; color: #1A2B4A; margin: 0 !important;
+}
+.pp__data-sub {
+  font-size: 12.5px; color: #9CA3AF; margin-bottom: 10px !important;
+}
+.pp__data-card p {
+  font-size: 14px; line-height: 1.7; color: #4B5563; margin-bottom: 0 !important;
+}
+
+/* ─── Check List (Data collected items) ─────────────────────── */
+.pp__check-list {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.pp__check-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; line-height: 1.6; color: #4B5563;
+}
+.pp__check-list li::before {
+  content: '✓';
+  color: #22C55E; font-size: 11px; font-weight: 800;
+  flex-shrink: 0; margin-top: 3px;
+  background: #F0FDF4;
+  width: 18px; height: 18px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ─── Tick List (How we use) ─────────────────────────────────── */
+.pp__tick-list {
+  list-style: none; padding: 0; margin: 16px 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pp__tick-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 15px; line-height: 1.7; color: #4B5563;
+  padding: 12px 16px;
+  background: #fff; border-radius: 10px; border: 1px solid #F3F4F6;
+}
+.pp__tick-list li::before {
+  content: '✓';
+  color: #fff; font-size: 11px; font-weight: 800;
+  flex-shrink: 0; margin-top: 3px;
+  background: #F67021;
+  width: 20px; height: 20px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ─── Callout Boxes ──────────────────────────────────────────── */
+.pp__callout {
+  display: flex; gap: 16px;
+  padding: 20px 22px; border-radius: 14px; margin-top: 20px;
+}
+.pp__callout--green { background: #F0FDF4; border: 1.5px solid #BBF7D0; }
+.pp__callout--warning { background: #FFFBEB; border: 1.5px solid #FDE68A; }
+.pp__callout--blue { background: #EFF6FF; border: 1.5px solid #BFDBFE; }
+.pp__callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.pp__callout-title {
+  font-size: 14px; font-weight: 700;
+  margin-bottom: 6px !important;
+}
+.pp__callout--green .pp__callout-title { color: #15803D; }
+.pp__callout--warning .pp__callout-title { color: #92400E; }
+.pp__callout--blue .pp__callout-title { color: #1D4ED8; }
+.pp__callout p {
+  font-size: 14px; line-height: 1.65; margin-bottom: 0 !important;
+}
+.pp__callout--green p { color: #166534; }
+.pp__callout--warning p { color: #78350F; }
+.pp__callout--blue p { color: #1E40AF; }
+
+/* ─── Retention List ─────────────────────────────────────────── */
+.pp__retention-list {
+  display: flex; flex-direction: column; gap: 10px; margin: 16px 0;
+}
+.pp__retention-row {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 20px;
+  background: #fff; border: 1.5px solid #E5E7EB;
+  border-radius: 14px; box-shadow: 0 2px 8px rgba(26,43,74,0.04);
+}
+.pp__retention-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.pp__retention-label {
+  font-size: 14px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px;
+}
+.pp__retention-desc {
+  font-size: 13.5px; color: #6B7280; line-height: 1.65;
+}
+
+/* ─── Third-Party Grid ───────────────────────────────────────── */
+.pp__third-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; margin: 20px 0;
+}
+.pp__third-card {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 18px; background: #fff;
+  border: 1.5px solid #E5E7EB; border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(26,43,74,0.04);
+}
+.pp__third-icon { font-size: 22px; flex-shrink: 0; }
+.pp__third-name {
+  font-size: 13.5px; font-weight: 700; color: #1A2B4A; margin-bottom: 4px;
+}
+.pp__third-desc { font-size: 12.5px; color: #6B7280; margin-bottom: 4px; }
+.pp__third-policy { font-size: 11.5px; color: #9CA3AF; font-style: italic; }
+
+/* ─── Rights List ────────────────────────────────────────────── */
+.pp__rights-list {
+  list-style: none; padding: 0; margin: 16px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.pp__right-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 18px;
+  background: #fff; border: 1.5px solid #E5E7EB;
+  border-radius: 12px; font-size: 14.5px; color: #374151;
+}
+.pp__right-icon { font-size: 18px; flex-shrink: 0; }
+
+/* ─── Email Link ─────────────────────────────────────────────── */
+.pp__email {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px;
+  background: #FFF3EE; border: 1.5px solid #FED7AA;
+  color: #F67021; font-size: 15px; font-weight: 700;
+  border-radius: 12px; text-decoration: none; margin-top: 8px;
+  transition: background 200ms ease, transform 200ms ease;
+}
+.pp__email:hover { background: #FFEDD5; transform: translateY(-2px); }
+
+/* ─── Page Footer ────────────────────────────────────────────── */
+.pp__page-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 0 0; margin-top: 20px; border-top: 1px solid #E5E7EB;
+}
+.pp__page-footer p { font-size: 13px; color: #9CA3AF; }
+.pp__back-home {
+  font-size: 14px; font-weight: 600; color: #F67021;
+  text-decoration: none; padding: 10px 20px;
+  background: #FFF3EE; border-radius: 10px;
+  transition: background 150ms ease;
+}
+.pp__back-home:hover { background: #FFEDD5; }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .pp__third-grid { grid-template-columns: 1fr; }
+  .pp__data-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .pp__layout { grid-template-columns: 1fr; gap: 0; padding: 32px 24px 60px; }
+  .pp__sidebar { display: none; }
+  .pp__title { font-size: 36px; }
+}
+@media (max-width: 640px) {
+  .pp__header-inner { padding: 0 20px; }
+  .pp__title { font-size: 30px; }
+  .pp__page-footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+}

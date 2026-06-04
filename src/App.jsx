@@ -1,10 +1,14 @@
+import { Routes, Route } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import FeaturesSlider from './components/FeaturesSlider/FeaturesSlider'
 import HowItWorks from './components/HowItWorks/HowItWorks'
+import Footer from './components/Footer/Footer'
+import TermsOfService from './pages/TermsOfService/TermsOfService'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -13,6 +17,18 @@ export default function App() {
         <FeaturesSlider />
         <HowItWorks />
       </main>
+      <Footer />
     </>
   )
 }
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+    </Routes>
+  )
+}
+
