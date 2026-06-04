@@ -61,6 +61,7 @@ export default function FeaturesSlider() {
             if (idx === activeIndex) className += ' feature-card--active'
             else if (idx === (activeIndex - 1 + FEATURES.length) % FEATURES.length) className += ' feature-card--prev'
             else if (idx === (activeIndex + 1) % FEATURES.length) className += ' feature-card--next'
+            
 
             return (
               <div 

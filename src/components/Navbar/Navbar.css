@@ -9,14 +9,15 @@
   z-index: 1000;
   height: 80px;
   background: transparent;
-  transition: box-shadow 280ms ease, background 280ms ease, backdrop-filter 280ms ease;
+  transition: box-shadow 200ms ease, background 200ms ease;
+  will-change: background, box-shadow;
+  transform: translateZ(0);
+  contain: layout style;
 }
 
 .navbar--scrolled {
   box-shadow: 0 1px 0 #E5E7EB, 0 8px 32px rgba(26,43,74,0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.97);
 }
 
 .navbar__inner {
@@ -125,9 +126,11 @@
   top: 80px; left: 0; right: 0;
   display: flex; justify-content: center;
   padding: 8px 32px 0;
-  pointer-events: auto;
-  animation: menuReveal 240ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+  animation: menuReveal 200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
   z-index: 999;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 .menu-wrapper--small { justify-content: flex-end; }
 
@@ -148,6 +151,8 @@
   max-width: 1180px;
   width: 100%;
   display: flex;
+  pointer-events: auto;
+  transform: translateZ(0);
 }
 
 /* ─── Left Rail ────────────────────────────────────────────── */
@@ -595,6 +600,8 @@
   gap: 0;
   min-width: 480px;
   max-width: 600px;
+  pointer-events: auto;
+  transform: translateZ(0);
 }
 
 .small-dropdown__section {

@@ -5,37 +5,37 @@ import logo from '../../assets/workkudosvg.svg'
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const occasions = [
-  { emoji: '👋', label: 'Farewell',        desc: 'Send off a colleague with warmth' },
-  { emoji: '🎂', label: 'Birthday',        desc: 'Celebrate their special day' },
-  { emoji: '💌', label: 'Thank You',       desc: 'Express genuine appreciation' },
-  { emoji: '🏖', label: 'Retirement',      desc: 'Honor years of dedication' },
-  { emoji: '💙', label: 'Sympathy',        desc: 'Offer comfort and support' },
-  { emoji: '🏆', label: 'Work Anniversary',desc: 'Milestone worth celebrating' },
-  { emoji: '🌼', label: 'Get Well Soon',   desc: 'Lift someone\'s spirits' },
-  { emoji: '👶', label: 'New Baby',        desc: 'Welcome the newest member' },
-  { emoji: '🎉', label: 'Welcome',         desc: 'Make a great first impression' },
-  { emoji: '🥳', label: 'Congrats',        desc: 'Celebrate achievements big & small' },
-  { emoji: '🎄', label: 'Holiday',         desc: 'Season\'s greetings for everyone' },
+  { emoji: '👋', label: 'Send-Off',         desc: 'Send off a colleague with warmth' },
+  { emoji: '🎂', label: 'Birthday',          desc: 'Celebrate their special day' },
+  { emoji: '💌', label: 'Appreciation',      desc: 'Express genuine appreciation' },
+  { emoji: '🏖', label: 'Retirement',        desc: 'Honor years of dedication' },
+  { emoji: '💙', label: 'Condolence',        desc: 'Offer comfort and support' },
+  { emoji: '🏆', label: 'Work Milestone',    desc: 'Milestone worth celebrating' },
+  { emoji: '🌼', label: 'Speedy Recovery',   desc: 'Lift someone\'s spirits' },
+  { emoji: '👶', label: 'Baby Arrival',      desc: 'Welcome the newest member' },
+  { emoji: '🎉', label: 'Onboarding',        desc: 'Make a great first impression' },
+  { emoji: '🥳', label: 'Kudos',             desc: 'Celebrate achievements big & small' },
+  { emoji: '🎄', label: 'Festive Season',    desc: 'Season\'s greetings for everyone' },
 ]
 
 const events = [
-  { emoji: '🎤', label: 'Executive Departure',    desc: 'Honour leadership transitions' },
-  { emoji: '🎊', label: 'Company Celebration',    desc: 'Mark company-wide milestones' },
-  { emoji: '🏅', label: 'Employee Award',         desc: 'Recognize top performers' },
-  { emoji: '🌎', label: 'Heritage & Belonging',   desc: 'Celebrate cultural diversity' },
-  { emoji: '👏', label: 'Staff Appreciation',     desc: 'Dedicated appreciation events' },
-  { emoji: '🕊', label: 'Online Memorial',        desc: 'A place to share memories' },
-  { emoji: '🏢', label: 'Department Event',       desc: 'Team-level celebrations' },
-  { emoji: '❄',  label: 'Holiday Celebration',   desc: 'Festive moments together' },
-  { emoji: '🎉', label: 'Team Celebration',       desc: 'Celebrate team wins' },
-  { emoji: '🏆', label: 'Office Competition',     desc: 'Friendly competitive spirit' },
-  { emoji: '🎯', label: 'Conferences & Offsites', desc: 'Events beyond the office' },
+  { emoji: '🎤', label: 'Leadership Exit',       desc: 'Honour leadership transitions' },
+  { emoji: '🎊', label: 'Org Milestone',          desc: 'Mark company-wide milestones' },
+  { emoji: '🏅', label: 'Star Performer',         desc: 'Recognize top performers' },
+  { emoji: '🌎', label: 'Diversity & Belonging',  desc: 'Celebrate cultural diversity' },
+  { emoji: '👏', label: 'Team Recognition',       desc: 'Dedicated appreciation events' },
+  { emoji: '🕊', label: 'Digital Tribute',        desc: 'A place to share memories' },
+  { emoji: '🏢', label: 'Team Gathering',         desc: 'Team-level celebrations' },
+  { emoji: '❄',  label: 'Festive Party',          desc: 'Festive moments together' },
+  { emoji: '🎉', label: 'Squad Win',              desc: 'Celebrate team wins' },
+  { emoji: '🏆', label: 'Workplace Challenge',    desc: 'Friendly competitive spirit' },
+  { emoji: '🎯', label: 'Summits & Retreats',     desc: 'Events beyond the office' },
 ]
 
 const recognitionCards = [
   {
     emoji: '⭐',
-    title: 'Special Occasions',
+    title: 'Key Milestones',
     desc: 'Birthdays, promotions, retirements and milestones.',
     bg: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
     border: '#FED7AA',
@@ -43,7 +43,7 @@ const recognitionCards = [
   },
   {
     emoji: '📣',
-    title: 'Engagement & Culture',
+    title: 'Connection & Values',
     desc: 'Recognition programs and team engagement.',
     bg: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
     border: '#BFDBFE',
@@ -51,7 +51,7 @@ const recognitionCards = [
   },
   {
     emoji: '🤝',
-    title: 'Shout Outs',
+    title: 'Peer Kudos',
     desc: 'Peer-to-peer recognition and appreciation.',
     bg: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
     border: '#BBF7D0',
@@ -60,20 +60,20 @@ const recognitionCards = [
 ]
 
 const extras = [
-  { emoji: '💌', label: 'eCards',             desc: 'Digital cards with personality' },
-  { emoji: '🎁', label: 'Corporate Gifts',    desc: 'Meaningful, curated gifts' },
-  { emoji: '🎟', label: 'Gift Cards',         desc: 'Let them choose their reward' },
-  { emoji: '📋', label: 'Online Group Cards', desc: 'Sign together, anywhere' },
-  { emoji: '📖', label: 'Book & Poster Prints',desc: 'Physical keepsakes that last' },
-  { emoji: '🖼', label: 'Online Collages',    desc: 'Photo memories, beautifully arranged' },
-  { emoji: '🎞', label: 'Online Slideshows',  desc: 'Video-style memory reels' },
+  { emoji: '💌', label: 'Digital Cards',       desc: 'Digital cards with personality' },
+  { emoji: '🎁', label: 'Business Gifts',      desc: 'Meaningful, curated gifts' },
+  { emoji: '🎟', label: 'Reward Vouchers',     desc: 'Let them choose their reward' },
+  { emoji: '📋', label: 'Shared Group Cards',  desc: 'Sign together, anywhere' },
+  { emoji: '📖', label: 'Printed Keepsakes',   desc: 'Physical keepsakes that last' },
+  { emoji: '🖼', label: 'Photo Mosaics',       desc: 'Photo memories, beautifully arranged' },
+  { emoji: '🎞', label: 'Memory Reels',        desc: 'Video-style memory reels' },
 ]
 
-/* Tab definitions for the Create mega menu */
+/* Tab definitions for the Build mega menu */
 const createTabs = [
   {
     id: 'occasions',
-    label: 'Occasions',
+    label: 'Moments',
     emoji: '🎉',
     tagline: 'Life moments worth celebrating',
     items: occasions,
@@ -81,7 +81,7 @@ const createTabs = [
   },
   {
     id: 'events',
-    label: 'Events & Campaigns',
+    label: 'Programs & Drives',
     emoji: '📅',
     tagline: 'Company-wide celebrations & campaigns',
     items: events,
@@ -89,7 +89,7 @@ const createTabs = [
   },
   {
     id: 'recognition',
-    label: 'Recognition Type',
+    label: 'Award Style',
     emoji: '⭐',
     tagline: 'Choose how you want to recognise',
     items: recognitionCards,
@@ -97,7 +97,7 @@ const createTabs = [
   },
   {
     id: 'extras',
-    label: 'Extras',
+    label: 'Add-ons',
     emoji: '✨',
     tagline: 'More ways to show appreciation',
     items: extras,
@@ -106,34 +106,34 @@ const createTabs = [
 ]
 
 const platformFeatures = [
-  { icon: '📊', label: 'Recognition Boards',    desc: 'Group cards your team can sign' },
-  { icon: '📈', label: 'Team Dashboards',        desc: 'Visualize recognition in real-time' },
-  { icon: '🔍', label: 'Analytics',              desc: 'Insights into team engagement' },
-  { icon: '🎨', label: 'Celebration Templates',  desc: 'Beautiful ready-made designs' },
-  { icon: '💡', label: 'Employee Engagement',    desc: 'Tools that motivate your people' },
-  { icon: '📋', label: 'Reporting',              desc: 'Export data and share results' },
-  { icon: '🔗', label: 'Integrations',           desc: 'Slack, Teams, HRIS and more' },
-  { icon: '🔔', label: 'Notifications',          desc: 'Never miss a milestone' },
+  { icon: '📊', label: 'Appreciation Walls',     desc: 'Group cards your team can sign' },
+  { icon: '📈', label: 'Group Insights',          desc: 'Visualize recognition in real-time' },
+  { icon: '🔍', label: 'Metrics',                 desc: 'Insights into team engagement' },
+  { icon: '🎨', label: 'Festive Layouts',         desc: 'Beautiful ready-made designs' },
+  { icon: '💡', label: 'Staff Motivation',        desc: 'Tools that motivate your people' },
+  { icon: '📋', label: 'Data Reports',            desc: 'Export data and share results' },
+  { icon: '🔗', label: 'Connections',             desc: 'Slack, Teams, HRIS and more' },
+  { icon: '🔔', label: 'Alerts',                  desc: 'Never miss a milestone' },
 ]
 
 const platformBenefits = [
-  { icon: '🚀', label: 'Increase team morale',      color: '#FF6B2C' },
-  { icon: '💬', label: 'Improve engagement',        color: '#3B82F6' },
-  { icon: '🌱', label: 'Strengthen culture',        color: '#22C55E' },
-  { icon: '🎯', label: 'Celebrate milestones',      color: '#F59E0B' },
-  { icon: '🌐', label: 'Distributed teams',         color: '#8B5CF6' },
-  { icon: '🏡', label: 'Remote-first recognition',  color: '#EC4899' },
+  { icon: '🚀', label: 'Boost team spirit',         color: '#FF6B2C' },
+  { icon: '💬', label: 'Enhance participation',     color: '#3B82F6' },
+  { icon: '🌱', label: 'Build community',           color: '#22C55E' },
+  { icon: '🎯', label: 'Honor achievements',        color: '#F59E0B' },
+  { icon: '🌐', label: 'Remote workforce',          color: '#8B5CF6' },
+  { icon: '🏡', label: 'Virtual appreciation',      color: '#EC4899' },
 ]
 
 const customersData = {
-  Industries:         ['Startups', 'Agencies', 'Education', 'Healthcare', 'Nonprofits'],
-  'Loved By':         ['Remote Teams', 'HR Teams', 'Founders', 'People Operations'],
-  'Customer Stories': ['Success Stories', 'Case Studies'],
+  Sectors:           ['New Ventures', 'Studios', 'Academia', 'Medical', 'Charities'],
+  'Trusted By':      ['Distributed Teams', 'People Teams', 'Entrepreneurs', 'Workforce Ops'],
+  'Win Stories':     ['Success Highlights', 'Use Cases'],
 }
 
 const resourcesData = {
-  Resources: ['Help Center', 'Templates', 'Recognition Guide', 'Blog'],
-  Support:   ['Contact', 'FAQs', 'Community'],
+  Guides:     ['Support Hub', 'Layouts', 'Appreciation Handbook', 'Insights'],
+  Assistance: ['Reach Us', 'Common Questions', 'Forum'],
 }
 
 /* ─── Icons ─────────────────────────────────────────────────── */
@@ -346,9 +346,9 @@ function MobileAccordion({ label, children }) {
 }
 
 /* ─── Main Navbar ──────────────────────────────────────────── */
-const NAV_ITEMS      = ['Create', 'Platform', 'Enterprise', 'Customers', 'Resources', 'Pricing']
-const MEGA_ITEMS     = ['Create', 'Platform']
-const DROPDOWN_ITEMS = ['Customers', 'Resources']
+const NAV_ITEMS      = ['Build', 'Solutions', 'Business', 'Community', 'Learn', 'Plans']
+const MEGA_ITEMS     = ['Build', 'Solutions']
+const DROPDOWN_ITEMS = ['Community', 'Learn']
 
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false)
@@ -357,7 +357,17 @@ export default function Navbar() {
   const closeTimer = useRef(null)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 10)
+          if (window.scrollY > 10) setActiveMenu(null)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -399,22 +409,22 @@ export default function Navbar() {
                   {hasMegaOrDropdown(item) && <ChevronIcon />}
                 </a>
 
-                {item === 'Create'    && activeMenu === 'Create'    && (
+                {item === 'Build'     && activeMenu === 'Build'     && (
                   <div className="menu-wrapper menu-wrapper--mega" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <CreateMegaMenu />
                   </div>
                 )}
-                {item === 'Platform'  && activeMenu === 'Platform'  && (
+                {item === 'Solutions' && activeMenu === 'Solutions' && (
                   <div className="menu-wrapper menu-wrapper--platform" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <PlatformMegaMenu />
                   </div>
                 )}
-                {item === 'Customers' && activeMenu === 'Customers' && (
+                {item === 'Community' && activeMenu === 'Community' && (
                   <div className="menu-wrapper menu-wrapper--small" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <SmallDropdown data={customersData} />
                   </div>
                 )}
-                {item === 'Resources' && activeMenu === 'Resources' && (
+                {item === 'Learn'     && activeMenu === 'Learn'     && (
                   <div className="menu-wrapper menu-wrapper--small" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <SmallDropdown data={resourcesData} />
                   </div>
@@ -449,28 +459,28 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
         <div className="mobile-menu__body">
-          <MobileAccordion label="Create">
-            <div className="mobile-section-title">OCCASIONS</div>
+          <MobileAccordion label="Build">
+            <div className="mobile-section-title">MOMENTS</div>
             {occasions.map(o => (
               <a key={o.label} href="#" className="mobile-link">{o.emoji} {o.label}</a>
             ))}
-            <div className="mobile-section-title" style={{ marginTop: 14 }}>EVENTS</div>
+            <div className="mobile-section-title" style={{ marginTop: 14 }}>PROGRAMS</div>
             {events.slice(0, 5).map(e => (
               <a key={e.label} href="#" className="mobile-link">{e.emoji} {e.label}</a>
             ))}
           </MobileAccordion>
 
-          <MobileAccordion label="Platform">
+          <MobileAccordion label="Solutions">
             <div className="mobile-section-title">FEATURES</div>
             {platformFeatures.map(f => (
               <a key={f.label} href="#" className="mobile-link">{f.icon} {f.label}</a>
             ))}
           </MobileAccordion>
 
-          <a href="#enterprise" className="mobile-top-link">Enterprise</a>
-          <a href="#customers"  className="mobile-top-link">Customers</a>
+          <a href="#business" className="mobile-top-link">Business</a>
+          <a href="#community" className="mobile-top-link">Community</a>
 
-          <MobileAccordion label="Resources">
+          <MobileAccordion label="Learn">
             {Object.entries(resourcesData).map(([sec, items]) => (
               <div key={sec}>
                 <div className="mobile-section-title">{sec}</div>
@@ -479,7 +489,7 @@ export default function Navbar() {
             ))}
           </MobileAccordion>
 
-          <a href="#pricing" className="mobile-top-link">Pricing</a>
+          <a href="#plans" className="mobile-top-link">Plans</a>
           <a href="#signin"  className="mobile-top-link">Sign In</a>
         </div>
 
