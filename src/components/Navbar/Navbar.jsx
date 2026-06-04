@@ -153,7 +153,7 @@ const ArrowIcon = () => (
 )
 
 /* ─── Create Mega Menu — Sidebar Tab UI ────────────────────── */
-function CreateMegaMenu() {
+function CreateMegaMenu({ onItemClick }) {
   const [activeTab, setActiveTab] = useState('occasions')
   const [animKey, setAnimKey]     = useState(0)
 
@@ -211,9 +211,10 @@ function CreateMegaMenu() {
             {tab.items.map((item, i) => (
               <a
                 key={item.label}
-                href="#"
+                href={item.label === 'Send-Off' ? '#/send-off' : '#'}
                 className="panel-item"
                 style={{ animationDelay: `${i * 18}ms` }}
+                onClick={onItemClick}
               >
                 <span className="panel-item__emoji">{item.emoji}</span>
                 <div className="panel-item__text">
@@ -353,6 +354,7 @@ export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isSendOff, setIsSendOff] = useState(window.location.hash === '#/send-off')
   const closeTimer = useRef(null)
 
   useEffect(() => {
@@ -371,6 +373,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const handleHash = () => {
+      setIsSendOff(window.location.hash === '#/send-off')
+    }
+    window.addEventListener('hashchange', handleHash)
+    return () => window.removeEventListener('hashchange', handleHash)
+  }, [])
+
   const openMenu  = (name) => { clearTimeout(closeTimer.current); setActiveMenu(name) }
   const closeMenu = ()     => { closeTimer.current = setTimeout(() => setActiveMenu(null), 140) }
   const keepOpen  = ()     => clearTimeout(closeTimer.current)
@@ -380,11 +390,11 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <header className={`navbar ${scrolled || isSendOff ? 'navbar--scrolled' : ''}`}>
         <div className="navbar__inner">
 
           {/* Logo */}
-          <a href="/" className="navbar__logo">
+          <a href="#/" className="navbar__logo">
             <img src={logo} alt="WorkKudo" className="navbar__logo-icon" />
             <div className="navbar__logo-text">
               <span className="navbar__logo-name">WorkKudo</span>
@@ -416,7 +426,7 @@ export default function Navbar() {
 
                 {item === 'Build'     && activeMenu === 'Build'     && (
                   <div className="menu-wrapper menu-wrapper--mega" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
-                    <CreateMegaMenu />
+                    <CreateMegaMenu onItemClick={() => setActiveMenu(null)} />
                   </div>
                 )}
                 {item === 'Solutions' && activeMenu === 'Solutions' && (
@@ -467,7 +477,14 @@ export default function Navbar() {
           <MobileAccordion label="Build">
             <div className="mobile-section-title">MOMENTS</div>
             {occasions.map(o => (
-              <a key={o.label} href="#" className="mobile-link">{o.emoji} {o.label}</a>
+              <a
+                key={o.label}
+                href={o.label === 'Send-Off' ? '#/send-off' : '#'}
+                className="mobile-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                {o.emoji} {o.label}
+              </a>
             ))}
             <div className="mobile-section-title" style={{ marginTop: 14 }}>PROGRAMS</div>
             {events.slice(0, 5).map(e => (

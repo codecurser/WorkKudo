@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer'
 import TermsOfService from './pages/TermsOfService/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Pricing from './pages/Pricing/Pricing'
-
+ 
 function HomePage() {
   return (
     <>
@@ -24,7 +24,7 @@ function HomePage() {
     </>
   )
 }
-
+ 
 export default function App() {
   return (
     <Routes>
@@ -35,4 +35,6 @@ export default function App() {
     </Routes>
   )
 }
-
+ 
+ 
+ 
