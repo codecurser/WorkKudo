@@ -133,11 +133,14 @@ export default function Footer() {
             <div key={col.heading} className="footer__col">
               <p className="footer__col-heading">{col.heading}</p>
               <ul className="footer__col-list">
-                {col.links.map(link => (
-                  <li key={link}>
-                    <a href="#" className="footer__link">{link}</a>
-                  </li>
-                ))}
+                {col.links.map(link => {
+                  const href = link === 'Contact Us' ? 'mailto:support@proso.ai' : '#'
+                  return (
+                    <li key={link}>
+                      <a href={href} className="footer__link">{link}</a>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}
@@ -149,12 +152,14 @@ export default function Footer() {
       <div className="footer__newsletter">
         <div className="footer__newsletter-inner">
           <div className="footer__newsletter-text">
-            <h3>Love happy coworkers? 🎉</h3>
+            <h3>Love happy coworkers?</h3>
             <p>Get recognition tips, templates & updates — straight to your inbox.</p>
           </div>
           {!subscribed ? (
             <form className="footer__newsletter-form" onSubmit={handleSubscribe}>
               <input
+                id="footer-email"
+                name="email"
                 type="email"
                 placeholder="Enter your work email"
                 value={email}
@@ -168,7 +173,7 @@ export default function Footer() {
             </form>
           ) : (
             <div className="footer__subscribed">
-              🎊 You're in! Welcome to the WorkKudo community.
+              You're in! Welcome to the WorkKudo community.
             </div>
           )}
         </div>

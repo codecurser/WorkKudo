@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Hero.css'
 import heroVideo from '../../assets/hero-video.mp4'
 
@@ -29,7 +29,7 @@ function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseMs = 18
         timeoutRef.current = setTimeout(() => setPhase('pausing'), pauseMs)
       }
     } else if (phase === 'pausing') {
-      setPhase('deleting')
+      timeoutRef.current = setTimeout(() => setPhase('deleting'), 0)
     } else if (phase === 'deleting') {
       if (display.length > 0) {
         timeoutRef.current = setTimeout(
@@ -37,8 +37,10 @@ function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseMs = 18
           deletingSpeed
         )
       } else {
-        setWordIdx(i => (i + 1) % words.length)
-        setPhase('typing')
+        timeoutRef.current = setTimeout(() => {
+          setWordIdx(i => (i + 1) % words.length)
+          setPhase('typing')
+        }, 0)
       }
     }
 

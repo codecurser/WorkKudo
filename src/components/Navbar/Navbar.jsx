@@ -154,14 +154,12 @@ const ArrowIcon = () => (
 /* ─── Create Mega Menu — Sidebar Tab UI ────────────────────── */
 function CreateMegaMenu() {
   const [activeTab, setActiveTab] = useState('occasions')
-  const [prevTab, setPrevTab]     = useState(null)
   const [animKey, setAnimKey]     = useState(0)
 
   const tab = createTabs.find(t => t.id === activeTab)
 
   const handleTabChange = (id) => {
     if (id === activeTab) return
-    setPrevTab(activeTab)
     setActiveTab(id)
     setAnimKey(k => k + 1)
   }
