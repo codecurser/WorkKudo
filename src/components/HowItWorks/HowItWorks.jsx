@@ -126,7 +126,9 @@ export default function HowItWorks() {
                   {/* Text Content */}
                   <div className="hiw__step-content">
                     <span className="hiw__step-number">0{step.id}</span>
-                    <div className="hiw__step-emoji">{step.emoji}</div>
+                    <div className="hiw__step-emoji-wrap">
+                      <div className="hiw__step-emoji">{step.emoji}</div>
+                    </div>
                     <h3 className="hiw__step-title">{step.title}</h3>
                     <p className="hiw__step-desc">{step.desc}</p>
                   </div>

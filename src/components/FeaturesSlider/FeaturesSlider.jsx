@@ -37,7 +37,7 @@ export default function FeaturesSlider() {
 
     const interval = setInterval(() => {
       setActiveIndex(current => (current + 1) % FEATURES.length)
-    }, 2500) // Slide every 2.5 seconds
+    }, 2250) // Slide every 2.5 seconds
     
     return () => clearInterval(interval)
   }, [isPaused])

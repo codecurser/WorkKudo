@@ -121,14 +121,47 @@
   user-select: none;
 }
 
+/* ── Emoji Wrapper — handles hover zoom ── */
+.hiw__step-emoji-wrap {
+  display: inline-block;
+  margin-bottom: 24px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+  will-change: transform;
+}
+
+.hiw__step--visible .hiw__step-emoji-wrap:hover {
+  transform: scale(1.18);
+}
+
+/* ── Emoji Inner — handles bounce-in animation ── */
 .hiw__step-emoji {
   font-size: 48px;
-  margin-bottom: 24px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #FFF;
   padding: 16px;
   border-radius: 20px;
   box-shadow: 0 12px 32px rgba(26,43,74,0.08);
+  transition: box-shadow 0.4s ease;
+}
+
+.hiw__step--visible .hiw__step-emoji-wrap:hover .hiw__step-emoji {
+  box-shadow: 0 22px 44px rgba(246,112,33,0.22);
+}
+
+/* Bounce-in when scrolled into view */
+.hiw__step--visible .hiw__step-emoji {
+  animation: emojiBounceIn 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.25s;
+}
+
+@keyframes emojiBounceIn {
+  0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
+  55%  { transform: scale(1.22) rotate(5deg);  opacity: 1; }
+  75%  { transform: scale(0.93) rotate(-2deg); }
+  100% { transform: scale(1)    rotate(0deg);  opacity: 1; }
 }
 
 .hiw__step-title {
