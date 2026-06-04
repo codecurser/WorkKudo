@@ -8,6 +8,7 @@ import Examples from './components/Examples/Examples'
 import Footer from './components/Footer/Footer'
 import TermsOfService from './pages/TermsOfService/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
+import Pricing from './pages/Pricing/Pricing'
 
 function HomePage() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/pricing" element={<Pricing />} />
     </Routes>
   )
 }

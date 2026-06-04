@@ -187,6 +187,8 @@ export default function Footer() {
             <span className="footer__copyright">© 2026 WorkKudo, Inc. All rights reserved.</span>
           </div>
           <div className="footer__bottom-links">
+            <Link to="/pricing" className="footer__legal">Pricing</Link>
+            <span className="footer__divider">|</span>
             <Link to="/privacy" className="footer__legal">Privacy Policy</Link>
             <span className="footer__divider">|</span>
             <Link to="/terms" className="footer__legal">Terms of Service</Link>

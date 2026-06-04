@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../../assets/workkudosvg.svg'
 
@@ -344,7 +345,7 @@ function MobileAccordion({ label, children }) {
 }
 
 /* ─── Main Navbar ──────────────────────────────────────────── */
-const NAV_ITEMS      = ['Build', 'Solutions', 'Business', 'Community', 'Learn', 'Plans']
+const NAV_ITEMS      = ['Build', 'Solutions', 'Business', 'Community', 'Learn', 'Pricing']
 const MEGA_ITEMS     = ['Build', 'Solutions']
 const DROPDOWN_ITEMS = ['Community', 'Learn']
 
@@ -400,12 +401,18 @@ export default function Navbar() {
                 onMouseEnter={() => hasMegaOrDropdown(item) ? openMenu(item) : null}
                 onMouseLeave={() => hasMegaOrDropdown(item) ? closeMenu() : null}
               >
-                <a href={`#${item.toLowerCase()}`} className="nav-link"
-                   aria-haspopup={hasMegaOrDropdown(item)}
-                   aria-expanded={activeMenu === item}>
-                  {item}
-                  {hasMegaOrDropdown(item) && <ChevronIcon />}
-                </a>
+                {item === 'Pricing' ? (
+                  <Link to="/pricing" className="nav-link">
+                    Pricing
+                  </Link>
+                ) : (
+                  <a href={`#${item.toLowerCase()}`} className="nav-link"
+                     aria-haspopup={hasMegaOrDropdown(item)}
+                     aria-expanded={activeMenu === item}>
+                    {item}
+                    {hasMegaOrDropdown(item) && <ChevronIcon />}
+                  </a>
+                )}
 
                 {item === 'Build'     && activeMenu === 'Build'     && (
                   <div className="menu-wrapper menu-wrapper--mega" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
@@ -487,7 +494,7 @@ export default function Navbar() {
             ))}
           </MobileAccordion>
 
-          <a href="#plans" className="mobile-top-link">Plans</a>
+          <Link to="/pricing" className="mobile-top-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
           <a href="#signin"  className="mobile-top-link">Sign In</a>
         </div>
 
