@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from 'react'
 import './Examples.css'
 
+// Import Backdrop Images
+import imgBirthday from '../../assets/birthday_backdrop.png'
+import imgFarewell from '../../assets/farewell_backdrop.png'
+import imgMilestone from '../../assets/carrier_milestone.png'
+import imgGetWell from '../../assets/getwellsoon_backdrop.png'
+import imgRetirement from '../../assets/retirement_backdrop.png'
+import imgPromotion from '../../assets/promotion_backdrop.png'
+
 const EXAMPLES_DATA = [
   {
     id: 'birthday',
     category: 'Birthday Celebration',
     accentColor: '#FF6B2C',
-    gradient: 'linear-gradient(135deg, #FFE9DF 0%, #FFCCB4 100%)',
-    icon: '🎂',
-    title: 'Happy Birthday!',
+    image: imgBirthday,
     message: 'Wishing you the absolute best today, Sarah! Cheers to another great year.',
     author: '— Michael K.'
   },
@@ -16,9 +22,7 @@ const EXAMPLES_DATA = [
     id: 'farewell',
     category: 'Farewell Sendoff',
     accentColor: '#34D399',
-    gradient: 'linear-gradient(135deg, #E6FBF3 0%, #A7F3D0 100%)',
-    icon: '🚀',
-    title: "We'll Miss You!",
+    image: imgFarewell,
     message: 'Good luck at your new role, Alex! Thank you for being an amazing teammate.',
     author: '— HR Team'
   },
@@ -26,9 +30,7 @@ const EXAMPLES_DATA = [
     id: 'milestone',
     category: 'Career Milestone',
     accentColor: '#1A2B4A',
-    gradient: 'linear-gradient(135deg, #EEF1F7 0%, #C3D0E6 100%)',
-    icon: '🏆',
-    title: 'Work Anniversary',
+    image: imgMilestone,
     message: 'Congrats on 5 years, David! Thank you for your dedication and leadership.',
     author: '— Product Team'
   },
@@ -36,9 +38,7 @@ const EXAMPLES_DATA = [
     id: 'getwell',
     category: 'Healing Wishes',
     accentColor: '#F59E0B',
-    gradient: 'linear-gradient(135deg, #FFFBEB 0%, #FDE68A 100%)',
-    icon: '❤️',
-    title: 'Thinking of You',
+    image: imgGetWell,
     message: 'Wishing you a speedy recovery, Elena! Sending you love and positive vibes.',
     author: '— Engineering Dept'
   },
@@ -46,9 +46,7 @@ const EXAMPLES_DATA = [
     id: 'retirement',
     category: 'Happy Retirement',
     accentColor: '#A78BFA',
-    gradient: 'linear-gradient(135deg, #F5F3FF 0%, #DDD6FE 100%)',
-    icon: '🌴',
-    title: 'Enjoy Retirement',
+    image: imgRetirement,
     message: 'Cheers to your next chapter, Robert! You will be deeply missed here.',
     author: '— Management'
   },
@@ -56,9 +54,7 @@ const EXAMPLES_DATA = [
     id: 'promotion',
     category: 'Job Promotion',
     accentColor: '#EC4899',
-    gradient: 'linear-gradient(135deg, #FDF2F8 0%, #FBCFE8 100%)',
-    icon: '🎉',
-    title: 'Congratulations!',
+    image: imgPromotion,
     message: 'So proud of your new Director role, Maya! Extremely well-deserved.',
     author: '— Leadership Ops'
   }
@@ -88,15 +84,14 @@ function ExampleCard({ ex, idx, cardRef }) {
 
   const handleMouseEnter = () => {
     const emojiPool = getEmojiPool(ex.id)
-    // Spawn 10 falling emojis with randomized positioning and speeds
-    const newEmojis = Array.from({ length: 10 }).map((_, i) => ({
+    const newEmojis = Array.from({ length: 12 }).map((_, i) => ({
       id: Date.now() + i + Math.random(),
       char: emojiPool[Math.floor(Math.random() * emojiPool.length)],
-      left: Math.random() * 80 + 10, // range: 10% to 90%
-      delay: Math.random() * 0.25, // staggered delay
-      duration: 1.6 + Math.random() * 0.6, // slower speed: 1.6s to 2.2s
-      size: 24 + Math.random() * 20, // larger size: 24px to 44px
-      rotation: Math.random() * 360 - 180, // spin rotation
+      left: Math.random() * 80 + 10,
+      delay: Math.random() * 0.25,
+      duration: 1.6 + Math.random() * 0.6,
+      size: 24 + Math.random() * 20,
+      rotation: Math.random() * 360 - 180,
     }))
     setEmojis(newEmojis)
   }
@@ -121,11 +116,12 @@ function ExampleCard({ ex, idx, cardRef }) {
         <span>{ex.category}</span>
       </div>
 
-      {/* Placeholder Board Image Simulation */}
-      <div 
-        className="examples__board-placeholder"
-        style={{ background: ex.gradient }}
-      >
+      {/* Board Image Container */}
+      <div className="examples__board-placeholder">
+        
+        {/* Darkened Overlay to dull exposure */}
+        <div className="examples__board-overlay" />
+
         {/* Emojis Burst Container */}
         <div className="examples__emoji-burst-container">
           {emojis.map((emoji) => (
@@ -145,19 +141,15 @@ function ExampleCard({ ex, idx, cardRef }) {
           ))}
         </div>
 
-        {/* Simulated Board Title */}
-        <div className="examples__board-title-wrap">
-          <span className="examples__board-emoji" role="img" aria-label={ex.category}>
-            {ex.icon}
-          </span>
-          <h4>{ex.title}</h4>
-        </div>
+        {/* Real Board Image Backdrop */}
+        <img src={ex.image} alt={ex.category} className="examples__board-img" />
 
-        {/* Simulated Message Card */}
+        {/* Simulated Message Card Overlay */}
         <div className="examples__mock-card">
           <p className="examples__mock-text">"{ex.message}"</p>
           <span className="examples__mock-author">{ex.author}</span>
         </div>
+        
       </div>
     </div>
   )
@@ -182,6 +174,7 @@ export default function Examples() {
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref)
     })
+
 
     return () => observer.disconnect()
   }, [])

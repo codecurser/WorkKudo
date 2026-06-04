@@ -83,16 +83,43 @@
 
 /* ─── Board Placeholder Simulation ─────────────────────────── */
 .examples__board-placeholder {
-  min-height: 250px;
-  height: 250px;
-  padding: 24px;
+  height: 260px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: stretch;
+  padding: 24px;
+}
+
+.examples__board-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+  filter: brightness(0.8); /* Dulls exposure */
+  transition: transform var(--duration) var(--ease), filter var(--duration) var(--ease);
+}
+
+.examples__board-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(15, 28, 51, 0.1) 0%, rgba(15, 28, 51, 0.35) 100%);
+  z-index: 2;
+  transition: opacity var(--duration) var(--ease);
+}
+
+.examples__card:hover .examples__board-img {
+  transform: scale(1.06);
+  filter: brightness(0.68); /* Darkens slightly more on hover for readability */
 }
 
 /* Emojis Burst Container */
@@ -139,44 +166,22 @@
   }
 }
 
-.examples__board-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  padding: 8px 12px;
-  border-radius: 10px;
-  align-self: flex-start;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transition: transform var(--duration) var(--ease);
-}
-
-.examples__board-emoji {
-  font-size: 16px;
-}
-
-.examples__board-title-wrap h4 {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-/* Mock Card */
+/* Mock Card Overlay */
 .examples__mock-card {
-  background: var(--bg-white);
-  padding: 18px 22px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(26, 43, 74, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 28, 51, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   transform: rotate(-1.5deg);
   transition: all var(--duration) var(--ease);
   display: flex;
   flex-direction: column;
   gap: 8px;
-  /* Floating animation */
   animation: gentle-float 6s ease-in-out infinite alternate;
 }
 
@@ -203,7 +208,7 @@
 }
 
 .examples__mock-text {
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--text-dark);
   font-style: italic;
@@ -219,16 +224,11 @@
   margin: 0;
 }
 
-/* ─── Hover Animations within Placeholder ──────────────────── */
-.examples__card:hover .examples__board-title-wrap {
-  transform: scale(1.02) translateY(-2px);
-}
-
 .examples__card:hover .examples__mock-card {
-  animation: none; /* Disable float animation on hover */
+  animation: none;
   transform: rotate(0deg) scale(1.02);
-  box-shadow: 0 12px 28px rgba(26, 43, 74, 0.12);
-  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 12px 28px rgba(15, 28, 51, 0.22);
+  border-color: rgba(255, 255, 255, 0.85);
 }
 
 @keyframes gentle-float {
@@ -278,10 +278,9 @@
 
 @media (max-width: 480px) {
   .examples__board-placeholder {
-    min-height: 230px;
     height: auto;
+    min-height: 240px;
     padding: 16px;
-    gap: 12px;
   }
   .examples__mock-card {
     padding: 14px 16px;

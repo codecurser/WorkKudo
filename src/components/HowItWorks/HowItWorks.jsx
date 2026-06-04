@@ -11,21 +11,24 @@ const STEPS = [
     emoji: '🎨',
     title: 'Create a board',
     desc: 'Pick the occasion, name the person, set a deadline. Done in under a minute.',
-    image: imgBoard
+    image: imgBoard,
+    blobGradient: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%)'
   },
   {
     id: 2,
     emoji: '📬',
     title: 'Invite your team',
     desc: 'Share a link or email contributors directly. No accounts needed to add a message.',
-    image: imgInvite
+    image: imgInvite,
+    blobGradient: 'linear-gradient(135deg, #34D399 0%, #A7F3D0 100%)'
   },
   {
     id: 3,
     emoji: '🥳',
     title: 'Surprise them',
     desc: 'Reveal the board when the moment comes. Download, share, or just send the link.',
-    image: imgSurprise
+    image: imgSurprise,
+    blobGradient: 'linear-gradient(135deg, #A78BFA 0%, #C4B5FD 100%)'
   }
 ]
 
@@ -133,18 +136,30 @@ export default function HowItWorks() {
                     <p className="hiw__step-desc">{step.desc}</p>
                   </div>
 
-                  {/* Image */}
+                  {/* Animated Blob Glass Card */}
                   <div className="hiw__step-image-wrapper">
-                    <div className="hiw__mac-window">
-                      <div className="hiw__mac-bar">
-                        <div className="hiw__mac-dots">
-                          <span style={{ background: '#FF5F57' }} />
-                          <span style={{ background: '#FEBC2E' }} />
-                          <span style={{ background: '#28C840' }} />
+                    <div className="hiw__animated-card">
+                      
+                      {/* Floating Blob */}
+                      <div 
+                        className="hiw__card-blob" 
+                        style={{ background: step.blobGradient }}
+                      />
+                      
+                      {/* Glass Panel */}
+                      <div className="hiw__card-bg">
+                        {/* Mac Bar inside Glass */}
+                        <div className="hiw__mac-bar">
+                          <div className="hiw__mac-dots">
+                            <span style={{ background: '#FF5F57' }} />
+                            <span style={{ background: '#FEBC2E' }} />
+                            <span style={{ background: '#28C840' }} />
+                          </div>
+                          <div className="hiw__mac-url">workkudo.app</div>
                         </div>
-                        <div className="hiw__mac-url">workkudo.app</div>
+                        <img src={step.image} alt={step.title} className="hiw__mac-img" />
                       </div>
-                      <img src={step.image} alt={step.title} className="hiw__mac-img" />
+
                     </div>
                   </div>
 
