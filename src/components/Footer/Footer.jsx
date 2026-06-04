@@ -20,12 +20,12 @@ const columns = [
   {
     heading: 'Solutions',
     links: [
-      'For Enterprise',
-      'For Remote Teams',
-      'For HR & People Ops',
-      'For Healthcare',
-      'For Nonprofits',
-      'For Startups',
+      'Corporations & Enterprise',
+      'Distributed Workforces',
+      'People & Culture Teams',
+      'Medical & Healthcare',
+      'Charities & NGOs',
+      'Early-Stage Ventures',
     ],
   },
   {
