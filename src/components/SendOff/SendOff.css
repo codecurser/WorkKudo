@@ -1,0 +1,603 @@
+/* ============================================================
+   WORKKUDO — SEND-OFF PAGE
+   Minimalist Professional Hero + Entrance Animations
+   ============================================================ */
+
+.sendoff-page {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.sendoff-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--text-white);
+}
+
+/* Background image — sized oversized for parallax headroom */
+.sendoff-hero__bg {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url('https://images.unsplash.com/photo-1602774433910-a4c76f948875?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* Overlay — heavier left, lighter right */
+.sendoff-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    rgba(8, 15, 30, 0.93) 0%,
+    rgba(8, 15, 30, 0.78) 45%,
+    rgba(8, 15, 30, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+
+
+/* Two-column layout */
+.sendoff-hero__container {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 72px;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* ── LEFT SIDE — ENTRANCE ANIMATION ── */
+.so-hero-left {
+  max-width: 560px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.so-hero-left--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.so-hero-heading {
+  font-size: clamp(3rem, 5.5vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1.06;
+  color: #ffffff;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+
+.so-hero-heading-accent {
+  /* Subtle gradient to give warmth without gimmick */
+  background: linear-gradient(90deg, #ff8f5e 0%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.so-hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.72;
+  margin-bottom: 40px;
+  max-width: 460px;
+  transition: color 0.3s ease;
+}
+
+/* CTA buttons */
+.so-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.so-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: var(--orange);
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 28px rgba(255, 107, 44, 0.38);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer sweep on hover */
+.so-cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.so-cta-primary:hover::before {
+  left: 160%;
+}
+
+.so-cta-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(255, 107, 44, 0.50);
+}
+
+.so-cta-primary:active {
+  transform: translateY(-1px);
+}
+
+.so-cta-ghost {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 2px;
+  transition: all 0.22s ease;
+}
+
+.so-cta-ghost:hover {
+  color: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Minimal trust / pricing line */
+.so-hero-trust {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+/* ── RIGHT SIDE — ENTRANCE ANIMATION (delayed) ── */
+.so-hero-right {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.22s;
+}
+
+.so-hero-right--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── APPLE-STYLE GLASS CARD ── */
+.so-quote-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 34px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+/* Subtle top sheen only — pure glass feel */
+.so-quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.50),
+    transparent
+  );
+  pointer-events: none;
+}
+
+/* Remove noise texture — keep it clean */
+.so-quote-card::after {
+  display: none;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Top shimmer line that sweeps across on load */
+.so-quote-card__shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
+  animation: shimmerSweep 3.5s ease-in-out 0.8s forwards;
+}
+
+@keyframes shimmerSweep {
+  from { left: -60%; }
+  to   { left: 140%;  }
+}
+
+.so-quote-card__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange-light);
+  opacity: 0.85;
+}
+
+.so-quote-card__quote {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.68;
+  border-left: 2px solid rgba(255, 143, 94, 0.55);
+  padding-left: 16px;
+  margin: 0;
+}
+
+/* Avatars row */
+.so-quote-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.so-quote-card__avatars {
+  display: flex;
+  align-items: center;
+}
+
+.so-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid rgba(8, 15, 30, 0.85);
+  margin-left: -7px;
+  transition: transform 0.2s ease;
+}
+
+.so-avatar:first-child { margin-left: 0; }
+
+.so-avatar:hover {
+  transform: scale(1.18);
+  z-index: 2;
+}
+
+.so-avatar--more {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.58rem;
+}
+
+.so-quote-card__signers {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+/* Price row inside card */
+.so-quote-card__price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.so-price-label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
+
+.so-price-badge {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--orange-light);
+  letter-spacing: -0.03em;
+  /* Subtle pulse to draw the eye */
+  animation: pricePulse 3s ease-in-out infinite;
+}
+
+@keyframes pricePulse {
+  0%, 100% { opacity: 1;    }
+  50%       { opacity: 0.72; }
+}
+
+/* ── FEATURES SECTION ── */
+.sendoff-features {
+  background: var(--bg-white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.so-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.so-feature-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.so-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gray-200);
+  box-shadow: var(--shadow-md);
+}
+
+.so-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.so-feature-icon.orange-icon   { background: #FFF3EE; }
+.so-feature-icon.lavender-icon { background: #EDE9FE; }
+.so-feature-icon.mint-icon     { background: #ECFDF5; }
+.so-feature-icon.beige-icon    { background: #FFFBEB; }
+
+.so-feature-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 10px;
+}
+
+.so-feature-card-desc {
+  font-size: 0.93rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── FAQ SECTION ── */
+.sendoff-faq {
+  background: var(--gray-50);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-accordion-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.faq-item:hover {
+  border-color: var(--gray-300);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy-dark);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-chevron-icon {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease;
+}
+
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.36s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-answer {
+  padding: 0 24px 20px;
+  font-size: 0.93rem;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+.faq-item--active {
+  border-color: var(--orange-border);
+  box-shadow: 0 2px 12px rgba(255, 107, 44, 0.08);
+}
+
+.faq-item--active .faq-chevron-icon {
+  transform: rotate(180deg);
+  color: var(--orange);
+}
+
+.faq-item--active .faq-answer-wrapper {
+  max-height: 500px;
+  transition: max-height 0.4s ease-in-out;
+}
+
+/* ── BOTTOM CTA ── */
+.sendoff-cta {
+  background: var(--bg-white);
+  padding: 96px 0;
+}
+
+.sendoff-cta-box {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+  color: var(--text-white);
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cta-desc {
+  font-size: 1.1rem;
+  color: var(--gray-300);
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-large {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .sendoff-hero__container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .so-hero-left  { max-width: 100%; }
+  .so-hero-right { justify-content: flex-start; }
+
+  .so-quote-card {
+    max-width: 480px;
+    /* disable float on mobile — let static layout breathe */
+    animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .sendoff-hero {
+    min-height: auto;
+  }
+
+  .sendoff-hero__container {
+    padding-top: 110px;
+    padding-bottom: 64px;
+    gap: 36px;
+  }
+
+  .so-hero-heading {
+    font-size: 2.6rem;
+  }
+
+  .so-hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .so-cta-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .sendoff-cta-box {
+    padding: 48px 24px;
+  }
+}
