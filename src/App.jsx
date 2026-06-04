@@ -1,40 +1,40 @@
-import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './index.css'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import FeaturesSlider from './components/FeaturesSlider/FeaturesSlider'
 import HowItWorks from './components/HowItWorks/HowItWorks'
-import SendOff from './components/SendOff/SendOff'
-
-export default function App() {
-  const [currentHash, setCurrentHash] = useState(window.location.hash)
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentHash(window.location.hash)
-      window.scrollTo(0, 0)
-    }
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
-
-  const isSendOff = currentHash === '#/send-off'
-
+import Examples from './components/Examples/Examples'
+import Footer from './components/Footer/Footer'
+import TermsOfService from './pages/TermsOfService/TermsOfService'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
+import Pricing from './pages/Pricing/Pricing'
+ 
+function HomePage() {
   return (
     <>
       <Navbar />
       <main>
-        {isSendOff ? (
-          <SendOff />
-        ) : (
-          <>
-            <Hero />
-            <FeaturesSlider />
-            <HowItWorks />
-          </>
-        )}
+        <Hero />
+        <FeaturesSlider />
+        <HowItWorks />
+        <Examples />
       </main>
+      <Footer />
     </>
   )
 }
-
+ 
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/terms" element={<TermsOfService />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/pricing" element={<Pricing />} />
+    </Routes>
+  )
+}
+ 
+ 
+ 
