@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import './SendOff.css'
 import SendOffHowItWorks from './SendOffHowItWorks'
 import CelebrationGrid from './CelebrationGrid'
+import FAQ from '../FAQ/FAQ'
 
 export default function SendOff() {
-  const [activeFaq, setActiveFaq] = useState(null)
   const [mounted, setMounted] = useState(false)
   const bgRef = useRef(null)
 
@@ -25,9 +25,6 @@ export default function SendOff() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const toggleFaq = (index) => {
-    setActiveFaq(activeFaq === index ? null : index)
-  }
 
   const faqItems = [
     {
@@ -157,36 +154,7 @@ export default function SendOff() {
       <CelebrationGrid />
 
       {/* ── FAQ SECTION ── */}
-      <section className="sendoff-faq section">
-        <div className="container">
-          <header className="section-header">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">Got questions? We've got answers.</p>
-          </header>
-
-          <div className="faq-accordion-container">
-            {faqItems.map((item, idx) => (
-              <div
-                key={idx}
-                className={`faq-item ${activeFaq === idx ? 'faq-item--active' : ''}`}
-                onClick={() => toggleFaq(idx)}
-              >
-                <button className="faq-question">
-                  <span>{item.q}</span>
-                  <span className="faq-chevron-icon">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2.5 4.5l3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                </button>
-                <div className="faq-answer-wrapper">
-                  <div className="faq-answer"><p>{item.a}</p></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQ data={faqItems} subtitle="Got questions? We've got answers." />
 
       {/* ── BOTTOM CTA ── */}
       <section className="sendoff-cta">

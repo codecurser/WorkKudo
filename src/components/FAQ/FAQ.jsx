@@ -93,7 +93,11 @@ function PersonSVG() {
   );
 }
 
-export default function FAQ() {
+export default function FAQ({
+  data = FAQ_DATA,
+  title = "Frequently Asked Questions",
+  subtitle = "Got questions about WorkKudo? We've got answers."
+}) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFaq = (index) => {
@@ -109,8 +113,8 @@ export default function FAQ() {
           {/* Left Column: Header & Interactive Graphic */}
           <div className="faq-visual">
             <header className="faq-header">
-              <h2>Frequently Asked Questions</h2>
-              <p>Got questions about WorkKudo? We've got answers.</p>
+              <h2>{title}</h2>
+              <p>{subtitle}</p>
             </header>
             
             {/* Interactive sticker card area */}
@@ -138,7 +142,7 @@ export default function FAQ() {
 
           {/* Right Column: Accordion list */}
           <div className="faq-list">
-            {FAQ_DATA.map((item, idx) => {
+            {data.map((item, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <div
