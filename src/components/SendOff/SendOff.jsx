@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './SendOff.css'
 import SendOffHowItWorks from './SendOffHowItWorks'
+import CelebrationGrid from './CelebrationGrid'
 
 export default function SendOff() {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -152,6 +153,8 @@ export default function SendOff() {
           </div>
         </div>
       </section>
+
+      <CelebrationGrid />
 
       {/* ── FAQ SECTION ── */}
       <section className="sendoff-faq section">

@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer'
 import TermsOfService from './pages/TermsOfService/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Pricing from './pages/Pricing/Pricing'
+import SendOff from './components/SendOff/SendOff'
  
 function HomePage() {
   return (
@@ -24,6 +25,18 @@ function HomePage() {
     </>
   )
 }
+
+function SendOffPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <SendOff />
+      </main>
+      <Footer />
+    </>
+  )
+}
  
 export default function App() {
   return (
@@ -32,9 +45,7 @@ export default function App() {
       <Route path="/terms" element={<TermsOfService />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/pricing" element={<Pricing />} />
+      <Route path="/send-off" element={<SendOffPage />} />
     </Routes>
   )
 }
- 
- 
- 

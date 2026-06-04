@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../../assets/workkudosvg.svg'
 
@@ -209,19 +209,35 @@ function CreateMegaMenu({ onItemClick }) {
         {tab.type === 'grid' && (
           <div className="create-panel__grid">
             {tab.items.map((item, i) => (
-              <a
-                key={item.label}
-                href={item.label === 'Send-Off' ? '#/send-off' : '#'}
-                className="panel-item"
-                style={{ animationDelay: `${i * 18}ms` }}
-                onClick={onItemClick}
-              >
-                <span className="panel-item__emoji">{item.emoji}</span>
-                <div className="panel-item__text">
-                  <span className="panel-item__label">{item.label}</span>
-                  <span className="panel-item__desc">{item.desc}</span>
-                </div>
-              </a>
+              item.label === 'Send-Off' ? (
+                <Link
+                  key={item.label}
+                  to="/send-off"
+                  className="panel-item"
+                  style={{ animationDelay: `${i * 18}ms` }}
+                  onClick={onItemClick}
+                >
+                  <span className="panel-item__emoji">{item.emoji}</span>
+                  <div className="panel-item__text">
+                    <span className="panel-item__label">{item.label}</span>
+                    <span className="panel-item__desc">{item.desc}</span>
+                  </div>
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href="#"
+                  className="panel-item"
+                  style={{ animationDelay: `${i * 18}ms` }}
+                  onClick={onItemClick}
+                >
+                  <span className="panel-item__emoji">{item.emoji}</span>
+                  <div className="panel-item__text">
+                    <span className="panel-item__label">{item.label}</span>
+                    <span className="panel-item__desc">{item.desc}</span>
+                  </div>
+                </a>
+              )
             ))}
           </div>
         )}
@@ -354,7 +370,8 @@ export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [isSendOff, setIsSendOff] = useState(window.location.hash === '#/send-off')
+  const location = useLocation()
+  const isSendOff = location.pathname === '/send-off'
   const closeTimer = useRef(null)
 
   useEffect(() => {
@@ -373,14 +390,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => {
-    const handleHash = () => {
-      setIsSendOff(window.location.hash === '#/send-off')
-    }
-    window.addEventListener('hashchange', handleHash)
-    return () => window.removeEventListener('hashchange', handleHash)
-  }, [])
-
   const openMenu  = (name) => { clearTimeout(closeTimer.current); setActiveMenu(name) }
   const closeMenu = ()     => { closeTimer.current = setTimeout(() => setActiveMenu(null), 140) }
   const keepOpen  = ()     => clearTimeout(closeTimer.current)
@@ -394,13 +403,13 @@ export default function Navbar() {
         <div className="navbar__inner">
 
           {/* Logo */}
-          <a href="#/" className="navbar__logo">
+          <Link to="/" className="navbar__logo">
             <img src={logo} alt="WorkKudo" className="navbar__logo-icon" />
             <div className="navbar__logo-text">
               <span className="navbar__logo-name">WorkKudo</span>
               <span className="navbar__logo-tagline">Recognition for modern teams</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="navbar__nav" aria-label="Main navigation">
@@ -477,14 +486,25 @@ export default function Navbar() {
           <MobileAccordion label="Build">
             <div className="mobile-section-title">MOMENTS</div>
             {occasions.map(o => (
-              <a
-                key={o.label}
-                href={o.label === 'Send-Off' ? '#/send-off' : '#'}
-                className="mobile-link"
-                onClick={() => setMobileOpen(false)}
-              >
-                {o.emoji} {o.label}
-              </a>
+              o.label === 'Send-Off' ? (
+                <Link
+                  key={o.label}
+                  to="/send-off"
+                  className="mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {o.emoji} {o.label}
+                </Link>
+              ) : (
+                <a
+                  key={o.label}
+                  href="#"
+                  className="mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {o.emoji} {o.label}
+                </a>
+              )
             ))}
             <div className="mobile-section-title" style={{ marginTop: 14 }}>PROGRAMS</div>
             {events.slice(0, 5).map(e => (
