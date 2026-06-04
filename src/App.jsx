@@ -10,7 +10,8 @@ import TermsOfService from './pages/TermsOfService/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Pricing from './pages/Pricing/Pricing'
 import SendOff from './components/SendOff/SendOff'
- 
+import FAQ from './components/FAQ/FAQ'
+
 function HomePage() {
   return (
     <>
@@ -20,6 +21,7 @@ function HomePage() {
         <FeaturesSlider />
         <HowItWorks />
         <Examples />
+        <FAQ />
       </main>
       <Footer />
     </>
@@ -37,7 +39,7 @@ function SendOffPage() {
     </>
   )
 }
- 
+
 export default function App() {
   return (
     <Routes>

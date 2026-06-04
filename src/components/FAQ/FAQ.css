@@ -1,0 +1,352 @@
+/* ============================================================
+   FAQ SECTION — WorkKudo Home Page
+   ============================================================ */
+
+.faq-section {
+  background: var(--bg-white);
+  padding: 80px 0;
+  border-top: 1px solid rgba(26, 43, 74, 0.05);
+  overflow: hidden;
+}
+
+.faq-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── Left Side: Visual & Header (Sticky) ── */
+.faq-visual {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-header {
+  text-align: left;
+}
+
+.faq-header h2 {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.faq-header p {
+  font-size: 15.5px;
+  color: var(--text-light);
+  line-height: 1.55;
+  max-width: 320px;
+}
+
+/* Interactive Sticker Box */
+.faq-sticker-box {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: rgba(26, 43, 74, 0.02);
+  border: 1px dashed rgba(26, 43, 74, 0.08);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  cursor: pointer;
+  overflow: visible;
+  transition: background var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+
+.faq-sticker-box:hover {
+  background: rgba(255, 107, 44, 0.03);
+  border-color: rgba(255, 107, 44, 0.15);
+}
+
+.faq-sticker {
+  position: relative;
+  z-index: 5;
+  background: #ffffff;
+  border: 1.5px solid rgba(26, 43, 74, 0.1);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  will-change: transform, box-shadow;
+}
+
+.faq-sticker-box:hover .faq-sticker {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: var(--shadow-lg), 0 10px 30px rgba(255, 107, 44, 0.08);
+  border-color: rgba(255, 107, 44, 0.2);
+}
+
+/* Emojis floating around */
+.faq-bubble {
+  position: absolute;
+  font-size: 32px;
+  z-index: 6;
+  user-select: none;
+  filter: drop-shadow(0 4px 8px rgba(26, 43, 74, 0.08));
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity var(--duration) var(--ease);
+  will-change: transform;
+}
+
+.faq-bubble--1 {
+  top: 30px;
+  left: 60px;
+  animation: floatBubble1 5s infinite ease-in-out;
+}
+
+.faq-bubble--2 {
+  bottom: 30px;
+  left: 70px;
+  animation: floatBubble2 6s infinite ease-in-out 0.5s;
+}
+
+.faq-bubble--3 {
+  top: 40px;
+  right: 60px;
+  animation: floatBubble3 5.5s infinite ease-in-out 1s;
+}
+
+.faq-bubble--4 {
+  bottom: 40px;
+  right: 70px;
+  animation: floatBubble4 6.5s infinite ease-in-out 1.5s;
+}
+
+/* Hover dynamic drift */
+.faq-sticker-box:hover .faq-bubble--1 {
+  transform: scale(1.3) translate(-14px, -14px) rotate(-12deg);
+}
+
+.faq-sticker-box:hover .faq-bubble--2 {
+  transform: scale(1.3) translate(-16px, 16px) rotate(15deg);
+}
+
+.faq-sticker-box:hover .faq-bubble--3 {
+  transform: scale(1.3) translate(16px, -16px) rotate(12deg);
+}
+
+.faq-sticker-box:hover .faq-bubble--4 {
+  transform: scale(1.3) translate(14px, 14px) rotate(-15deg);
+}
+
+/* Float animations */
+@keyframes floatBubble1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(5deg); }
+}
+
+@keyframes floatBubble2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-8deg); }
+}
+
+@keyframes floatBubble3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(-6deg); }
+}
+
+@keyframes floatBubble4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(7deg); }
+}
+
+
+/* ── Right Side: Accordion List ── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-card {
+  background: #ffffff;
+  border: 1px solid rgba(26, 43, 74, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--duration) var(--ease), box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
+  will-change: border-color, box-shadow, transform;
+}
+
+.faq-card:hover {
+  border-color: rgba(26, 43, 74, 0.15);
+  box-shadow: 0 4px 20px rgba(26, 43, 74, 0.04);
+}
+
+.faq-card--active {
+  border-color: rgba(255, 107, 44, 0.25);
+  box-shadow: 0 8px 24px rgba(255, 107, 44, 0.05);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.faq-chevron {
+  color: var(--text-muted);
+  transition: transform var(--duration) var(--ease), color var(--duration) var(--ease);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.faq-card--active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--orange);
+}
+
+/* Answer slide transition */
+.faq-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration) var(--ease);
+}
+
+.faq-content {
+  padding: 0 24px 20px;
+}
+
+/* Chat bubble styling inside FAQ card */
+.faq-chat-bubble {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
+.faq-person-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(255, 107, 44, 0.12);
+  animation: avatarEntrance 0.35s var(--ease) forwards;
+  will-change: transform;
+}
+
+.faq-card--active .faq-person-avatar {
+  animation: avatarEntrance 0.35s var(--ease) forwards, avatarNod 2.2s ease-in-out infinite alternate 0.4s;
+}
+
+.faq-chat-text {
+  flex: 1;
+  background: var(--gray-50);
+  border: 1px solid rgba(26, 43, 74, 0.05);
+  border-radius: 12px;
+  padding: 14px 18px;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(26, 43, 74, 0.02);
+}
+
+/* Left pointing arrow for the chat bubble */
+.faq-chat-text::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  background: var(--gray-50);
+  border-left: 1px solid rgba(26, 43, 74, 0.05);
+  border-bottom: 1px solid rgba(26, 43, 74, 0.05);
+  transform: rotate(45deg);
+}
+
+.faq-typing-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.faq-cursor {
+  display: inline-block;
+  width: 2.5px;
+  height: 14px;
+  background: var(--orange);
+  margin-left: 4px;
+  animation: blinkCursor 0.8s infinite step-end;
+  vertical-align: middle;
+}
+
+@keyframes avatarEntrance {
+  from { opacity: 0; transform: scale(0.8) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes avatarNod {
+  0% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-3px) scaleY(1.02); }
+  100% { transform: translateY(1px) scaleY(0.98); }
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .faq-visual {
+    position: static;
+  }
+  .faq-header {
+    text-align: center;
+  }
+  .faq-header p {
+    max-width: 100%;
+  }
+  .faq-sticker-box {
+    max-width: 500px;
+    margin: 16px auto 0;
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-section {
+    padding: 60px 0;
+  }
+  .faq-header h2 {
+    font-size: 30px;
+  }
+  .faq-trigger {
+    padding: 16px 20px;
+    font-size: 14.5px;
+  }
+  .faq-content {
+    padding: 0 20px 16px;
+    font-size: 13.5px;
+  }
+}
