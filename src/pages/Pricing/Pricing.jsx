@@ -82,63 +82,71 @@ export default function Pricing() {
           {/* ── Interactive Pricing Calculator Card ── */}
           <div className="pricing-page__calculator-section">
             <div className="pricing-card">
-              
-              <div className="pricing-card__header">
-                <span className="pricing-card__popular-badge">Most Popular</span>
-                <h3>Per Board Pricing</h3>
-                <div className="pricing-card__price-wrapper">
-                  <span className="pricing-card__currency">$</span>
-                  <span className="pricing-card__amount">{totalPrice}</span>
-                  <span className="pricing-card__period">
-                    {promoSuccess ? 'credited' : `for ${boardsCount} board${boardsCount > 1 ? 's' : ''}`}
-                  </span>
-                </div>
-                <p className="pricing-card__subheader">
-                  One flat fee. No subscriptions. No per-contributor charges.
-                </p>
-              </div>
-
-              {/* Interactive Board Slider */}
-              {!promoSuccess && (
-                <div className="pricing-card__slider-wrap">
-                  <div className="pricing-card__slider-labels">
-                    <span>Boards to Create</span>
-                    <span className="pricing-card__slider-count">{boardsCount}</span>
+              <div className="pricing-card__grid">
+                
+                {/* Left Panel: Pricing / Slider */}
+                <div className="pricing-card__left">
+                  <span className="pricing-card__popular-badge">Most Popular</span>
+                  <h3 className="pricing-card__heading">Per Board Pricing</h3>
+                  
+                  <div className="pricing-card__price-wrapper">
+                    <span className="pricing-card__currency">$</span>
+                    <span className="pricing-card__amount">{totalPrice}</span>
+                    <span className="pricing-card__period">
+                      {promoSuccess ? 'credited' : `for ${boardsCount} board${boardsCount > 1 ? 's' : ''}`}
+                    </span>
                   </div>
-                  <input 
-                    type="range" 
-                    min="1" 
-                    max="10" 
-                    value={boardsCount} 
-                    onChange={(e) => setBoardsCount(parseInt(e.target.value))}
-                    className="pricing-card__slider"
-                  />
-                  <p className="pricing-card__slider-tip">
-                    {getSliderLabel(boardsCount)}
+                  
+                  <p className="pricing-card__subheader">
+                    One flat fee. No subscriptions. No per-contributor charges.
                   </p>
+
+                  {/* Interactive Board Slider */}
+                  {!promoSuccess && (
+                    <div className="pricing-card__slider-wrap">
+                      <div className="pricing-card__slider-labels">
+                        <span>Boards to Create</span>
+                        <span className="pricing-card__slider-count">{boardsCount}</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="1" 
+                        max="10" 
+                        value={boardsCount} 
+                        onChange={(e) => setBoardsCount(parseInt(e.target.value))}
+                        className="pricing-card__slider"
+                      />
+                      <p className="pricing-card__slider-tip">
+                        {getSliderLabel(boardsCount)}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Action Button */}
+                  <div className="pricing-card__action">
+                    <button className="btn-primary pricing-card__btn">
+                      Create a board for {promoSuccess ? 'Free' : `$${totalPrice}`}
+                    </button>
+                    <p className="pricing-card__footnote">
+                      Secure payment via Stripe · No account needed to contribute
+                    </p>
+                  </div>
                 </div>
-              )}
 
-              {/* Feature Checklist */}
-              <ul className="pricing-card__features">
-                {FEATURES.map((feat) => (
-                  <li key={feat.id} className="pricing-card__feature">
-                    <span className="pricing-card__feature-check">✓</span>
-                    <span className="pricing-card__feature-text">{feat.text}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Right Panel: Features List */}
+                <div className="pricing-card__right">
+                  <h4 className="pricing-card__features-heading">What's Included</h4>
+                  <ul className="pricing-card__features">
+                    {FEATURES.map((feat) => (
+                      <li key={feat.id} className="pricing-card__feature">
+                        <span className="pricing-card__feature-check">✓</span>
+                        <span className="pricing-card__feature-text">{feat.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              {/* Action Button */}
-              <div className="pricing-card__action">
-                <button className="btn-primary pricing-card__btn">
-                  🎉 Create a board for {promoSuccess ? 'Free' : `$${totalPrice}`}
-                </button>
-                <p className="pricing-card__footnote">
-                  Secure payment via Stripe · No account needed to contribute
-                </p>
               </div>
-
             </div>
           </div>
 

@@ -3,58 +3,58 @@
    ============================================================ */
 
 .examples {
-  background: #DFE7F4; /* Soft periwinkle/blue matching the screenshot and our navy-accented theme */
-  padding: 96px 0;
-  border-top: 1px solid rgba(26, 43, 74, 0.08);
-  border-bottom: 1px solid rgba(26, 43, 74, 0.08);
+  background: #EAEFF7; /* Soft refined periwinkle */
+  padding: 80px 0;
+  border-top: 1px solid rgba(26, 43, 74, 0.05);
+  border-bottom: 1px solid rgba(26, 43, 74, 0.05);
 }
 
 .examples__header {
   text-align: center;
-  max-width: 640px;
-  margin: 0 auto 56px;
+  max-width: 600px;
+  margin: 0 auto 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .examples__header h2 {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 800;
   color: var(--text-dark);
-  letter-spacing: -0.8px;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .examples__header p {
-  font-size: 16px;
+  font-size: 15.5px;
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 /* ─── Grid ─────────────────────────────────────────────────── */
 .examples__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 /* ─── Individual Card ───────────────────────────────────────── */
 .examples__card {
   background: var(--bg-card);
-  border: 1.5px solid var(--border);
-  border-radius: 18px;
+  border: 1px solid rgba(26, 43, 74, 0.08);
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
   /* Scroll reveal initial state */
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
               border-color var(--duration) var(--ease),
               box-shadow var(--duration) var(--ease);
 }
@@ -65,9 +65,9 @@
 }
 
 .examples__card.examples__card--visible:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--gray-300);
+  border-color: rgba(26, 43, 74, 0.15);
 }
 
 /* ─── Card Header Bar ──────────────────────────────────────── */
@@ -91,6 +91,23 @@
   justify-content: flex-end;
   align-items: stretch;
   padding: 24px;
+}
+
+.examples__board-placeholder::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 55%);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration) var(--ease);
+}
+
+.examples__card:hover .examples__board-placeholder::after {
+  opacity: 1;
+  animation: shineSweep 4s linear infinite;
 }
 
 .examples__board-img {
@@ -170,19 +187,20 @@
 .examples__mock-card {
   position: relative;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(15, 28, 51, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 13px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(15, 28, 51, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   transform: rotate(-1.5deg);
-  transition: all var(--duration) var(--ease);
+  transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease), border-color var(--duration) var(--ease);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   animation: gentle-float 6s ease-in-out infinite alternate;
+  will-change: transform, box-shadow;
 }
 
 /* Offset float animations slightly so they don't move in sync */
@@ -226,9 +244,9 @@
 
 .examples__card:hover .examples__mock-card {
   animation: none;
-  transform: rotate(0deg) scale(1.02);
-  box-shadow: 0 12px 28px rgba(15, 28, 51, 0.22);
-  border-color: rgba(255, 255, 255, 0.85);
+  transform: rotate(1.5deg) translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(15, 28, 51, 0.16);
+  border-color: rgba(255, 255, 255, 1);
 }
 
 @keyframes gentle-float {
