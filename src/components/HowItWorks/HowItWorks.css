@@ -2,7 +2,7 @@
    HOW IT WORKS SECTION
    ============================================================ */
 .hiw {
-  padding: 120px 0;
+  padding: 80px 0;
   background: linear-gradient(180deg, #F8FAFC 0%, #FFF5F0 30%, #FFFFFF 100%);
   position: relative;
   overflow: hidden;
@@ -10,20 +10,20 @@
 
 .hiw__header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .hiw__header h2 {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 800;
   color: #1A2B4A;
   letter-spacing: -0.02em;
 }
 
 .hiw__header p {
-  font-size: 18px;
+  font-size: 16px;
   color: #6B7280;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .hiw__timeline-wrapper {
@@ -62,7 +62,7 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 160px; /* Space between rows */
+  gap: 110px; /* Space between rows */
 }
 
 .hiw__step {
@@ -178,16 +178,87 @@
   line-height: 1.6;
 }
 
-/* ── Mac Window Frame ── */
-.hiw__mac-window {
+/* ── Animated Blob Glass Card ── */
+.hiw__animated-card {
+  position: relative;
   width: 100%;
   max-width: 500px;
-  border-radius: 12px;
+  height: 330px;
+  border-radius: 20px;
+  z-index: 10;
   overflow: hidden;
-  box-shadow: 0 24px 64px rgba(26,43,74,0.12), 0 0 0 1px rgba(0,0,0,0.06);
-  background: #323233;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 15px 35px rgba(26, 43, 74, 0.04), 
+              0 0 25px rgba(255, 255, 255, 0.5);
+  transition: transform var(--duration-slow) var(--ease), box-shadow var(--duration-slow) var(--ease), border-color var(--duration) var(--ease);
+  will-change: transform, box-shadow;
+  perspective: 1000px;
+}
+
+.hiw__animated-card:hover {
+  transform: translateY(-6px) rotateX(2deg) rotateY(-1.5deg) scale(1.01);
+  box-shadow: 0 28px 56px rgba(26, 43, 74, 0.12), 
+              0 0 35px rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hiw__animated-card:hover .hiw__card-blob {
+  transform: translate(-50%, -50%) scale(1.22);
+  filter: blur(18px);
+  opacity: 0.95;
+}
+
+.hiw__card-bg {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+}
+
+.hiw__card-blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(24px);
+  animation: blob-bounce 6s infinite ease-in-out;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
 }
 
 .hiw__mac-bar {
@@ -197,6 +268,7 @@
   padding: 10px 16px;
   position: relative;
   background: #323233;
+  border-bottom: 1px solid #222223;
 }
 
 .hiw__mac-dots {
@@ -229,6 +301,8 @@
   height: auto;
   display: block;
   background: #FFF;
+  flex: 1;
+  object-fit: cover;
 }
 
 /* ── Responsive ── */
@@ -255,5 +329,14 @@
   }
   .hiw__steps {
     gap: 80px;
+  }
+  .hiw__animated-card {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw__animated-card {
+    height: 220px;
   }
 }
