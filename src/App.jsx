@@ -16,6 +16,10 @@ import Retirement from './components/Retirement/Retirement'
 import Condolence from './components/Condolence/Condolence'
 import WorkMilestone from './components/WorkMilestone/WorkMilestone'
 import SpeedyRecovery from './components/SpeedyRecovery/SpeedyRecovery'
+import BabyArrival from './components/BabyArrival/BabyArrival'
+import Onboarding from './components/Onboarding/Onboarding'
+import Kudos from './components/Kudos/Kudos'
+import FestiveSeason from './components/FestiveSeason/FestiveSeason'
 import FAQ from './components/FAQ/FAQ'
 
 function HomePage() {
@@ -118,6 +122,54 @@ function SpeedyRecoveryPage() {
   )
 }
 
+function BabyArrivalPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <BabyArrival />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+function OnboardingPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Onboarding />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+function KudosPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Kudos />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+function FestiveSeasonPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <FestiveSeason />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -132,6 +184,10 @@ export default function App() {
       <Route path="/condolence" element={<CondolencePage />} />
       <Route path="/work-milestone" element={<WorkMilestonePage />} />
       <Route path="/speedy-recovery" element={<SpeedyRecoveryPage />} />
+      <Route path="/baby-arrival" element={<BabyArrivalPage />} />
+      <Route path="/onboarding" element={<OnboardingPage />} />
+      <Route path="/kudos" element={<KudosPage />} />
+      <Route path="/festive-season" element={<FestiveSeasonPage />} />
     </Routes>
   )
 }

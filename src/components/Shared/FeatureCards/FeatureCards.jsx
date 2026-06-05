@@ -1243,6 +1243,674 @@ const speedyRecoveryCards = [
   },
 ];
 
+// ─── BABY ARRIVAL CARDS DATA ───
+const babyArrivalCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a sweet baby board and set up the expecting parents",
+    accent: "#ec4899",
+    bg: "linear-gradient(145deg,#fdf2f8,#fce7f3)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ba1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ec4899"/>
+            <stop offset="100%" stopColor="#db2777"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fdf2f8" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#ba1)"/>
+        {/* Baby carriage */}
+        <path d="M64,36 A12,12 0 0,1 84,36 L84,40 L64,40 Z" fill="white" opacity="0.9"/>
+        <circle cx="68" cy="44" r="3" fill="white" opacity="0.8"/>
+        <circle cx="80" cy="44" r="3" fill="white" opacity="0.8"/>
+        <path d="M78,32 A8,8 0 0,0 66,28" stroke="white" strokeWidth="1.5" fill="none" opacity="0.7"/>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">BABY BOARD</text>
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#ec4899" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#db2777" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">42</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#be185d" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">30</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#ba1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Baby Shower Board</text>
+        <circle cx="20" cy="164" r="8" fill="#fdf2f8"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#ec4899" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">E</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For Emma & Tom</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Welcome baby!</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#ec4899"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Gather Love",
+    tag: "Collaborate",
+    desc: "Collect sweet advice, well wishes and cute gifs from the whole team",
+    accent: "#db2777",
+    bg: "linear-gradient(145deg,#fce7f3,#fbcfe8)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fce7f3" opacity="0.4"/>
+        <rect width="148" height="42" fill="#db2777"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GATHER LOVE</text>
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#78350f" fontFamily="var(--font-sans)">So excited for you</text>
+          <text x="14" y="74" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">both! Get ready for</text>
+          <text x="14" y="82" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">the best adventure!</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- sarah.j</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#fce7f3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#9d174d" fontFamily="var(--font-sans)">Sleep now while</text>
+          <text x="82" y="74" fontSize="4.5" fill="#9d174d" fontFamily="var(--font-sans)">you still can! Huge</text>
+          <text x="82" y="82" fontSize="4.5" fill="#9d174d" fontFamily="var(--font-sans)">congrats! 👶</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- mark.t</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (30)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "S", name: "Sarah J.", role: "Creator", color: "#ec4899", bg: "#fce7f3", y: 149 },
+          { init: "M", name: "Mark T.",  role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "L", name: "Liam O.",  role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "A", name: "Anna K.",  role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Baby Book",
+    tag: "Keepsake",
+    desc: "A beautifully printed premium baby book shipped as a gift for the nursery",
+    accent: "#be185d",
+    bg: "linear-gradient(145deg,#fdf2f8,#fbcfe8)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fdf2f8" opacity="0.5"/>
+        <rect width="148" height="42" fill="#be185d"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">BABY BOOK</text>
+        <rect x="24" y="54" width="100" height="96" rx="6" fill="#fbcfe8" style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.14))" }}/>
+        <rect x="32" y="54" width="6" height="96" fill="#ec4899" opacity="0.8"/>
+        <path d="M74,70 A10,10 0 0,1 94,70 L94,76 L74,76 Z" fill="#ec4899"/>
+        <circle cx="78" cy="80" r="3" fill="#db2777"/>
+        <circle cx="90" cy="80" r="3" fill="#db2777"/>
+        <text x="74" y="110" fontSize="8" fill="#9d174d" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">WELCOME</text>
+        <text x="74" y="122" fontSize="12" fill="#be185d" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">BABY!</text>
+        <text x="74" y="136" fontSize="4.5" fill="#ec4899" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">From the WorkKudo Team</text>
+        <path d="M16,72 L17.5,76 L21,76 L18.5,78 L19.5,82 L16,80 L12.5,82 L13.5,78 L11,76 L14.5,76 Z" fill="#f472b6" opacity="0.7"/>
+        <path d="M130,80 L131,83 L134,83 L132,85 L133,88 L130,86 L127,88 L128,85 L126,83 L129,83 Z" fill="#f472b6" opacity="0.7"/>
+        <rect x="8" y="162" width="132" height="40" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="176" fontSize="5.5" fill="#be185d" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING TO NURSERY</text>
+        <text x="16" y="188" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Shipped to: Emma & Tom · Jul 2026</text>
+        <circle cx="130" cy="178" r="6" fill="#fdf2f8"/>
+        <path d="M127.5,178 L129,179.5 L132.5,175.5" stroke="#be185d" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate!",
+    tag: "Share",
+    desc: "Share a private link, export as PDF and shower them with love",
+    accent: "#ec4899",
+    bg: "linear-gradient(145deg,#fdf2f8,#fce7f3)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ba4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#ec4899"/>
+            <stop offset="100%" stopColor="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fdf2f8" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#ba4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE! 🍼</text>
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/emma-baby</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#ec4899"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
+        </g>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#fce7f3"/>
+        <text x="45" y="95" fontSize="5" fill="#be185d" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#f3e8ff"/>
+        <text x="103" y="95" fontSize="5" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#ec4899"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        {[
+          { x: 32, y: 134, color: "#ec4899" }, { x: 48, y: 128, color: "#8b5cf6" },
+          { x: 64, y: 138, color: "#f472b6" }, { x: 80, y: 125, color: "#a78bfa" },
+          { x: 96, y: 136, color: "#ec4899" }, { x: 112, y: 130, color: "#f472b6" },
+          { x: 40, y: 150, color: "#a78bfa" }, { x: 72, y: 155, color: "#ec4899" },
+          { x: 104, y: 148, color: "#8b5cf6" },
+        ].map((d, i) => (
+          <rect key={i} x={d.x} y={d.y} width="5" height="5" rx="1" fill={d.color} opacity="0.75" transform={`rotate(${i*25},${d.x+2.5},${d.y+2.5})`}/>
+        ))}
+        <text x="74" y="180" fontSize="26" textAnchor="middle" fontFamily="var(--font-sans)">💖</text>
+        <text x="74" y="202" fontSize="6" fill="#ec4899" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CONGRATULATIONS!</text>
+      </svg>
+    ),
+  },
+];
+
+// ─── ONBOARDING CARDS DATA ───
+const onboardingCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a welcome board and set up the new hire's profile",
+    accent: "#3b82f6",
+    bg: "linear-gradient(145deg,#eff6ff,#dbeafe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ob1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#3b82f6"/>
+            <stop offset="100%" stopColor="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#eff6ff" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#ob1)"/>
+        {/* Waving hand */}
+        <text x="74" y="44" fontSize="24" textAnchor="middle" fontFamily="var(--font-sans)">👋</text>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">WELCOME BOARD</text>
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#3b82f6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#2563eb" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">18</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Intros</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#1d4ed8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">24</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#ob1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Team Welcome Board</text>
+        <circle cx="20" cy="164" r="8" fill="#eff6ff"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#3b82f6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">D</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For David Kim</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">New Senior Engineer</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#3b82f6"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Gather Intros",
+    tag: "Collaborate",
+    desc: "Collect warm introductions, tips, and friendly waves from the team",
+    accent: "#2563eb",
+    bg: "linear-gradient(145deg,#dbeafe,#bfdbfe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#dbeafe" opacity="0.4"/>
+        <rect width="148" height="42" fill="#2563eb"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GATHER INTROS</text>
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#78350f" fontFamily="var(--font-sans)">Welcome David!</text>
+          <text x="14" y="74" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">So glad you joined.</text>
+          <text x="14" y="82" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">Let's grab coffee soon.</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- ryan.m</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#e0e7ff" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#3730a3" fontFamily="var(--font-sans)">Excited to work</text>
+          <text x="82" y="74" fontSize="4.5" fill="#3730a3" fontFamily="var(--font-sans)">together! Welcome</text>
+          <text x="82" y="82" fontSize="4.5" fill="#3730a3" fontFamily="var(--font-sans)">to the best team! 👋</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- sarah.c</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (24)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "R", name: "Ryan M.",  role: "Creator", color: "#3b82f6", bg: "#dbeafe", y: 149 },
+          { init: "S", name: "Sarah C.", role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "L", name: "Lisa P.",  role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "M", name: "Mike T.",  role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Welcome Kit",
+    tag: "Keepsake",
+    desc: "A beautifully printed welcome book shipped to their desk with team swag",
+    accent: "#1d4ed8",
+    bg: "linear-gradient(145deg,#eff6ff,#bfdbfe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#eff6ff" opacity="0.5"/>
+        <rect width="148" height="42" fill="#1d4ed8"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">WELCOME KIT</text>
+        {/* Welcome Box */}
+        <rect x="24" y="54" width="100" height="96" rx="6" fill="#f8fafc" style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.14))" }}/>
+        <rect x="24" y="54" width="100" height="4" fill="#3b82f6" opacity="0.8"/>
+        <path d="M74,70 A10,10 0 0,1 94,70 L94,76 L74,76 Z" fill="#3b82f6"/>
+        <text x="74" y="105" fontSize="8" fill="#1e40af" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">WELCOME</text>
+        <text x="74" y="117" fontSize="12" fill="#1d4ed8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">ABOARD!</text>
+        <text x="74" y="132" fontSize="4.5" fill="#3b82f6" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">The WorkKudo Team</text>
+        <path d="M16,72 L17.5,76 L21,76 L18.5,78 L19.5,82 L16,80 L12.5,82 L13.5,78 L11,76 L14.5,76 Z" fill="#60a5fa" opacity="0.7"/>
+        <path d="M130,80 L131,83 L134,83 L132,85 L133,88 L130,86 L127,88 L128,85 L126,83 L129,83 Z" fill="#60a5fa" opacity="0.7"/>
+        <rect x="8" y="162" width="132" height="40" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="176" fontSize="5.5" fill="#1d4ed8" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING TO DESK</text>
+        <text x="16" y="188" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Shipped to: David Kim · Aug 2026</text>
+        <circle cx="130" cy="178" r="6" fill="#eff6ff"/>
+        <path d="M127.5,178 L129,179.5 L132.5,175.5" stroke="#1d4ed8" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate!",
+    tag: "Share",
+    desc: "Share a private link, export as PDF and make their first day amazing",
+    accent: "#3b82f6",
+    bg: "linear-gradient(145deg,#eff6ff,#dbeafe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ob4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#3b82f6"/>
+            <stop offset="100%" stopColor="#10b981"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#eff6ff" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#ob4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE! 🚀</text>
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/david-welcome</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#3b82f6"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
+        </g>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#dbeafe"/>
+        <text x="45" y="95" fontSize="5" fill="#1d4ed8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#d1fae5"/>
+        <text x="103" y="95" fontSize="5" fill="#059669" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#3b82f6"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        {[
+          { x: 32, y: 134, color: "#3b82f6" }, { x: 48, y: 128, color: "#10b981" },
+          { x: 64, y: 138, color: "#60a5fa" }, { x: 80, y: 125, color: "#34d399" },
+          { x: 96, y: 136, color: "#3b82f6" }, { x: 112, y: 130, color: "#60a5fa" },
+          { x: 40, y: 150, color: "#34d399" }, { x: 72, y: 155, color: "#3b82f6" },
+          { x: 104, y: 148, color: "#10b981" },
+        ].map((d, i) => (
+          <rect key={i} x={d.x} y={d.y} width="5" height="5" rx="1" fill={d.color} opacity="0.75" transform={`rotate(${i*25},${d.x+2.5},${d.y+2.5})`}/>
+        ))}
+        <text x="74" y="180" fontSize="26" textAnchor="middle" fontFamily="var(--font-sans)">🙌</text>
+        <text x="74" y="202" fontSize="6" fill="#3b82f6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">WELCOME TO THE TEAM!</text>
+      </svg>
+    ),
+  },
+];
+
+// ─── KUDOS CARDS DATA ───
+const kudosCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a vibrant kudos board and set up the team or individual",
+    accent: "#f43f5e",
+    bg: "linear-gradient(145deg,#fff1f2,#ffe4e6)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ku1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#f43f5e"/>
+            <stop offset="100%" stopColor="#e11d48"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fff1f2" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#ku1)"/>
+        <text x="74" y="44" fontSize="24" textAnchor="middle" fontFamily="var(--font-sans)">🔥</text>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">KUDOS BOARD</text>
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#f43f5e" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#e11d48" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">56</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Shoutouts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#be123c" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">40</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#ku1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Project Apollo Launch</text>
+        <circle cx="20" cy="164" r="8" fill="#fff1f2"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#f43f5e" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">E</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For Engineering Team</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Amazing work!</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#f43f5e"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Gather Praise",
+    tag: "Collaborate",
+    desc: "Collect high-fives, praise, and celebration gifs from everyone",
+    accent: "#e11d48",
+    bg: "linear-gradient(145deg,#ffe4e6,#fecdd3)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#ffe4e6" opacity="0.4"/>
+        <rect width="148" height="42" fill="#e11d48"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GATHER PRAISE</text>
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#78350f" fontFamily="var(--font-sans)">Incredible work</text>
+          <text x="14" y="74" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">delivering this</text>
+          <text x="14" y="82" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">ahead of schedule! 🚀</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- jess.w</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#fee2e2" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#991b1b" fontFamily="var(--font-sans)">You completely</text>
+          <text x="82" y="74" fontSize="4.5" fill="#991b1b" fontFamily="var(--font-sans)">crushed it. So proud</text>
+          <text x="82" y="82" fontSize="4.5" fill="#991b1b" fontFamily="var(--font-sans)">of this team! 🙌</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- mike.r</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (40)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "J", name: "Jess W.", role: "Creator", color: "#f43f5e", bg: "#ffe4e6", y: 149 },
+          { init: "M", name: "Mike R.", role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "A", name: "Alex B.", role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "S", name: "Sam P.",  role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Kudos Poster",
+    tag: "Keepsake",
+    desc: "A stunning printed kudos poster shipped to the office to celebrate the win",
+    accent: "#be123c",
+    bg: "linear-gradient(145deg,#fff1f2,#fecdd3)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fff1f2" opacity="0.5"/>
+        <rect width="148" height="42" fill="#be123c"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">KUDOS POSTER</text>
+        <rect x="24" y="54" width="100" height="96" rx="2" fill="#f1f5f9" style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.14))" }}/>
+        <rect x="28" y="58" width="92" height="88" fill="none" stroke="#e2e8f0" strokeWidth="1"/>
+        <text x="74" y="80" fontSize="18" textAnchor="middle" fontFamily="var(--font-sans)">🚀</text>
+        <text x="74" y="100" fontSize="10" fill="#e11d48" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">PROJECT</text>
+        <text x="74" y="112" fontSize="10" fill="#e11d48" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">APOLLO</text>
+        <text x="74" y="126" fontSize="4.5" fill="#64748b" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Outstanding Team Achievement</text>
+        <path d="M16,72 L17.5,76 L21,76 L18.5,78 L19.5,82 L16,80 L12.5,82 L13.5,78 L11,76 L14.5,76 Z" fill="#fb7185" opacity="0.7"/>
+        <path d="M130,80 L131,83 L134,83 L132,85 L133,88 L130,86 L127,88 L128,85 L126,83 L129,83 Z" fill="#fb7185" opacity="0.7"/>
+        <rect x="8" y="162" width="132" height="40" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="176" fontSize="5.5" fill="#be123c" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING TO OFFICE</text>
+        <text x="16" y="188" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Shipped to: Eng Team HQ · Sep 2026</text>
+        <circle cx="130" cy="178" r="6" fill="#fff1f2"/>
+        <path d="M127.5,178 L129,179.5 L132.5,175.5" stroke="#be123c" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate!",
+    tag: "Share",
+    desc: "Share a private link, export as PDF and celebrate the massive win",
+    accent: "#f43f5e",
+    bg: "linear-gradient(145deg,#fff1f2,#ffe4e6)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ku4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#f43f5e"/>
+            <stop offset="100%" stopColor="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fff1f2" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#ku4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE! 🏆</text>
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/eng-apollo</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#f43f5e"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
+        </g>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#ffe4e6"/>
+        <text x="45" y="95" fontSize="5" fill="#be123c" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#f3e8ff"/>
+        <text x="103" y="95" fontSize="5" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#f43f5e"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        {[
+          { x: 32, y: 134, color: "#f43f5e" }, { x: 48, y: 128, color: "#8b5cf6" },
+          { x: 64, y: 138, color: "#fb7185" }, { x: 80, y: 125, color: "#a78bfa" },
+          { x: 96, y: 136, color: "#f43f5e" }, { x: 112, y: 130, color: "#fb7185" },
+          { x: 40, y: 150, color: "#a78bfa" }, { x: 72, y: 155, color: "#f43f5e" },
+          { x: 104, y: 148, color: "#8b5cf6" },
+        ].map((d, i) => (
+          <rect key={i} x={d.x} y={d.y} width="5" height="5" rx="1" fill={d.color} opacity="0.75" transform={`rotate(${i*25},${d.x+2.5},${d.y+2.5})`}/>
+        ))}
+        <text x="74" y="180" fontSize="26" textAnchor="middle" fontFamily="var(--font-sans)">✨</text>
+        <text x="74" y="202" fontSize="6" fill="#f43f5e" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">INCREDIBLE WORK!</text>
+      </svg>
+    ),
+  },
+];
+
+// ─── FESTIVE SEASON CARDS DATA ───
+const festiveSeasonCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a festive holiday board for the entire team or department",
+    accent: "#ef4444",
+    bg: "linear-gradient(145deg,#fef2f2,#fee2e2)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="fs1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ef4444"/>
+            <stop offset="100%" stopColor="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fef2f2" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#fs1)"/>
+        <text x="74" y="44" fontSize="24" textAnchor="middle" fontFamily="var(--font-sans)">🎄</text>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">FESTIVE BOARD</text>
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#ef4444" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#dc2626" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">120</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#b91c1c" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">105</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#fs1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Holiday Party Board</text>
+        <circle cx="20" cy="164" r="8" fill="#fef2f2"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#ef4444" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">T</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For The Whole Team</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Happy Holidays!</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#ef4444"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Gather Cheers",
+    tag: "Collaborate",
+    desc: "Collect holiday photos, family updates, and festive cheers",
+    accent: "#dc2626",
+    bg: "linear-gradient(145deg,#fee2e2,#fecaca)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fee2e2" opacity="0.4"/>
+        <rect width="148" height="42" fill="#dc2626"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GATHER CHEERS</text>
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#78350f" fontFamily="var(--font-sans)">Happy holidays to</text>
+          <text x="14" y="74" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">the best team! Have</text>
+          <text x="14" y="82" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">a wonderful break 🎄</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- maria.l</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#fee2e2" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#991b1b" fontFamily="var(--font-sans)">Such a great year!</text>
+          <text x="82" y="74" fontSize="4.5" fill="#991b1b" fontFamily="var(--font-sans)">Thanks for all the</text>
+          <text x="82" y="82" fontSize="4.5" fill="#991b1b" fontFamily="var(--font-sans)">hard work everyone! 🎁</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- david.b</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (105)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "M", name: "Maria L.", role: "Creator", color: "#ef4444", bg: "#fee2e2", y: 149 },
+          { init: "D", name: "David B.", role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "C", name: "Chris P.", role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "A", name: "Alice K.", role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Holiday Book",
+    tag: "Keepsake",
+    desc: "A beautifully printed holiday memory book shipped to the office",
+    accent: "#b91c1c",
+    bg: "linear-gradient(145deg,#fef2f2,#fecaca)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fef2f2" opacity="0.5"/>
+        <rect width="148" height="42" fill="#b91c1c"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">HOLIDAY BOOK</text>
+        <rect x="24" y="54" width="100" height="96" rx="6" fill="#fca5a5" style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.14))" }}/>
+        <rect x="32" y="54" width="6" height="96" fill="#ef4444" opacity="0.8"/>
+        <path d="M74,70 A10,10 0 0,1 94,70 L94,76 L74,76 Z" fill="#ef4444"/>
+        <text x="74" y="105" fontSize="8" fill="#7f1d1d" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">YEAR IN REVIEW</text>
+        <text x="74" y="117" fontSize="12" fill="#b91c1c" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">2026</text>
+        <text x="74" y="132" fontSize="4.5" fill="#ef4444" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">WorkKudo Team</text>
+        <path d="M16,72 L17.5,76 L21,76 L18.5,78 L19.5,82 L16,80 L12.5,82 L13.5,78 L11,76 L14.5,76 Z" fill="#f87171" opacity="0.7"/>
+        <path d="M130,80 L131,83 L134,83 L132,85 L133,88 L130,86 L127,88 L128,85 L126,83 L129,83 Z" fill="#f87171" opacity="0.7"/>
+        <rect x="8" y="162" width="132" height="40" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="176" fontSize="5.5" fill="#b91c1c" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING TO OFFICE</text>
+        <text x="16" y="188" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Shipped to: Headquarters · Dec 2026</text>
+        <circle cx="130" cy="178" r="6" fill="#fef2f2"/>
+        <path d="M127.5,178 L129,179.5 L132.5,175.5" stroke="#b91c1c" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate!",
+    tag: "Share",
+    desc: "Share a private link, export as PDF and ring in the new year",
+    accent: "#ef4444",
+    bg: "linear-gradient(145deg,#fef2f2,#fee2e2)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="fs4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#ef4444"/>
+            <stop offset="100%" stopColor="#10b981"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fef2f2" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#fs4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE! 🎊</text>
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/team-holidays</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#ef4444"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
+        </g>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#fee2e2"/>
+        <text x="45" y="95" fontSize="5" fill="#b91c1c" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#d1fae5"/>
+        <text x="103" y="95" fontSize="5" fill="#059669" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#ef4444"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        {[
+          { x: 32, y: 134, color: "#ef4444" }, { x: 48, y: 128, color: "#10b981" },
+          { x: 64, y: 138, color: "#f87171" }, { x: 80, y: 125, color: "#34d399" },
+          { x: 96, y: 136, color: "#ef4444" }, { x: 112, y: 130, color: "#f87171" },
+          { x: 40, y: 150, color: "#34d399" }, { x: 72, y: 155, color: "#ef4444" },
+          { x: 104, y: 148, color: "#10b981" },
+        ].map((d, i) => (
+          <rect key={i} x={d.x} y={d.y} width="5" height="5" rx="1" fill={d.color} opacity="0.75" transform={`rotate(${i*25},${d.x+2.5},${d.y+2.5})`}/>
+        ))}
+        <text x="74" y="180" fontSize="26" textAnchor="middle" fontFamily="var(--font-sans)">🎁</text>
+        <text x="74" y="202" fontSize="6" fill="#ef4444" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">HAPPY HOLIDAYS!</text>
+      </svg>
+    ),
+  },
+];
+
 // Helper to determine active list and gradient configs
 const getPageConfig = (pageType) => {
   switch (pageType) {
@@ -1287,6 +1955,34 @@ const getPageConfig = (pageType) => {
         title: "How it works",
         subtitle: "Four cheerful steps to lift someone's spirits and help them heal faster",
         gradients: ["#10b981", "#0d9488", "#059669", "#10b981"],
+      };
+    case "baby-arrival":
+      return {
+        cards: babyArrivalCards,
+        title: "How it works",
+        subtitle: "Four sweet steps to celebrate the newest addition to the family",
+        gradients: ["#ec4899", "#db2777", "#8b5cf6", "#ec4899"],
+      };
+    case "onboarding":
+      return {
+        cards: onboardingCards,
+        title: "How it works",
+        subtitle: "Four welcoming steps to make their first day unforgettable",
+        gradients: ["#3b82f6", "#2563eb", "#10b981", "#3b82f6"],
+      };
+    case "kudos":
+      return {
+        cards: kudosCards,
+        title: "How it works",
+        subtitle: "Four energetic steps to celebrate a massive team win",
+        gradients: ["#f43f5e", "#e11d48", "#8b5cf6", "#f43f5e"],
+      };
+    case "festive-season":
+      return {
+        cards: festiveSeasonCards,
+        title: "How it works",
+        subtitle: "Four festive steps to wrap up the year with joy",
+        gradients: ["#ef4444", "#dc2626", "#10b981", "#ef4444"],
       };
     case "send-off":
     default:

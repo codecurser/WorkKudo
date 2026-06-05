@@ -449,6 +449,42 @@ const speedyRecoveryPins = [
   },
 ];
 
+// ─── BABY ARRIVAL PINS DATA ───
+const babyArrivalPins = [
+  { id: "ba-1", lat: 51.5074, lng: -0.1278, city: "London",    user: "Emma T.",    msg: "Can't wait to meet the little one!",     avatar: "E", color: "#ec4899", delay: "0.2s" },
+  { id: "ba-2", lat: 40.7128, lng: -74.006, city: "New York",  user: "David K.",   msg: "So incredibly happy for your growing family!", avatar: "D", color: "#db2777", delay: "0.7s" },
+  { id: "ba-3", lat: 35.6762, lng: 139.650, city: "Tokyo",     user: "Yuki S.",    msg: "Wishing you rest and joy. Welcome baby!", avatar: "Y", color: "#8b5cf6", delay: "1.5s" },
+  { id: "ba-4", lat: -33.868, lng: 151.209, city: "Sydney",    user: "Chloe B.",   msg: "Huge congratulations from down under! 🍼",  avatar: "C", color: "#ec4899", delay: "2.1s" },
+  { id: "ba-5", lat: 43.6532, lng: -79.383, city: "Toronto",   user: "Mark R.",    msg: "Enjoy every precious moment!",            avatar: "M", color: "#db2777", delay: "2.8s" },
+];
+
+// ─── ONBOARDING PINS DATA ───
+const onboardingPins = [
+  { id: "ob-1", lat: 37.7749, lng: -122.41, city: "San Francisco", user: "Alex W.",    msg: "Welcome to the team! Excited to work together.", avatar: "A", color: "#3b82f6", delay: "0.2s" },
+  { id: "ob-2", lat: 51.5074, lng: -0.1278, city: "London",        user: "Sarah J.",   msg: "So glad you're here! Let's grab a virtual coffee.", avatar: "S", color: "#2563eb", delay: "0.8s" },
+  { id: "ob-3", lat: 1.3521,  lng: 103.819, city: "Singapore",     user: "Wei C.",     msg: "Welcome aboard! Great to have you with us.", avatar: "W", color: "#10b981", delay: "1.4s" },
+  { id: "ob-4", lat: 48.8566, lng: 2.3522,  city: "Paris",         user: "Marie D.",   msg: "Bienvenue! You're going to love it here.",  avatar: "M", color: "#3b82f6", delay: "2.2s" },
+  { id: "ob-5", lat: -33.868, lng: 151.209, city: "Sydney",        user: "James H.",   msg: "Welcome to the best team ever! 👋",       avatar: "J", color: "#2563eb", delay: "3.0s" },
+];
+
+// ─── KUDOS PINS DATA ───
+const kudosPins = [
+  { id: "ku-1", lat: 40.7128, lng: -74.006, city: "New York",   user: "Mike T.",    msg: "Incredible launch! You all crushed it! 🚀", avatar: "M", color: "#f43f5e", delay: "0.2s" },
+  { id: "ku-2", lat: 51.5074, lng: -0.1278, city: "London",     user: "Emma S.",    msg: "Stunning work! So proud of the results.",   avatar: "E", color: "#e11d48", delay: "0.6s" },
+  { id: "ku-3", lat: 12.9716, lng: 77.5946, city: "Bangalore",  user: "Rahul M.",   msg: "Massive win for the company. Fantastic!",   avatar: "R", color: "#8b5cf6", delay: "1.2s" },
+  { id: "ku-4", lat: 35.6762, lng: 139.650, city: "Tokyo",      user: "Kenji Y.",   msg: "Exceeding all expectations. Amazing! 🏆",  avatar: "K", color: "#f43f5e", delay: "1.8s" },
+  { id: "ku-5", lat: 52.5200, lng: 13.4050, city: "Berlin",     user: "Anna K.",    msg: "Setting the new standard! Cheers! 🥂",    avatar: "A", color: "#e11d48", delay: "2.5s" },
+];
+
+// ─── FESTIVE SEASON PINS DATA ───
+const festiveSeasonPins = [
+  { id: "fs-1", lat: 51.5074, lng: -0.1278, city: "London",    user: "Team UK",    msg: "Merry Christmas & Happy New Year! 🎄",   avatar: "UK", color: "#ef4444", delay: "0.3s" },
+  { id: "fs-2", lat: 40.7128, lng: -74.006, city: "New York",  user: "Team US",    msg: "Happy Holidays everyone! Enjoy the break!", avatar: "US", color: "#dc2626", delay: "0.9s" },
+  { id: "fs-3", lat: 35.6762, lng: 139.650, city: "Tokyo",     user: "Team JP",    msg: "Wishing you joy and peace this season! 🎁", avatar: "JP", color: "#10b981", delay: "1.5s" },
+  { id: "fs-4", lat: -33.868, lng: 151.209, city: "Sydney",    user: "Team AU",    msg: "Sunny greetings for a wonderful holiday! ☀️", avatar: "AU", color: "#ef4444", delay: "2.1s" },
+  { id: "fs-5", lat: 48.8566, lng: 2.3522,  city: "Paris",     user: "Team FR",    msg: "Joyeuses Fêtes! Cheers to an amazing year!",avatar: "FR", color: "#dc2626", delay: "2.8s" },
+];
+
 // Configuration selector
 const getMapConfig = (pageType) => {
   switch (pageType) {
@@ -517,6 +553,50 @@ const getMapConfig = (pageType) => {
         badgeColor: "#10b981",
         badgeBorder: "rgba(16, 185, 129, 0.2)",
         reactions: { "💚": 24, "🌼": 20, "🥰": 18, "❤️": 22 }
+      };
+    case "baby-arrival":
+      return {
+        pins: babyArrivalPins,
+        badgeText: "Welcome Baby",
+        title: "Global Baby Greetings",
+        subtitle: "Colleagues from around the world share their excitement and sweet wishes for the newest addition to the family!",
+        badgeBg: "rgba(236, 72, 153, 0.08)",
+        badgeColor: "#ec4899",
+        badgeBorder: "rgba(236, 72, 153, 0.2)",
+        reactions: { "🍼": 24, "🧸": 20, "💕": 30, "🎉": 18 }
+      };
+    case "onboarding":
+      return {
+        pins: onboardingPins,
+        badgeText: "Global Welcome",
+        title: "Worldwide Onboarding Map",
+        subtitle: "A massive, warm welcome from colleagues spanning San Francisco to Singapore. The global team is thrilled to have you!",
+        badgeBg: "rgba(59, 130, 246, 0.08)",
+        badgeColor: "#3b82f6",
+        badgeBorder: "rgba(59, 130, 246, 0.2)",
+        reactions: { "👋": 35, "🚀": 22, "💙": 18, "🎉": 28 }
+      };
+    case "kudos":
+      return {
+        pins: kudosPins,
+        badgeText: "Worldwide Kudos",
+        title: "Global Recognition Map",
+        subtitle: "An incredible achievement recognized globally! Teams from New York, London, Tokyo and beyond light up the map with praise.",
+        badgeBg: "rgba(244, 63, 94, 0.08)",
+        badgeColor: "#f43f5e",
+        badgeBorder: "rgba(244, 63, 94, 0.2)",
+        reactions: { "🔥": 40, "🏆": 25, "👏": 32, "🚀": 20 }
+      };
+    case "festive-season":
+      return {
+        pins: festiveSeasonPins,
+        badgeText: "Happy Holidays",
+        title: "Global Festive Cheers",
+        subtitle: "The entire company celebrates together! Holiday cheers and end-of-year greetings are shared across all international offices.",
+        badgeBg: "rgba(239, 68, 68, 0.08)",
+        badgeColor: "#ef4444",
+        badgeBorder: "rgba(239, 68, 68, 0.2)",
+        reactions: { "🎄": 45, "🎁": 30, "❄️": 22, "🥂": 28 }
       };
     case "send-off":
     default:
