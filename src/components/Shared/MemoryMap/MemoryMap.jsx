@@ -385,6 +385,70 @@ const workMilestonePins = [
   },
 ];
 
+// ─── PINS DATA FOR SPEEDY RECOVERY ───
+const speedyRecoveryPins = [
+  {
+    id: "ny",
+    name: "Jade Morris",
+    role: "Team Lead",
+    location: "New York, USA",
+    avatar: "J",
+    color: "#10b981",
+    msg: "Sam, the whole New York office is rooting for you! Take all the time you need to rest and recover. We've got things covered here — just focus on getting better. Miss you tons!",
+    time: "1 hour ago",
+    lat: 40.7128,
+    lng: -74.006,
+  },
+  {
+    id: "london",
+    name: "Carlos Vega",
+    role: "Product Designer",
+    location: "London, UK",
+    avatar: "C",
+    color: "#059669",
+    msg: "Sending healing thoughts from London! You are missed at every standup. Rest up, eat well, and get back to us stronger than ever. The team is thinking of you every day!",
+    time: "3 hours ago",
+    lat: 51.5074,
+    lng: -0.1278,
+  },
+  {
+    id: "bangalore",
+    name: "Preet Singh",
+    role: "Backend Engineer",
+    location: "Bangalore, India",
+    avatar: "P",
+    color: "#0d9488",
+    msg: "Wishing you a speedy recovery from Bangalore! Your positive energy is what makes our team so special. Don't rush — we need you at 100%. Take care, rest well, we’ll be here!",
+    time: "6 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "tokyo",
+    name: "Yuki Tanaka",
+    role: "UX Designer",
+    location: "Tokyo, Japan",
+    avatar: "Y",
+    color: "#10b981",
+    msg: "Get well soon from Tokyo! Every great team needs their star player healthy. We're sending all the good vibes across the Pacific. Rest, recover, and come back when you're ready!",
+    time: "10 hours ago",
+    lat: 35.6762,
+    lng: 139.6503,
+  },
+  {
+    id: "amsterdam",
+    name: "Eva de Groot",
+    role: "Data Analyst",
+    location: "Amsterdam, Netherlands",
+    avatar: "E",
+    color: "#059669",
+    msg: "Speedy recovery wishes from Amsterdam! We already miss your energy and brilliant ideas. Focus on healing — everything else can wait. The whole team sends warm hugs your way!",
+    time: "1 day ago",
+    lat: 52.3676,
+    lng: 4.9041,
+  },
+];
+
 // Configuration selector
 const getMapConfig = (pageType) => {
   switch (pageType) {
@@ -442,6 +506,17 @@ const getMapConfig = (pageType) => {
         badgeColor: "#7c3aed",
         badgeBorder: "rgba(124, 58, 237, 0.2)",
         reactions: { "🏆": 22, "🎉": 18, "⭐": 28, "👏": 20 }
+      };
+    case "speedy-recovery":
+      return {
+        pins: speedyRecoveryPins,
+        badgeText: "Get Well Wishes",
+        title: "Global Get-Well Map",
+        subtitle: "Warm wishes and healing thoughts pour in from New York, London, Bangalore, Tokyo, and Amsterdam. The whole world is cheering for a speedy recovery!",
+        badgeBg: "rgba(16, 185, 129, 0.08)",
+        badgeColor: "#10b981",
+        badgeBorder: "rgba(16, 185, 129, 0.2)",
+        reactions: { "💚": 24, "🌼": 20, "🥰": 18, "❤️": 22 }
       };
     case "send-off":
     default:

@@ -15,6 +15,7 @@ import Appreciation from './components/Appreciation/Appreciation'
 import Retirement from './components/Retirement/Retirement'
 import Condolence from './components/Condolence/Condolence'
 import WorkMilestone from './components/WorkMilestone/WorkMilestone'
+import SpeedyRecovery from './components/SpeedyRecovery/SpeedyRecovery'
 import FAQ from './components/FAQ/FAQ'
 
 function HomePage() {
@@ -105,6 +106,18 @@ function WorkMilestonePage() {
   )
 }
 
+function SpeedyRecoveryPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <SpeedyRecovery />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -118,6 +131,7 @@ export default function App() {
       <Route path="/retirement" element={<RetirementPage />} />
       <Route path="/condolence" element={<CondolencePage />} />
       <Route path="/work-milestone" element={<WorkMilestonePage />} />
+      <Route path="/speedy-recovery" element={<SpeedyRecoveryPage />} />
     </Routes>
   )
 }
