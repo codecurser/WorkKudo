@@ -321,6 +321,70 @@ const condolencePins = [
   },
 ];
 
+// ─── PINS DATA FOR WORK MILESTONE ───
+const workMilestonePins = [
+  {
+    id: "ny",
+    name: "Alex Park",
+    role: "Engineering Lead",
+    location: "New York, USA",
+    avatar: "A",
+    color: "#7c3aed",
+    msg: "Jamie, 5 years of incredible work! You have been a cornerstone of our New York team. Every project you touched came out better. Here's to the next 5 and beyond — congratulations!",
+    time: "1 hour ago",
+    lat: 40.7128,
+    lng: -74.006,
+  },
+  {
+    id: "london",
+    name: "Nina Rao",
+    role: "Product Manager",
+    location: "London, UK",
+    avatar: "N",
+    color: "#5b21b6",
+    msg: "Five brilliant years! Working with you across timezones has been such a pleasure. Your dedication, creativity and positivity make this company a truly great place. Huge congratulations!",
+    time: "3 hours ago",
+    lat: 51.5074,
+    lng: -0.1278,
+  },
+  {
+    id: "singapore",
+    name: "Wei L.",
+    role: "Regional Sales Director",
+    location: "Singapore",
+    avatar: "W",
+    color: "#4f46e5",
+    msg: "Half a decade of excellence! The Singapore office celebrates with you. Your work on the APAC expansion was pivotal. A big congratulations from all of us here — keep shining!",
+    time: "6 hours ago",
+    lat: 1.3521,
+    lng: 103.8198,
+  },
+  {
+    id: "toronto",
+    name: "Matt Chen",
+    role: "Data Scientist",
+    location: "Toronto, Canada",
+    avatar: "M",
+    color: "#f59e0b",
+    msg: "Congratulations on 5 years! Every hackathon, every sprint, every late night — you always brought your A-game. Toronto is proud to have worked with you. Here's to many more milestones!",
+    time: "10 hours ago",
+    lat: 43.6511,
+    lng: -79.3834,
+  },
+  {
+    id: "sydney",
+    name: "Zara Adams",
+    role: "UX Researcher",
+    location: "Sydney, Australia",
+    avatar: "Z",
+    color: "#7c3aed",
+    msg: "5 years and still the most enthusiastic person in every meeting! Sydney sends massive congratulations. Your passion for the product and care for the team is truly unmatched. Cheers!",
+    time: "1 day ago",
+    lat: -33.8688,
+    lng: 151.2093,
+  },
+];
+
 // Configuration selector
 const getMapConfig = (pageType) => {
   switch (pageType) {
@@ -367,6 +431,17 @@ const getMapConfig = (pageType) => {
         badgeColor: "#4a6fa5",
         badgeBorder: "rgba(74, 111, 165, 0.18)",
         reactions: { "💙": 24, "💖": 18, "🕊️": 20, "💫": 15 }
+      };
+    case "work-milestone":
+      return {
+        pins: workMilestonePins,
+        badgeText: "Global Celebrations",
+        title: "Work Milestone Memory Map",
+        subtitle: "Colleagues from New York to Singapore, Toronto to Sydney celebrate a career milestone. Watch the world light up with pride and congratulations!",
+        badgeBg: "rgba(124, 58, 237, 0.08)",
+        badgeColor: "#7c3aed",
+        badgeBorder: "rgba(124, 58, 237, 0.2)",
+        reactions: { "🏆": 22, "🎉": 18, "⭐": 28, "👏": 20 }
       };
     case "send-off":
     default:

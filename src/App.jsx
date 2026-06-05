@@ -14,6 +14,7 @@ import Birthday from './components/Birthday/Birthday'
 import Appreciation from './components/Appreciation/Appreciation'
 import Retirement from './components/Retirement/Retirement'
 import Condolence from './components/Condolence/Condolence'
+import WorkMilestone from './components/WorkMilestone/WorkMilestone'
 import FAQ from './components/FAQ/FAQ'
 
 function HomePage() {
@@ -92,6 +93,18 @@ function CondolencePage() {
   )
 }
 
+function WorkMilestonePage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <WorkMilestone />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -104,6 +117,7 @@ export default function App() {
       <Route path="/appreciation" element={<AppreciationPage />} />
       <Route path="/retirement" element={<RetirementPage />} />
       <Route path="/condolence" element={<CondolencePage />} />
+      <Route path="/work-milestone" element={<WorkMilestonePage />} />
     </Routes>
   )
 }

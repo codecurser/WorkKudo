@@ -879,6 +879,188 @@ const condolenceCards = [
   },
 ];
 
+// ─── WORK MILESTONE CARDS DATA ───
+const workMilestoneCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a milestone board and set up the honoured team member",
+    accent: "#7c3aed",
+    bg: "linear-gradient(145deg,#f5f3ff,#ede9fe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="wm1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7c3aed"/>
+            <stop offset="100%" stopColor="#5b21b6"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#f5f3ff" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#wm1)"/>
+        {/* Trophy */}
+        <g>
+          <rect x="68" y="36" width="12" height="7" rx="1.5" fill="white" opacity="0.9"/>
+          <rect x="72" y="43" width="4" height="8" rx="1" fill="white" opacity="0.9"/>
+          <rect x="67" y="51" width="14" height="3" rx="1" fill="white" opacity="0.9"/>
+          <path d="M63,18 Q58,18 58,24 Q58,33 68,37 L68,24 Z" fill="white" opacity="0.75"/>
+          <path d="M85,18 Q90,18 90,24 Q90,33 80,37 L80,24 Z" fill="white" opacity="0.75"/>
+          <ellipse cx="74" cy="20" rx="12" ry="9" fill="white" opacity="0.95"/>
+          <text x="74" y="24" fontSize="9" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">★</text>
+        </g>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">MILESTONE BOARD</text>
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">5</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Years</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#5b21b6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">34</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#4f46e5" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">22</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#wm1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Milestone Board</text>
+        <circle cx="20" cy="164" r="8" fill="#f5f3ff"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">J</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For Jamie Collins</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">5 Years at WorkKudo</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#7c3aed"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Collect Memories",
+    tag: "Collaborate",
+    desc: "Gather shoutouts, stories and congratulations from the whole team",
+    accent: "#5b21b6",
+    bg: "linear-gradient(145deg,#ede9fe,#ddd6fe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#ede9fe" opacity="0.4"/>
+        <rect width="148" height="42" fill="#5b21b6"/>
+        <text x="74" y="26" fontSize="7.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COLLECT MEMORIES</text>
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#78350f" fontFamily="var(--font-sans)">5 years and every</text>
+          <text x="14" y="74" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">day better than</text>
+          <text x="14" y="82" fontSize="4.5" fill="#78350f" fontFamily="var(--font-sans)">the last. Congrats!</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- alex.p</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#e0e7ff" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#3730a3" fontFamily="var(--font-sans)">A true company</text>
+          <text x="82" y="74" fontSize="4.5" fill="#3730a3" fontFamily="var(--font-sans)">pillar. Here's to</text>
+          <text x="82" y="82" fontSize="4.5" fill="#3730a3" fontFamily="var(--font-sans)">many more years!</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- nina.r</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (22)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "A", name: "Alex Park",   role: "Creator", color: "#7c3aed", bg: "#ede9fe", y: 149 },
+          { init: "N", name: "Nina Rao",    role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "M", name: "Matt Chen",   role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "Z", name: "Zara Adams",  role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Award Plaque",
+    tag: "Keepsake",
+    desc: "Premium printed award plaque and milestone book shipped to their desk",
+    accent: "#4f46e5",
+    bg: "linear-gradient(145deg,#eef2ff,#e0e7ff)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#eef2ff" opacity="0.5"/>
+        <rect width="148" height="42" fill="#4f46e5"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">AWARD PLAQUE</text>
+        {/* Plaque */}
+        <rect x="24" y="54" width="100" height="96" rx="6" fill="#f5f0dc" style={{ filter: "drop-shadow(0 6px 16px rgba(0,0,0,0.14))" }}/>
+        <rect x="24" y="54" width="100" height="96" rx="6" fill="none" stroke="#c9a84c" strokeWidth="3"/>
+        <rect x="32" y="62" width="84" height="80" rx="4" fill="none" stroke="#c9a84c" strokeWidth="1" strokeDasharray="3 2" opacity="0.6"/>
+        {/* Star */}
+        <polygon points="74,72 77,81 86,81 79,87 82,96 74,90 66,96 69,87 62,81 71,81" fill="#c9a84c"/>
+        <text x="74" y="105" fontSize="6" fill="#5b21b6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">WORK ANNIVERSARY</text>
+        <text x="74" y="115" fontSize="9" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">5 YEARS</text>
+        <text x="74" y="125" fontSize="5" fill="#78716c" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Jamie Collins</text>
+        <rect x="42" y="132" width="64" height="1.5" rx="1" fill="#c9a84c" opacity="0.5"/>
+        <text x="74" y="143" fontSize="4.5" fill="#9ca3af" fontWeight="500" textAnchor="middle" fontFamily="var(--font-sans)">WorkKudo Inc. · 2024</text>
+        {/* Confetti stars */}
+        <path d="M16,72 L17.5,76 L21,76 L18.5,78 L19.5,82 L16,80 L12.5,82 L13.5,78 L11,76 L14.5,76 Z" fill="#f59e0b" opacity="0.7"/>
+        <path d="M130,80 L131,83 L134,83 L132,85 L133,88 L130,86 L127,88 L128,85 L126,83 L129,83 Z" fill="#7c3aed" opacity="0.7"/>
+        {/* Shipping detail */}
+        <rect x="8" y="162" width="132" height="40" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="176" fontSize="5.5" fill="#4f46e5" fontWeight="800" fontFamily="var(--font-sans)">DELIVERY DETAILS</text>
+        <text x="16" y="188" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Shipped to: Jamie Collins · Jun 2026</text>
+        <circle cx="130" cy="178" r="6" fill="#eef2ff"/>
+        <path d="M127.5,178 L129,179.5 L132.5,175.5" stroke="#4f46e5" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate!",
+    tag: "Share & Reveal",
+    desc: "Share a private link, export as PDF and celebrate the milestone together",
+    accent: "#f59e0b",
+    bg: "linear-gradient(145deg,#fffbeb,#fef3c7)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="wm4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#f59e0b"/>
+            <stop offset="100%" stopColor="#7c3aed"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fffbeb" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#wm4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE! 🎊</text>
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/jamie-5yrs</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#7c3aed"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
+        </g>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#fef3c7"/>
+        <text x="45" y="95" fontSize="5" fill="#92400e" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#ede9fe"/>
+        <text x="103" y="95" fontSize="5" fill="#5b21b6" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#f59e0b"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        {/* Confetti burst */}
+        {[
+          { x: 32, y: 134, color: "#7c3aed" }, { x: 48, y: 128, color: "#f59e0b" },
+          { x: 64, y: 138, color: "#10b981" }, { x: 80, y: 125, color: "#ef4444" },
+          { x: 96, y: 136, color: "#7c3aed" }, { x: 112, y: 130, color: "#f59e0b" },
+          { x: 40, y: 150, color: "#4f46e5" }, { x: 72, y: 155, color: "#f59e0b" },
+          { x: 104, y: 148, color: "#10b981" },
+        ].map((d, i) => (
+          <rect key={i} x={d.x} y={d.y} width="5" height="5" rx="1" fill={d.color} opacity="0.75" transform={`rotate(${i*25},${d.x+2.5},${d.y+2.5})`}/>
+        ))}
+        <text x="74" y="180" fontSize="26" textAnchor="middle" fontFamily="var(--font-sans)">🏆</text>
+        <text x="74" y="202" fontSize="6" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CONGRATULATIONS!</text>
+      </svg>
+    ),
+  },
+];
+
 // Helper to determine active list and gradient configs
 const getPageConfig = (pageType) => {
   switch (pageType) {
@@ -909,6 +1091,13 @@ const getPageConfig = (pageType) => {
         title: "How it works",
         subtitle: "Four gentle steps to create a heartfelt tribute for those who grieve",
         gradients: ["#4a6fa5", "#7c8ba8", "#5a7a6e", "#4a6fa5"],
+      };
+    case "work-milestone":
+      return {
+        cards: workMilestoneCards,
+        title: "How it works",
+        subtitle: "Four powerful steps to celebrate a career milestone worth remembering",
+        gradients: ["#7c3aed", "#5b21b6", "#4f46e5", "#f59e0b"],
       };
     case "send-off":
     default:
