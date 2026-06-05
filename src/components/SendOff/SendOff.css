@@ -30,17 +30,18 @@
   background-position: center top;
   z-index: 0;
   will-change: transform;
+  filter: brightness(1.2);
 }
 
-/* Overlay — heavier left, lighter right */
+/* Overlay — heavier left, lighter right (brightened to reveal more background) */
 .sendoff-hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     108deg,
-    rgba(8, 15, 30, 0.93) 0%,
-    rgba(8, 15, 30, 0.78) 45%,
-    rgba(8, 15, 30, 0.45) 100%
+    rgba(8, 15, 30, 0.85) 0%,
+    rgba(8, 15, 30, 0.65) 45%,
+    rgba(8, 15, 30, 0.25) 100%
   );
   z-index: 1;
 }
@@ -93,11 +94,12 @@
 
 .so-hero-sub {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.72;
   margin-bottom: 40px;
   max-width: 460px;
   transition: color 0.3s ease;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
 }
 
 /* CTA buttons */
@@ -197,10 +199,14 @@
 
 /* ── APPLE-STYLE GLASS CARD ── */
 .so-quote-card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(16px) saturate(190%);
+  -webkit-backdrop-filter: blur(16px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 24px;
   padding: 34px;
   width: 100%;
@@ -210,9 +216,8 @@
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 16px 48px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   animation: cardFloat 5s ease-in-out infinite;
 }
 

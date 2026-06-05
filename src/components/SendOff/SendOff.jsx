@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './SendOff.css'
-import SendOffHowItWorks from './SendOffHowItWorks'
+import FeatureCards from './FeatureCards'
 import CelebrationGrid from './CelebrationGrid'
 import FAQ from '../FAQ/FAQ'
 
@@ -116,7 +116,7 @@ export default function SendOff() {
       </section>
 
       {/* ── HOW IT WORKS SECTION ── */}
-      <SendOffHowItWorks />
+      <FeatureCards />
 
       {/* ── FEATURES SECTION ── */}
       <section className="sendoff-features section" id="features">
