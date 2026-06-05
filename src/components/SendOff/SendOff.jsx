@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import './SendOff.css'
 import FeatureCards from './FeatureCards'
+import MemoryMap from './MemoryMap'
 import CelebrationGrid from './CelebrationGrid'
 import FAQ from '../FAQ/FAQ'
 
@@ -118,38 +119,8 @@ export default function SendOff() {
       {/* ── HOW IT WORKS SECTION ── */}
       <FeatureCards />
 
-      {/* ── FEATURES SECTION ── */}
-      <section className="sendoff-features section" id="features">
-        <div className="container">
-          <header className="section-header">
-            <h2 className="section-title">Everything You Need for a Perfect Send-off</h2>
-            <p className="section-subtitle">Make their departure unforgettable with rich collaborative features.</p>
-          </header>
-
-          <div className="so-features-grid">
-            <div className="so-feature-card">
-              <div className="so-feature-icon orange-icon">💬</div>
-              <h3 className="so-feature-card-title">Unlimited Signatures</h3>
-              <p className="so-feature-card-desc">Invite the whole company, division, or team. There's no cap on how many people can leave a message.</p>
-            </div>
-            <div className="so-feature-card">
-              <div className="so-feature-icon lavender-icon">🎨</div>
-              <h3 className="so-feature-card-title">Rich Customization</h3>
-              <p className="so-feature-card-desc">Add GIFs, custom images, change backgrounds, and choose fonts that match their unique personality.</p>
-            </div>
-            <div className="so-feature-card">
-              <div className="so-feature-icon mint-icon">🎞️</div>
-              <h3 className="so-feature-card-title">Media &amp; Reels</h3>
-              <p className="so-feature-card-desc">Embed video messages directly into the board. Turn comments into a beautiful visual wall of memories.</p>
-            </div>
-            <div className="so-feature-card">
-              <div className="so-feature-icon beige-icon">📖</div>
-              <h3 className="so-feature-card-title">Downloadable Keepsakes</h3>
-              <p className="so-feature-card-desc">Export the entire board as a high-resolution, print-ready PDF book for them to keep forever.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ── GLOBAL MEMORY MAP SECTION ── */}
+      <MemoryMap />
 
       <CelebrationGrid />
 
