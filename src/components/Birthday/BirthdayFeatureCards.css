@@ -1,0 +1,233 @@
+/* ============================================================
+   WORKKUDO — BIRTHDAY FEATURECARDS RESPONSIVE STYLING & ANIMATIONS
+   ============================================================ */
+
+.fc-card-deck {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Ensure card wrappers align and wrap nicely */
+.fc-card-wrapper {
+  transition: transform 0.3s ease;
+}
+
+/* Hide the horizontal connector line on smaller viewports where cards wrap */
+.fc-connector-svg {
+  display: block;
+}
+
+@media (max-width: 1130px) {
+  .fc-connector-svg {
+    display: none !important;
+  }
+}
+
+/* Dynamic flowing animation on the connector line */
+.fc-connector-svg path:nth-of-type(2) {
+  animation: fc-line-flow 1.2s linear infinite;
+}
+
+@keyframes fc-line-flow {
+  from {
+    stroke-dashoffset: 22;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Pulsing sonar ring animations around traveling dot */
+.fc-sonar-ring {
+  animation: fc-sonar 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  transform-origin: center;
+}
+
+.fc-sonar-ring-delay {
+  animation: fc-sonar 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation-delay: 0.9s;
+  transform-origin: center;
+}
+
+@keyframes fc-sonar {
+  0% {
+    r: 7px;
+    opacity: 0.8;
+    stroke-width: 2.5px;
+  }
+  100% {
+    r: 28px;
+    opacity: 0;
+    stroke-width: 0.5px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   INTERNAL SVG MICRO-ANIMATIONS (BIRTHDAY SPECIFIC)
+   ────────────────────────────────────────────────────────── */
+
+/* Card 1: Flame Flickering */
+.birthday-candle-flame {
+  transform-origin: 58px 68px;
+  animation: flame-flicker 0.6s ease-in-out infinite alternate;
+}
+
+.birthday-candle-flame-delay {
+  transform-origin: 74px 68px;
+  animation: flame-flicker 0.6s ease-in-out infinite alternate;
+  animation-delay: 0.3s;
+}
+
+@keyframes flame-flicker {
+  0% {
+    transform: scale(0.9) skewX(-2deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.1) skewX(2deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #ffa100);
+  }
+}
+
+/* Card 2: Floating/Wiggling Balloons */
+.fc-svg-balloon-1 {
+  transform-origin: 50px 80px;
+  animation: balloon-float-1 4s ease-in-out infinite alternate;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fc-svg-balloon-2 {
+  transform-origin: 98px 85px;
+  animation: balloon-float-2 4.5s ease-in-out infinite alternate;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fc-svg-balloon-3 {
+  transform-origin: 74px 95px;
+  animation: balloon-float-3 3.8s ease-in-out infinite alternate;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes balloon-float-1 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-4px) rotate(2deg); }
+}
+
+@keyframes balloon-float-2 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-6px) rotate(-3deg); }
+}
+
+@keyframes balloon-float-3 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-3px) rotate(1deg); }
+}
+
+/* Scale up/lift balloons slightly on card hover */
+.fc-card-wrapper:hover .fc-svg-balloon-1 {
+  transform: scale(1.08) translateY(-8px) rotate(-3deg);
+}
+.fc-card-wrapper:hover .fc-svg-balloon-2 {
+  transform: scale(1.08) translateY(-10px) rotate(4deg);
+}
+.fc-card-wrapper:hover .fc-svg-balloon-3 {
+  transform: scale(1.06) translateY(-6px) rotate(-1deg);
+}
+
+/* Card 3: Gift box lid translations */
+.fc-svg-gift-lid {
+  transform-origin: 74px 90px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fc-card-wrapper:hover .fc-svg-gift-lid {
+  transform: translateY(-14px) rotate(-4deg);
+}
+
+.fc-svg-gift-bow {
+  transform-origin: 74px 86px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fc-card-wrapper:hover .fc-svg-gift-bow {
+  transform: translateY(-14px) scale(1.1);
+}
+
+/* Card 4: Popper horn wiggle & confetti scale / burst */
+.fc-svg-horn {
+  transform-origin: 25px 185px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fc-card-wrapper:hover .fc-svg-horn {
+  transform: scale(1.05) rotate(-5deg);
+}
+
+.fc-svg-streamer-1,
+.fc-svg-streamer-2,
+.fc-svg-dot-1,
+.fc-svg-dot-2,
+.fc-svg-star-1,
+.fc-svg-emoji-1,
+.fc-svg-emoji-2 {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+/* On load they are hidden or tiny if possible, or we translate them outwards on hover */
+.fc-svg-streamer-1 { transform: translate(-10px, 10px) scale(0.6); opacity: 0; transition: all 0.5s ease; }
+.fc-svg-streamer-2 { transform: translate(-10px, 10px) scale(0.6); opacity: 0; transition: all 0.5s ease; }
+.fc-svg-dot-1 { transform: translate(-8px, 8px) scale(0.5); opacity: 0; transition: all 0.4s ease; }
+.fc-svg-dot-2 { transform: translate(-8px, 8px) scale(0.5); opacity: 0; transition: all 0.4s ease; }
+.fc-svg-star-1 { transform: translate(-15px, 15px) scale(0.2) rotate(-45deg); opacity: 0; transition: all 0.5s ease; }
+.fc-svg-emoji-1 { transform: translate(-20px, 20px) scale(0.1); opacity: 0; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.3); }
+.fc-svg-emoji-2 { transform: translate(-20px, 20px) scale(0.1); opacity: 0; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.3); }
+
+.fc-card-wrapper:hover .fc-svg-streamer-1 { transform: translate(0, 0) scale(1); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-streamer-2 { transform: translate(0, 0) scale(1); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-dot-1 { transform: translate(0, 0) scale(1); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-dot-2 { transform: translate(0, 0) scale(1); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-star-1 { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-emoji-1 { transform: translate(0, 0) scale(1); opacity: 1; }
+.fc-card-wrapper:hover .fc-svg-emoji-2 { transform: translate(0, 0) scale(1); opacity: 1; }
+
+
+/* ──────────────────────────────────────────────────────────
+   RESPONSIVE OVERRIDES (MOBILE & TABLET)
+   ────────────────────────────────────────────────────────── */
+
+/* On mobile/tablet, adjust spacing and disable adjacent rotations to prevent overlapping */
+@media (max-width: 960px) {
+  .fc-card-deck {
+    gap: 36px 24px !important;
+    padding: 10px;
+  }
+
+  .fc-card-wrapper {
+    transform: none !important;
+  }
+
+  /* Disable 3D tilt transforms that cause overlapping on wrapped layouts and reset opacity */
+  .fc-card-wrapper > div {
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10) !important;
+  }
+
+  /* Use a safe, clean 2D scale and highlight for the hovered card instead of 3D tilt */
+  .fc-card-wrapper:hover > div {
+    transform: scale(1.06) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  /* Highlight step pill on hover */
+  .fc-card-wrapper:hover .fc-step-indicator {
+    transform: translateY(-4px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .fc-card-deck {
+    gap: 32px 16px !important;
+  }
+}

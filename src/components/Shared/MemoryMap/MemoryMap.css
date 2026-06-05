@@ -1,0 +1,498 @@
+/* ============================================================
+   WORKKUDO — SHARED GLOBAL MEMORY MAP STYLING (LEAFLET)
+   ============================================================ */
+
+.shared-map-section {
+  padding: 100px 20px 90px;
+  background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg) 50%, var(--bg-white) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+.shared-map-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.shared-map-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shared-map-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  border: 1px solid;
+}
+
+.shared-map-title {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.shared-map-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Layout Grid */
+.shared-map-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Map Column */
+.shared-map-wrapper {
+  background: var(--bg-white);
+  border-radius: 24px;
+  border: 1.5px solid var(--border);
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(26, 43, 74, 0.03);
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  box-sizing: border-box;
+}
+
+/* Loader Styles */
+.shared-map-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  gap: 16px;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.shared-loader-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(26, 43, 74, 0.1);
+  border-radius: 50%;
+  animation: shared-spin 1s linear infinite;
+}
+
+@keyframes shared-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   CUSTOM LEAFLET ELEMENT STYLING
+   ============================================================ */
+
+/* Remove Leaflet background outline and border */
+.shared-leaflet-custom-icon {
+  background: none !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+.shared-leaflet-marker-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glowing central dot */
+.shared-leaflet-marker-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: scale(1);
+  z-index: 2;
+}
+
+/* Hover & Active dot scaling */
+.shared-leaflet-custom-icon.active .shared-leaflet-marker-dot {
+  transform: scale(1.4);
+  border-width: 2px;
+}
+
+/* Pulsing sonar ring */
+.shared-leaflet-marker-sonar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  margin-left: -6px;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.shared-leaflet-custom-icon.active .shared-leaflet-marker-sonar {
+  animation: shared-sonar-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes shared-sonar-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+    border-width: 3px;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+    border-width: 0.5px;
+  }
+}
+
+/* Connector Arc Lines */
+.shared-leaflet-connector-line {
+  animation: shared-line-flow 1.5s linear infinite;
+  stroke-dashoffset: 28;
+}
+
+@keyframes shared-line-flow {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Tooltip Styles */
+.shared-leaflet-tooltip {
+  background: var(--navy-dark) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  opacity: 0.95 !important;
+}
+
+.shared-leaflet-tooltip::before {
+  border-top-color: var(--navy-dark) !important;
+}
+
+/* ============================================================
+   GLASSMORPHIC MESSAGE CARD STYLING
+   ============================================================ */
+
+.shared-map-card-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shared-glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  animation: shared-card-entry 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes shared-card-entry {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Giant quotation watermark */
+.shared-card-quote-mark {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 14rem;
+  font-family: Georgia, serif;
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.shared-glass-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.shared-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-sans);
+}
+
+.shared-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shared-card-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.shared-card-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shared-card-role-pill {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--navy);
+  background: rgba(26, 43, 74, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.shared-card-location {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.shared-card-time {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shared-glass-card-body {
+  z-index: 1;
+  position: relative;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.shared-card-msg {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--navy-dark);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Emoji Reactions Panel */
+.shared-card-reactions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  z-index: 1;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.shared-reaction-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(26, 43, 74, 0.08);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 2px 4px rgba(26, 43, 74, 0.02);
+}
+
+.shared-reaction-btn:hover {
+  background: white;
+  border-color: var(--active-glow);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.shared-reaction-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.shared-reaction-emoji {
+  font-size: 13px;
+}
+
+.shared-reaction-count {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+/* Card footer and pagination controls */
+.shared-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(26, 43, 74, 0.06);
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.shared-map-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.shared-map-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.shared-map-dot.active {
+  transform: scale(1.3);
+}
+
+.shared-map-play-btn {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--navy);
+  background: rgba(26, 43, 74, 0.05);
+  border: none;
+  border-radius: 99px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.shared-map-play-btn:hover {
+  background: rgba(26, 43, 74, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT STYLING
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .shared-map-layout {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 960px) {
+  .shared-map-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .shared-map-wrapper {
+    height: 340px;
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .shared-glass-card {
+    padding: 28px;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 580px) {
+  .shared-map-section {
+    padding: 60px 16px 50px;
+  }
+
+  .shared-map-header {
+    margin-bottom: 30px;
+  }
+
+  .shared-map-wrapper {
+    height: 280px;
+    border-radius: 14px;
+  }
+
+  .shared-glass-card {
+    padding: 20px;
+    min-height: 290px;
+  }
+
+  .shared-card-msg {
+    font-size: 1rem;
+  }
+
+  .shared-card-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .shared-card-name {
+    font-size: 15px;
+  }
+
+  .shared-reaction-btn {
+    padding: 4px 10px;
+  }
+}

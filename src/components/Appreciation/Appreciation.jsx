@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import './SendOff.css'
+import './Appreciation.css'
 import FeatureCards from '../Shared/FeatureCards/FeatureCards'
 import MemoryMap from '../Shared/MemoryMap/MemoryMap'
 import CelebrationGrid from '../Shared/CelebrationGrid/CelebrationGrid'
 import FAQ from '../FAQ/FAQ'
 
-export default function SendOff() {
+export default function Appreciation() {
   const [mounted, setMounted] = useState(false)
   const bgRef = useRef(null)
 
@@ -25,7 +25,6 @@ export default function SendOff() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
 
   const faqItems = [
     {
@@ -47,68 +46,68 @@ export default function SendOff() {
   ]
 
   return (
-    <div className="sendoff-page">
+    <div className="appreciation-page">
 
       {/* ── HERO ── */}
-      <section className="sendoff-hero">
-        <div className="sendoff-hero__bg" ref={bgRef} aria-hidden="true" />
-        <div className="sendoff-hero__overlay" aria-hidden="true" />
+      <section className="appreciation-hero">
+        <div className="appreciation-hero__bg" ref={bgRef} aria-hidden="true" />
+        <div className="appreciation-hero__overlay" aria-hidden="true" />
 
-        <div className="sendoff-hero__container container">
+        <div className="appreciation-hero__container container">
 
           {/* Left */}
-          <div className={`so-hero-left ${mounted ? 'so-hero-left--visible' : ''}`}>
-            <h1 className="so-hero-heading">
-              Send them off<br />
-              <span className="so-hero-heading-accent">the right way.</span>
+          <div className={`ap-hero-left ${mounted ? 'ap-hero-left--visible' : ''}`}>
+            <h1 className="ap-hero-heading">
+              Show appreciation<br />
+              <span className="ap-hero-heading-accent">the right way.</span>
             </h1>
 
-            <p className="so-hero-sub">
-              A collaborative farewell board your whole team signs — messages, photos, memories — delivered as a keepsake they'll keep forever.
+            <p className="ap-hero-sub">
+              A collaborative appreciation board your whole team signs — praise, thank-yous, and kudos — delivered as a keepsake they'll keep forever.
             </p>
 
-            <div className="so-hero-ctas">
-              <a href="#create" className="so-cta-primary">
-                Create a Send-Off Board
+            <div className="ap-hero-ctas">
+              <a href="#create" className="ap-cta-primary">
+                Create a Kudos Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#features" className="so-cta-ghost">How it works</a>
+              <a href="#memory-map-shared" className="ap-cta-ghost">How it works</a>
             </div>
 
             {/* Minimal trust line */}
-            <p className="so-hero-trust">
+            <p className="ap-hero-trust">
               Flat fee · $5 per board · Unlimited signers · Yours forever
             </p>
           </div>
 
           {/* Right — floating card */}
-          <div className={`so-hero-right ${mounted ? 'so-hero-right--visible' : ''}`}>
-            <div className="so-quote-card">
-              <div className="so-quote-card__label">Legacy Card</div>
+          <div className={`ap-hero-right ${mounted ? 'ap-hero-right--visible' : ''}`}>
+            <div className="ap-quote-card">
+              <div className="ap-quote-card__label">Appreciation Card</div>
 
-              <blockquote className="so-quote-card__quote">
-                "Goodbyes aren't the end of a journey — they're the beginning of a legacy carried forward by those you've inspired."
+              <blockquote className="ap-quote-card__quote">
+                "Feeling appreciated is one of the most important needs in the workplace. Thank you for always going above and beyond and being an exceptional colleague!"
               </blockquote>
 
-              <div className="so-quote-card__footer">
-                <div className="so-quote-card__avatars">
-                  <span className="so-avatar" style={{ background: '#FF6B2C' }}>S</span>
-                  <span className="so-avatar" style={{ background: '#A78BFA' }}>M</span>
-                  <span className="so-avatar" style={{ background: '#34D399' }}>J</span>
-                  <span className="so-avatar so-avatar--more">+14</span>
+              <div className="ap-quote-card__footer">
+                <div className="ap-quote-card__avatars">
+                  <span className="ap-avatar" style={{ background: '#00B894' }}>S</span>
+                  <span className="ap-avatar" style={{ background: '#7C3AED' }}>O</span>
+                  <span className="ap-avatar" style={{ background: '#FDCB6E' }}>F</span>
+                  <span className="ap-avatar ap-avatar--more">+15</span>
                 </div>
-                <span className="so-quote-card__signers">17 teammates signed</span>
+                <span className="ap-quote-card__signers">18 teammates signed</span>
               </div>
 
-              <div className="so-quote-card__price-row">
-                <span className="so-price-label">One board · One price</span>
-                <span className="so-price-badge">$5</span>
+              <div className="ap-quote-card__price-row">
+                <span className="ap-price-label">One board · One price</span>
+                <span className="ap-price-badge">$5</span>
               </div>
 
               {/* Animated shimmer line */}
-              <div className="so-quote-card__shimmer" aria-hidden="true" />
+              <div className="ap-quote-card__shimmer" aria-hidden="true" />
             </div>
           </div>
 
@@ -117,23 +116,24 @@ export default function SendOff() {
       </section>
 
       {/* ── HOW IT WORKS SECTION ── */}
-      <FeatureCards pageType="send-off" />
+      <FeatureCards pageType="appreciation" />
 
       {/* ── GLOBAL MEMORY MAP SECTION ── */}
-      <MemoryMap pageType="send-off" />
+      <MemoryMap pageType="appreciation" />
 
-      <CelebrationGrid />
+      {/* ── CELEBRATION GRID ── */}
+      <CelebrationGrid themeClass="green" />
 
       {/* ── FAQ SECTION ── */}
       <FAQ data={faqItems} subtitle="Got questions? We've got answers." />
 
       {/* ── BOTTOM CTA ── */}
-      <section className="sendoff-cta">
+      <section className="appreciation-cta">
         <div className="container">
-          <div className="sendoff-cta-box">
-            <h2 className="cta-title">Ready to create a memorable goodbye?</h2>
-            <p className="cta-desc">Start building a legacy board for your colleague in just 2 minutes.</p>
-            <a href="#create" className="btn-primary btn-large animate-pulse-orange">
+          <div className="appreciation-cta-box">
+            <h2 className="cta-title">Ready to create a memorable kudos card?</h2>
+            <p className="cta-desc">Start building an appreciation board for your colleague in just 2 minutes.</p>
+            <a href="#create" className="btn-primary btn-large animate-pulse-green">
               Create a Board for $5
             </a>
           </div>

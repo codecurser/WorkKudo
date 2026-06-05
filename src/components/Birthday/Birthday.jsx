@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import './SendOff.css'
+import './Birthday.css'
 import FeatureCards from '../Shared/FeatureCards/FeatureCards'
 import MemoryMap from '../Shared/MemoryMap/MemoryMap'
 import CelebrationGrid from '../Shared/CelebrationGrid/CelebrationGrid'
 import FAQ from '../FAQ/FAQ'
 
-export default function SendOff() {
+export default function Birthday() {
   const [mounted, setMounted] = useState(false)
   const bgRef = useRef(null)
 
@@ -25,7 +25,6 @@ export default function SendOff() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
 
   const faqItems = [
     {
@@ -47,68 +46,68 @@ export default function SendOff() {
   ]
 
   return (
-    <div className="sendoff-page">
+    <div className="birthday-page">
 
       {/* ── HERO ── */}
-      <section className="sendoff-hero">
-        <div className="sendoff-hero__bg" ref={bgRef} aria-hidden="true" />
-        <div className="sendoff-hero__overlay" aria-hidden="true" />
+      <section className="birthday-hero">
+        <div className="birthday-hero__bg" ref={bgRef} aria-hidden="true" />
+        <div className="birthday-hero__overlay" aria-hidden="true" />
 
-        <div className="sendoff-hero__container container">
+        <div className="birthday-hero__container container">
 
           {/* Left */}
-          <div className={`so-hero-left ${mounted ? 'so-hero-left--visible' : ''}`}>
-            <h1 className="so-hero-heading">
-              Send them off<br />
-              <span className="so-hero-heading-accent">the right way.</span>
+          <div className={`bd-hero-left ${mounted ? 'bd-hero-left--visible' : ''}`}>
+            <h1 className="bd-hero-heading">
+              Celebrate their birthday<br />
+              <span className="bd-hero-heading-accent">the right way.</span>
             </h1>
 
-            <p className="so-hero-sub">
-              A collaborative farewell board your whole team signs — messages, photos, memories — delivered as a keepsake they'll keep forever.
+            <p className="bd-hero-sub">
+              A collaborative birthday board your whole team signs — messages, photos, memories — delivered as a keepsake they'll keep forever.
             </p>
 
-            <div className="so-hero-ctas">
-              <a href="#create" className="so-cta-primary">
-                Create a Send-Off Board
+            <div className="bd-hero-ctas">
+              <a href="#create" className="bd-cta-primary">
+                Create a Birthday Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#features" className="so-cta-ghost">How it works</a>
+              <a href="#birthday-memory-map" className="bd-cta-ghost">How it works</a>
             </div>
 
             {/* Minimal trust line */}
-            <p className="so-hero-trust">
+            <p className="bd-hero-trust">
               Flat fee · $5 per board · Unlimited signers · Yours forever
             </p>
           </div>
 
           {/* Right — floating card */}
-          <div className={`so-hero-right ${mounted ? 'so-hero-right--visible' : ''}`}>
-            <div className="so-quote-card">
-              <div className="so-quote-card__label">Legacy Card</div>
+          <div className={`bd-hero-right ${mounted ? 'bd-hero-right--visible' : ''}`}>
+            <div className="bd-quote-card">
+              <div className="bd-quote-card__label">Birthday Card</div>
 
-              <blockquote className="so-quote-card__quote">
-                "Goodbyes aren't the end of a journey — they're the beginning of a legacy carried forward by those you've inspired."
+              <blockquote className="bd-quote-card__quote">
+                "Another year older, another year wiser! Wishing you a day filled with celebration, cake, and a fantastic year ahead from the entire team."
               </blockquote>
 
-              <div className="so-quote-card__footer">
-                <div className="so-quote-card__avatars">
-                  <span className="so-avatar" style={{ background: '#FF6B2C' }}>S</span>
-                  <span className="so-avatar" style={{ background: '#A78BFA' }}>M</span>
-                  <span className="so-avatar" style={{ background: '#34D399' }}>J</span>
-                  <span className="so-avatar so-avatar--more">+14</span>
+              <div className="bd-quote-card__footer">
+                <div className="bd-quote-card__avatars">
+                  <span className="bd-avatar" style={{ background: '#FF7675' }}>S</span>
+                  <span className="bd-avatar" style={{ background: '#FDCB6E' }}>O</span>
+                  <span className="bd-avatar" style={{ background: '#00B894' }}>F</span>
+                  <span className="bd-avatar bd-avatar--more">+22</span>
                 </div>
-                <span className="so-quote-card__signers">17 teammates signed</span>
+                <span className="bd-quote-card__signers">25 teammates signed</span>
               </div>
 
-              <div className="so-quote-card__price-row">
-                <span className="so-price-label">One board · One price</span>
-                <span className="so-price-badge">$5</span>
+              <div className="bd-quote-card__price-row">
+                <span className="bd-price-label">One board · One price</span>
+                <span className="bd-price-badge">$5</span>
               </div>
 
               {/* Animated shimmer line */}
-              <div className="so-quote-card__shimmer" aria-hidden="true" />
+              <div className="bd-quote-card__shimmer" aria-hidden="true" />
             </div>
           </div>
 
@@ -117,23 +116,24 @@ export default function SendOff() {
       </section>
 
       {/* ── HOW IT WORKS SECTION ── */}
-      <FeatureCards pageType="send-off" />
+      <FeatureCards pageType="birthday" />
 
       {/* ── GLOBAL MEMORY MAP SECTION ── */}
-      <MemoryMap pageType="send-off" />
+      <MemoryMap pageType="birthday" />
 
-      <CelebrationGrid />
+      {/* ── CELEBRATION GRID ── */}
+      <CelebrationGrid themeClass="rose" />
 
       {/* ── FAQ SECTION ── */}
       <FAQ data={faqItems} subtitle="Got questions? We've got answers." />
 
       {/* ── BOTTOM CTA ── */}
-      <section className="sendoff-cta">
+      <section className="birthday-cta">
         <div className="container">
-          <div className="sendoff-cta-box">
-            <h2 className="cta-title">Ready to create a memorable goodbye?</h2>
-            <p className="cta-desc">Start building a legacy board for your colleague in just 2 minutes.</p>
-            <a href="#create" className="btn-primary btn-large animate-pulse-orange">
+          <div className="birthday-cta-box">
+            <h2 className="cta-title">Ready to create a memorable birthday card?</h2>
+            <p className="cta-desc">Start building a celebration board for your colleague in just 2 minutes.</p>
+            <a href="#create" className="btn-primary btn-large animate-pulse-rose">
               Create a Board for $5
             </a>
           </div>

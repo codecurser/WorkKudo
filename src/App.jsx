@@ -10,6 +10,8 @@ import TermsOfService from './pages/TermsOfService/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import Pricing from './pages/Pricing/Pricing'
 import SendOff from './components/SendOff/SendOff'
+import Birthday from './components/Birthday/Birthday'
+import Appreciation from './components/Appreciation/Appreciation'
 import FAQ from './components/FAQ/FAQ'
 
 function HomePage() {
@@ -40,6 +42,30 @@ function SendOffPage() {
   )
 }
 
+function BirthdayPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Birthday />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+function AppreciationPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Appreciation />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -48,6 +74,8 @@ export default function App() {
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/send-off" element={<SendOffPage />} />
+      <Route path="/birthday" element={<BirthdayPage />} />
+      <Route path="/appreciation" element={<AppreciationPage />} />
     </Routes>
   )
 }

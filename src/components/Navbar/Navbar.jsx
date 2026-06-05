@@ -209,10 +209,10 @@ function CreateMegaMenu({ onItemClick }) {
         {tab.type === 'grid' && (
           <div className="create-panel__grid">
             {tab.items.map((item, i) => (
-              item.label === 'Send-Off' ? (
+              item.label === 'Send-Off' || item.label === 'Birthday' || item.label === 'Appreciation' ? (
                 <Link
                   key={item.label}
-                  to="/send-off"
+                  to={item.label === 'Send-Off' ? "/send-off" : item.label === 'Birthday' ? "/birthday" : "/appreciation"}
                   className="panel-item"
                   style={{ animationDelay: `${i * 18}ms` }}
                   onClick={onItemClick}
@@ -371,7 +371,7 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
-  const isSendOff = location.pathname === '/send-off'
+  const isOccasionPage = location.pathname === '/send-off' || location.pathname === '/birthday' || location.pathname === '/appreciation'
   const closeTimer = useRef(null)
 
   useEffect(() => {
@@ -399,7 +399,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar ${scrolled || isSendOff ? 'navbar--scrolled' : ''}`}>
+      <header className={`navbar ${scrolled || isOccasionPage ? 'navbar--scrolled' : ''}`}>
         <div className="navbar__inner">
 
           {/* Logo */}
@@ -486,10 +486,10 @@ export default function Navbar() {
           <MobileAccordion label="Build">
             <div className="mobile-section-title">MOMENTS</div>
             {occasions.map(o => (
-              o.label === 'Send-Off' ? (
+              o.label === 'Send-Off' || o.label === 'Birthday' || o.label === 'Appreciation' ? (
                 <Link
                   key={o.label}
-                  to="/send-off"
+                  to={o.label === 'Send-Off' ? "/send-off" : o.label === 'Birthday' ? "/birthday" : "/appreciation"}
                   className="mobile-link"
                   onClick={() => setMobileOpen(false)}
                 >
