@@ -4,485 +4,501 @@ import "./MemoryMap.css";
 // ─── PINS DATA FOR SEND-OFF ───
 const sendOffPins = [
   {
-    id: "ny",
-    name: "Aakash M.",
+    id: "delhi",
+    name: "Aarav Sharma",
     role: "Lead Engineer",
-    location: "New York, USA",
+    location: "New Delhi, India",
     avatar: "A",
     color: "#e84393",
-    msg: "Good luck on the new adventure! You've been a rockstar mentor and collaborator. The engineering team won't be the same without your whiteboarding sessions!",
+    msg: "Wishing you all the very best for the journey ahead. Your leadership, mentorship, and unwavering support have left a lasting impact on the team. You'll be greatly missed, and we hope your next chapter is filled with success and happiness.",
     time: "2 hours ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Emma W.",
-    role: "UX Designer",
-    location: "London, UK",
-    avatar: "E",
-    color: "#7c3aed",
-    msg: "Cheerio, mate! The London design crew is going to miss your brilliant ideas and positive vibes. Best of luck with the next step, let's stay in touch!",
-    time: "4 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
-    id: "lagos",
-    name: "Chidi O.",
-    role: "API Architect",
-    location: "Lagos, Nigeria",
-    avatar: "C",
-    color: "#1a6b47",
-    msg: "Your code was always clean and your guidance inspiring. Thank you for always unblocking us on the API integrations. Wishing you all the best in your next chapter!",
-    time: "6 hours ago",
-    lat: 6.5244,
-    lng: 3.3792,
-  },
-  {
-    id: "tokyo",
-    name: "Kenji T.",
-    role: "Regional Director",
-    location: "Tokyo, Japan",
-    avatar: "K",
-    color: "#ff5722",
-    msg: "Thank you for supporting our Japan regional launch! We couldn't have done it without your late-night reviews. Wishing you massive success!",
-    time: "1 day ago",
-    lat: 35.6762,
-    lng: 139.6503,
-  },
-  {
-    id: "sydney",
-    name: "Chloe L.",
-    role: "Product Manager",
-    location: "Sydney, Australia",
-    avatar: "C",
-    color: "#00b894",
-    msg: "It was an absolute pleasure working together across the timezones. Safe travels and congratulations on this exciting new opportunity!",
-    time: "2 days ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR BIRTHDAY ───
-const birthdayPins = [
-  {
-    id: "ny",
-    name: "Sarah K.",
-    role: "Project Manager",
-    location: "New York, USA",
-    avatar: "S",
-    color: "#ff7675",
-    msg: "Happy Birthday! 🎂 Have an absolutely amazing day filled with joy, laughter, and lots of cake! The team is so lucky to have you leading us.",
-    time: "1 hour ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Oliver P.",
-    role: "Frontend Engineer",
-    location: "London, UK",
-    avatar: "O",
-    color: "#fdcb6e",
-    msg: "Cheers to another great trip around the sun! 🎈 Wishing you a brilliant birthday and an even better year ahead. Have a pint for me!",
-    time: "3 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
-    id: "lagos",
-    name: "Fatima A.",
-    role: "Database Specialist",
-    location: "Lagos, Nigeria",
-    avatar: "F",
-    color: "#00b894",
-    msg: "Wishing you a wonderful birthday, my friend! May this year bring you endless happiness, good health, and major breakthroughs. Enjoy your day!",
-    time: "5 hours ago",
-    lat: 6.5244,
-    lng: 3.3792,
-  },
-  {
-    id: "tokyo",
-    name: "Yuki H.",
-    role: "QA Lead",
-    location: "Tokyo, Japan",
-    avatar: "Y",
-    color: "#6c5ce7",
-    msg: "Happy Birthday! 🌸 Hope you have a wonderful celebration. Thank you for always being so helpful and patient. Let's eat lots of cake!",
-    time: "12 hours ago",
-    lat: 35.6762,
-    lng: 139.6503,
-  },
-  {
-    id: "sydney",
-    name: "Liam M.",
-    role: "Content Creator",
-    location: "Sydney, Australia",
-    avatar: "L",
-    color: "#ff7675",
-    msg: "Happy Birthday from sunny Sydney! 🐨 Sending you the warmest wishes for a fantastic day. Hope you get spoiled rotten today!",
-    time: "1 day ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR APPRECIATION ───
-const appreciationPins = [
-  {
-    id: "ny",
-    name: "Sarah K.",
-    role: "Project Manager",
-    location: "New York, USA",
-    avatar: "S",
-    color: "#00b894",
-    msg: "Thank you for all the help! 🌟 You always go the extra mile to unblock the team, and we really appreciate your support in resolving project blockers.",
-    time: "1 hour ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Oliver P.",
-    role: "Frontend Engineer",
-    location: "London, UK",
-    avatar: "O",
-    color: "#7c3aed",
-    msg: "Working with you is an absolute pleasure. Your positive attitude and brilliant layouts make a huge difference. Thanks for the team support!",
-    time: "3 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
-    id: "lagos",
-    name: "Fatima A.",
-    role: "Database Specialist",
-    location: "Lagos, Nigeria",
-    avatar: "F",
-    color: "#fdcb6e",
-    msg: "A massive thank you for mentoring me on the database schema designs and queries. You are an incredible teacher and peer!",
-    time: "5 hours ago",
-    lat: 6.5244,
-    lng: 3.3792,
-  },
-  {
-    id: "tokyo",
-    name: "Yuki H.",
-    role: "QA Lead",
-    location: "Tokyo, Japan",
-    avatar: "Y",
-    color: "#ff7675",
-    msg: "Thank you for supporting the QA launch and keeping our standards high! Your attention to detail is outstanding, and we appreciate it.",
-    time: "12 hours ago",
-    lat: 35.6762,
-    lng: 139.6503,
-  },
-  {
-    id: "sydney",
-    name: "Liam M.",
-    role: "Content Creator",
-    location: "Sydney, Australia",
-    avatar: "L",
-    color: "#00b894",
-    msg: "I truly appreciate your creative energy and collaboration on our latest campaigns. Thank you for being such an awesome teammate!",
-    time: "1 day ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR RETIREMENT ───
-const retirementPins = [
-  {
-    id: "ny",
-    name: "Priya Sharma",
-    role: "Department Head",
-    location: "New York, USA",
-    avatar: "P",
-    color: "#e6a817",
-    msg: "Robert, 30 incredible years! The entire New York office is going to miss your mentorship and legendary Friday evening stories. Wishing you the most golden retirement!",
-    time: "1 hour ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Dev Tiwari",
-    role: "Senior Engineer",
-    location: "London, UK",
-    avatar: "D",
-    color: "#c0392b",
-    msg: "Enjoy the next chapter! You've given so much to this company over the decades. London will never forget your contributions to the global expansion. Cheers to you!",
-    time: "3 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
+    lat: 28.6139,
+    lng: 77.209,
   },
   {
     id: "mumbai",
-    name: "Anjali Roy",
-    role: "Operations Lead",
+    name: "Priya Mehta",
+    role: "UX Designer",
     location: "Mumbai, India",
-    avatar: "A",
-    color: "#1a6b47",
-    msg: "You were a guiding star for so many of us in the Mumbai team. Your patience, your wisdom, and your work ethic are unmatched. Enjoy every moment of retirement!",
-    time: "6 hours ago",
+    avatar: "P",
+    color: "#7c3aed",
+    msg: "It's hard to say goodbye to someone who brought so much creativity and positivity to every project. Thank you for all the wonderful memories and collaboration. Wishing you continued growth and success wherever you go.",
+    time: "4 hours ago",
     lat: 19.076,
     lng: 72.8777,
   },
   {
-    id: "tokyo",
-    name: "Kenji T.",
-    role: "Regional Director",
-    location: "Tokyo, Japan",
-    avatar: "K",
-    color: "#7c3aed",
-    msg: "From Tokyo with so much appreciation! You supported our regional office from day one. Your leadership made our success possible. Congratulations and enjoy your rest!",
-    time: "12 hours ago",
-    lat: 35.6762,
-    lng: 139.6503,
-  },
-  {
-    id: "sydney",
-    name: "Chloe L.",
-    role: "Product Manager",
-    location: "Sydney, Australia",
-    avatar: "C",
-    color: "#f97316",
-    msg: "The Sydney crew is raising a glass to you! Thank you for everything you've built and the team culture you nurtured. We'll carry your legacy forward. Enjoy the beach!",
-    time: "1 day ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR CONDOLENCE ───
-const condolencePins = [
-  {
-    id: "ny",
-    name: "Sarah Kim",
-    role: "Team Lead",
-    location: "New York, USA",
-    avatar: "S",
-    color: "#4a6fa5",
-    msg: "Michael touched so many lives here in New York. His kindness, patience, and brilliant mind made our office a better place every single day. We hold you and your family in our hearts.",
-    time: "2 hours ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Tom Brown",
-    role: "Senior Developer",
-    location: "London, UK",
-    avatar: "T",
-    color: "#7c8ba8",
-    msg: "Sending our deepest condolences from the London team. Michael was a wonderful colleague and an even better human being. He will be truly missed by everyone who was lucky enough to know him.",
-    time: "4 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
-    id: "lagos",
-    name: "Amara D.",
-    role: "Product Designer",
-    location: "Lagos, Nigeria",
-    avatar: "A",
-    color: "#5a7a6e",
-    msg: "Our thoughts are with you and your loved ones during this incredibly difficult time. Michael's warmth and generosity will live on in all of us who had the privilege of working alongside him.",
-    time: "8 hours ago",
-    lat: 6.5244,
-    lng: 3.3792,
-  },
-  {
-    id: "berlin",
-    name: "Lena M.",
-    role: "Data Analyst",
-    location: "Berlin, Germany",
-    avatar: "L",
-    color: "#6b8cba",
-    msg: "From Berlin, we send our heartfelt sympathies. Michael's contributions to the project and to our team culture were invaluable. May his memory be a source of comfort and peace for everyone.",
-    time: "12 hours ago",
-    lat: 52.52,
-    lng: 13.405,
-  },
-  {
-    id: "sydney",
-    name: "James O.",
-    role: "Engineering Manager",
-    location: "Sydney, Australia",
-    avatar: "J",
-    color: "#4a6fa5",
-    msg: "The Sydney office is grieving alongside you. Michael was a beacon of positivity and professionalism. We will carry his legacy of kindness and dedication in everything we do going forward.",
-    time: "1 day ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR WORK MILESTONE ───
-const workMilestonePins = [
-  {
-    id: "ny",
-    name: "Alex Park",
-    role: "Engineering Lead",
-    location: "New York, USA",
-    avatar: "A",
-    color: "#7c3aed",
-    msg: "Jamie, 5 years of incredible work! You have been a cornerstone of our New York team. Every project you touched came out better. Here's to the next 5 and beyond — congratulations!",
-    time: "1 hour ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Nina Rao",
-    role: "Product Manager",
-    location: "London, UK",
-    avatar: "N",
-    color: "#5b21b6",
-    msg: "Five brilliant years! Working with you across timezones has been such a pleasure. Your dedication, creativity and positivity make this company a truly great place. Huge congratulations!",
-    time: "3 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
-    id: "singapore",
-    name: "Wei L.",
-    role: "Regional Sales Director",
-    location: "Singapore",
-    avatar: "W",
-    color: "#4f46e5",
-    msg: "Half a decade of excellence! The Singapore office celebrates with you. Your work on the APAC expansion was pivotal. A big congratulations from all of us here — keep shining!",
-    time: "6 hours ago",
-    lat: 1.3521,
-    lng: 103.8198,
-  },
-  {
-    id: "toronto",
-    name: "Matt Chen",
-    role: "Data Scientist",
-    location: "Toronto, Canada",
-    avatar: "M",
-    color: "#f59e0b",
-    msg: "Congratulations on 5 years! Every hackathon, every sprint, every late night — you always brought your A-game. Toronto is proud to have worked with you. Here's to many more milestones!",
-    time: "10 hours ago",
-    lat: 43.6511,
-    lng: -79.3834,
-  },
-  {
-    id: "sydney",
-    name: "Zara Adams",
-    role: "UX Researcher",
-    location: "Sydney, Australia",
-    avatar: "Z",
-    color: "#7c3aed",
-    msg: "5 years and still the most enthusiastic person in every meeting! Sydney sends massive congratulations. Your passion for the product and care for the team is truly unmatched. Cheers!",
-    time: "1 day ago",
-    lat: -33.8688,
-    lng: 151.2093,
-  },
-];
-
-// ─── PINS DATA FOR SPEEDY RECOVERY ───
-const speedyRecoveryPins = [
-  {
-    id: "ny",
-    name: "Jade Morris",
-    role: "Team Lead",
-    location: "New York, USA",
-    avatar: "J",
-    color: "#10b981",
-    msg: "Sam, the whole New York office is rooting for you! Take all the time you need to rest and recover. We've got things covered here — just focus on getting better. Miss you tons!",
-    time: "1 hour ago",
-    lat: 40.7128,
-    lng: -74.006,
-  },
-  {
-    id: "london",
-    name: "Carlos Vega",
-    role: "Product Designer",
-    location: "London, UK",
-    avatar: "C",
-    color: "#059669",
-    msg: "Sending healing thoughts from London! You are missed at every standup. Rest up, eat well, and get back to us stronger than ever. The team is thinking of you every day!",
-    time: "3 hours ago",
-    lat: 51.5074,
-    lng: -0.1278,
-  },
-  {
     id: "bangalore",
-    name: "Preet Singh",
-    role: "Backend Engineer",
-    location: "Bangalore, India",
-    avatar: "P",
-    color: "#0d9488",
-    msg: "Wishing you a speedy recovery from Bangalore! Your positive energy is what makes our team so special. Don't rush — we need you at 100%. Take care, rest well, we’ll be here!",
+    name: "Rohan Verma",
+    role: "API Architect",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#1a6b47",
+    msg: "Thank you for being an incredible teammate and guide. Your expertise and willingness to help made a difference every single day. Best wishes for all the exciting opportunities and achievements that lie ahead.",
     time: "6 hours ago",
     lat: 12.9716,
     lng: 77.5946,
   },
   {
-    id: "tokyo",
-    name: "Yuki Tanaka",
-    role: "UX Designer",
-    location: "Tokyo, Japan",
-    avatar: "Y",
-    color: "#10b981",
-    msg: "Get well soon from Tokyo! Every great team needs their star player healthy. We're sending all the good vibes across the Pacific. Rest, recover, and come back when you're ready!",
-    time: "10 hours ago",
-    lat: 35.6762,
-    lng: 139.6503,
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "Regional Director",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#ff5722",
+    msg: "Your dedication, vision, and encouragement have inspired so many of us. While we're sad to see you go, we're excited for everything you'll accomplish next. Wishing you success, fulfillment, and new adventures ahead.",
+    time: "1 day ago",
+    lat: 17.385,
+    lng: 78.4867,
   },
   {
-    id: "amsterdam",
-    name: "Eva de Groot",
-    role: "Data Analyst",
-    location: "Amsterdam, Netherlands",
-    avatar: "E",
-    color: "#059669",
-    msg: "Speedy recovery wishes from Amsterdam! We already miss your energy and brilliant ideas. Focus on healing — everything else can wait. The whole team sends warm hugs your way!",
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Product Manager",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#00b894",
+    msg: "Working alongside you has been a privilege. Thank you for the collaboration, support, and countless contributions you've made to the team. May your next journey be rewarding, exciting, and filled with great success.",
+    time: "2 days ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
+// ============================================================
+// PINS DATA FOR BIRTHDAY
+// ============================================================
+
+const birthdayPins = [
+  {
+    id: "delhi",
+    name: "Aarav Sharma",
+    role: "Project Manager",
+    location: "New Delhi, India",
+    avatar: "A",
+    color: "#ff7675",
+    msg: "Happy Birthday! 🎂 Wishing you a day filled with laughter, celebration, and wonderful memories. Your positivity and leadership make every day better for the team. Enjoy your special day!",
+    time: "1 hour ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Priya Mehta",
+    role: "Frontend Engineer",
+    location: "Mumbai, India",
+    avatar: "P",
+    color: "#fdcb6e",
+    msg: "Many happy returns of the day! 🎈 May this year bring exciting opportunities, good health, and countless reasons to smile. Have an amazing birthday celebration!",
+    time: "3 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Rohan Verma",
+    role: "Database Specialist",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#00b894",
+    msg: "Wishing you a fantastic birthday and a year ahead filled with success and happiness. Thank you for being such a valued member of the team. Enjoy every moment of your day!",
+    time: "5 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "QA Lead",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#6c5ce7",
+    msg: "Happy Birthday! 🌸 Your dedication and kindness make a difference every day. May your celebration be as wonderful as the positivity you bring to the workplace.",
+    time: "12 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Content Creator",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#ff7675",
+    msg: "Warm birthday wishes from all of us! 🎉 May your day be filled with joy, laughter, and everything that makes you happy. Here's to another incredible year ahead!",
     time: "1 day ago",
-    lat: 52.3676,
-    lng: 4.9041,
+    lat: 22.5726,
+    lng: 88.3639,
   },
 ];
 
+// ============================================================
+// PINS DATA FOR APPRECIATION
+// ============================================================
+
+const appreciationPins = [
+  {
+    id: "delhi",
+    name: "Aarav Sharma",
+    role: "Project Manager",
+    location: "New Delhi, India",
+    avatar: "A",
+    color: "#00b894",
+    msg: "Thank you for always stepping up when the team needs support. Your leadership, guidance, and willingness to help make a meaningful impact every day. We truly appreciate everything you do.",
+    time: "1 hour ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Priya Mehta",
+    role: "Frontend Engineer",
+    location: "Mumbai, India",
+    avatar: "P",
+    color: "#7c3aed",
+    msg: "Your dedication, creativity, and collaborative spirit make every project better. Thank you for consistently bringing your best and helping the entire team succeed.",
+    time: "3 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Rohan Verma",
+    role: "Database Specialist",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#fdcb6e",
+    msg: "Thank you for generously sharing your knowledge and expertise. Your support and mentorship have helped so many of us grow professionally and personally.",
+    time: "5 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "QA Lead",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#ff7675",
+    msg: "We appreciate your commitment to excellence and your attention to detail. Your efforts help maintain the highest standards across every project we deliver.",
+    time: "12 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Content Creator",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#00b894",
+    msg: "Your creativity, enthusiasm, and teamwork inspire everyone around you. Thank you for your contributions and for always bringing positive energy to the team.",
+    time: "1 day ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
+
+// ============================================================
+// PINS DATA FOR RETIREMENT
+// ============================================================
+
+const retirementPins = [
+  {
+    id: "delhi",
+    name: "Priya Sharma",
+    role: "Department Head",
+    location: "New Delhi, India",
+    avatar: "P",
+    color: "#e6a817",
+    msg: "Congratulations on an extraordinary career and a well-deserved retirement. Your wisdom, leadership, and contributions have left a lasting legacy that will continue to inspire us for years to come.",
+    time: "1 hour ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Dev Tiwari",
+    role: "Senior Engineer",
+    location: "Mumbai, India",
+    avatar: "D",
+    color: "#c0392b",
+    msg: "As you begin this exciting new chapter, we thank you for the countless lessons, memories, and achievements you've shared with us. Wishing you happiness, relaxation, and fulfillment in retirement.",
+    time: "3 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Anjali Roy",
+    role: "Operations Lead",
+    location: "Bengaluru, India",
+    avatar: "A",
+    color: "#1a6b47",
+    msg: "Your dedication and guidance have shaped so many careers and strengthened our team in countless ways. May retirement bring you joy, adventure, and precious moments with loved ones.",
+    time: "6 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "Regional Director",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#7c3aed",
+    msg: "Thank you for years of outstanding leadership and commitment. Your impact will be remembered long after today. Wishing you a rewarding and peaceful retirement journey.",
+    time: "12 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Product Manager",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#f97316",
+    msg: "You leave behind an incredible legacy of teamwork, innovation, and mentorship. Congratulations on your retirement, and may the years ahead be your happiest yet.",
+    time: "1 day ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
+
+// ============================================================
+// PINS DATA FOR CONDOLENCE
+// ============================================================
+
+const condolencePins = [
+  {
+    id: "delhi",
+    name: "Aarav Sharma",
+    role: "Team Lead",
+    location: "New Delhi, India",
+    avatar: "A",
+    color: "#4a6fa5",
+    msg: "Our heartfelt condolences are with you and your family during this difficult time. May the cherished memories of your loved one bring comfort and strength in the days ahead.",
+    time: "2 hours ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Priya Mehta",
+    role: "Senior Developer",
+    location: "Mumbai, India",
+    avatar: "P",
+    color: "#7c8ba8",
+    msg: "We are deeply saddened by your loss. Please know that our thoughts and prayers are with you, and we hope you find peace and support from those around you.",
+    time: "4 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Rohan Verma",
+    role: "Product Designer",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#5a7a6e",
+    msg: "During this time of sorrow, may you find comfort in the love and support of family, friends, and colleagues. Our deepest sympathies are with you.",
+    time: "8 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "Data Analyst",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#6b8cba",
+    msg: "Please accept our sincere condolences. We are thinking of you and your loved ones and sending strength, comfort, and support during this difficult period.",
+    time: "12 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Engineering Manager",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#4a6fa5",
+    msg: "Words cannot ease the pain of loss, but please know that you are in our thoughts. Wishing you peace, courage, and comfort in the days ahead.",
+    time: "1 day ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
+
+// ============================================================
+// PINS DATA FOR WORK MILESTONE
+// ============================================================
+
+const workMilestonePins = [
+  {
+    id: "delhi",
+    name: "Aarav Sharma",
+    role: "Engineering Lead",
+    location: "New Delhi, India",
+    avatar: "A",
+    color: "#7c3aed",
+    msg: "Congratulations on reaching this remarkable milestone! Your dedication, hard work, and commitment have made a lasting impact on the team. We're grateful for everything you've contributed over the years.",
+    time: "1 hour ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Priya Mehta",
+    role: "Product Manager",
+    location: "Mumbai, India",
+    avatar: "P",
+    color: "#5b21b6",
+    msg: "This achievement is a testament to your passion and excellence. Thank you for being such an important part of our journey. Here's to many more successes ahead!",
+    time: "3 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Rohan Verma",
+    role: "Regional Sales Director",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#4f46e5",
+    msg: "Your contributions have consistently driven growth, innovation, and success. Congratulations on this well-deserved milestone and all that you've accomplished.",
+    time: "6 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "Data Scientist",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#f59e0b",
+    msg: "Celebrating this milestone with you today! Your dedication and positive influence have helped shape the team and inspire those around you.",
+    time: "10 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "UX Researcher",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#7c3aed",
+    msg: "Congratulations on this important achievement. Your passion, creativity, and commitment continue to make a difference every day. Here's to many more milestones ahead.",
+    time: "1 day ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
+
+// ============================================================
+// PINS DATA FOR SPEEDY RECOVERY
+// ============================================================
+
+const speedyRecoveryPins = [
+  {
+    id: "delhi",
+    name: "Aarav Sharma",
+    role: "Team Lead",
+    location: "New Delhi, India",
+    avatar: "A",
+    color: "#10b981",
+    msg: "Wishing you a smooth and speedy recovery. Take all the time you need to rest and focus on your health. We look forward to seeing you back, healthy and smiling.",
+    time: "1 hour ago",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+  {
+    id: "mumbai",
+    name: "Priya Mehta",
+    role: "Product Designer",
+    location: "Mumbai, India",
+    avatar: "P",
+    color: "#059669",
+    msg: "Sending positive thoughts and warm wishes your way. Your well-being is what matters most right now, and the entire team is cheering for your recovery every step of the way.",
+    time: "3 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "bangalore",
+    name: "Rohan Verma",
+    role: "Backend Engineer",
+    location: "Bengaluru, India",
+    avatar: "R",
+    color: "#0d9488",
+    msg: "Take the time you need to rest and regain your strength. We're all looking forward to seeing you healthy again. Wishing you comfort, healing, and a quick recovery.",
+    time: "6 hours ago",
+    lat: 12.9716,
+    lng: 77.5946,
+  },
+  {
+    id: "hyderabad",
+    name: "Neha Reddy",
+    role: "UX Designer",
+    location: "Hyderabad, India",
+    avatar: "N",
+    color: "#10b981",
+    msg: "The entire team is thinking of you and sending our best wishes. May each day bring renewed strength, better health, and steady progress toward recovery.",
+    time: "10 hours ago",
+    lat: 17.385,
+    lng: 78.4867,
+  },
+  {
+    id: "kolkata",
+    name: "Vikram Chatterjee",
+    role: "Data Analyst",
+    location: "Kolkata, India",
+    avatar: "V",
+    color: "#059669",
+    msg: "Wishing you brighter days ahead and a full recovery. Focus on yourself, rest well, and know that your team is here supporting you every step of the way.",
+    time: "1 day ago",
+    lat: 22.5726,
+    lng: 88.3639,
+  },
+];
 // ─── BABY ARRIVAL PINS DATA ───
 const babyArrivalPins = [
-  { id: "ba-1", lat: 51.5074, lng: -0.1278, city: "London",    user: "Emma T.",    msg: "Can't wait to meet the little one!",     avatar: "E", color: "#ec4899", delay: "0.2s" },
-  { id: "ba-2", lat: 40.7128, lng: -74.006, city: "New York",  user: "David K.",   msg: "So incredibly happy for your growing family!", avatar: "D", color: "#db2777", delay: "0.7s" },
-  { id: "ba-3", lat: 35.6762, lng: 139.650, city: "Tokyo",     user: "Yuki S.",    msg: "Wishing you rest and joy. Welcome baby!", avatar: "Y", color: "#8b5cf6", delay: "1.5s" },
-  { id: "ba-4", lat: -33.868, lng: 151.209, city: "Sydney",    user: "Chloe B.",   msg: "Huge congratulations from down under! 🍼",  avatar: "C", color: "#ec4899", delay: "2.1s" },
-  { id: "ba-5", lat: 43.6532, lng: -79.383, city: "Toronto",   user: "Mark R.",    msg: "Enjoy every precious moment!",            avatar: "M", color: "#db2777", delay: "2.8s" },
+  { id: "ba-1", lat: 51.5074, lng: -0.1278, city: "London", user: "Emma T.", msg: "Can't wait to meet the little one!", avatar: "E", color: "#ec4899", delay: "0.2s" },
+  { id: "ba-2", lat: 40.7128, lng: -74.006, city: "New York", user: "David K.", msg: "So incredibly happy for your growing family!", avatar: "D", color: "#db2777", delay: "0.7s" },
+  { id: "ba-3", lat: 35.6762, lng: 139.650, city: "Tokyo", user: "Yuki S.", msg: "Wishing you rest and joy. Welcome baby!", avatar: "Y", color: "#8b5cf6", delay: "1.5s" },
+  { id: "ba-4", lat: -33.868, lng: 151.209, city: "Sydney", user: "Chloe B.", msg: "Huge congratulations from down under! 🍼", avatar: "C", color: "#ec4899", delay: "2.1s" },
+  { id: "ba-5", lat: 43.6532, lng: -79.383, city: "Toronto", user: "Mark R.", msg: "Enjoy every precious moment!", avatar: "M", color: "#db2777", delay: "2.8s" },
 ];
 
 // ─── ONBOARDING PINS DATA ───
 const onboardingPins = [
-  { id: "ob-1", lat: 37.7749, lng: -122.41, city: "San Francisco", user: "Alex W.",    msg: "Welcome to the team! Excited to work together.", avatar: "A", color: "#3b82f6", delay: "0.2s" },
-  { id: "ob-2", lat: 51.5074, lng: -0.1278, city: "London",        user: "Sarah J.",   msg: "So glad you're here! Let's grab a virtual coffee.", avatar: "S", color: "#2563eb", delay: "0.8s" },
-  { id: "ob-3", lat: 1.3521,  lng: 103.819, city: "Singapore",     user: "Wei C.",     msg: "Welcome aboard! Great to have you with us.", avatar: "W", color: "#10b981", delay: "1.4s" },
-  { id: "ob-4", lat: 48.8566, lng: 2.3522,  city: "Paris",         user: "Marie D.",   msg: "Bienvenue! You're going to love it here.",  avatar: "M", color: "#3b82f6", delay: "2.2s" },
-  { id: "ob-5", lat: -33.868, lng: 151.209, city: "Sydney",        user: "James H.",   msg: "Welcome to the best team ever! 👋",       avatar: "J", color: "#2563eb", delay: "3.0s" },
+  { id: "ob-1", lat: 37.7749, lng: -122.41, city: "San Francisco", user: "Alex W.", msg: "Welcome to the team! Excited to work together.", avatar: "A", color: "#3b82f6", delay: "0.2s" },
+  { id: "ob-2", lat: 51.5074, lng: -0.1278, city: "London", user: "Sarah J.", msg: "So glad you're here! Let's grab a virtual coffee.", avatar: "S", color: "#2563eb", delay: "0.8s" },
+  { id: "ob-3", lat: 1.3521, lng: 103.819, city: "Singapore", user: "Wei C.", msg: "Welcome aboard! Great to have you with us.", avatar: "W", color: "#10b981", delay: "1.4s" },
+  { id: "ob-4", lat: 48.8566, lng: 2.3522, city: "Paris", user: "Marie D.", msg: "Bienvenue! You're going to love it here.", avatar: "M", color: "#3b82f6", delay: "2.2s" },
+  { id: "ob-5", lat: -33.868, lng: 151.209, city: "Sydney", user: "James H.", msg: "Welcome to the best team ever! 👋", avatar: "J", color: "#2563eb", delay: "3.0s" },
 ];
 
 // ─── KUDOS PINS DATA ───
 const kudosPins = [
-  { id: "ku-1", lat: 40.7128, lng: -74.006, city: "New York",   user: "Mike T.",    msg: "Incredible launch! You all crushed it! 🚀", avatar: "M", color: "#f43f5e", delay: "0.2s" },
-  { id: "ku-2", lat: 51.5074, lng: -0.1278, city: "London",     user: "Emma S.",    msg: "Stunning work! So proud of the results.",   avatar: "E", color: "#e11d48", delay: "0.6s" },
-  { id: "ku-3", lat: 12.9716, lng: 77.5946, city: "Bangalore",  user: "Rahul M.",   msg: "Massive win for the company. Fantastic!",   avatar: "R", color: "#8b5cf6", delay: "1.2s" },
-  { id: "ku-4", lat: 35.6762, lng: 139.650, city: "Tokyo",      user: "Kenji Y.",   msg: "Exceeding all expectations. Amazing! 🏆",  avatar: "K", color: "#f43f5e", delay: "1.8s" },
-  { id: "ku-5", lat: 52.5200, lng: 13.4050, city: "Berlin",     user: "Anna K.",    msg: "Setting the new standard! Cheers! 🥂",    avatar: "A", color: "#e11d48", delay: "2.5s" },
+  { id: "ku-1", lat: 40.7128, lng: -74.006, city: "New York", user: "Mike T.", msg: "Incredible launch! You all crushed it! 🚀", avatar: "M", color: "#f43f5e", delay: "0.2s" },
+  { id: "ku-2", lat: 51.5074, lng: -0.1278, city: "London", user: "Emma S.", msg: "Stunning work! So proud of the results.", avatar: "E", color: "#e11d48", delay: "0.6s" },
+  { id: "ku-3", lat: 12.9716, lng: 77.5946, city: "Bangalore", user: "Rahul M.", msg: "Massive win for the company. Fantastic!", avatar: "R", color: "#8b5cf6", delay: "1.2s" },
+  { id: "ku-4", lat: 35.6762, lng: 139.650, city: "Tokyo", user: "Kenji Y.", msg: "Exceeding all expectations. Amazing! 🏆", avatar: "K", color: "#f43f5e", delay: "1.8s" },
+  { id: "ku-5", lat: 52.5200, lng: 13.4050, city: "Berlin", user: "Anna K.", msg: "Setting the new standard! Cheers! 🥂", avatar: "A", color: "#e11d48", delay: "2.5s" },
 ];
 
 // ─── FESTIVE SEASON PINS DATA ───
 const festiveSeasonPins = [
-  { id: "fs-1", lat: 51.5074, lng: -0.1278, city: "London",    user: "Team UK",    msg: "Merry Christmas & Happy New Year! 🎄",   avatar: "UK", color: "#ef4444", delay: "0.3s" },
-  { id: "fs-2", lat: 40.7128, lng: -74.006, city: "New York",  user: "Team US",    msg: "Happy Holidays everyone! Enjoy the break!", avatar: "US", color: "#dc2626", delay: "0.9s" },
-  { id: "fs-3", lat: 35.6762, lng: 139.650, city: "Tokyo",     user: "Team JP",    msg: "Wishing you joy and peace this season! 🎁", avatar: "JP", color: "#10b981", delay: "1.5s" },
-  { id: "fs-4", lat: -33.868, lng: 151.209, city: "Sydney",    user: "Team AU",    msg: "Sunny greetings for a wonderful holiday! ☀️", avatar: "AU", color: "#ef4444", delay: "2.1s" },
-  { id: "fs-5", lat: 48.8566, lng: 2.3522,  city: "Paris",     user: "Team FR",    msg: "Joyeuses Fêtes! Cheers to an amazing year!",avatar: "FR", color: "#dc2626", delay: "2.8s" },
+  { id: "fs-1", lat: 51.5074, lng: -0.1278, city: "London", user: "Team UK", msg: "Merry Christmas & Happy New Year! 🎄", avatar: "UK", color: "#ef4444", delay: "0.3s" },
+  { id: "fs-2", lat: 40.7128, lng: -74.006, city: "New York", user: "Team US", msg: "Happy Holidays everyone! Enjoy the break!", avatar: "US", color: "#dc2626", delay: "0.9s" },
+  { id: "fs-3", lat: 35.6762, lng: 139.650, city: "Tokyo", user: "Team JP", msg: "Wishing you joy and peace this season! 🎁", avatar: "JP", color: "#10b981", delay: "1.5s" },
+  { id: "fs-4", lat: -33.868, lng: 151.209, city: "Sydney", user: "Team AU", msg: "Sunny greetings for a wonderful holiday! ☀️", avatar: "AU", color: "#ef4444", delay: "2.1s" },
+  { id: "fs-5", lat: 48.8566, lng: 2.3522, city: "Paris", user: "Team FR", msg: "Joyeuses Fêtes! Cheers to an amazing year!", avatar: "FR", color: "#dc2626", delay: "2.8s" },
 ];
 
 // Configuration selector
@@ -841,10 +857,10 @@ export default function MemoryMap({ pageType = "send-off" }) {
   return (
     <section className="shared-map-section" id="memory-map-shared">
       <div className="shared-map-container">
-        
+
         {/* Title Header */}
         <header className="shared-map-header">
-          <span 
+          <span
             className="shared-map-badge"
             style={{
               background: config.badgeBg,
@@ -860,11 +876,11 @@ export default function MemoryMap({ pageType = "send-off" }) {
 
         {/* Content Layout */}
         <div className="shared-map-layout">
-          
+
           {/* Left Column: Interactive Map */}
           <div className="shared-map-wrapper">
-            <div 
-              ref={mapContainerRef} 
+            <div
+              ref={mapContainerRef}
               id="shared-leaflet-world-map"
               style={{
                 width: "100%",
@@ -885,8 +901,8 @@ export default function MemoryMap({ pageType = "send-off" }) {
 
           {/* Right Column: Glassmorphic Message Card */}
           <div className="shared-map-card-panel">
-            <div 
-              className="shared-glass-card" 
+            <div
+              className="shared-glass-card"
               key={`${pageType}-${activeIndex}`}
               style={{
                 border: `1px solid ${activePin.color}33`,
@@ -898,7 +914,7 @@ export default function MemoryMap({ pageType = "send-off" }) {
 
               {/* Header inside Card */}
               <div className="shared-glass-card-header">
-                <div 
+                <div
                   className="shared-card-avatar"
                   style={{
                     background: activePin.color,
@@ -954,9 +970,9 @@ export default function MemoryMap({ pageType = "send-off" }) {
                     />
                   ))}
                 </div>
-                
+
                 {/* Autoplay Pause / Play button */}
-                <button 
+                <button
                   className="shared-map-play-btn"
                   onClick={() => setIsPlaying(!isPlaying)}
                   aria-label={isPlaying ? "Pause autoplay" : "Start autoplay"}
