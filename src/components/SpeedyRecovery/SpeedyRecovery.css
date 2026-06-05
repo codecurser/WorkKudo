@@ -30,7 +30,6 @@
   background-position: center 40%;
   z-index: 0;
   will-change: transform;
-  filter: brightness(0.42) contrast(1.08) saturate(1.1);
 }
 
 /* Deep forest green overlay */

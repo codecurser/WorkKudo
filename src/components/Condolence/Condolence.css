@@ -30,7 +30,6 @@
   background-position: center 55%;
   z-index: 0;
   will-change: transform;
-  filter: brightness(0.45) contrast(1.05) saturate(0.8);
 }
 
 /* Deep blue-slate overlay */

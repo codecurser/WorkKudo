@@ -30,7 +30,6 @@
   background-position: center top;
   z-index: 0;
   will-change: transform;
-  filter: brightness(0.6) contrast(1.15);
 }
 
 /* Overlay — heavier left, lighter right for contrast */

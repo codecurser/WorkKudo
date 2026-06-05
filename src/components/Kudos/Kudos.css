@@ -30,7 +30,6 @@
   background-position: center 40%;
   z-index: 0;
   will-change: transform;
-  filter: brightness(0.35) contrast(1.15) saturate(1.2);
 }
 
 /* Deep rose overlay */

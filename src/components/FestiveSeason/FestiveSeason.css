@@ -30,7 +30,6 @@
   background-position: center 40%;
   z-index: 0;
   will-change: transform;
-  filter: brightness(0.38) contrast(1.1) saturate(1.2);
 }
 
 /* Deep ruby overlay */
