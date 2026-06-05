@@ -499,6 +499,386 @@ const appreciationCards = [
   },
 ];
 
+// ─── RETIREMENT CARDS DATA ───
+const retirementCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a golden retirement board and set up the honoured colleague",
+    accent: "#e6a817",
+    bg: "linear-gradient(145deg,#fff8e1,#ffecc2)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ret1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#e6a817"/>
+            <stop offset="100%" stopColor="#f97316"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#fff8e1" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#ret1)"/>
+        {/* Trophy */}
+        <rect x="66" y="20" width="16" height="6" rx="2" fill="white" opacity="0.9"/>
+        <rect x="70" y="26" width="8" height="10" rx="1" fill="white" opacity="0.9"/>
+        <rect x="65" y="36" width="18" height="3" rx="1" fill="white" opacity="0.9"/>
+        <path d="M62,14 Q56,14 56,20 Q56,30 66,34 L66,20 Z" fill="white" opacity="0.7"/>
+        <path d="M86,14 Q92,14 92,20 Q92,30 82,34 L82,20 Z" fill="white" opacity="0.7"/>
+        <ellipse cx="74" cy="14" rx="14" ry="10" fill="white" opacity="0.95"/>
+        <text x="74" y="18" fontSize="7" fill="#e6a817" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">★</text>
+        <text x="74" y="62" fontSize="7" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">GOLDEN FAREWELL</text>
+        {/* Stats */}
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#e6a817" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">30</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Yrs</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#f97316" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">42</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#7c3aed" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">26</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#ret1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Retirement Board</text>
+        <circle cx="20" cy="164" r="8" fill="#fff8e1"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#e6a817" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">R</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For Robert Singh</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Retiring after 30 years</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#e6a817"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Share Memories",
+    tag: "Collaborate",
+    desc: "Collect stories, milestones and heartfelt messages from the whole team",
+    accent: "#c0392b",
+    bg: "linear-gradient(145deg,#fff3e0,#ffe0cc)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#fff7f0" opacity="0.4"/>
+        <rect width="148" height="42" fill="#c0392b"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">SHARE MEMORIES</text>
+        {/* Memory album sticky notes */}
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#92400e" fontFamily="var(--font-sans)">30 years of great</text>
+          <text x="14" y="74" fontSize="4.5" fill="#92400e" fontFamily="var(--font-sans)">work! Thank you</text>
+          <text x="14" y="82" fontSize="4.5" fill="#92400e" fontFamily="var(--font-sans)">for everything!</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- priya.s</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#dbeafe" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#1e40af" fontFamily="var(--font-sans)">Enjoy the sunset</text>
+          <text x="82" y="74" fontSize="4.5" fill="#1e40af" fontFamily="var(--font-sans)">chapters of life!</text>
+          <text x="82" y="82" fontSize="4.5" fill="#1e40af" fontFamily="var(--font-sans)">You've earned it.</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- dev.t</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (26)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "P", name: "Priya Sharma",  role: "Creator", color: "#c0392b", bg: "#fee2e2", y: 149 },
+          { init: "D", name: "Dev Tiwari",    role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "R", name: "Raj Mehta",     role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "A", name: "Anjali Roy",    role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Gift & Print",
+    tag: "Keepsake",
+    desc: "Premium printed memory book + curated retirement gift delivered to their home",
+    accent: "#1a6b47",
+    bg: "linear-gradient(145deg,#e8f5e9,#d4edda)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#f0faf5" opacity="0.5"/>
+        <rect width="148" height="42" fill="#1a6b47"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GIFT & PRINT</text>
+        {/* Gift box */}
+        <rect x="30" y="90" width="88" height="64" rx="4" fill="#e6a817" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.12))" }}/>
+        <rect x="30" y="90" width="88" height="16" rx="4" fill="#c0392b"/>
+        <rect x="30" y="100" width="88" height="6" fill="#c0392b"/>
+        {/* Ribbon vertical */}
+        <rect x="70" y="90" width="8" height="64" fill="#fff8e1"/>
+        {/* Bow */}
+        <g className="fc-svg-gift-bow">
+          <path d="M74,84 C60,70 54,84 74,84 Z" fill="#c0392b"/>
+          <path d="M74,84 C88,70 94,84 74,84 Z" fill="#c0392b"/>
+          <circle cx="74" cy="84" r="5" fill="#a93226"/>
+          <text x="74" y="87" fontSize="6" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">★</text>
+        </g>
+        {/* Book spine visible inside gift */}
+        <rect x="40" y="96" width="4" height="52" fill="#c0392b"/>
+        <rect x="44" y="96" width="66" height="52" fill="#fffcf0"/>
+        <text x="77" y="126" fontSize="5.5" fill="#1a6b47" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">Memory</text>
+        <text x="77" y="134" fontSize="5.5" fill="#1a6b47" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">Book</text>
+        {/* Stars */}
+        <path d="M22,72 L24,76 L28,76 L25,78 L26,82 L22,80 L18,82 L19,78 L16,76 L20,76 Z" fill="#e6a817" />
+        <path d="M126,78 L127.5,81 L131,81 L129,83 L130,86 L127,84.5 L124,86 L125,83 L123,81 L126.5,81 Z" fill="#1a6b47" />
+        {/* Shipping tag */}
+        <rect x="8" y="164" width="132" height="38" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="178" fontSize="5.5" fill="#1a6b47" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING DETAILS</text>
+        <text x="16" y="190" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Delivered to: Robert Singh · Jun 2026</text>
+        <circle cx="130" cy="181" r="6" fill="#e8f5e9"/>
+        <path d="M127.5,181 L129,182.5 L132.5,178.5" stroke="#1a6b47" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Celebrate",
+    tag: "Share & Reveal",
+    desc: "Share a private board link, export the PDF and celebrate the golden chapter",
+    accent: "#7c3aed",
+    bg: "linear-gradient(145deg,#f5f3ff,#ede9fe)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="ret4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#7c3aed"/>
+            <stop offset="100%" stopColor="#e6a817"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#f5f3ff" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#ret4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">CELEBRATE!</text>
+        {/* Sunrise illustration */}
+        <circle cx="74" cy="140" r="28" fill="#e6a817" opacity="0.15"/>
+        <circle cx="74" cy="140" r="18" fill="#e6a817" opacity="0.85"/>
+        {/* Sun rays */}
+        {[0,45,90,135,180,225,270,315].map((deg, idx) => {
+          const r = deg * Math.PI / 180;
+          const x1 = 74 + 22 * Math.cos(r);
+          const y1 = 140 + 22 * Math.sin(r);
+          const x2 = 74 + 30 * Math.cos(r);
+          const y2 = 140 + 30 * Math.sin(r);
+          return <line key={idx} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#e6a817" strokeWidth="2" strokeLinecap="round"/>;
+        })}
+        <path d="M34,140 Q74,100 114,140" fill="#1a6b47" opacity="0.55"/>
+        <path d="M20,140 H128" stroke="#1a6b47" strokeWidth="2" opacity="0.3"/>
+        <text x="74" y="144" fontSize="9" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">🌅</text>
+        {/* Checklist below */}
+        <rect x="8" y="164" width="132" height="40" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="177" fontSize="6.5" fill="#7c3aed" fontWeight="800" fontFamily="var(--font-sans)">REVEAL CHECKLIST</text>
+        {[
+          { text: "Download print-ready high-res PDF", y: 190 },
+          { text: "Copy private link for Slack / Teams", y: 199 },
+        ].map((item, idx) => (
+          <g key={item.y}>
+            <circle cx="18" cy={item.y - 2} r="3.5" fill="#f5f3ff"/>
+            <path d="M16.5,188 L17.5,189 L19.5,187" stroke="#7c3aed" strokeWidth="0.8" strokeLinecap="round" fill="none" transform={`translate(0, ${item.y - 190})`}/>
+            <text x="26" y={item.y.toString()} fontSize="5" fill="#4b5563" fontWeight="600" fontFamily="var(--font-sans)">{item.text}</text>
+          </g>
+        ))}
+        {/* Confetti dots */}
+        <circle cx="30" cy="65" r="3" fill="#e6a817" className="fc-svg-dot-1"/>
+        <circle cx="118" cy="58" r="2" fill="#7c3aed" className="fc-svg-dot-2"/>
+        <circle cx="108" cy="80" r="2.5" fill="#c0392b" className="fc-svg-dot-1"/>
+        <circle cx="42" cy="78" r="2" fill="#1a6b47" className="fc-svg-dot-2"/>
+      </svg>
+    ),
+  },
+];
+
+// ─── CONDOLENCE CARDS DATA ───
+const condolenceCards = [
+  {
+    step: 1,
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a compassionate tribute board and set up the memorial",
+    accent: "#4a6fa5",
+    bg: "linear-gradient(145deg,#eef2ff,#dde5f4)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="con1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#4a6fa5"/>
+            <stop offset="100%" stopColor="#6b8cba"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#eef2ff" opacity="0.5"/>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#con1)"/>
+        {/* Dove of peace */}
+        <g opacity="0.95">
+          <path d="M74,28 C68,20 60,22 58,28 C56,34 62,38 70,34 C74,32 78,28 82,30 C86,32 84,38 78,40 C84,42 88,36 86,30 Z" fill="white"/>
+          <circle cx="60" cy="26" r="2" fill="white" opacity="0.7"/>
+          <path d="M58,28 L50,35" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        </g>
+        <text x="74" y="62" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">TRIBUTE BOARD</text>
+        {/* Stats */}
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#4a6fa5" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#6b8cba" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">38</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#7c8ba8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">31</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#con1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Memorial Board</text>
+        <circle cx="20" cy="164" r="8" fill="#eef2ff"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#4a6fa5" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">M</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">In Memory of</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Michael Evans</text>
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#4a6fa5"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
+      </svg>
+    ),
+  },
+  {
+    step: 2,
+    label: "Share Comfort",
+    tag: "Collaborate",
+    desc: "Gather heartfelt messages, shared memories and words of comfort from the team",
+    accent: "#7c8ba8",
+    bg: "linear-gradient(145deg,#f0f4ff,#e2e8f8)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#f0f4ff" opacity="0.4"/>
+        <rect width="148" height="42" fill="#7c8ba8"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">SHARE COMFORT</text>
+        {/* Comfort notes */}
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#f8f0ff" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#5b21b6" fontFamily="var(--font-sans)">He was the most</text>
+          <text x="14" y="74" fontSize="4.5" fill="#5b21b6" fontFamily="var(--font-sans)">kind and generous</text>
+          <text x="14" y="82" fontSize="4.5" fill="#5b21b6" fontFamily="var(--font-sans)">person I've known.</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- sarah.k</text>
+        </g>
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#e8f4fd" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#1e40af" fontFamily="var(--font-sans)">Thinking of you</text>
+          <text x="82" y="74" fontSize="4.5" fill="#1e40af" fontFamily="var(--font-sans)">and your family</text>
+          <text x="82" y="82" fontSize="4.5" fill="#1e40af" fontFamily="var(--font-sans)">during this time.</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- tom.b</text>
+        </g>
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (31)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { init: "S", name: "Sarah Kim",    role: "Creator", color: "#4a6fa5", bg: "#dde5f4", y: 149 },
+          { init: "T", name: "Tom Brown",    role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "L", name: "Lisa Patel",   role: "Signed",  color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "J", name: "James Osei",   role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+  {
+    step: 3,
+    label: "Print Tribute",
+    tag: "Keepsake",
+    desc: "A beautifully bound memorial book printed and delivered to the family",
+    accent: "#5a7a6e",
+    bg: "linear-gradient(145deg,#ecf5f0,#d6ebe2)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <rect width="148" height="210" fill="#ecf5f0" opacity="0.5"/>
+        <rect width="148" height="42" fill="#5a7a6e"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">PRINT TRIBUTE</text>
+        {/* Memorial book */}
+        <rect x="34" y="56" width="80" height="100" rx="4" fill="#4a6fa5" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.12))" }}/>
+        <rect x="34" y="56" width="10" height="100" fill="#3a5a8a"/>
+        {/* Book pages */}
+        <g className="fc-svg-book">
+          <rect x="46" y="62" width="62" height="88" rx="2" fill="#fafafa"/>
+          {/* Flower decoration */}
+          <circle cx="77" cy="88" r="8" fill="#dde5f4"/>
+          <circle cx="77" cy="88" r="4" fill="#4a6fa5"/>
+          {[0,60,120,180,240,300].map((deg, i) => {
+            const rad = deg * Math.PI / 180;
+            return <ellipse key={i} cx={77 + 7*Math.cos(rad)} cy={88 + 7*Math.sin(rad)} rx="3.5" ry="2" fill="#b8c8e8" transform={`rotate(${deg}, ${77 + 7*Math.cos(rad)}, ${88 + 7*Math.sin(rad)})`}/>
+          })}
+          <text x="77" y="105" fontSize="5" fill="#4a6fa5" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">IN LOVING</text>
+          <text x="77" y="112" fontSize="5" fill="#4a6fa5" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">MEMORY</text>
+          {/* Lines for text */}
+          <rect x="52" y="120" width="50" height="1.5" rx="1" fill="#e5e7eb"/>
+          <rect x="56" y="125" width="42" height="1.5" rx="1" fill="#e5e7eb"/>
+          <rect x="59" y="130" width="36" height="1.5" rx="1" fill="#e5e7eb"/>
+          <rect x="62" y="135" width="30" height="1.5" rx="1" fill="#e5e7eb"/>
+        </g>
+        {/* Candle */}
+        <rect x="20" y="130" width="6" height="20" rx="1" fill="#f5f0e8"/>
+        <path d="M23,125 C21,120 25,116 23,112 C23,117 27,121 25,125 Z" fill="#fdcb6e"/>
+        <rect x="118" y="135" width="6" height="16" rx="1" fill="#f5f0e8"/>
+        <path d="M121,130 C119,125 123,121 121,117 C121,122 125,126 123,130 Z" fill="#fdcb6e"/>
+      </svg>
+    ),
+  },
+  {
+    step: 4,
+    label: "Send with Care",
+    tag: "Deliver",
+    desc: "Share a private link with the family or send directly to their inbox with love",
+    accent: "#4a6fa5",
+    bg: "linear-gradient(145deg,#eef2ff,#dde5f4)",
+    svg: (
+      <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="con4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#4a6fa5"/>
+            <stop offset="100%" stopColor="#7c8ba8"/>
+          </linearGradient>
+        </defs>
+        <rect width="148" height="210" fill="#eef2ff" opacity="0.5"/>
+        <rect width="148" height="42" fill="url(#con4)"/>
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">SEND WITH CARE</text>
+        {/* Heart with envelope */}
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        {/* Envelope shape */}
+        <rect x="20" y="60" width="108" height="56" rx="4" fill="#dde5f4"/>
+        <polygon points="20,60 74,95 128,60" fill="#b8c8e8"/>
+        <line x1="20" y1="116" x2="55" y2="88" stroke="#b8c8e8" strokeWidth="1"/>
+        <line x1="128" y1="116" x2="93" y2="88" stroke="#b8c8e8" strokeWidth="1"/>
+        {/* Heart on envelope */}
+        <path d="M74,75 C74,75 68,68 62,72 C56,76 60,86 74,92 C88,86 92,76 86,72 C80,68 74,75 74,75 Z" fill="#4a6fa5" opacity="0.7"/>
+        {/* Checklist */}
+        <rect x="8" y="130" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="145" fontSize="6.5" fill="#4a6fa5" fontWeight="800" fontFamily="var(--font-sans)">DELIVERY OPTIONS</text>
+        <line x1="8" y1="150" x2="140" y2="150" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { text: "Private link for family members",    y: 163 },
+          { text: "Download high-res PDF tribute",       y: 176 },
+          { text: "Schedule a compassionate email send", y: 189 }
+        ].map((item, idx) => (
+          <g key={item.y}>
+            <circle cx="18" cy={item.y - 2} r="3.5" fill="#dde5f4"/>
+            <path d="M16.5,161 L17.5,162 L19.5,160" stroke="#4a6fa5" strokeWidth="0.8" strokeLinecap="round" fill="none" transform={`translate(0,${item.y-163})`}/>
+            <text x="26" y={item.y.toString()} fontSize="5" fill="#4b5563" fontWeight="600" fontFamily="var(--font-sans)">{item.text}</text>
+          </g>
+        ))}
+      </svg>
+    ),
+  },
+];
+
 // Helper to determine active list and gradient configs
 const getPageConfig = (pageType) => {
   switch (pageType) {
@@ -515,6 +895,20 @@ const getPageConfig = (pageType) => {
         title: "How it works",
         subtitle: "Four simple steps to capture meaningful appreciation",
         gradients: ["#00b894", "#7c3aed", "#fdcb6e", "#ff7675"],
+      };
+    case "retirement":
+      return {
+        cards: retirementCards,
+        title: "How it works",
+        subtitle: "Four golden steps to honour a lifetime of dedication",
+        gradients: ["#e6a817", "#c0392b", "#1a6b47", "#7c3aed"],
+      };
+    case "condolence":
+      return {
+        cards: condolenceCards,
+        title: "How it works",
+        subtitle: "Four gentle steps to create a heartfelt tribute for those who grieve",
+        gradients: ["#4a6fa5", "#7c8ba8", "#5a7a6e", "#4a6fa5"],
       };
     case "send-off":
     default:

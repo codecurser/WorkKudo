@@ -209,10 +209,16 @@ function CreateMegaMenu({ onItemClick }) {
         {tab.type === 'grid' && (
           <div className="create-panel__grid">
             {tab.items.map((item, i) => (
-              item.label === 'Send-Off' || item.label === 'Birthday' || item.label === 'Appreciation' ? (
+              item.label === 'Send-Off' || item.label === 'Birthday' || item.label === 'Appreciation' || item.label === 'Retirement' || item.label === 'Condolence' ? (
                 <Link
                   key={item.label}
-                  to={item.label === 'Send-Off' ? "/send-off" : item.label === 'Birthday' ? "/birthday" : "/appreciation"}
+                  to={
+                    item.label === 'Send-Off'     ? "/send-off"     :
+                    item.label === 'Birthday'     ? "/birthday"     :
+                    item.label === 'Appreciation' ? "/appreciation" :
+                    item.label === 'Retirement'   ? "/retirement"   :
+                    "/condolence"
+                  }
                   className="panel-item"
                   style={{ animationDelay: `${i * 18}ms` }}
                   onClick={onItemClick}

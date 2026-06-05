@@ -193,6 +193,134 @@ const appreciationPins = [
   },
 ];
 
+// ─── PINS DATA FOR RETIREMENT ───
+const retirementPins = [
+  {
+    id: "ny",
+    name: "Priya Sharma",
+    role: "Department Head",
+    location: "New York, USA",
+    avatar: "P",
+    color: "#e6a817",
+    msg: "Robert, 30 incredible years! The entire New York office is going to miss your mentorship and legendary Friday evening stories. Wishing you the most golden retirement!",
+    time: "1 hour ago",
+    lat: 40.7128,
+    lng: -74.006,
+  },
+  {
+    id: "london",
+    name: "Dev Tiwari",
+    role: "Senior Engineer",
+    location: "London, UK",
+    avatar: "D",
+    color: "#c0392b",
+    msg: "Enjoy the next chapter! You've given so much to this company over the decades. London will never forget your contributions to the global expansion. Cheers to you!",
+    time: "3 hours ago",
+    lat: 51.5074,
+    lng: -0.1278,
+  },
+  {
+    id: "mumbai",
+    name: "Anjali Roy",
+    role: "Operations Lead",
+    location: "Mumbai, India",
+    avatar: "A",
+    color: "#1a6b47",
+    msg: "You were a guiding star for so many of us in the Mumbai team. Your patience, your wisdom, and your work ethic are unmatched. Enjoy every moment of retirement!",
+    time: "6 hours ago",
+    lat: 19.076,
+    lng: 72.8777,
+  },
+  {
+    id: "tokyo",
+    name: "Kenji T.",
+    role: "Regional Director",
+    location: "Tokyo, Japan",
+    avatar: "K",
+    color: "#7c3aed",
+    msg: "From Tokyo with so much appreciation! You supported our regional office from day one. Your leadership made our success possible. Congratulations and enjoy your rest!",
+    time: "12 hours ago",
+    lat: 35.6762,
+    lng: 139.6503,
+  },
+  {
+    id: "sydney",
+    name: "Chloe L.",
+    role: "Product Manager",
+    location: "Sydney, Australia",
+    avatar: "C",
+    color: "#f97316",
+    msg: "The Sydney crew is raising a glass to you! Thank you for everything you've built and the team culture you nurtured. We'll carry your legacy forward. Enjoy the beach!",
+    time: "1 day ago",
+    lat: -33.8688,
+    lng: 151.2093,
+  },
+];
+
+// ─── PINS DATA FOR CONDOLENCE ───
+const condolencePins = [
+  {
+    id: "ny",
+    name: "Sarah Kim",
+    role: "Team Lead",
+    location: "New York, USA",
+    avatar: "S",
+    color: "#4a6fa5",
+    msg: "Michael touched so many lives here in New York. His kindness, patience, and brilliant mind made our office a better place every single day. We hold you and your family in our hearts.",
+    time: "2 hours ago",
+    lat: 40.7128,
+    lng: -74.006,
+  },
+  {
+    id: "london",
+    name: "Tom Brown",
+    role: "Senior Developer",
+    location: "London, UK",
+    avatar: "T",
+    color: "#7c8ba8",
+    msg: "Sending our deepest condolences from the London team. Michael was a wonderful colleague and an even better human being. He will be truly missed by everyone who was lucky enough to know him.",
+    time: "4 hours ago",
+    lat: 51.5074,
+    lng: -0.1278,
+  },
+  {
+    id: "lagos",
+    name: "Amara D.",
+    role: "Product Designer",
+    location: "Lagos, Nigeria",
+    avatar: "A",
+    color: "#5a7a6e",
+    msg: "Our thoughts are with you and your loved ones during this incredibly difficult time. Michael's warmth and generosity will live on in all of us who had the privilege of working alongside him.",
+    time: "8 hours ago",
+    lat: 6.5244,
+    lng: 3.3792,
+  },
+  {
+    id: "berlin",
+    name: "Lena M.",
+    role: "Data Analyst",
+    location: "Berlin, Germany",
+    avatar: "L",
+    color: "#6b8cba",
+    msg: "From Berlin, we send our heartfelt sympathies. Michael's contributions to the project and to our team culture were invaluable. May his memory be a source of comfort and peace for everyone.",
+    time: "12 hours ago",
+    lat: 52.52,
+    lng: 13.405,
+  },
+  {
+    id: "sydney",
+    name: "James O.",
+    role: "Engineering Manager",
+    location: "Sydney, Australia",
+    avatar: "J",
+    color: "#4a6fa5",
+    msg: "The Sydney office is grieving alongside you. Michael was a beacon of positivity and professionalism. We will carry his legacy of kindness and dedication in everything we do going forward.",
+    time: "1 day ago",
+    lat: -33.8688,
+    lng: 151.2093,
+  },
+];
+
 // Configuration selector
 const getMapConfig = (pageType) => {
   switch (pageType) {
@@ -217,6 +345,28 @@ const getMapConfig = (pageType) => {
         badgeColor: "#00b894",
         badgeBorder: "rgba(0, 184, 148, 0.15)",
         reactions: { "💌": 24, "👏": 18, "🌟": 30, "👍": 15 }
+      };
+    case "retirement":
+      return {
+        pins: retirementPins,
+        badgeText: "Worldwide Tributes",
+        title: "Retirement Memory Map",
+        subtitle: "Colleagues across the globe honour decades of dedication. Watch heartfelt tributes light up from New York, London, Mumbai, Tokyo, and beyond!",
+        badgeBg: "rgba(230, 168, 23, 0.08)",
+        badgeColor: "#e6a817",
+        badgeBorder: "rgba(230, 168, 23, 0.2)",
+        reactions: { "🌴": 18, "🥂": 14, "🏆": 22, "❤️": 30 }
+      };
+    case "condolence":
+      return {
+        pins: condolencePins,
+        badgeText: "Messages of Comfort",
+        title: "Global Condolence Map",
+        subtitle: "Compassionate colleagues from around the world share their words of comfort and cherished memories to support those who grieve.",
+        badgeBg: "rgba(74, 111, 165, 0.08)",
+        badgeColor: "#4a6fa5",
+        badgeBorder: "rgba(74, 111, 165, 0.18)",
+        reactions: { "💙": 24, "💖": 18, "🕊️": 20, "💫": 15 }
       };
     case "send-off":
     default:

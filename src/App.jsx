@@ -12,6 +12,8 @@ import Pricing from './pages/Pricing/Pricing'
 import SendOff from './components/SendOff/SendOff'
 import Birthday from './components/Birthday/Birthday'
 import Appreciation from './components/Appreciation/Appreciation'
+import Retirement from './components/Retirement/Retirement'
+import Condolence from './components/Condolence/Condolence'
 import FAQ from './components/FAQ/FAQ'
 
 function HomePage() {
@@ -66,6 +68,30 @@ function AppreciationPage() {
   )
 }
 
+function RetirementPage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Retirement />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
+function CondolencePage() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Condolence />
+      </main>
+      <Footer />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <Routes>
@@ -76,6 +102,8 @@ export default function App() {
       <Route path="/send-off" element={<SendOffPage />} />
       <Route path="/birthday" element={<BirthdayPage />} />
       <Route path="/appreciation" element={<AppreciationPage />} />
+      <Route path="/retirement" element={<RetirementPage />} />
+      <Route path="/condolence" element={<CondolencePage />} />
     </Routes>
   )
 }
