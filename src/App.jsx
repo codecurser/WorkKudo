@@ -28,6 +28,7 @@ import MilestoneExample from './pages/ExampleBoard/MilestoneExample'
 import GetWellExample from './pages/ExampleBoard/GetWellExample'
 import RetirementExample from './pages/ExampleBoard/RetirementExample'
 import PromotionExample from './pages/ExampleBoard/PromotionExample'
+import Enterprise from './pages/Enterprise/Enterprise'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -222,6 +223,7 @@ export default function App() {
       <Route path="/examples/getwell" element={<GetWellExample />} />
       <Route path="/examples/retirement" element={<RetirementExample />} />
       <Route path="/examples/promotion" element={<PromotionExample />} />
+      <Route path="/solutions/enterprise" element={<Enterprise />} />
     </Routes>
     </>
   )

@@ -134,10 +134,23 @@ export default function Footer() {
               <p className="footer__col-heading">{col.heading}</p>
               <ul className="footer__col-list">
                 {col.links.map(link => {
-                  const href = link === 'Contact Us' ? 'mailto:support@proso.ai' : '#'
+                  let href = '#'
+                  let isRouterLink = false
+
+                  if (link === 'Contact Us') {
+                    href = 'mailto:support@proso.ai'
+                  } else if (link === 'Corporations & Enterprise') {
+                    href = '/solutions/enterprise'
+                    isRouterLink = true
+                  }
+
                   return (
                     <li key={link}>
-                      <a href={href} className="footer__link">{link}</a>
+                      {isRouterLink ? (
+                        <Link to={href} className="footer__link">{link}</Link>
+                      ) : (
+                        <a href={href} className="footer__link">{link}</a>
+                      )}
                     </li>
                   )
                 })}
