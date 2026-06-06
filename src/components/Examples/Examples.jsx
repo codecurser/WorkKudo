@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Examples.css'
 
 // Import Backdrop Images
@@ -79,7 +80,7 @@ function getEmojiPool(id) {
   }
 }
 
-function ExampleCard({ ex, idx, cardRef }) {
+function ExampleCard({ ex, idx, cardRef, onClick }) {
   const [emojis, setEmojis] = useState([])
 
   const handleMouseEnter = () => {
@@ -104,9 +105,10 @@ function ExampleCard({ ex, idx, cardRef }) {
     <div 
       ref={cardRef}
       className="examples__card"
-      style={{ transitionDelay: `${(idx % 3) * 120}ms` }}
+      style={{ transitionDelay: `${(idx % 3) * 120}ms`, cursor: 'pointer' }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={() => onClick(ex.id)}
     >
       {/* Card Header Bar */}
       <div 
@@ -157,6 +159,7 @@ function ExampleCard({ ex, idx, cardRef }) {
 
 export default function Examples() {
   const cardRefs = useRef([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -195,6 +198,7 @@ export default function Examples() {
               ex={ex} 
               idx={idx} 
               cardRef={(el) => (cardRefs.current[idx] = el)} 
+              onClick={(id) => ['birthday', 'farewell', 'milestone', 'getwell', 'retirement', 'promotion'].includes(id) ? navigate(`/examples/${id}`) : alert('Page coming soon!')}
             />
           ))}
         </div>

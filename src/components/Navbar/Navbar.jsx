@@ -383,7 +383,7 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
-  const isOccasionPage = location.pathname === '/send-off' || location.pathname === '/birthday' || location.pathname === '/appreciation'
+  const isOccasionPage = location.pathname === '/send-off' || location.pathname === '/birthday' || location.pathname === '/appreciation' || location.pathname.startsWith('/examples/')
   const closeTimer = useRef(null)
 
   useEffect(() => {

@@ -1,0 +1,188 @@
+.promotion-board {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding-top: 80px; /* Space for navbar */
+  padding-bottom: 60px;
+  font-family: 'Inter', sans-serif;
+}
+
+.promotion-board__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 1;
+}
+
+.promotion-board__header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+}
+
+.promotion-board__header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.promotion-board__header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.promotion-board__back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.promotion-board__back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-4px);
+}
+
+.promotion-board__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.promotion-board__grid {
+  column-count: 3;
+  column-gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .promotion-board__grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .promotion-board__grid {
+    column-count: 1;
+  }
+}
+
+.promotion-board__card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  transform-origin: center bottom;
+}
+
+.promotion-board__card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 6rem;
+  color: rgba(0, 0, 0, 0.04);
+  font-family: serif;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.promotion-board__card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.promotion-board__card-image {
+  position: relative;
+  z-index: 1;
+}
+
+.promotion-board__card-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.promotion-board__card-content {
+  padding: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.promotion-board__message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2d3748;
+  margin-bottom: 24px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.promotion-board__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 16px;
+}
+
+.promotion-board__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  /* Using a bright pink/magenta gradient for Promotion */
+  background: linear-gradient(135deg, #EC4899, #BE185D);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(236, 72, 153, 0.3);
+  text-transform: uppercase;
+}
+
+.promotion-board__name {
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.promotion-board__card--large .promotion-board__message {
+  font-size: 1.25rem;
+  line-height: 1.7;
+}
+
+.promotion-board__card--small .promotion-board__message {
+  font-size: 1rem;
+}
