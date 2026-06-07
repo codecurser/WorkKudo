@@ -2,6 +2,31 @@ import React, { useEffect, useRef } from 'react';
 import './Enterprise.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
+import FAQ from '../../components/FAQ/FAQ';
+
+const enterpriseFaq = [
+  {
+    q: "How does SSO integration work?",
+    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
+  },
+  {
+    q: "Is WorkKudo SOC2 compliant?",
+    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+  },
+  {
+    q: "Can we restrict signing to internal employees only?",
+    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+  },
+  {
+    q: "What support SLA does the Enterprise plan offer?",
+    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+  },
+  {
+    q: "Can we integrate with our HRIS system?",
+    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+  }
+];
 
 export default function Enterprise() {
   const sectionRef = useRef(null);
@@ -225,6 +250,16 @@ export default function Enterprise() {
           </div>
         </div>
       </section>
+
+      {/* ── Celebration Grid ── */}
+      <CelebrationGrid themeClass="navy" />
+
+      {/* ── FAQ Section ── */}
+      <FAQ 
+        title="Enterprise FAQs" 
+        subtitle="Everything you need to know about WorkKudo for Enterprise." 
+        data={enterpriseFaq}
+      />
 
       {/* ── Final CTA ── */}
       <section className="ep-cta">

@@ -2,7 +2,31 @@ import React, { useRef, useState, useEffect } from 'react';
 import './Gifting.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
+
+const giftingFaq = [
+  {
+    q: "How do employees receive their gifts?",
+    a: "When a board is completed, the recipient receives a secure link via email. They can view their group card and select their preferred gift from our curated business catalog."
+  },
+  {
+    q: "Do you handle international shipping and taxes?",
+    a: "Yes! We support fulfillment in over 150 countries. We handle all global customs, local duties, shipping logistics, and tax calculations automatically."
+  },
+  {
+    q: "Can employees choose their own gifts?",
+    a: "Absolutely. We offer choice-based gifting where you set a budget (e.g., $50) and employees choose from a collection of premium physical products or digital gift cards matching that tier."
+  },
+  {
+    q: "What types of gift cards are available?",
+    a: "We offer over 2,000 top brand electronic cards globally, including Amazon, Visa, Starbucks, Uber, and local retail giants in each country."
+  },
+  {
+    q: "Can we brand the gifting experience?",
+    a: "Yes, you can customize the email invitation, redemption page, eCards, and packaging inserts with your logo, corporate colors, and custom brand messages."
+  }
+];
 import WorkkudoCard from '../../components/WorkkudoCard/WorkkudoCard';
 import physicalGiftsImg from '../../assets/physical_gifts.png';
 import giftCardsImg from '../../assets/gift_cards.png';
@@ -193,10 +217,14 @@ export default function Gifting() {
         </div>
       </section>
 
+      {/* ── Celebration Grid ── */}
+      <CelebrationGrid themeClass="dark" />
+
       {/* ── FAQ Section ── */}
       <FAQ 
         title="Gifting FAQs" 
         subtitle="Everything you need to know about corporate gifting." 
+        data={giftingFaq}
       />
 
       <Footer />
