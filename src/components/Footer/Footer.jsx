@@ -9,11 +9,9 @@ const columns = [
     heading: 'Build',
     links: [
       'Group Cards',
-      'eCards & Digital Cards',
       'Appreciation Walls',
       'Photo Mosaics',
       'Memory Reels',
-      'Reward Vouchers',
       'Printed Keepsakes',
     ],
   },

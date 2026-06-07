@@ -374,7 +374,7 @@ function MobileAccordion({ label, children }) {
 }
 
 /* ─── Main Navbar ──────────────────────────────────────────── */
-const NAV_ITEMS      = ['Build', 'Solutions', 'Business', 'Community', 'Learn', 'Pricing']
+const NAV_ITEMS      = ['Build', 'Solutions', 'Gifting', 'Business', 'Community', 'Learn', 'Pricing']
 const MEGA_ITEMS     = ['Build', 'Solutions']
 const DROPDOWN_ITEMS = ['Community', 'Learn']
 
@@ -435,6 +435,10 @@ export default function Navbar() {
                 {item === 'Pricing' ? (
                   <Link to="/pricing" className="nav-link">
                     Pricing
+                  </Link>
+                ) : item === 'Gifting' ? (
+                  <Link to="/gifting" className="nav-link">
+                    Gifting
                   </Link>
                 ) : (
                   <a href={`#${item.toLowerCase()}`} className="nav-link"
