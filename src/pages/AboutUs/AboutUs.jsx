@@ -3,7 +3,25 @@ import './AboutUs.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 
-/* ── Intersection Observer Hook ── */
+/* ── WorkKudo SVG Logo Component ── */
+function WorkKudoLogo({ className = '', size = 56 }) {
+  return (
+    <svg
+      className={`wk-logo-svg ${className}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 192 192"
+      width={size}
+      height={size}
+      aria-label="WorkKudo Logo"
+    >
+      <rect x="9.75" y="9.75" width="60" height="172.5" rx="6" fill="#f97316" className="wk-rect-1" />
+      <rect x="122.25" y="9.75" width="60" height="93" rx="6" fill="#f97316" className="wk-rect-2" />
+      <rect x="76.078" y="109.66" width="106.172" height="72.59" rx="6" fill="#f97316" className="wk-rect-3" />
+    </svg>
+  );
+}
+
+/* ── Hooks ── */
 function useReveal(threshold = 0.15) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -12,7 +30,7 @@ function useReveal(threshold = 0.15) {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.unobserve(el); } },
-      { threshold }
+      { threshold, rootMargin: '0px 0px -50px 0px' }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -20,251 +38,280 @@ function useReveal(threshold = 0.15) {
   return [ref, visible];
 }
 
-/* ── Animated Counter ── */
-function Counter({ end, suffix = '', duration = 2000 }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const started = useRef(false);
-
+function useMouseParallax(strength = 30) {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !started.current) {
-        started.current = true;
-        const start = performance.now();
-        const animate = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-          setCount(Math.floor(eased * end));
-          if (progress < 1) requestAnimationFrame(animate);
-        };
-        requestAnimationFrame(animate);
-      }
-    }, { threshold: 0.5 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [end, duration]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
+    const handle = (e) => {
+      setPos({
+        x: (e.clientX / window.innerWidth - 0.5) * strength,
+        y: (e.clientY / window.innerHeight - 0.5) * strength,
+      });
+    };
+    window.addEventListener('mousemove', handle, { passive: true });
+    return () => window.removeEventListener('mousemove', handle);
+  }, [strength]);
+  return pos;
 }
 
-/* ── Feature Data ── */
+/* ── Components ── */
+function Marquee({ children, speed = 40, direction = 'left' }) {
+  return (
+    <div className={`au-marquee au-marquee--${direction}`}>
+      <div className="au-marquee__track" style={{ animationDuration: `${speed}s` }}>
+        <div className="au-marquee__content">{children}</div>
+        <div className="au-marquee__content" aria-hidden="true">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function AnimatedCard({ children, className = '', delay = 0, visible = true }) {
+  return (
+    <div 
+      className={`au-anim-card ${className} ${visible ? 'is-visible' : ''}`} 
+      style={{ '--delay': `${delay}ms` }}
+    >
+      <div className="au-anim-card__inner">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/* ── Data ── */
 const features = [
-  { num: '01', title: 'Create digital boards', desc: 'Create beautiful digital appreciation boards tailored to any event or milestone.', icon: '🎨' },
-  { num: '02', title: 'Collect team messages', desc: 'Easily gather messages, photos, and video attachments from teammates, managers, and friends.', icon: '💬' },
-  { num: '03', title: 'Celebrate milestones', desc: 'Commemorate promotions, careers, birthdays, recoveries, and significant work anniversaries.', icon: '🏆' },
-  { num: '04', title: 'Public recognition', desc: 'Acknowledge and highlight employees\' contributions publicly across the organization.', icon: '📢' },
-  { num: '05', title: 'Culture alignment', desc: 'Strengthen company culture and bond remote and hybrid teams together across borders.', icon: '🌍' },
-  { num: '06', title: 'Preserve memories', desc: 'Keep a digital memory wall that employees can return to and cherish forever.', icon: '💎' },
+  { icon: '🎨', num: '01', title: 'Create Digital Boards', desc: 'Beautiful appreciation boards tailored to any milestone, celebration, or message.' },
+  { icon: '💬', num: '02', title: 'Collect Team Messages', desc: 'Gather heartfelt messages, photos, and videos from everyone on the team.' },
+  { icon: '🏆', num: '03', title: 'Celebrate Milestones', desc: 'Birthdays, work anniversaries, promotions, farewells — every moment matters.' },
+  { icon: '📢', num: '04', title: 'Public Recognition', desc: 'Shine a spotlight on outstanding contributions across your organization.' },
+  { icon: '🌍', num: '05', title: 'Culture Alignment', desc: 'Bond remote and hybrid teams across borders through shared celebration.' },
+  { icon: '💎', num: '06', title: 'Preserve Memories', desc: 'Build a digital memory archive employees can cherish for years to come.' },
 ];
 
 const benefits = [
-  { icon: '📈', title: 'Improve employee engagement', color: '#3b82f6' },
-  { icon: '🔒', title: 'Increase retention and loyalty', color: '#10b981' },
-  { icon: '🤝', title: 'Strengthen team relationships', color: '#8b5cf6' },
-  { icon: '✨', title: 'Build positive workplace culture', color: '#f59e0b' },
-  { icon: '💚', title: 'Support employee wellbeing', color: '#06b6d4' },
-  { icon: '🚀', title: 'Encourage collaboration & performance', color: '#ec4899' },
+  { icon: '📈', title: 'Improve Employee Engagement', color: '#f97316' },
+  { icon: '🔒', title: 'Increase Retention & Loyalty', color: '#3b82f6' },
+  { icon: '🤝', title: 'Strengthen Team Relationships', color: '#10b981' },
+  { icon: '✨', title: 'Build Positive Workplace Culture', color: '#8b5cf6' },
+  { icon: '💚', title: 'Support Employee Wellbeing', color: '#f59e0b' },
+  { icon: '🚀', title: 'Encourage Collaboration', color: '#ec4899' },
 ];
 
-const stats = [
-  { value: 10000, suffix: '+', label: 'Boards Created' },
-  { value: 500, suffix: '+', label: 'Organizations' },
-  { value: 150, suffix: '+', label: 'Countries Reached' },
-  { value: 98, suffix: '%', label: 'Satisfaction Rate' },
+const teams = [
+  { icon: '🏢', label: 'Enterprise' },
+  { icon: '🚀', label: 'Startups' },
+  { icon: '🏥', label: 'Healthcare' },
+  { icon: '🌐', label: 'Remote' },
+  { icon: '💼', label: 'HR Teams' },
+  { icon: '🎓', label: 'Education' },
+  { icon: '🤝', label: 'Non-Profits' },
+  { icon: '🛒', label: 'Retail' },
+  { icon: '💻', label: 'Tech Agencies' },
 ];
 
+/* ── Main Component ── */
 export default function AboutUs() {
-  const [heroRef, heroVisible] = useReveal(0.1);
-  const [originRef, originVisible] = useReveal();
-  const [missionRef, missionVisible] = useReveal();
+  const mouse = useMouseParallax(40);
+  
+  const [heroRef, heroVisible] = useReveal(0.05);
+  const [storyRef, storyVisible] = useReveal(0.2);
   const [featRef, featVisible] = useReveal(0.1);
-  const [teamsRef, teamsVisible] = useReveal();
+  const [teamsRef, teamsVisible] = useReveal(0.2);
   const [whyRef, whyVisible] = useReveal(0.1);
-  const [ctaRef, ctaVisible] = useReveal();
-  const [statsRef, statsVisible] = useReveal(0.2);
+  const [ctaRef, ctaVisible] = useReveal(0.2);
 
   return (
-    <div className="about-us-page">
+    <div className="au-page">
       <Navbar />
 
-      {/* ── Hero Section ── */}
-      <section className="about-hero" ref={heroRef}>
-        <div className="about-hero__bg-orbs">
-          <div className="about-orb about-orb--1"></div>
-          <div className="about-orb about-orb--2"></div>
-          <div className="about-orb about-orb--3"></div>
-        </div>
-        <div className={`about-container about-hero__inner ${heroVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <span className="about-badge">About WorkKudo</span>
-          <h1 className="about-hero__title">
-            Making Appreciation<br />
-            <span className="about-hero__gradient">More Meaningful</span> at Work
-          </h1>
-          <p className="about-hero__lead">
-            At WorkKudo, we believe that recognition shouldn't be reserved for annual reviews, company-wide meetings, or special occasions. The most impactful appreciation happens in everyday moments—when teammates celebrate wins, acknowledge effort, and show gratitude for the people around them.
-          </p>
-          <div className="about-hero__actions">
-            <a href="/#build" className="about-btn about-btn--primary">
-              Start a Board
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="/pricing" className="about-btn about-btn--secondary">View Pricing</a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats Bar ── */}
-      <section className="about-stats" ref={statsRef}>
-        <div className={`about-container about-stats__inner ${statsVisible ? 'au-reveal' : 'au-hidden'}`}>
-          {stats.map((s, i) => (
-            <div className="about-stat" key={i} style={{ animationDelay: `${i * 100}ms` }}>
-              <span className="about-stat__value">
-                <Counter end={s.value} suffix={s.suffix} />
-              </span>
-              <span className="about-stat__label">{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Origin Section ── */}
-      <section className="about-section about-origin" ref={originRef}>
-        <div className={`about-container ${originVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-origin-content">
-            <div className="about-origin__icon">💡</div>
-            <h2 className="about-origin__title">Our Story</h2>
-            <p>
-              WorkKudo was created to help organizations build stronger workplace cultures through meaningful recognition experiences. Whether it's a birthday, work anniversary, promotion, farewell, retirement, recovery message, or simply a heartfelt thank-you, we make it easy for teams to come together and celebrate the people who make work better.
+      {/* ── HERO ── */}
+      <section className="au-hero" ref={heroRef}>
+        <div className="au-hero__bg-pattern" />
+        
+        {/* Parallax Floating Elements */}
+        <div className="au-floating au-floating--1" style={{ transform: `translate(${mouse.x * 0.8}px, ${mouse.y * 0.8}px)` }}></div>
+        <div className="au-floating au-floating--2" style={{ transform: `translate(${mouse.x * -1.2}px, ${mouse.y * -1.2}px)` }}></div>
+        
+        <div className="au-container au-hero__content">
+          <div className={`au-hero__text-box ${heroVisible ? 'au-reveal-dramatic' : 'au-hidden-dramatic'}`}>
+            <h1 className="au-hero__title">
+              Making Appreciation <br/>
+              <span className="au-text-gradient">Meaningful</span> At Work
+            </h1>
+            <p className="au-hero__lead">
+              Experience recognition like never before. We provide a highly engaging, elegant platform 
+              to celebrate milestones and bring your team's gratitude to the forefront.
             </p>
-            <p>No complicated setup. No lengthy onboarding. Just meaningful recognition made simple.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Mission & Vision ── */}
-      <section className="about-section about-mission-vision" ref={missionRef}>
-        <div className={`about-container ${missionVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-grid-2">
-            <div className="about-card about-mission-card">
-              <div className="about-card__accent about-card__accent--orange"></div>
-              <span className="card-icon">🎯</span>
-              <h2>Our Mission</h2>
-              <p className="highlight-text">Help every employee feel seen, appreciated, and valued.</p>
-              <p>
-                We believe recognition is one of the most powerful drivers of engagement, belonging, and team success. When people feel acknowledged for their contributions, they become more connected, motivated, and inspired to do their best work.
-              </p>
-            </div>
-
-            <div className="about-card about-vision-card">
-              <div className="about-card__accent about-card__accent--purple"></div>
-              <span className="card-icon">🔭</span>
-              <h2>Our Vision</h2>
-              <p>
-                We envision a future where every workplace prioritizes gratitude, celebrates achievements, and recognizes the people behind the success.
-              </p>
-              <p>
-                By making appreciation effortless and enjoyable, we're helping teams create cultures where employees feel connected, motivated, and proud to belong.
-              </p>
+            <div className="au-hero__actions">
+              <a href="/#build" className="au-btn au-btn--primary">Get Started</a>
+              <a href="/pricing" className="au-btn au-btn--outline">View Pricing</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── What We Do ── */}
-      <section className="about-section about-what-we-do" ref={featRef}>
-        <div className={`about-container ${featVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-section-header">
-            <span className="about-badge about-badge--navy">Platform</span>
-            <h2>What We Do</h2>
-            <p>WorkKudo provides collaborative recognition boards that allow teams to create personalized celebrations in minutes.</p>
+      {/* ── THE FOUNDATION ── */}
+      <section className="au-section au-foundation" ref={storyRef}>
+        <div className="au-container">
+          <div className="au-foundation-grid">
+            {/* Origin */}
+            <AnimatedCard visible={storyVisible} delay={0} className="au-foundation-card au-foundation-origin">
+              <div className="au-foundation-content">
+                <div className="au-foundation-icon">💡</div>
+                <h3 className="au-card-title">Our Origin</h3>
+                <p className="au-card-text">
+                  WorkKudo was created to help organizations build stronger workplace cultures through meaningful recognition experiences. Whether it's a birthday, work anniversary, promotion, farewell, retirement, recovery message, or simply a heartfelt thank-you, we make it easy for teams to come together and celebrate the people who make work better.
+                </p>
+                <p className="au-card-text au-text-bold" style={{ marginTop: '16px' }}>
+                  No complicated setup. No lengthy onboarding. Just meaningful recognition made simple.
+                </p>
+              </div>
+              <div className="au-foundation-visual">
+                <div className="au-story__logo-wrap">
+                  <WorkKudoLogo size={60} className="au-logo-anim" />
+                </div>
+              </div>
+            </AnimatedCard>
+
+            {/* Mission */}
+            <AnimatedCard visible={storyVisible} delay={100} className="au-foundation-card au-foundation-mission">
+              <div className="au-foundation-icon">
+                <WorkKudoLogo size={24} />
+              </div>
+              <h3 className="au-card-title">Our Mission</h3>
+              <div className="au-foundation-highlight">
+                Help every employee feel seen, appreciated, and valued.
+              </div>
+              <p className="au-card-text">
+                We believe recognition is one of the most powerful drivers of engagement,
+                belonging, and team success. When people feel acknowledged, they become
+                more connected, motivated, and inspired to do their best work.
+              </p>
+            </AnimatedCard>
+
+            {/* Vision */}
+            <AnimatedCard visible={storyVisible} delay={200} className="au-foundation-card au-foundation-vision">
+              <div className="au-foundation-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3 className="au-card-title">Our Vision</h3>
+              <p className="au-card-text">
+                A future where every workplace prioritizes gratitude, celebrates achievements,
+                and recognizes the people behind the success.
+              </p>
+              <p className="au-card-text" style={{ marginTop: '16px' }}>
+                By making appreciation effortless and enjoyable, we help teams create cultures
+                where employees feel connected, motivated, and proud to belong.
+              </p>
+            </AnimatedCard>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHAT WE DO ── */}
+      <section className="au-section au-features" ref={featRef}>
+        <div className="au-container">
+          <div className={`au-section-header ${featVisible ? 'au-reveal-up' : 'au-hidden-up'}`}>
+            <span className="au-badge">Platform Capabilities</span>
+            <h2 className="au-section-title">What We Do</h2>
+            <p className="au-section-lead">
+              WorkKudo provides collaborative recognition boards that allow teams to create personalized celebrations in minutes.
+            </p>
           </div>
 
-          <div className="about-features-grid">
+          <div className="au-feat-grid">
             {features.map((f, i) => (
-              <div className="about-feature-card" key={i} style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="about-feature-card__top">
-                  <span className="feat-icon">{f.icon}</span>
-                  <span className="feat-number">{f.num}</span>
+              <AnimatedCard visible={featVisible} delay={i * 100} className="au-feat-card" key={i}>
+                <div className="au-feat-header">
+                  <span className="au-feat-icon">{f.icon}</span>
+                  <span className="au-feat-num">{f.num}</span>
                 </div>
-                <h3>{f.title}</h3>
-                <p>{f.desc}</p>
-              </div>
+                <h3 className="au-card-title">{f.title}</h3>
+                <p className="au-card-text">{f.desc}</p>
+              </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Built for Modern Teams ── */}
-      <section className="about-section about-modern-teams" ref={teamsRef}>
-        <div className={`about-container ${teamsVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-teams-box">
-            <div className="about-teams-box__glow"></div>
-            <span className="about-badge">For Teams of All Sizes</span>
-            <h2>Built for Modern Teams</h2>
-            <p>
-              Today's workplaces are more distributed than ever. Teams collaborate across cities, countries, and time zones, making it harder to create shared moments of appreciation.
+      {/* ── BUILT FOR TEAMS (MARQUEE) ── */}
+      <section className="au-section au-teams" ref={teamsRef}>
+        <div className="au-container">
+          <div className={`au-teams-inner ${teamsVisible ? 'au-reveal-up' : 'au-hidden-up'}`}>
+            <span className="au-badge">Universal Appeal</span>
+            <h2 className="au-section-title">Built for Modern Teams</h2>
+            <p className="au-section-lead">
+              Today's workplaces are more distributed than ever. Whether you're a startup with
+              ten employees or a global enterprise with thousands, WorkKudo makes recognition
+              accessible, engaging, and memorable across every timezone.
             </p>
-            <p>
-              WorkKudo bridges that gap by giving teams a dedicated space to celebrate together, regardless of where they work. Whether you're a startup with ten employees or a global organization with thousands, WorkKudo helps make recognition accessible, engaging, and memorable.
-            </p>
-            <div className="about-teams-icons">
-              <div className="about-teams-icon">🏢<span>Enterprise</span></div>
-              <div className="about-teams-icon">🚀<span>Startups</span></div>
-              <div className="about-teams-icon">🏥<span>Healthcare</span></div>
-              <div className="about-teams-icon">🌐<span>Remote</span></div>
-              <div className="about-teams-icon">💼<span>HR Teams</span></div>
-            </div>
           </div>
+        </div>
+        
+        <div className={`au-teams-marquee-wrap ${teamsVisible ? 'au-reveal-scale' : 'au-hidden-scale'}`} style={{ '--delay': '200ms' }}>
+          <Marquee speed={35} direction="left">
+            {teams.map((t, i) => (
+              <div className="au-team-chip" key={i}>
+                <span className="au-team-chip__icon">{t.icon}</span>
+                <span className="au-team-chip__label">{t.label}</span>
+              </div>
+            ))}
+          </Marquee>
+          
+          <Marquee speed={40} direction="right">
+            {[...teams].reverse().map((t, i) => (
+              <div className="au-team-chip" key={i}>
+                <span className="au-team-chip__icon">{t.icon}</span>
+                <span className="au-team-chip__label">{t.label}</span>
+              </div>
+            ))}
+          </Marquee>
         </div>
       </section>
 
-      {/* ── Why Recognition Matters ── */}
-      <section className="about-section about-why-matters" ref={whyRef}>
-        <div className={`about-container ${whyVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-section-header">
-            <span className="about-badge">Research-Backed</span>
-            <h2>Why Recognition Matters</h2>
-            <p>Research consistently shows that employees who feel recognized are more engaged, productive, and likely to stay with their organizations.</p>
+      {/* ── WHY RECOGNITION MATTERS ── */}
+      <section className="au-section au-why" ref={whyRef}>
+        <div className="au-container">
+          <div className={`au-section-header ${whyVisible ? 'au-reveal-up' : 'au-hidden-up'}`}>
+            <span className="au-badge">Research-Backed</span>
+            <h2 className="au-section-title">Why Recognition Matters</h2>
+            <p className="au-section-lead">
+              Employees who feel recognized are more engaged, productive, and likely to stay.
+            </p>
           </div>
 
-          <div className="about-benefits-grid">
+          <div className="au-benefits-grid">
             {benefits.map((b, i) => (
-              <div className="about-benefit-item" key={i} style={{ animationDelay: `${i * 80}ms`, '--benefit-color': b.color }}>
-                <div className="benefit-icon-wrap">
-                  <span className="benefit-icon">{b.icon}</span>
+              <AnimatedCard visible={whyVisible} delay={i * 100} className="au-benefit" key={i}>
+                <div className="au-benefit__icon" style={{ color: b.color, backgroundColor: `${b.color}15`, borderColor: `${b.color}30` }}>
+                  {b.icon}
                 </div>
-                <h4>{b.title}</h4>
-              </div>
+                <h4 className="au-card-title au-benefit__title">{b.title}</h4>
+              </AnimatedCard>
             ))}
           </div>
 
-          <p className="about-commitment">
+          <p className={`au-commitment ${whyVisible ? 'au-reveal-up' : 'au-hidden-up'}`} style={{ '--delay': '600ms' }}>
             At WorkKudo, we're committed to helping organizations unlock these benefits through thoughtful, authentic appreciation.
           </p>
         </div>
       </section>
 
-      {/* ── Join the Movement ── */}
-      <section className="about-section about-cta" ref={ctaRef}>
-        <div className="about-cta__bg-pattern"></div>
-        <div className={`about-container ${ctaVisible ? 'au-reveal' : 'au-hidden'}`}>
-          <div className="about-cta-content">
-            <h2>Join the Movement</h2>
-            <p>
-              Thousands of meaningful moments happen every day inside organizations. WorkKudo exists to ensure those moments never go unnoticed. Whether you're celebrating a birthday, recognizing a major milestone, welcoming a new team member, or saying farewell to a colleague, WorkKudo helps turn appreciation into lasting memories.
-            </p>
-            <blockquote className="cta-quote">
-              "Because great workplaces are built on great people—and great people deserve recognition."
-            </blockquote>
-            <div className="cta-actions">
-              <a href="/#build" className="about-btn about-btn--primary about-btn--lg">
-                Start a Board Today
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
+      {/* ── CTA SECTION ── */}
+      <section className="au-section au-cta" ref={ctaRef}>
+        <div className="au-container">
+          <AnimatedCard visible={ctaVisible} className="au-cta-box">
+            <div className="au-cta-box__content">
+              <h2 className="au-cta__title">Join the Movement</h2>
+              <p className="au-cta__text">
+                Thousands of meaningful moments happen inside organizations every day. WorkKudo
+                ensures those moments are never unnoticed — turning appreciation into lasting memories.
+              </p>
+              <div className="au-cta__actions">
+                <a href="/#build" className="au-btn au-btn--primary">Start a Board Today</a>
+              </div>
             </div>
-          </div>
+          </AnimatedCard>
         </div>
       </section>
 
