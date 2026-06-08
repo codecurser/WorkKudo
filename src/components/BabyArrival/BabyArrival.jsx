@@ -30,7 +30,7 @@ export default function BabyArrival() {
       <section className="ba-hero">
         <div className="ba-hero__bg" ref={bgRef} aria-hidden="true" />
         <div className="ba-hero__overlay" aria-hidden="true" />
-        
+
         {/* Floating elements */}
         <div className="ba-floaters">
           <div className="ba-float ba-float--1" />
@@ -42,31 +42,31 @@ export default function BabyArrival() {
 
         <div className="ba-hero__container container">
           <div className={`ba-hero-left ${isVisible ? 'ba-hero-left--visible' : ''}`}>
-            <div className="ba-hero-badge">
+            {/* <div className="ba-hero-badge">
               <span className="ba-hero-badge-icon">🍼</span>
               Welcome Baby
-            </div>
-            
+            </div> */}
+
             <h1 className="ba-hero-heading">
               Celebrate the <br />
               <span className="ba-hero-heading-accent">Newest Arrival</span>
             </h1>
-            
+
             <p className="ba-hero-sub">
-              Shower expecting parents with love, advice, and sweet messages. 
+              Shower expecting parents with love, advice, and sweet messages.
               Create a collaborative digital baby book that the whole team can sign, no matter where they are.
             </p>
-            
+
             <div className="ba-hero-ctas">
               <a href="#" className="ba-cta-primary">
                 Create a Baby Board
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a href="#" className="ba-cta-ghost">View an Example</a>
             </div>
-            
+
             <div className="ba-hero-trust">
               ★ The sweetest way for teams to say congratulations
             </div>

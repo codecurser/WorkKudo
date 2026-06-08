@@ -30,7 +30,7 @@ export default function Onboarding() {
       <section className="ob-hero">
         <div className="ob-hero__bg" ref={bgRef} aria-hidden="true" />
         <div className="ob-hero__overlay" aria-hidden="true" />
-        
+
         {/* Floating elements */}
         <div className="ob-floaters">
           <div className="ob-float ob-float--1" />
@@ -42,30 +42,30 @@ export default function Onboarding() {
 
         <div className="ob-hero__container container">
           <div className={`ob-hero-left ${isVisible ? 'ob-hero-left--visible' : ''}`}>
-            <div className="ob-hero-badge">
+            {/* <div className="ob-hero-badge">
               <span className="ob-hero-badge-icon">👋</span>
               Team Welcome
-            </div>
-            
+            </div> */}
+
             <h1 className="ob-hero-heading">
               Give new hires a <br />
               <span className="ob-hero-heading-accent">Warm Welcome</span>
             </h1>
-            
+
             <p className="ob-hero-sub">
               Make their first day unforgettable. Create a digital welcome board filled with introductions, tips, and friendly waves from the entire team.
             </p>
-            
+
             <div className="ob-hero-ctas">
               <a href="#" className="ob-cta-primary">
                 Create a Welcome Board
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a href="#" className="ob-cta-ghost">View an Example</a>
             </div>
-            
+
             <div className="ob-hero-trust">
               ★ The best way to say "Welcome aboard" remotely
             </div>
