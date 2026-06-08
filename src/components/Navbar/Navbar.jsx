@@ -93,14 +93,14 @@ const createTabs = [
     items: recognitionCards,
     type: 'cards',
   },
-  {
-    id: 'extras',
-    label: 'Add-ons',
-    emoji: '✨',
-    tagline: 'More ways to show appreciation',
-    items: extras,
-    type: 'grid',
-  },
+  // {
+  //   id: 'extras',
+  //   label: 'Add-ons',
+  //   emoji: '✨',
+  //   tagline: 'More ways to show appreciation',
+  //   items: extras,
+  //   type: 'grid',
+  // },
 ]
 
 const platformFeatures = [

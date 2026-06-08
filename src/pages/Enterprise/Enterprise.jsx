@@ -38,56 +38,56 @@ export default function Enterprise() {
     const handleScroll = () => {
       rafId = requestAnimationFrame(() => {
         if (!sectionRef.current || !trackRef.current || !bgRef.current) return;
-        
+
         const rect = sectionRef.current.getBoundingClientRect();
         // Calculate how far down we are in the tall section
         // Subtract Navbar height (80px) to start sticky effect accurately
-        const top = rect.top - 80; 
+        const top = rect.top - 80;
         const height = rect.height - window.innerHeight;
-        
+
         // Progress from 0 to 1
         let p = -top / height;
         if (p < 0) p = 0;
         if (p > 1) p = 1;
-        
+
         // Calculate max horizontal translation
         // Total track width minus viewport width
         const maxTranslate = trackRef.current.scrollWidth - window.innerWidth;
         trackRef.current.style.transform = `translateX(-${p * maxTranslate}px)`;
-        
+
         // Accelerate the background transition so it becomes fully dark by the time the second card appears
-        let bgP = p * 2.5; 
+        let bgP = p * 2.5;
         if (bgP > 1) bgP = 1;
 
         // Color transition: White (#ffffff) to Dark Blue (#1A2B4A)
         const r = Math.round(255 - bgP * (255 - 26));
         const g = Math.round(255 - bgP * (255 - 43));
         const b = Math.round(255 - bgP * (255 - 74));
-        
+
         bgRef.current.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        
+
         // Text color inversion threshold based on the accelerated background
         const isDark = bgP > 0.6;
         bgRef.current.style.color = isDark ? 'white' : '#1e293b';
-        
+
         const title = bgRef.current.querySelector('.ep-section-header--sticky h2');
         if (title) title.style.color = isDark ? 'white' : '#1A2B4A';
 
         const subtitle = bgRef.current.querySelector('.ep-section-header--sticky p');
         if (subtitle) subtitle.style.color = isDark ? '#cbd5e1' : '#64748b';
-        
+
         // Explicitly enforce solid white cards and dark text to prevent HMR ghost styles
         const cards = bgRef.current.querySelectorAll('.ep-feature-card');
         cards.forEach(card => {
-           card.style.backgroundColor = 'white';
-           card.style.boxShadow = isDark ? '0 20px 40px rgba(0, 0, 0, 0.4)' : '0 10px 30px rgba(0, 0, 0, 0.05)';
-           card.style.borderColor = isDark ? 'transparent' : '#e2e8f0';
-           
-           const h3 = card.querySelector('h3');
-           if (h3) h3.style.color = '#0f172a';
-           
-           const cardP = card.querySelector('p');
-           if (cardP) cardP.style.color = '#64748b';
+          card.style.backgroundColor = 'white';
+          card.style.boxShadow = isDark ? '0 20px 40px rgba(0, 0, 0, 0.4)' : '0 10px 30px rgba(0, 0, 0, 0.05)';
+          card.style.borderColor = isDark ? 'transparent' : '#e2e8f0';
+
+          const h3 = card.querySelector('h3');
+          if (h3) h3.style.color = '#0f172a';
+
+          const cardP = card.querySelector('p');
+          if (cardP) cardP.style.color = '#64748b';
         });
       });
     };
@@ -95,7 +95,7 @@ export default function Enterprise() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     // Trigger once on mount to set initial styles
     handleScroll();
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(rafId);
@@ -105,13 +105,12 @@ export default function Enterprise() {
   return (
     <div className="enterprise-page">
       <Navbar />
-      
+
       {/* ── Hero Section ── */}
       <section className="ep-hero">
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Enterprise Solutions</div>
             <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
             <p className="ep-hero__subtitle">
               Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
@@ -128,9 +127,9 @@ export default function Enterprise() {
                 <span className="ep-dot yellow"></span>
                 <span className="ep-dot green"></span>
               </div>
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Enterprise Analytics Dashboard" 
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Enterprise Analytics Dashboard"
                 className="ep-hero__img"
               />
             </div>
@@ -142,14 +141,14 @@ export default function Enterprise() {
       <section ref={sectionRef} className="ep-horizontal-wrapper">
         <div ref={bgRef} className="ep-sticky-container">
           <div className="ep-sticky-content">
-            
+
             <div className="ep-container ep-section-header ep-section-header--sticky">
               <h2>Enterprise-Grade Infrastructure</h2>
               <p>Designed for absolute security, compliance, and total administrative control.</p>
             </div>
-            
+
             <div className="ep-horizontal-track" ref={trackRef}>
-              
+
               <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -250,9 +249,9 @@ export default function Enterprise() {
       <CelebrationGrid themeClass="navy" />
 
       {/* ── FAQ Section ── */}
-      <FAQ 
-        title="Enterprise FAQs" 
-        subtitle="Everything you need to know about WorkKudo for Enterprise." 
+      <FAQ
+        title="Enterprise FAQs"
+        subtitle="Everything you need to know about WorkKudo for Enterprise."
         data={enterpriseFaq}
       />
 
