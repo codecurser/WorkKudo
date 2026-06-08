@@ -11,6 +11,7 @@ import {
 import './Programs.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import FAQ from '../../components/FAQ/FAQ';
 
 /* ─────────────────────────────────────────────
    SHARED VARIANTS
@@ -79,10 +80,6 @@ function HeroSection() {
       <div className="pg-container pg-hero-inner">
         {/* LEFT — Text */}
         <div className="pg-hero-content">
-          <motion.span className="pg-badge" variants={fadeUp} initial="hidden" animate="visible" custom={0}>
-            <span className="pg-badge-dot" />📅 Programs &amp; Drives
-          </motion.span>
-
           <motion.h1 className="pg-hero-title" variants={fadeUp} initial="hidden" animate="visible" custom={0.1}>
             Run Meaningful Programs That
             <span className="pg-gradient-text"> Bring Your People Together</span>
@@ -1090,43 +1087,15 @@ function FinalCTA() {
 
   return (
     <section className="pg-cta" ref={ref}>
-      <div className="pg-cta-bg" aria-hidden="true">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="pg-cta-particle"
-            style={{ left: `${5 + i * 8.5}%`, top: `${15 + (i % 4) * 18}%` }}
-            animate={{ y: [0, -24, 0], rotate: [0, 360], opacity: [0.2, 0.6, 0.2] }}
-            transition={{ duration: 4 + i % 3, repeat: Infinity, delay: i * 0.35 }}
-          />
-        ))}
-      </div>
-
       <div className="pg-container pg-cta-inner">
-        <motion.div
-          className="pg-cta-emojis"
-          variants={fadeIn}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          custom={0}
-        >
-          {['🎉', '🏆', '🌎', '💌', '⭐'].map((e, i) => (
-            <motion.span
-              key={i}
-              animate={{ y: [0, -12, 0], rotate: [-5, 5, -5] }}
-              transition={{ duration: 3 + i * 0.4, repeat: Infinity, delay: i * 0.4 }}
-            >{e}</motion.span>
-          ))}
-        </motion.div>
-
-        <motion.h2 className="pg-cta-title" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}>
+        <motion.h2 className="pg-cta-title" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0}>
           Build Programs Employees<br />Love Participating In
         </motion.h2>
-        <motion.p className="pg-cta-sub" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.2}>
+        <motion.p className="pg-cta-sub" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}>
           Bring people together through celebrations, recognition, and culture initiatives
           that strengthen workplace connections.
         </motion.p>
-        <motion.div className="pg-cta-actions" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.3}>
+        <motion.div className="pg-cta-actions" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.2}>
           <motion.button
             className="pg-btn pg-btn--cta-primary"
             whileHover={{ scale: 1.04, y: -2 }}
@@ -1143,61 +1112,6 @@ function FinalCTA() {
             whileTap={{ scale: 0.97 }}
           >Learn More</motion.button>
         </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   FAQ
-───────────────────────────────────────────── */
-const FAQ_DATA = [
-  { q: 'What kinds of programs can I create?', a: 'Celebration campaigns, peer recognition drives, culture & inclusion initiatives, onboarding welcome boards, and team appreciation walls — all in one place.' },
-  { q: 'Can I invite people outside my organization?', a: 'Yes. You control who gets invited. Share a private link with internal team members, departments, or select external collaborators.' },
-  { q: 'Is there a participant limit?', a: 'WorkKudo scales with your team. Whether you have 10 or 10,000 employees, everyone can contribute asynchronously from any location.' },
-  { q: 'Can programs be scheduled in advance?', a: 'Absolutely. Set a target delivery date and WorkKudo will remind contributors before the deadline, ensuring nothing slips.' },
-  { q: 'Do participants need a WorkKudo account?', a: 'No. Contributors can add messages, photos, and appreciation via a shareable link — no account required to participate.' },
-];
-
-function FAQSection() {
-  const [open, setOpen] = useState(null);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-
-  return (
-    <section className="pg-faq" ref={ref}>
-      <div className="pg-container pg-faq-inner">
-        <div className="pg-section-header">
-          <motion.h2 className="pg-section-title" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}>Common Questions</motion.h2>
-        </div>
-        <div className="pg-faq-list">
-          {FAQ_DATA.map((item, i) => (
-            <motion.div
-              key={i}
-              className={`pg-faq-item ${open === i ? 'open' : ''}`}
-              variants={fadeUp}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              custom={0.1 + i * 0.08}
-            >
-              <button className="pg-faq-q" onClick={() => setOpen(open === i ? null : i)}>
-                <span>{item.q}</span>
-                <motion.span animate={{ rotate: open === i ? 45 : 0 }} transition={{ duration: 0.25 }}>+</motion.span>
-              </button>
-              <AnimatePresence>
-                {open === i && (
-                  <motion.p
-                    className="pg-faq-a"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >{item.a}</motion.p>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -1221,7 +1135,17 @@ export default function Programs() {
       <WhySection />
       <ShowcaseSection />
       <WorkplaceCultureSection />
-      <FAQSection />
+      <FAQ
+        title="Programs & Drives — FAQs"
+        subtitle="Everything you need to know about running programs on WorkKudo."
+        data={[
+          { q: 'What kinds of programs can I create?', a: 'Celebration campaigns, peer recognition drives, culture & inclusion initiatives, onboarding welcome boards, and team appreciation walls — all in one place.' },
+          { q: 'Can I invite people outside my organization?', a: 'Yes. You control who gets invited. Share a private link with internal team members, departments, or select external collaborators.' },
+          { q: 'Is there a participant limit?', a: 'WorkKudo scales with your team. Whether you have 10 or 10,000 employees, everyone can contribute asynchronously from any location.' },
+          { q: 'Can programs be scheduled in advance?', a: 'Absolutely. Set a target delivery date and WorkKudo will remind contributors before the deadline, ensuring nothing slips.' },
+          { q: 'Do participants need a WorkKudo account?', a: 'No. Contributors can add messages, photos, and appreciation via a shareable link — no account required to participate.' },
+        ]}
+      />
       <FinalCTA />
       <Footer />
     </div>
