@@ -49,27 +49,11 @@ const events = [
 const recognitionCards = [
   {
     emoji: '⭐',
-    title: 'Key Milestones',
-    desc: 'Birthdays, promotions, retirements and milestones.',
-    bg: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
-    border: '#FED7AA',
-    accent: '#F97316',
-  },
-  {
-    emoji: '📣',
-    title: 'Connection & Values',
-    desc: 'Recognition programs and team engagement.',
+    title: 'Award Styles & Programs',
+    desc: 'Discover our unified solutions for celebrating key milestones, aligning company values, and sharing peer-to-peer kudos.',
     bg: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
     border: '#BFDBFE',
     accent: '#3B82F6',
-  },
-  {
-    emoji: '🤝',
-    title: 'Peer Kudos',
-    desc: 'Peer-to-peer recognition and appreciation.',
-    bg: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
-    border: '#BBF7D0',
-    accent: '#22C55E',
   },
 ]
 
@@ -269,15 +253,16 @@ function CreateMegaMenu({ onItemClick }) {
         {tab.type === 'cards' && (
           <div className="create-panel__cards">
             {tab.items.map((card, i) => (
-              <a
+              <Link
                 key={card.title}
-                href="#"
+                to="/award-style"
                 className="panel-card"
                 style={{
                   background: card.bg,
                   borderColor: card.border,
                   animationDelay: `${i * 60}ms`,
                 }}
+                onClick={onItemClick}
               >
                 <div className="panel-card__icon" style={{ background: card.border }}>
                   {card.emoji}
@@ -289,7 +274,7 @@ function CreateMegaMenu({ onItemClick }) {
                 <span className="panel-card__arrow" style={{ color: card.accent }}>
                   <ArrowIcon />
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         )}

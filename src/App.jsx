@@ -35,6 +35,7 @@ import PeopleCulture from './pages/PeopleCulture/PeopleCulture'
 import Healthcare from './pages/Healthcare/Healthcare'
 import Nonprofits from './pages/Nonprofits/Nonprofits'
 import Startups from './pages/Startups/Startups'
+import AwardStyle from './pages/AwardStyle/AwardStyle'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -235,6 +236,7 @@ export default function App() {
       <Route path="/solutions/healthcare" element={<Healthcare />} />
       <Route path="/solutions/nonprofits" element={<Nonprofits />} />
       <Route path="/solutions/startups" element={<Startups />} />
+      <Route path="/award-style" element={<AwardStyle />} />
       <Route path="/gifting" element={<Gifting />} />
     </Routes>
     </>
