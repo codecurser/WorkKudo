@@ -62,9 +62,9 @@ export default function WorkMilestone() {
           {/* Left */}
           <div className={`wm-hero-left ${mounted ? 'wm-hero-left--visible' : ''}`}>
 
-            <div className="wm-hero-badge">
+            {/* <div className="wm-hero-badge">
               🏆 Work Milestone
-            </div>
+            </div> */}
 
             <h1 className="wm-hero-heading">
               Celebrate every<br />
@@ -79,7 +79,7 @@ export default function WorkMilestone() {
               <a href="#create" className="wm-cta-primary">
                 Create a Milestone Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a href="#memory-map-shared" className="wm-cta-ghost">See how it works</a>

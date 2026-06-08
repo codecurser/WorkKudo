@@ -30,7 +30,7 @@ export default function Kudos() {
       <section className="ku-hero">
         <div className="ku-hero__bg" ref={bgRef} aria-hidden="true" />
         <div className="ku-hero__overlay" aria-hidden="true" />
-        
+
         {/* Floating elements */}
         <div className="ku-floaters">
           <div className="ku-float ku-float--1" />
@@ -42,30 +42,30 @@ export default function Kudos() {
 
         <div className="ku-hero__container container">
           <div className={`ku-hero-left ${isVisible ? 'ku-hero-left--visible' : ''}`}>
-            <div className="ku-hero-badge">
+            {/* <div className="ku-hero-badge">
               <span className="ku-hero-badge-icon">🔥</span>
               Project Success
             </div>
-            
+             */}
             <h1 className="ku-hero-heading">
               Celebrate the <br />
               <span className="ku-hero-heading-accent">Massive Wins</span>
             </h1>
-            
+
             <p className="ku-hero-sub">
               Did a team just crush a huge launch or hit a major goal? Give them the ultimate high-five with a collaborative digital kudos board.
             </p>
-            
+
             <div className="ku-hero-ctas">
               <a href="#" className="ku-cta-primary">
                 Create a Kudos Board
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a href="#" className="ku-cta-ghost">View an Example</a>
             </div>
-            
+
             <div className="ku-hero-trust">
               ★ Used by top teams to boost morale and celebrate wins
             </div>

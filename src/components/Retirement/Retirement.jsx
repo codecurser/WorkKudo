@@ -63,10 +63,6 @@ export default function Retirement() {
           <div className={`ret-hero-left ${mounted ? 'ret-hero-left--visible' : ''}`}>
 
             {/* Badge */}
-            <div className="ret-hero-badge">
-              🏖 Retirement
-            </div>
-
             <h1 className="ret-hero-heading">
               Honour a lifetime<br />
               <span className="ret-hero-heading-accent">of dedication.</span>
@@ -80,7 +76,7 @@ export default function Retirement() {
               <a href="#create" className="ret-cta-primary">
                 Create a Retirement Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
               <a href="#memory-map-shared" className="ret-cta-ghost">See how it works</a>
