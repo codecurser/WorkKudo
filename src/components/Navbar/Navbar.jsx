@@ -20,17 +20,30 @@ const occasions = [
 ]
 
 const events = [
-  { emoji: '🎤', label: 'Leadership Exit',       desc: 'Honour leadership transitions' },
-  { emoji: '🎊', label: 'Org Milestone',          desc: 'Mark company-wide milestones' },
-  { emoji: '🏅', label: 'Star Performer',         desc: 'Recognize top performers' },
-  { emoji: '🌎', label: 'Diversity & Belonging',  desc: 'Celebrate cultural diversity' },
-  { emoji: '👏', label: 'Team Recognition',       desc: 'Dedicated appreciation events' },
-  { emoji: '🕊', label: 'Digital Tribute',        desc: 'A place to share memories' },
-  { emoji: '🏢', label: 'Team Gathering',         desc: 'Team-level celebrations' },
-  { emoji: '❄',  label: 'Festive Party',          desc: 'Festive moments together' },
-  { emoji: '🎉', label: 'Squad Win',              desc: 'Celebrate team wins' },
-  { emoji: '🏆', label: 'Workplace Challenge',    desc: 'Friendly competitive spirit' },
-  { emoji: '🎯', label: 'Summits & Retreats',     desc: 'Events beyond the office' },
+  {
+    emoji: '🎉',
+    title: 'Celebrations',
+    desc: 'Org milestones, festive parties, team gatherings, and summits & retreats.',
+    bg: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
+    border: '#FED7AA',
+    accent: '#F97316',
+  },
+  {
+    emoji: '🏆',
+    title: 'Recognition',
+    desc: 'Star Performer awards, team recognition, squad wins, and workplace challenges.',
+    bg: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
+    border: '#BFDBFE',
+    accent: '#3B82F6',
+  },
+  {
+    emoji: '🌎',
+    title: 'Culture & Inclusion',
+    desc: 'Celebrate diversity, belonging, cultural events, and inclusive workplace initiatives.',
+    bg: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
+    border: '#BBF7D0',
+    accent: '#22C55E',
+  },
 ]
 
 const recognitionCards = [
@@ -86,7 +99,7 @@ const createTabs = [
     emoji: '📅',
     tagline: 'Company-wide celebrations & campaigns',
     items: events,
-    type: 'grid',
+    type: 'cards',
   },
   {
     id: 'recognition',
@@ -536,8 +549,8 @@ export default function Navbar() {
               )
             ))}
             <div className="mobile-section-title" style={{ marginTop: 14 }}>PROGRAMS</div>
-            {events.slice(0, 5).map(e => (
-              <a key={e.label} href="#" className="mobile-link">{e.emoji} {e.label}</a>
+            {events.map(e => (
+              <a key={e.title} href="#" className="mobile-link">{e.emoji} {e.title}</a>
             ))}
           </MobileAccordion>
 
