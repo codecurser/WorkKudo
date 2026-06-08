@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import './BenefitPage.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
@@ -27,7 +27,7 @@ const popIn = {
 
 /* ════════════════════════════════════
    HERO VARIANT 1 — Diagonal dark/light split
-   VirtualAppreciation
+   VirtualAppreciation  (unchanged)
 ════════════════════════════════════ */
 function HeroV1({ data }) {
   return (
@@ -87,7 +87,6 @@ function HeroV1({ data }) {
           <motion.div key={i} className={`bpg-hero-v1__stat bpg-hero-v1__stat--${i === 0 ? 'a' : 'b'}`}
             initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + i * 0.15, ...spring }}
-            style={{ animationDuration: `${4 + i}s` }}
           >
             <span className="bpg-hero-v1__stat-val">{s.val}</span>
             {s.label}
@@ -116,33 +115,29 @@ function HeroV1({ data }) {
 }
 
 /* ════════════════════════════════════
-   HERO VARIANT 2 — Centered + dashboard preview
+   HERO VARIANT 2 — Centered + wide browser mockup preview
    BoostTeamSpirit
 ════════════════════════════════════ */
 function HeroV2({ data }) {
   return (
     <section className="bpg-hero-v2">
+      {/* Background: white + soft radial orange glow + dot grid */}
       <div className="bpg-hero-v2__bg" />
-      <div className="bpg-hero-v2__inner">
-        <motion.div className="bpg-hero-v2__chips"
-          initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-        >
-          {data.heroChips?.map((c, i) => (
-            <span key={i} className={`bpg-hero-v2__chip ${i === 0 ? 'bpg-hero-v2__chip--active' : ''}`}>{c}</span>
-          ))}
-        </motion.div>
+      <div className="bpg-hero-v2__dots" />
 
-        <motion.div className="bpg-eyebrow bpg-eyebrow--orange" style={{ margin: '0 auto 18px' }}
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.05 }}
+      {/* Centered text block */}
+      <div className="bpg-hero-v2__inner">
+        <motion.div className="bpg-eyebrow bpg-eyebrow--orange bpg-hero-v2__eyebrow"
+          initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
         >
           <span className="bpg-eyebrow-dot" /> {data.icon} {data.category}
         </motion.div>
 
-        <motion.h1 className="bpg-h1 bpg-h1--dark" style={{ textAlign: 'center' }}
+        <motion.h1 className="bpg-h1 bpg-h1--dark bpg-hero-v2__h1"
           initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72, delay: 0.1, ease }}
         >{data.heroTitle}</motion.h1>
 
-        <motion.p className="bpg-lead bpg-lead--muted" style={{ textAlign: 'center', margin: '0 auto 32px' }}
+        <motion.p className="bpg-lead bpg-lead--muted bpg-hero-v2__lead"
           initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.2, ease }}
         >{data.heroDesc}</motion.p>
 
@@ -161,48 +156,63 @@ function HeroV2({ data }) {
         </motion.div>
       </div>
 
-      {/* Bottom preview */}
-      <motion.div className="bpg-hero-v2__preview"
-        initial={{ opacity: 0, y: 48 }} animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, delay: 0.4, ease }}
-        style={{ maxWidth: 900, margin: '0 auto' }}
-      >
-        <div className="bpg-hero-v2__preview-bar">
-          <span className="bpg-mac-dot" style={{ background: '#FF5F57' }} />
-          <span className="bpg-mac-dot" style={{ background: '#FEBC2E' }} />
-          <span className="bpg-mac-dot" style={{ background: '#28C840' }} />
-          <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--text-muted)', marginLeft: 8 }}>WorkKudo — {data.category}</span>
-        </div>
-        <div className="bpg-hero-v2__preview-body">
-          {data.previewNotes?.map((n, i) => (
-            <div key={i} className="bpg-hero-v2__preview-note" style={{ borderLeft: `3px solid ${n.color}` }}>
-              <div className="bpg-hero-v2__preview-note-head">
-                <div className="bpg-hero-v2__av" style={{ background: n.color }}>{n.name[0]}</div>
-                <div>
-                  <span className="bpg-hero-v2__av-name">{n.name}</span>
-                  <span className="bpg-hero-v2__av-role">{n.role}</span>
+      {/* Wide browser mockup preview — sits at the bottom */}
+      <div className="bpg-hero-v2__preview-wrap">
+        <motion.div className="bpg-hero-v2__preview"
+          initial={{ opacity: 0, y: 56 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.42, ease }}
+        >
+          <div className="bpg-hero-v2__preview-bar">
+            <span className="bpg-mac-dot" style={{ background: '#FF5F57' }} />
+            <span className="bpg-mac-dot" style={{ background: '#FEBC2E' }} />
+            <span className="bpg-mac-dot" style={{ background: '#28C840' }} />
+            <span className="bpg-hero-v2__bar-title">WorkKudo — {data.category}</span>
+            <span style={{ marginLeft: 'auto', fontSize: 10, fontWeight: 700, color: '#34D399', display: 'flex', alignItems: 'center', gap: 4 }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#34D399', display: 'inline-block' }} />
+              LIVE
+            </span>
+          </div>
+          <div className="bpg-hero-v2__preview-body">
+            {(data.previewNotes || []).map((n, i) => (
+              <motion.div key={i} className="bpg-hero-v2__preview-note"
+                style={{ borderLeft: `3px solid ${n.color}` }}
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + i * 0.1, ease }}
+              >
+                <div className="bpg-hero-v2__preview-note-head">
+                  <div className="bpg-hero-v2__av" style={{ background: n.color }}>{n.name[0]}</div>
+                  <div>
+                    <span className="bpg-hero-v2__av-name">{n.name}</span>
+                    <span className="bpg-hero-v2__av-role">{n.role}</span>
+                  </div>
                 </div>
-              </div>
-              <p className="bpg-hero-v2__note-text">{n.msg}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+                <p className="bpg-hero-v2__note-text">{n.msg}</p>
+                <div className="bpg-hero-v2__note-foot">
+                  <span className="bpg-hero-v2__note-like">❤ {2 + i * 3}</span>
+                  <span className="bpg-hero-v2__note-tag" style={{ color: n.color }}>{n.tag || '#kudos'}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
 
 /* ════════════════════════════════════
-   HERO VARIANT 3 — Bold text + card mosaic
+   HERO VARIANT 3 — Asymmetric bold left + floating mosaic right
    BuildCommunity
 ════════════════════════════════════ */
 function HeroV3({ data }) {
   return (
     <section className="bpg-hero-v3">
+      {/* Background: var(--bg) + subtle orange radial right */}
       <div className="bpg-hero-v3__bg" />
       <div className="bpg-container">
         <div className="bpg-hero-v3__inner">
-          <div>
+          {/* Left: text content */}
+          <div className="bpg-hero-v3__left">
             <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
               initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
             >
@@ -231,6 +241,7 @@ function HeroV3({ data }) {
               >{data.ctaSecondary}</motion.a>
             </motion.div>
 
+            {/* Stat strip */}
             {data.heroStats3 && (
               <motion.div className="bpg-hero-v3__stats"
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
@@ -245,19 +256,21 @@ function HeroV3({ data }) {
             )}
           </div>
 
-          {/* Card mosaic */}
+          {/* Right: 2-col mosaic with floating cards */}
           <motion.div className="bpg-hero-v3__mosaic"
-            initial={{ opacity: 0, x: 32 }} animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.78, delay: 0.18, ease }}
           >
-            {data.mosaicCards?.map((mc, i) => (
-              <motion.div key={i} className={`bpg-hero-v3__mc ${mc.tall ? 'bpg-hero-v3__mc--tall' : ''}`}
-                animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
-                transition={{ duration: 4 + i * 0.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+            {(data.mosaicCards || []).map((mc, i) => (
+              <motion.div key={i}
+                className={`bpg-hero-v3__mc ${mc.tall ? 'bpg-hero-v3__mc--tall' : ''}`}
+                animate={{ y: [0, i % 2 === 0 ? -7 : 7, 0] }}
+                transition={{ duration: 3.8 + i * 0.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.38 }}
               >
                 <div className="bpg-hero-v3__mc-icon">{mc.icon}</div>
-                <strong className="bpg-hero-v3__mc">{mc.title}</strong>
-                <span>{mc.sub}</span>
+                <span className="bpg-hero-v3__mc-title">{mc.title}</span>
+                <span className="bpg-hero-v3__mc-sub">{mc.sub}</span>
+                {mc.extra && <div className="bpg-hero-v3__mc-extra">{mc.extra}</div>}
               </motion.div>
             ))}
           </motion.div>
@@ -268,7 +281,7 @@ function HeroV3({ data }) {
 }
 
 /* ════════════════════════════════════
-   HERO VARIANT 4 — Full dark + metric cards
+   HERO VARIANT 4 — Full dark navy + 2×2 metric grid
    EnhanceParticipation
 ════════════════════════════════════ */
 function HeroV4({ data }) {
@@ -278,6 +291,7 @@ function HeroV4({ data }) {
       <div className="bpg-hero-v4__dots" />
       <div className="bpg-container">
         <div className="bpg-hero-v4__inner">
+          {/* Left: white text */}
           <div>
             <motion.div className="bpg-eyebrow bpg-eyebrow--white"
               initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
@@ -308,17 +322,20 @@ function HeroV4({ data }) {
             </motion.div>
           </div>
 
-          {/* Number grid */}
+          {/* Right: 2×2 glass metric cards */}
           <motion.div className="bpg-hero-v4__numgrid"
-            initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.78, delay: 0.2, ease }}
+            initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.78, delay: 0.22, ease }}
           >
-            {data.numCards?.map((nc, i) => (
-              <motion.div key={i} className={`bpg-hero-v4__ng-card ${nc.accent ? 'bpg-hero-v4__ng-card--accent' : ''}`}
-                whileHover={{ y: -4, scale: 1.02 }} transition={spring}
+            {(data.numCards || []).map((nc, i) => (
+              <motion.div key={i}
+                className={`bpg-hero-v4__ng-card ${nc.accent ? 'bpg-hero-v4__ng-card--accent' : ''}`}
+                whileHover={{ y: -5, scale: 1.03 }} transition={spring}
               >
                 <div className="bpg-hero-v4__ng-icon">{nc.icon}</div>
-                <div className="bpg-hero-v4__ng-val">{nc.val}<span>{nc.unit}</span></div>
+                <div className="bpg-hero-v4__ng-val">
+                  {nc.val}<span className="bpg-hero-v4__ng-unit">{nc.unit}</span>
+                </div>
                 <div className="bpg-hero-v4__ng-lbl">{nc.label}</div>
               </motion.div>
             ))}
@@ -330,7 +347,7 @@ function HeroV4({ data }) {
 }
 
 /* ════════════════════════════════════
-   HERO VARIANT 5 — Warm gradient + award card
+   HERO VARIANT 5 — Warm tinted bg + award recognition card
    HonorAchievements
 ════════════════════════════════════ */
 function HeroV5({ data }) {
@@ -338,6 +355,7 @@ function HeroV5({ data }) {
     <section className="bpg-hero-v5">
       <div className="bpg-container">
         <div className="bpg-hero-v5__inner">
+          {/* Left: text */}
           <div>
             <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
               initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
@@ -367,6 +385,7 @@ function HeroV5({ data }) {
               >{data.ctaSecondary}</motion.a>
             </motion.div>
 
+            {/* Chip row */}
             {data.heroChips && (
               <motion.div className="bpg-hero-v5__badge-row"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }}
@@ -378,22 +397,25 @@ function HeroV5({ data }) {
             )}
           </div>
 
-          {/* Award card */}
+          {/* Right: award recognition card with floating chips */}
           <motion.div className="bpg-hero-v5__award"
             initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.78, delay: 0.18, ease }}
           >
+            {/* Floating chips — positioned outside the card */}
             {data.floatChips && (
               <>
                 <motion.div className="bpg-hero-v5__float bpg-hero-v5__float--a"
-                  animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={{ y: [0, -9, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 >{data.floatChips[0]}</motion.div>
                 <motion.div className="bpg-hero-v5__float bpg-hero-v5__float--b"
-                  animate={{ y: [0, 7, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                  animate={{ y: [0, 8, 0] }} transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
                 >{data.floatChips[1]}</motion.div>
               </>
             )}
+
             <div className="bpg-hero-v5__award-card">
+              {/* Card top header */}
               <div className="bpg-hero-v5__award-top">
                 <div className="bpg-hero-v5__trophy">{data.icon}</div>
                 <div>
@@ -401,11 +423,13 @@ function HeroV5({ data }) {
                   <div className="bpg-hero-v5__award-sub">{data.awardCardSub}</div>
                 </div>
               </div>
+              {/* Award rows */}
               <div className="bpg-hero-v5__award-list">
-                {data.awardRows?.map((row, i) => (
+                {(data.awardRows || []).map((row, i) => (
                   <motion.div key={i} className="bpg-hero-v5__award-row"
-                    initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + i * 0.12, ease }}
+                    initial={{ opacity: 0, x: -14 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.42 + i * 0.12, ease }}
+                    whileHover={{ x: 4 }}
                   >
                     <div className="bpg-hero-v5__award-av" style={{ background: row.color }}>{row.name[0]}</div>
                     <div className="bpg-hero-v5__award-info">
@@ -425,17 +449,20 @@ function HeroV5({ data }) {
 }
 
 /* ════════════════════════════════════
-   HERO VARIANT 6 — Dark globe / world map
+   HERO VARIANT 6 — Deep navy + live global pins card
    RemoteWorkforce
 ════════════════════════════════════ */
 function HeroV6({ data }) {
   return (
     <section className="bpg-hero-v6">
+      {/* Background orbs */}
       <div className="bpg-hero-v6__orb-a" />
       <div className="bpg-hero-v6__orb-b" />
       <div className="bpg-hero-v6__dots" />
+
       <div className="bpg-container">
         <div className="bpg-hero-v6__inner">
+          {/* Left: white text */}
           <div>
             <motion.div className="bpg-eyebrow bpg-eyebrow--white"
               initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
@@ -466,30 +493,48 @@ function HeroV6({ data }) {
             </motion.div>
           </div>
 
-          {/* Globe card */}
+          {/* Right: glass card with live contribution pins */}
           <motion.div
             initial={{ opacity: 0, y: 36 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.78, delay: 0.2, ease }}
+            transition={{ duration: 0.8, delay: 0.22, ease }}
           >
             <div className="bpg-hero-v6__globe-card">
+              {/* Card top bar */}
               <div className="bpg-hero-v6__globe-bar">
                 <span className="bpg-mac-dot" style={{ background: '#FF5F57' }} />
                 <span className="bpg-mac-dot" style={{ background: '#FEBC2E' }} />
                 <span className="bpg-mac-dot" style={{ background: '#28C840' }} />
-                <span className="bpg-hero-v6__globe-title">Live contributions · {data.category}</span>
+                <span className="bpg-hero-v6__globe-title">Live contributions</span>
+                <span className="bpg-hero-v6__globe-live">
+                  <span className="bpg-hero-v6__live-dot" />
+                  LIVE
+                </span>
               </div>
+
+              {/* Pin rows */}
               <div className="bpg-hero-v6__pins">
-                {data.globalPins?.map((pin, i) => (
+                {(data.globalPins || []).map((pin, i) => (
                   <motion.div key={i} className="bpg-hero-v6__pin"
-                    initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.35 + i * 0.1, ease }}
+                    initial={{ opacity: 0, x: -18 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.38 + i * 0.1, ease }}
+                    whileHover={{ x: 4 }}
                   >
                     <span className="bpg-hero-v6__pin-flag">{pin.flag}</span>
-                    <span className="bpg-hero-v6__pin-name">{pin.name}</span>
-                    <span className="bpg-hero-v6__pin-msg">{pin.msg}</span>
+                    <div className="bpg-hero-v6__pin-info">
+                      <span className="bpg-hero-v6__pin-name">{pin.name}</span>
+                      <span className="bpg-hero-v6__pin-msg">{pin.msg}</span>
+                    </div>
                     <span className="bpg-hero-v6__pin-online" />
                   </motion.div>
                 ))}
+              </div>
+
+              {/* Footer stat bar */}
+              <div className="bpg-hero-v6__card-foot">
+                <span className="bpg-hero-v6__foot-stat">
+                  <span className="bpg-hero-v6__foot-val">{data.globalPins?.length || 4}</span> active now
+                </span>
+                <span className="bpg-hero-v6__foot-chip">🌍 Global</span>
               </div>
             </div>
           </motion.div>
@@ -509,6 +554,7 @@ function Challenge({ data }) {
   return (
     <section className="bpg-challenge" ref={ref}>
       <div className="bpg-container bpg-challenge__grid">
+        {/* Left: text + pain points */}
         <div>
           <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
             variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0}
@@ -522,9 +568,11 @@ function Challenge({ data }) {
             {data.problemDesc}
           </motion.p>
 
-          <motion.p className="bpg-lead bpg-lead--muted" style={{ maxWidth: 520 }} variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.18}>
-            {data.problemDesc2}
-          </motion.p>
+          {data.problemDesc2 && (
+            <motion.p className="bpg-lead bpg-lead--muted" style={{ maxWidth: 520 }} variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.18}>
+              {data.problemDesc2}
+            </motion.p>
+          )}
 
           <div className="bpg-challenge__points">
             {data.problemPoints.map((pt, i) => (
@@ -538,8 +586,15 @@ function Challenge({ data }) {
           </div>
         </div>
 
+        {/* Right: widget panel */}
         <motion.div variants={fadeRight} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}>
-          <div className="bpg-widget">{data.problemIllustration}</div>
+          <div className="bpg-widget">
+            <div className="bpg-widget__header">
+              <span className="bpg-widget__header-icon">📊</span>
+              <span className="bpg-widget__header-title">Team Health Overview</span>
+            </div>
+            {data.problemIllustration}
+          </div>
         </motion.div>
       </div>
     </section>
@@ -593,7 +648,7 @@ function Features({ data }) {
 }
 
 /* ════════════════════════════════════
-   HOW IT WORKS — 4-step timeline
+   HOW IT WORKS — 4-step timeline with progress bars
 ════════════════════════════════════ */
 function HowItWorks({ data }) {
   const ref = useRef(null);
@@ -616,14 +671,24 @@ function HowItWorks({ data }) {
             <motion.div key={i} className="bpg-hiw__step"
               variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.12 + i * 0.1}
             >
-              <div style={{ position: 'relative' }}>
-                <motion.div className="bpg-hiw__step-circle" whileHover={{ scale: 1.1 }} transition={spring}>
-                  {step.icon}
-                </motion.div>
-                <span className="bpg-hiw__step-num">{i + 1}</span>
+              <div className="bpg-hiw__step-card">
+                <div style={{ position: 'relative', marginBottom: 20, display: 'flex', justifyContent: 'center' }}>
+                  <motion.div className="bpg-hiw__step-circle" whileHover={{ scale: 1.1 }} transition={spring}>
+                    {step.icon}
+                  </motion.div>
+                  <span className="bpg-hiw__step-num">{i + 1}</span>
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+                {/* Animated progress bar */}
+                <div className="bpg-hiw__step-bar">
+                  <motion.div className="bpg-hiw__step-bar-fill"
+                    initial={{ width: 0 }}
+                    animate={inView ? { width: '100%' } : { width: 0 }}
+                    transition={{ duration: 1.2, delay: 0.5 + i * 0.2, ease: [0.25, 1, 0.5, 1] }}
+                  />
+                </div>
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -675,54 +740,6 @@ function UseCases({ data }) {
 }
 
 /* ════════════════════════════════════
-   SHOWCASE — Symmetric bento
-════════════════════════════════════ */
-function Showcase({ data }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-  const layouts = ['main', null, null, 'wide', null];
-
-  return (
-    <section className="bpg-showcase" ref={ref}>
-      <div className="bpg-container">
-        <div className="bpg-sec-hd">
-          <motion.div className="bpg-eyebrow bpg-eyebrow--orange" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0}>
-            ▣ Experience
-          </motion.div>
-          <motion.h2 className="bpg-h2 bpg-h2--center" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.08}>
-            See It In Action
-          </motion.h2>
-        </div>
-
-        <div className="bpg-showcase__grid">
-          {data.showcase.slice(0, 5).map((item, i) => (
-            <motion.div key={i}
-              className={`bpg-sc-tile ${layouts[i] === 'main' ? 'bpg-sc-tile--main' : layouts[i] === 'wide' ? 'bpg-sc-tile--wide' : ''}`}
-              variants={popIn} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.08 + i * 0.09}
-            >
-              <motion.div className="bpg-sc-tile__inner" style={{ background: item.bg || 'var(--orange-50)' }}
-                whileHover={{ scale: 1.015 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-              >
-                <div className="bpg-sc-tile__icon">{item.icon}</div>
-                <div className="bpg-sc-tile__body">
-                  <strong>{item.label}</strong>
-                  {item.desc && <p>{item.desc}</p>}
-                  {item.tags && (
-                    <div className="bpg-sc-tile__tags">
-                      {item.tags.map(t => <span key={t}>{t}</span>)}
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════
    BENEFITS — 3-col grid
 ════════════════════════════════════ */
 function BenefitsSection({ data }) {
@@ -750,7 +767,10 @@ function BenefitsSection({ data }) {
               variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1 + i * 0.07}
               whileHover={{ y: -5 }} transition={{ type: 'spring', stiffness: 280, damping: 22 }}
             >
-              <motion.div className="bpg-benefit-card__icon" whileHover={{ scale: 1.12, rotate: -8 }} transition={spring}>
+              <motion.div className="bpg-benefit-card__icon"
+                whileHover={{ scale: 1.14, rotate: -8 }} transition={spring}
+                style={{ '--icon-color': b.color || 'var(--orange)' }}
+              >
                 {b.icon}
               </motion.div>
               <div>
@@ -796,10 +816,14 @@ function FAQSection({ data }) {
             <div key={i} className={`bpg-faq__item ${open === i ? 'open' : ''}`}>
               <button className="bpg-faq__q" onClick={() => setOpen(open === i ? null : i)}>
                 {item.q}
-                <span className="bpg-faq__chevron">▼</span>
+                <motion.span className="bpg-faq__chevron"
+                  animate={{ rotate: open === i ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >▼</motion.span>
               </button>
               <motion.div className="bpg-faq__a"
-                animate={{ maxHeight: open === i ? 280 : 0 }}
+                initial={false}
+                animate={{ maxHeight: open === i ? 320 : 0, opacity: open === i ? 1 : 0 }}
                 transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
               >
                 <div className="bpg-faq__a-inner">{item.a}</div>
@@ -826,7 +850,7 @@ function FinalCTA({ data }) {
       <div className="bpg-cta__inner">
         <motion.div className="bpg-cta__icon"
           variants={popIn} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0}
-          whileHover={{ scale: 1.08, rotate: -6 }} transition={spring}
+          whileHover={{ scale: 1.1, rotate: -6 }} transition={spring}
         >{data.icon}</motion.div>
         <motion.h2 className="bpg-cta__h2" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}>
           {data.ctaHeadline}
@@ -864,15 +888,14 @@ export default function BenefitPage({ data }) {
   return (
     <div className="bpg">
       <Navbar />
-      <HeroComponent  data={data} />
-      <Challenge      data={data} />
-      <Features       data={data} />
-      <HowItWorks     data={data} />
-      <UseCases       data={data} />
-      <Showcase       data={data} />
+      <HeroComponent   data={data} />
+      <Challenge       data={data} />
+      <Features        data={data} />
+      <HowItWorks      data={data} />
+      <UseCases        data={data} />
       <BenefitsSection data={data} />
-      <FAQSection     data={data} />
-      <FinalCTA       data={data} />
+      <FAQSection      data={data} />
+      <FinalCTA        data={data} />
       <Footer />
     </div>
   );
