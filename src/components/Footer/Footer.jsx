@@ -6,17 +6,7 @@ import { Link } from 'react-router-dom'
 /* ─── Footer Link Data ──────────────────────────────────────── */
 const columns = [
   {
-    heading: 'Build',
-    links: [
-      'Group Cards',
-      'Appreciation Walls',
-      'Photo Mosaics',
-      'Memory Reels',
-      'Printed Keepsakes',
-    ],
-  },
-  {
-    heading: 'Solutions',
+    heading: 'Community',
     links: [
       'Corporations & Enterprise',
       'Distributed Workforces',
