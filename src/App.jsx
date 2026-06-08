@@ -47,6 +47,12 @@ import StaffMotivation from './pages/Features/StaffMotivation'
 import DataReports from './pages/Features/DataReports'
 import Connections from './pages/Features/Connections'
 import Alerts from './pages/Features/Alerts'
+import BoostTeamSpirit from './pages/Benefits/BoostTeamSpirit'
+import EnhanceParticipation from './pages/Benefits/EnhanceParticipation'
+import BuildCommunity from './pages/Benefits/BuildCommunity'
+import HonorAchievements from './pages/Benefits/HonorAchievements'
+import RemoteWorkforce from './pages/Benefits/RemoteWorkforce'
+import VirtualAppreciation from './pages/Benefits/VirtualAppreciation'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -260,6 +266,12 @@ export default function App() {
       <Route path="/features/data-reports" element={<DataReports />} />
       <Route path="/features/connections" element={<Connections />} />
       <Route path="/features/alerts" element={<Alerts />} />
+      <Route path="/benefits/boost-team-spirit" element={<BoostTeamSpirit />} />
+      <Route path="/benefits/enhance-participation" element={<EnhanceParticipation />} />
+      <Route path="/benefits/build-community" element={<BuildCommunity />} />
+      <Route path="/benefits/honor-achievements" element={<HonorAchievements />} />
+      <Route path="/benefits/remote-workforce" element={<RemoteWorkforce />} />
+      <Route path="/benefits/virtual-appreciation" element={<VirtualAppreciation />} />
     </Routes>
     </>
   )

@@ -115,12 +115,12 @@ const platformFeatures = [
 ]
 
 const platformBenefits = [
-  { icon: '🚀', label: 'Boost team spirit', color: '#FF6B2C' },
-  { icon: '💬', label: 'Enhance participation', color: '#3B82F6' },
-  { icon: '🌱', label: 'Build community', color: '#22C55E' },
-  { icon: '🎯', label: 'Honor achievements', color: '#F59E0B' },
-  { icon: '🌐', label: 'Remote workforce', color: '#8B5CF6' },
-  { icon: '🏡', label: 'Virtual appreciation', color: '#EC4899' },
+  { icon: '🚀', label: 'Boost team spirit', color: '#FF6B2C', to: '/benefits/boost-team-spirit' },
+  { icon: '💬', label: 'Enhance participation', color: '#3B82F6', to: '/benefits/enhance-participation' },
+  { icon: '🌱', label: 'Build community', color: '#22C55E', to: '/benefits/build-community' },
+  { icon: '🎯', label: 'Honor achievements', color: '#F59E0B', to: '/benefits/honor-achievements' },
+  { icon: '🌐', label: 'Remote workforce', color: '#8B5CF6', to: '/benefits/remote-workforce' },
+  { icon: '🏡', label: 'Virtual appreciation', color: '#EC4899', to: '/benefits/virtual-appreciation' },
 ]
 
 const customersData = {
@@ -322,12 +322,12 @@ function PlatformMegaMenu() {
           <p className="mega-col__title">BENEFITS</p>
           <div className="benefits-list">
             {platformBenefits.map(b => (
-              <a key={b.label} href="#" className="benefit-item">
+              <Link key={b.label} to={b.to} className="benefit-item">
                 <span className="benefit-item__icon" style={{ background: `${b.color}18`, color: b.color }}>
                   {b.icon}
                 </span>
                 <span className="benefit-item__label">{b.label}</span>
-              </a>
+              </Link>
             ))}
           </div>
 
