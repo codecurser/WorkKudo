@@ -212,7 +212,7 @@
 
 /* ── Sticky Horizontal Scroll Features ── */
 .ep-horizontal-wrapper {
-  height: 400vh;
+  height: 250vh;
   /* Creates the scrolling distance */
   position: relative;
 }
@@ -260,6 +260,7 @@
   padding: 0 max(20px, calc((100vw - 1200px) / 2)) 40px max(20px, calc((100vw - 1200px) / 2));
   width: max-content;
   will-change: transform;
+  transition: transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .ep-feature-card {
