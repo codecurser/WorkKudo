@@ -615,3 +615,26 @@
     font-size: 1.25rem;
   }
 }
+
+/* ── Enterprise Testimonial Color Theme ── */
+.ep-testimonial--enterprise {
+  background: #f8fafc;
+}
+.ep-testimonial--enterprise .ep-testimonial__card {
+  background: #1A2B4A;
+  color: white;
+  box-shadow: 0 20px 40px rgba(26, 43, 74, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.ep-testimonial--enterprise .ep-quote-icon {
+  color: rgba(255, 255, 255, 0.15);
+}
+.ep-testimonial--enterprise blockquote {
+  color: white;
+}
+.ep-testimonial--enterprise .ep-testimonial__author strong {
+  color: white;
+}
+.ep-testimonial--enterprise .ep-testimonial__author span {
+  color: #93c5fd;
+}

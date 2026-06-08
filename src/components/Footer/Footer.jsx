@@ -140,6 +140,21 @@ export default function Footer() {
                   } else if (link === 'Corporations & Enterprise') {
                     href = '/solutions/enterprise'
                     isRouterLink = true
+                  } else if (link === 'Distributed Workforces') {
+                    href = '/solutions/distributed'
+                    isRouterLink = true
+                  } else if (link === 'People & Culture Teams') {
+                    href = '/solutions/people-culture'
+                    isRouterLink = true
+                  } else if (link === 'Medical & Healthcare') {
+                    href = '/solutions/healthcare'
+                    isRouterLink = true
+                  } else if (link === 'Charities & NGOs') {
+                    href = '/solutions/nonprofits'
+                    isRouterLink = true
+                  } else if (link === 'Early-Stage Ventures') {
+                    href = '/solutions/startups'
+                    isRouterLink = true
                   }
 
                   return (

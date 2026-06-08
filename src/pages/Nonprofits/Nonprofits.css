@@ -1,0 +1,30 @@
+/* Nonprofits Specific Styles */
+/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+
+/* ── Nonprofits Testimonial/Highlight Color Theme ── */
+.ep-testimonial--nonprofits {
+  background: #f8fafc;
+}
+
+.ep-testimonial--nonprofits .ep-testimonial__card {
+  background: linear-gradient(135deg, #14392c 0%, #0d251d 100%);
+  color: white;
+  box-shadow: 0 20px 45px rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.ep-testimonial--nonprofits .ep-quote-icon {
+  color: rgba(16, 185, 129, 0.25);
+}
+
+.ep-testimonial--nonprofits blockquote {
+  color: white;
+}
+
+.ep-testimonial--nonprofits .ep-testimonial__author strong {
+  color: white;
+}
+
+.ep-testimonial--nonprofits .ep-testimonial__author span {
+  color: #a7f3d0;
+}

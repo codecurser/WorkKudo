@@ -1,34 +1,35 @@
 import React, { useEffect, useRef } from 'react';
-import './Enterprise.css';
+import '../Enterprise/Enterprise.css';
+import './Healthcare.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
 
-const enterpriseFaq = [
+const healthcareFaq = [
   {
-    q: "How does SSO integration work?",
-    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
+    q: "Is WorkKudo HIPAA compliant?",
+    a: "Yes. WorkKudo prioritizes user privacy and security. We support secure SSO, TLS 1.3 encryption, and administrative parameters that restrict data viewing to authorized company branches to protect healthcare staff details and meet HIPAA standards."
   },
   {
-    q: "Is WorkKudo SOC2 compliant?",
-    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+    q: "How does this fit into busy, rotating shift schedules?",
+    a: "Our digital boards operate completely asynchronously. Teammates can easily contribute messages, photos, or GIFs from their own mobile devices or workstations at any time during their shifts, ensuring no clinician is left out."
   },
   {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+    q: "Can we use this for campaigns like Nurse Appreciation Week?",
+    a: "Absolutely. WorkKudo is ideal for hospital-wide recognition events, department-level milestones, professional credentials, and structured care team campaigns."
   },
   {
-    q: "What support SLA does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+    q: "Can we track participation and cultural engagement across hospital branches?",
+    a: "Yes. Hospital administrators have access to dashboard analytics to monitor which departments are active, track peer kudos trends, and manage recognition budgets."
   },
   {
-    q: "Can we integrate with our HRIS system?",
-    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+    q: "What physical reward options do you offer for healthcare staff?",
+    a: "We offer global digital vouchers from popular brands, custom physical gift deliveries, and printed keepsake books containing all team greetings."
   }
 ];
 
-export default function Enterprise() {
+export default function Healthcare() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const bgRef = useRef(null);
@@ -59,10 +60,10 @@ export default function Enterprise() {
         let bgP = p * 2.5; 
         if (bgP > 1) bgP = 1;
 
-        // Color transition: White (#ffffff) to Dark Blue (#1A2B4A)
-        const r = Math.round(255 - bgP * (255 - 26));
-        const g = Math.round(255 - bgP * (255 - 43));
-        const b = Math.round(255 - bgP * (255 - 74));
+        // Color transition: White (#ffffff) to Deep Teal (rgb(13, 59, 66) / #0D3B42)
+        const r = Math.round(255 - bgP * (255 - 13));
+        const g = Math.round(255 - bgP * (255 - 59));
+        const b = Math.round(255 - bgP * (255 - 66));
         
         bgRef.current.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         
@@ -71,10 +72,10 @@ export default function Enterprise() {
         bgRef.current.style.color = isDark ? 'white' : '#1e293b';
         
         const title = bgRef.current.querySelector('.ep-section-header--sticky h2');
-        if (title) title.style.color = isDark ? 'white' : '#1A2B4A';
+        if (title) title.style.color = isDark ? 'white' : '#0D3B42';
 
         const subtitle = bgRef.current.querySelector('.ep-section-header--sticky p');
-        if (subtitle) subtitle.style.color = isDark ? '#cbd5e1' : '#64748b';
+        if (subtitle) subtitle.style.color = isDark ? '#ccfbf1' : '#64748b';
         
         // Explicitly enforce solid white cards and dark text to prevent HMR ghost styles
         const cards = bgRef.current.querySelectorAll('.ep-feature-card');
@@ -103,7 +104,7 @@ export default function Enterprise() {
   }, []);
 
   return (
-    <div className="enterprise-page">
+    <div className="enterprise-page healthcare-page">
       <Navbar />
       
       {/* ── Hero Section ── */}
@@ -111,14 +112,14 @@ export default function Enterprise() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Enterprise Solutions</div>
-            <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
+            <div className="ep-badge">Solutions for Healthcare Providers</div>
+            <h1 className="ep-hero__title">Foster Connection and Recognition in Care Teams</h1>
             <p className="ep-hero__subtitle">
-              Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
+              Improve staff morale, reduce burnout, and support healthcare compliance. Celebrate medical milestones, peer achievements, and administrative successes seamlessly.
             </p>
             <div className="ep-hero__actions">
               <button className="ep-btn ep-btn--primary">Request a Demo</button>
-              <button className="ep-btn ep-btn--secondary">Contact Sales</button>
+              <button className="ep-btn ep-btn--secondary">Explore Care Benefits</button>
             </div>
           </div>
           <div className="ep-hero__visual">
@@ -129,8 +130,8 @@ export default function Enterprise() {
                 <span className="ep-dot green"></span>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Enterprise Analytics Dashboard" 
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Healthcare Team Collaboration" 
                 className="ep-hero__img"
               />
             </div>
@@ -144,58 +145,58 @@ export default function Enterprise() {
           <div className="ep-sticky-content">
             
             <div className="ep-container ep-section-header ep-section-header--sticky">
-              <h2>Enterprise-Grade Infrastructure</h2>
-              <p>Designed for absolute security, compliance, and total administrative control.</p>
+              <h2>Support Your Healthcare Staff</h2>
+              <p>Appreciation tools designed to handle shift rotation, remote clinical departments, and administrative care teams.</p>
             </div>
             
             <div className="ep-horizontal-track" ref={trackRef}>
               
+              <div className="ep-feature-card" style={{ '--accent': '#0d9488' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 3-2 3s2.23.5 4.5-1.5M3 3l18 18M15 3l6 6M9 3l12 12M5 3l14 14M3 9l12 12M3 15l6 6"></path></svg>
+                </div>
+                <h3>Care Staff Appreciation</h3>
+                <p>Recognize nurses, clinicians, and medical technicians publicly. Celebrate everyday care wins that directly reduce physician and clinical fatigue.</p>
+              </div>
+
               <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 </div>
-                <h3>Security & Compliance</h3>
-                <p>Bank-level encryption, SOC2 Type II compliance, GDPR readiness, and seamless enterprise SSO (SAML, Okta, Azure AD) integration.</p>
+                <h3>Milestone Recognition</h3>
+                <p>Track residency completions, professional accreditations, and long-term service milestones automatically. Highlight professional growth across branches.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                </div>
-                <h3>Advanced Analytics</h3>
-                <p>Track engagement, cultural sentiment, and core value adoption across thousands of employees with high-fidelity, real-time reporting dashboards.</p>
-              </div>
-
-              <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
-                <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                 </div>
-                <h3>Custom Branding</h3>
-                <p>Deliver fully white-labeled recognition experiences. Integrate your own domains, brand colorways, and bespoke physical reward catalogs.</p>
+                <h3>Peer-to-Peer Kudos</h3>
+                <p>Support clinical and non-clinical team cross-connection. Give coworkers a direct way to thank each other and highlight silent support contributions.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
-                <h3>Global Fulfillment</h3>
-                <p>Automate physical gifts, digital vouchers, and localized currency rewards in over 150 countries instantly without the logistical headache.</p>
+                <h3>Asynchronous Signatures</h3>
+                <p>Enable shift-workers to participate on their own schedule. Boards collect team messages, photos, and media asynchronously across rotating schedules.</p>
+              </div>
+
+              <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h3>HIPAA-Compliant Security</h3>
+                <p>Protect staff data with SSO validation, role-based controls, and secure data pipelines that comply with strict healthcare industry regulations.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#ec4899' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
                 </div>
-                <h3>Role-Based Access</h3>
-                <p>Deploy granular viewing permissions, multi-tier admin approval flows, and hierarchical budget allocations tailored for massive organizations.</p>
-              </div>
-
-              <div className="ep-feature-card" style={{ '--accent': '#06b6d4' }}>
-                <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                </div>
-                <h3>HRIS Integrations</h3>
-                <p>Fully automate onboarding flows, birthday triggers, and work anniversary celebrations by syncing directly with Workday, BambooHR, and Rippling.</p>
+                <h3>Global & Custom Gifting</h3>
+                <p>Offer localized digital voucher rewards or high-quality printed keepsake books. Empower staff to select their preferred reward type instantly.</p>
               </div>
 
             </div>
@@ -208,9 +209,9 @@ export default function Enterprise() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Your Teams Where They Already Work</h2>
+              <h2>Integrate with Hospital Communication Systems</h2>
               <p>
-                WorkKudo deeply integrates with your existing tech stack. Celebrate wins directly in Slack or Microsoft Teams, and let our HRIS integrations handle the data syncing in the background.
+                Push recognition feeds directly to Slack, Microsoft Teams, or local intranets. Sync staff records in real-time with HRIS directories to manage branch onboarding.
               </p>
               <ul className="ep-integrations__list">
                 <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
@@ -233,14 +234,14 @@ export default function Enterprise() {
       </section>
 
       {/* ── Highlight Section ── */}
-      <section className="ep-testimonial ep-testimonial--enterprise">
+      <section className="ep-testimonial ep-testimonial--healthcare">
         <div className="ep-container">
           <div className="ep-testimonial__card">
             <svg className="ep-quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              WorkKudo provides corporate teams with a dedicated, enterprise-grade workspace that guarantees SSO compliance, strict data residency controls, and bank-level encryption. Keep your company communications secure while scaling cultural recognition across thousands of employees globally.
+              Empower your healthcare workforce by introducing lightweight, positive recognition loops that counter care fatigue. WorkKudo fits into demanding shift patterns, allowing medical and administrative teams to stay connected, celebrate achievements, and reduce clinician burnout.
             </blockquote>
           </div>
         </div>
@@ -251,16 +252,16 @@ export default function Enterprise() {
 
       {/* ── FAQ Section ── */}
       <FAQ 
-        title="Enterprise FAQs" 
-        subtitle="Everything you need to know about WorkKudo for Enterprise." 
-        data={enterpriseFaq}
+        title="Healthcare FAQs" 
+        subtitle="Common questions about compliance, shift coordination, and employee celebrations in healthcare." 
+        data={healthcareFaq}
       />
 
       {/* ── Final CTA ── */}
       <section className="ep-cta">
         <div className="ep-container">
-          <h2>Ready to transform your enterprise culture?</h2>
-          <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
+          <h2>Ready to support your clinical teams?</h2>
+          <p>Join healthcare networks who trust WorkKudo to keep their care teams appreciated and connected.</p>
           <div className="ep-cta__actions">
             <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
             <button className="ep-btn ep-btn--outline">View Pricing</button>

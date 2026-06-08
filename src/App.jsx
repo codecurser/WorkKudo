@@ -30,6 +30,11 @@ import RetirementExample from './pages/ExampleBoard/RetirementExample'
 import PromotionExample from './pages/ExampleBoard/PromotionExample'
 import Enterprise from './pages/Enterprise/Enterprise'
 import Gifting from './pages/Gifting/Gifting'
+import DistributedWorkforces from './pages/DistributedWorkforces/DistributedWorkforces'
+import PeopleCulture from './pages/PeopleCulture/PeopleCulture'
+import Healthcare from './pages/Healthcare/Healthcare'
+import Nonprofits from './pages/Nonprofits/Nonprofits'
+import Startups from './pages/Startups/Startups'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -225,6 +230,11 @@ export default function App() {
       <Route path="/examples/retirement" element={<RetirementExample />} />
       <Route path="/examples/promotion" element={<PromotionExample />} />
       <Route path="/solutions/enterprise" element={<Enterprise />} />
+      <Route path="/solutions/distributed" element={<DistributedWorkforces />} />
+      <Route path="/solutions/people-culture" element={<PeopleCulture />} />
+      <Route path="/solutions/healthcare" element={<Healthcare />} />
+      <Route path="/solutions/nonprofits" element={<Nonprofits />} />
+      <Route path="/solutions/startups" element={<Startups />} />
       <Route path="/gifting" element={<Gifting />} />
     </Routes>
     </>

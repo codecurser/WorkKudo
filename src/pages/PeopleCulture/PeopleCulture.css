@@ -1,0 +1,30 @@
+/* People & Culture Specific Styles */
+/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+
+/* ── People & Culture Testimonial Color Theme ── */
+.ep-testimonial--people-culture {
+  background: #f8fafc;
+}
+
+.ep-testimonial--people-culture .ep-testimonial__card {
+  background: linear-gradient(135deg, #2d124d 0%, #1e0b33 100%);
+  color: white;
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.ep-testimonial--people-culture .ep-quote-icon {
+  color: rgba(168, 85, 247, 0.25);
+}
+
+.ep-testimonial--people-culture blockquote {
+  color: white;
+}
+
+.ep-testimonial--people-culture .ep-testimonial__author strong {
+  color: white;
+}
+
+.ep-testimonial--people-culture .ep-testimonial__author span {
+  color: #d8b4fe;
+}

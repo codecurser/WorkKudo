@@ -344,7 +344,19 @@ function SmallDropdown({ data }) {
           <ul>
             {items.map(item => (
               <li key={item}>
-                <a href="#" className="small-dropdown__item">{item}</a>
+                {item === 'Distributed Teams' ? (
+                  <Link to="/solutions/distributed" className="small-dropdown__item">{item}</Link>
+                ) : item === 'People Teams' ? (
+                  <Link to="/solutions/people-culture" className="small-dropdown__item">{item}</Link>
+                ) : item === 'Medical' ? (
+                  <Link to="/solutions/healthcare" className="small-dropdown__item">{item}</Link>
+                ) : item === 'Charities' ? (
+                  <Link to="/solutions/nonprofits" className="small-dropdown__item">{item}</Link>
+                ) : item === 'New Ventures' ? (
+                  <Link to="/solutions/startups" className="small-dropdown__item">{item}</Link>
+                ) : (
+                  <a href="#" className="small-dropdown__item">{item}</a>
+                )}
               </li>
             ))}
           </ul>

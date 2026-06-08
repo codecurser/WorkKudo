@@ -1,0 +1,25 @@
+/* Distributed Workforces Specific Styles */
+/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+
+/* ── Distributed Testimonial Color Theme ── */
+.ep-testimonial--distributed {
+  background: #f8fafc;
+}
+.ep-testimonial--distributed .ep-testimonial__card {
+  background: linear-gradient(135deg, #0b0f19 0%, #060913 100%);
+  color: white;
+  box-shadow: 0 20px 45px rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+.ep-testimonial--distributed .ep-quote-icon {
+  color: rgba(6, 182, 212, 0.25);
+}
+.ep-testimonial--distributed blockquote {
+  color: white;
+}
+.ep-testimonial--distributed .ep-testimonial__author strong {
+  color: white;
+}
+.ep-testimonial--distributed .ep-testimonial__author span {
+  color: #22d3ee;
+}

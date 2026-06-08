@@ -1,34 +1,35 @@
 import React, { useEffect, useRef } from 'react';
-import './Enterprise.css';
+import '../Enterprise/Enterprise.css';
+import './Startups.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
 
-const enterpriseFaq = [
+const startupFaq = [
   {
-    q: "How does SSO integration work?",
-    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
+    q: "Do you offer discounts for early-stage startups?",
+    a: "Yes. We offer startup-friendly pricing programs designed to help early-stage ventures establish positive recognition habits early in their growth journey."
   },
   {
-    q: "Is WorkKudo SOC2 compliant?",
-    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+    q: "How fast can we set up WorkKudo?",
+    a: "In under two minutes. You can create a board, select a background layout, and share the contribution link directly in your Slack or Teams channel immediately."
   },
   {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+    q: "Can we customize boards with our startup's branding?",
+    a: "Yes. Startups can upload custom logos, configure organization brand color schemes, and tag cards with your specific company values."
   },
   {
-    q: "What support SLA does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+    q: "How do global rewards work for remote contractors?",
+    a: "When a board is completed, the recipient can select their preferred reward from a catalog of digital vouchers supported in over 150 countries with local currency conversion."
   },
   {
-    q: "Can we integrate with our HRIS system?",
-    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+    q: "Does WorkKudo integrate with Slack?",
+    a: "Yes. Our native Slack app lets you launch boards, collect signatures asynchronously, and broadcast milestone wins directly within your shared workspaces."
   }
 ];
 
-export default function Enterprise() {
+export default function Startups() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const bgRef = useRef(null);
@@ -59,10 +60,10 @@ export default function Enterprise() {
         let bgP = p * 2.5; 
         if (bgP > 1) bgP = 1;
 
-        // Color transition: White (#ffffff) to Dark Blue (#1A2B4A)
-        const r = Math.round(255 - bgP * (255 - 26));
-        const g = Math.round(255 - bgP * (255 - 43));
-        const b = Math.round(255 - bgP * (255 - 74));
+        // Color transition: White (#ffffff) to Deep Indigo (rgb(30, 27, 75) / #1E1B4B)
+        const r = Math.round(255 - bgP * (255 - 30));
+        const g = Math.round(255 - bgP * (255 - 27));
+        const b = Math.round(255 - bgP * (255 - 75));
         
         bgRef.current.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         
@@ -71,10 +72,10 @@ export default function Enterprise() {
         bgRef.current.style.color = isDark ? 'white' : '#1e293b';
         
         const title = bgRef.current.querySelector('.ep-section-header--sticky h2');
-        if (title) title.style.color = isDark ? 'white' : '#1A2B4A';
+        if (title) title.style.color = isDark ? 'white' : '#1E1B4B';
 
         const subtitle = bgRef.current.querySelector('.ep-section-header--sticky p');
-        if (subtitle) subtitle.style.color = isDark ? '#cbd5e1' : '#64748b';
+        if (subtitle) subtitle.style.color = isDark ? '#c7d2fe' : '#64748b';
         
         // Explicitly enforce solid white cards and dark text to prevent HMR ghost styles
         const cards = bgRef.current.querySelectorAll('.ep-feature-card');
@@ -103,7 +104,7 @@ export default function Enterprise() {
   }, []);
 
   return (
-    <div className="enterprise-page">
+    <div className="enterprise-page startups-page">
       <Navbar />
       
       {/* ── Hero Section ── */}
@@ -111,14 +112,14 @@ export default function Enterprise() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Enterprise Solutions</div>
-            <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
+            <div className="ep-badge">Solutions for Early-Stage Startups</div>
+            <h1 className="ep-hero__title">Scale Startup Culture from Day One</h1>
             <p className="ep-hero__subtitle">
-              Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
+              Fast-moving recognition for rapid-growth teams. Keep your team motivated, align wins with startup values, and celebrate milestones seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
-              <button className="ep-btn ep-btn--secondary">Contact Sales</button>
+              <button className="ep-btn ep-btn--primary">Request Startup Plan</button>
+              <button className="ep-btn ep-btn--secondary">Explore Growth Benefits</button>
             </div>
           </div>
           <div className="ep-hero__visual">
@@ -129,8 +130,8 @@ export default function Enterprise() {
                 <span className="ep-dot green"></span>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Enterprise Analytics Dashboard" 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Startup Team Collaboration" 
                 className="ep-hero__img"
               />
             </div>
@@ -144,58 +145,58 @@ export default function Enterprise() {
           <div className="ep-sticky-content">
             
             <div className="ep-container ep-section-header ep-section-header--sticky">
-              <h2>Enterprise-Grade Infrastructure</h2>
-              <p>Designed for absolute security, compliance, and total administrative control.</p>
+              <h2>Build Your Culture Early</h2>
+              <p>Appreciation tools designed for agile workflows, rapid scaling, and modern product teams.</p>
             </div>
             
             <div className="ep-horizontal-track" ref={trackRef}>
               
+              <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <h3>Agile Recognition</h3>
+                <p>Celebrate rapid iterations, closed rounds, and key feature releases. Support appreciation that moves at the speed of your product roadmap.</p>
+              </div>
+
               <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
-                <h3>Security & Compliance</h3>
-                <p>Bank-level encryption, SOC2 Type II compliance, GDPR readiness, and seamless enterprise SSO (SAML, Okta, Azure AD) integration.</p>
+                <h3>Scale Culture Early</h3>
+                <p>Deploy positive recognition habits from your first hires. Build alignment with your core values and reduce early-stage developer churn.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
                 </div>
-                <h3>Advanced Analytics</h3>
-                <p>Track engagement, cultural sentiment, and core value adoption across thousands of employees with high-fidelity, real-time reporting dashboards.</p>
-              </div>
-
-              <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
-                <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <h3>Custom Branding</h3>
-                <p>Deliver fully white-labeled recognition experiences. Integrate your own domains, brand colorways, and bespoke physical reward catalogs.</p>
-              </div>
-
-              <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
-                <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                </div>
-                <h3>Global Fulfillment</h3>
-                <p>Automate physical gifts, digital vouchers, and localized currency rewards in over 150 countries instantly without the logistical headache.</p>
+                <h3>Startup Friendly Pricing</h3>
+                <p>Access cost-effective pricing tiers built for pre-seed and seeded ventures. Maximize engagement impact while managing administrative costs.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#ec4899' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
-                <h3>Role-Based Access</h3>
-                <p>Deploy granular viewing permissions, multi-tier admin approval flows, and hierarchical budget allocations tailored for massive organizations.</p>
+                <h3>Slack & Teams Sync</h3>
+                <p>Post wins directly where your team collaborates. Send invite links and celebrate board completions inside your daily chat workspace channels.</p>
+              </div>
+
+              <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2z"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h3>Rapid Configuration</h3>
+                <p>Create appreciation boards in under two minutes with no setup guides or complex admin onboarding. Invite collaborators immediately via links.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#06b6d4' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
                 </div>
-                <h3>HRIS Integrations</h3>
-                <p>Fully automate onboarding flows, birthday triggers, and work anniversary celebrations by syncing directly with Workday, BambooHR, and Rippling.</p>
+                <h3>Global Remote Rewards</h3>
+                <p>Reward international remote contractors instantly with choice-based digital gift cards available across 150+ countries with local currency support.</p>
               </div>
 
             </div>
@@ -208,9 +209,9 @@ export default function Enterprise() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Your Teams Where They Already Work</h2>
+              <h2>deep Slack and Workspace Integrations</h2>
               <p>
-                WorkKudo deeply integrates with your existing tech stack. Celebrate wins directly in Slack or Microsoft Teams, and let our HRIS integrations handle the data syncing in the background.
+                WorkKudo integrates directly into your Slack or MS Teams workspace. Set up directory syncs automatically to welcome new hires before day one.
               </p>
               <ul className="ep-integrations__list">
                 <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
@@ -233,14 +234,14 @@ export default function Enterprise() {
       </section>
 
       {/* ── Highlight Section ── */}
-      <section className="ep-testimonial ep-testimonial--enterprise">
+      <section className="ep-testimonial ep-testimonial--startups">
         <div className="ep-container">
           <div className="ep-testimonial__card">
             <svg className="ep-quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              WorkKudo provides corporate teams with a dedicated, enterprise-grade workspace that guarantees SSO compliance, strict data residency controls, and bank-level encryption. Keep your company communications secure while scaling cultural recognition across thousands of employees globally.
+              Scale your company culture alongside your product. WorkKudo provides early-stage startups with a fast-moving, high-impact workspace to keep early hires aligned, celebrate rapid iterations, and build recognition habits that grow with your company.
             </blockquote>
           </div>
         </div>
@@ -251,16 +252,16 @@ export default function Enterprise() {
 
       {/* ── FAQ Section ── */}
       <FAQ 
-        title="Enterprise FAQs" 
-        subtitle="Everything you need to know about WorkKudo for Enterprise." 
-        data={enterpriseFaq}
+        title="Startups FAQs" 
+        subtitle="Common questions about startup discounts, rapid setups, and Slack integrations." 
+        data={startupFaq}
       />
 
       {/* ── Final CTA ── */}
       <section className="ep-cta">
         <div className="ep-container">
-          <h2>Ready to transform your enterprise culture?</h2>
-          <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
+          <h2>Ready to build a strong startup culture?</h2>
+          <p>Join fast-growing startup teams using WorkKudo to scale appreciation and values.</p>
           <div className="ep-cta__actions">
             <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
             <button className="ep-btn ep-btn--outline">View Pricing</button>

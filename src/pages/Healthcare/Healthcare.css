@@ -1,0 +1,30 @@
+/* Healthcare Specific Styles */
+/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+
+/* ── Healthcare Testimonial/Highlight Color Theme ── */
+.ep-testimonial--healthcare {
+  background: #f8fafc;
+}
+
+.ep-testimonial--healthcare .ep-testimonial__card {
+  background: linear-gradient(135deg, #0d3b42 0%, #072226 100%);
+  color: white;
+  box-shadow: 0 20px 45px rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+}
+
+.ep-testimonial--healthcare .ep-quote-icon {
+  color: rgba(13, 148, 136, 0.25);
+}
+
+.ep-testimonial--healthcare blockquote {
+  color: white;
+}
+
+.ep-testimonial--healthcare .ep-testimonial__author strong {
+  color: white;
+}
+
+.ep-testimonial--healthcare .ep-testimonial__author span {
+  color: #99f6e4;
+}

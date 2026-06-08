@@ -1,0 +1,30 @@
+/* Startups Specific Styles */
+/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+
+/* ── Startups Testimonial/Highlight Color Theme ── */
+.ep-testimonial--startups {
+  background: #f8fafc;
+}
+
+.ep-testimonial--startups .ep-testimonial__card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #12102e 100%);
+  color: white;
+  box-shadow: 0 20px 45px rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.ep-testimonial--startups .ep-quote-icon {
+  color: rgba(99, 102, 241, 0.25);
+}
+
+.ep-testimonial--startups blockquote {
+  color: white;
+}
+
+.ep-testimonial--startups .ep-testimonial__author strong {
+  color: white;
+}
+
+.ep-testimonial--startups .ep-testimonial__author span {
+  color: #c7d2fe;
+}

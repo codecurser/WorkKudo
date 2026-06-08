@@ -1,34 +1,35 @@
 import React, { useEffect, useRef } from 'react';
-import './Enterprise.css';
+import '../Enterprise/Enterprise.css';
+import './Nonprofits.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
 
-const enterpriseFaq = [
+const nonprofitFaq = [
   {
-    q: "How does SSO integration work?",
-    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
+    q: "Do you offer special pricing for registered charities and NGOs?",
+    a: "Yes. We offer special discounted pricing tiers for 501(c)(3) organizations, registered charities, and international non-profits to ensure you can appreciate your workforce cost-effectively."
   },
   {
-    q: "Is WorkKudo SOC2 compliant?",
-    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+    q: "Can volunteers and donors sign boards without creating accounts?",
+    a: "Absolutely. Volunteers, donors, and field coordinators can immediately add messages, photos, and greetings using invite links without going through any registration or corporate login process."
   },
   {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+    q: "How does the charity donation redirect feature work for gift cards?",
+    a: "When a team member or volunteer receives a gift voucher, they have the option to redirect the total cash value as a direct donation back to a curated selection of global charities and NGOs."
   },
   {
-    q: "What support SLA does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+    q: "Can we customize boards for specific donation campaigns or national weeks?",
+    a: "Yes. You can customize layout backgrounds, add campaign-specific logos, and tag cards with your core mission values to keep your purpose-driven workforce aligned."
   },
   {
-    q: "Can we integrate with our HRIS system?",
-    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+    q: "Does the platform support timezone-friendly asynchronous signing?",
+    a: "Yes, WorkKudo operates in over 150 countries, enabling international field staff, remote volunteers, and donors to co-sign greetings across different timezones on their own schedules."
   }
 ];
 
-export default function Enterprise() {
+export default function Nonprofits() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const bgRef = useRef(null);
@@ -59,10 +60,10 @@ export default function Enterprise() {
         let bgP = p * 2.5; 
         if (bgP > 1) bgP = 1;
 
-        // Color transition: White (#ffffff) to Dark Blue (#1A2B4A)
-        const r = Math.round(255 - bgP * (255 - 26));
-        const g = Math.round(255 - bgP * (255 - 43));
-        const b = Math.round(255 - bgP * (255 - 74));
+        // Color transition: White (#ffffff) to Deep Forest Green (rgb(20, 57, 44) / #14392C)
+        const r = Math.round(255 - bgP * (255 - 20));
+        const g = Math.round(255 - bgP * (255 - 57));
+        const b = Math.round(255 - bgP * (255 - 44));
         
         bgRef.current.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         
@@ -71,10 +72,10 @@ export default function Enterprise() {
         bgRef.current.style.color = isDark ? 'white' : '#1e293b';
         
         const title = bgRef.current.querySelector('.ep-section-header--sticky h2');
-        if (title) title.style.color = isDark ? 'white' : '#1A2B4A';
+        if (title) title.style.color = isDark ? 'white' : '#14392C';
 
         const subtitle = bgRef.current.querySelector('.ep-section-header--sticky p');
-        if (subtitle) subtitle.style.color = isDark ? '#cbd5e1' : '#64748b';
+        if (subtitle) subtitle.style.color = isDark ? '#bbf7d0' : '#64748b';
         
         // Explicitly enforce solid white cards and dark text to prevent HMR ghost styles
         const cards = bgRef.current.querySelectorAll('.ep-feature-card');
@@ -103,7 +104,7 @@ export default function Enterprise() {
   }, []);
 
   return (
-    <div className="enterprise-page">
+    <div className="enterprise-page nonprofits-page">
       <Navbar />
       
       {/* ── Hero Section ── */}
@@ -111,14 +112,14 @@ export default function Enterprise() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Enterprise Solutions</div>
-            <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
+            <div className="ep-badge">Solutions for Charities & NGOs</div>
+            <h1 className="ep-hero__title">Inspire and Unite Your Purpose-Driven Workforce</h1>
             <p className="ep-hero__subtitle">
-              Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
+              Keep volunteers and non-profit staff appreciated, connected, and aligned with your mission. Build community, recognize dedication, and coordinate celebrations seamlessly.
             </p>
             <div className="ep-hero__actions">
               <button className="ep-btn ep-btn--primary">Request a Demo</button>
-              <button className="ep-btn ep-btn--secondary">Contact Sales</button>
+              <button className="ep-btn ep-btn--secondary">Explore Non-Profit Benefits</button>
             </div>
           </div>
           <div className="ep-hero__visual">
@@ -129,8 +130,8 @@ export default function Enterprise() {
                 <span className="ep-dot green"></span>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Enterprise Analytics Dashboard" 
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Volunteers and Nonprofits Teamwork" 
                 className="ep-hero__img"
               />
             </div>
@@ -144,58 +145,58 @@ export default function Enterprise() {
           <div className="ep-sticky-content">
             
             <div className="ep-container ep-section-header ep-section-header--sticky">
-              <h2>Enterprise-Grade Infrastructure</h2>
-              <p>Designed for absolute security, compliance, and total administrative control.</p>
+              <h2>Celebrate Your Purpose-Driven Team</h2>
+              <p>Appreciation tools tailored to volunteer recognition, global operations, and mission values.</p>
             </div>
             
             <div className="ep-horizontal-track" ref={trackRef}>
               
-              <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
-                <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                </div>
-                <h3>Security & Compliance</h3>
-                <p>Bank-level encryption, SOC2 Type II compliance, GDPR readiness, and seamless enterprise SSO (SAML, Okta, Azure AD) integration.</p>
-              </div>
-
               <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                 </div>
-                <h3>Advanced Analytics</h3>
-                <p>Track engagement, cultural sentiment, and core value adoption across thousands of employees with high-fidelity, real-time reporting dashboards.</p>
+                <h3>Mission-Driven Appreciation</h3>
+                <p>Tag recognition with your organization's core values. Show staff and volunteers how their efforts directly make a difference and drive mission alignment.</p>
+              </div>
+
+              <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3>Volunteer Recognition</h3>
+                <p>Celebrate your volunteer networks during national volunteer weeks, major campaign targets, or service milestones with high-visibility boards.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2-2 2 0 0 0-2 2v16"></path></svg>
                 </div>
-                <h3>Custom Branding</h3>
-                <p>Deliver fully white-labeled recognition experiences. Integrate your own domains, brand colorways, and bespoke physical reward catalogs.</p>
+                <h3>Budget-Conscious Plans</h3>
+                <p>Gain access to discounted tiers tailored for registered non-profits, helping you maximize recognition impact while keeping administrative overhead low.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 </div>
-                <h3>Global Fulfillment</h3>
-                <p>Automate physical gifts, digital vouchers, and localized currency rewards in over 150 countries instantly without the logistical headache.</p>
+                <h3>Asynchronous Signatures</h3>
+                <p>Allow donors, field officers, and remote volunteers to co-sign greetings across timezones, locations, and various rotating schedules.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#ec4899' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
-                <h3>Role-Based Access</h3>
-                <p>Deploy granular viewing permissions, multi-tier admin approval flows, and hierarchical budget allocations tailored for massive organizations.</p>
+                <h3>Custom Campaign Branding</h3>
+                <p>Customize boards with your campaign assets. Build custom layout templates, colors, and graphics that support your public fundraising initiatives.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#06b6d4' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
                 </div>
-                <h3>HRIS Integrations</h3>
-                <p>Fully automate onboarding flows, birthday triggers, and work anniversary celebrations by syncing directly with Workday, BambooHR, and Rippling.</p>
+                <h3>Global Donation Gifting</h3>
+                <p>Support direct donation conversions. Give gift card recipients the options to redirect their reward cash values back to global charitable causes instantly.</p>
               </div>
 
             </div>
@@ -208,9 +209,9 @@ export default function Enterprise() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Your Teams Where They Already Work</h2>
+              <h2>Connect Your Purpose-Driven Teams</h2>
               <p>
-                WorkKudo deeply integrates with your existing tech stack. Celebrate wins directly in Slack or Microsoft Teams, and let our HRIS integrations handle the data syncing in the background.
+                WorkKudo integrates with Slack and Microsoft Teams to broadcast volunteer wins. Sync directory lists with your database to welcome global volunteers.
               </p>
               <ul className="ep-integrations__list">
                 <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
@@ -233,14 +234,16 @@ export default function Enterprise() {
       </section>
 
       {/* ── Highlight Section ── */}
-      <section className="ep-testimonial ep-testimonial--enterprise">
+      <section className="ep-testimonial ep-testimonial--nonprofits">
         <div className="ep-container">
           <div className="ep-testimonial__card">
             <svg className="ep-quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              WorkKudo provides corporate teams with a dedicated, enterprise-grade workspace that guarantees SSO compliance, strict data residency controls, and bank-level encryption. Keep your company communications secure while scaling cultural recognition across thousands of employees globally.
+              Unite your non-profit staff and volunteers around the mission that drives them. WorkKudo provides a highly collaborative, cost-effective space to recognize the tireless dedication of purpose-driven teams, helping keep engagement high and volunteer churn low.
             </blockquote>
           </div>
         </div>
@@ -251,16 +254,16 @@ export default function Enterprise() {
 
       {/* ── FAQ Section ── */}
       <FAQ 
-        title="Enterprise FAQs" 
-        subtitle="Everything you need to know about WorkKudo for Enterprise." 
-        data={enterpriseFaq}
+        title="Charities & NGOs FAQs" 
+        subtitle="Common questions about non-profit discounts, donation options, and volunteer campaign celebrations." 
+        data={nonprofitFaq}
       />
 
       {/* ── Final CTA ── */}
       <section className="ep-cta">
         <div className="ep-container">
-          <h2>Ready to transform your enterprise culture?</h2>
-          <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
+          <h2>Ready to coordinate your NGO appreciation?</h2>
+          <p>Join global non-profit teams and charities who use WorkKudo to keep volunteers engaged and appreciated.</p>
           <div className="ep-cta__actions">
             <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
             <button className="ep-btn ep-btn--outline">View Pricing</button>

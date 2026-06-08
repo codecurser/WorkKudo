@@ -1,34 +1,35 @@
 import React, { useEffect, useRef } from 'react';
-import './Enterprise.css';
+import '../Enterprise/Enterprise.css';
+import './DistributedWorkforces.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
 
-const enterpriseFaq = [
+const distributedFaq = [
   {
-    q: "How does SSO integration work?",
-    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
+    q: "Can people sign from different countries without signing up?",
+    a: "Yes, anyone with the invite link can add messages, images, GIFs, and videos from anywhere in the world. No registration, account creation, or corporate VPN is required to sign a board."
   },
   {
-    q: "Is WorkKudo SOC2 compliant?",
-    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+    q: "How do rewards work for international employees?",
+    a: "WorkKudo offers global digital gift cards and localized currency rewards in over 150 countries. When a board is completed, recipients can choose their reward, and we handle fulfillment and currency exchange automatically."
   },
   {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+    q: "Is there a limit on contributors?",
+    a: "No. Whether you have a small remote engineering squad of 10 or a massive global team of 10,000, our boards scale infinitely with unlimited contributors, signers, and files."
   },
   {
-    q: "What support SLA does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+    q: "Does it support Slack & Microsoft Teams?",
+    a: "Yes, we have native integrations that let you announce milestone celebrations, share board invite links, and notify the channel once a board has been completed and sent."
   },
   {
-    q: "Can we integrate with our HRIS system?",
-    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+    q: "How secure is data sharing across international networks?",
+    a: "We implement bank-level AES-256 encryption at rest and TLS 1.3 in transit. WorkKudo is SOC 2 Type II compliant and meets all GDPR and CCPA privacy standards for global enterprises."
   }
 ];
 
-export default function Enterprise() {
+export default function DistributedWorkforces() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const bgRef = useRef(null);
@@ -103,7 +104,7 @@ export default function Enterprise() {
   }, []);
 
   return (
-    <div className="enterprise-page">
+    <div className="enterprise-page distributed-page">
       <Navbar />
       
       {/* ── Hero Section ── */}
@@ -111,14 +112,14 @@ export default function Enterprise() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Enterprise Solutions</div>
-            <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
+            <div className="ep-badge">Solutions for Remote Teams</div>
+            <h1 className="ep-hero__title">Empower Distributed Teams at Global Scale</h1>
             <p className="ep-hero__subtitle">
-              Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
+              Build connection, trust, and alignment across timezones. WorkKudo's hybrid-friendly recognition platform bridges the physical distance to keep remote teammates closer than ever.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
-              <button className="ep-btn ep-btn--secondary">Contact Sales</button>
+              <button className="ep-btn ep-btn--primary">Start Global Board</button>
+              <button className="ep-btn ep-btn--secondary">See Remote Demos</button>
             </div>
           </div>
           <div className="ep-hero__visual">
@@ -129,8 +130,8 @@ export default function Enterprise() {
                 <span className="ep-dot green"></span>
               </div>
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Enterprise Analytics Dashboard" 
+                src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Remote Team Collaboration Screenshot" 
                 className="ep-hero__img"
               />
             </div>
@@ -144,58 +145,58 @@ export default function Enterprise() {
           <div className="ep-sticky-content">
             
             <div className="ep-container ep-section-header ep-section-header--sticky">
-              <h2>Enterprise-Grade Infrastructure</h2>
-              <p>Designed for absolute security, compliance, and total administrative control.</p>
+              <h2>Built for Borderless Collaboration</h2>
+              <p>Asynchronous tools and timezone-friendly features designed to bring remote teammates closer.</p>
             </div>
             
             <div className="ep-horizontal-track" ref={trackRef}>
               
-              <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
+              <div className="ep-feature-card" style={{ '--accent': '#06b6d4' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 </div>
-                <h3>Security & Compliance</h3>
-                <p>Bank-level encryption, SOC2 Type II compliance, GDPR readiness, and seamless enterprise SSO (SAML, Okta, Azure AD) integration.</p>
+                <h3>Asynchronous Signing</h3>
+                <p>Teammates sign from anywhere, anytime. Our boards collect signatures, images, GIFs, and milestone memories asynchronously on their own schedules.</p>
               </div>
 
-              <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
+              <div className="ep-feature-card" style={{ '--accent': '#3b82f6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
-                <h3>Advanced Analytics</h3>
-                <p>Track engagement, cultural sentiment, and core value adoption across thousands of employees with high-fidelity, real-time reporting dashboards.</p>
+                <h3>Slack & Teams Sync</h3>
+                <p>Celebrate wins directly in your shared channels. Share invite links, send notifications, and celebrate completions without leaving your daily chat space.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                 </div>
-                <h3>Custom Branding</h3>
-                <p>Deliver fully white-labeled recognition experiences. Integrate your own domains, brand colorways, and bespoke physical reward catalogs.</p>
+                <h3>Global Fulfillment</h3>
+                <p>Reward international teammates instantly. Automated choice-based gifting across 150+ countries with local shipping and currency support.</p>
+              </div>
+
+              <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
+                <div className="ep-feature-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <h3>HRIS Automations</h3>
+                <p>Sync directories seamlessly with Workday, BambooHR, and Rippling to automate onboarding greets, work anniversaries, and birthday templates.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
-                <h3>Global Fulfillment</h3>
-                <p>Automate physical gifts, digital vouchers, and localized currency rewards in over 150 countries instantly without the logistical headache.</p>
+                <h3>Unlimited Contributor Scale</h3>
+                <p>Invite internal squads, cross-department teams, or external vendors to co-sign. Boards scale infinitely with no per-user licensing walls.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#ec4899' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 </div>
-                <h3>Role-Based Access</h3>
-                <p>Deploy granular viewing permissions, multi-tier admin approval flows, and hierarchical budget allocations tailored for massive organizations.</p>
-              </div>
-
-              <div className="ep-feature-card" style={{ '--accent': '#06b6d4' }}>
-                <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                </div>
-                <h3>HRIS Integrations</h3>
-                <p>Fully automate onboarding flows, birthday triggers, and work anniversary celebrations by syncing directly with Workday, BambooHR, and Rippling.</p>
+                <h3>Localized Experience</h3>
+                <p>Provide eCard greetings and digital gift redemptions customized to each recipient's timezone, local language, and regional preferences.</p>
               </div>
 
             </div>
@@ -208,9 +209,9 @@ export default function Enterprise() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Your Teams Where They Already Work</h2>
+              <h2>Meet Remote Teams in Their Daily Workspaces</h2>
               <p>
-                WorkKudo deeply integrates with your existing tech stack. Celebrate wins directly in Slack or Microsoft Teams, and let our HRIS integrations handle the data syncing in the background.
+                WorkKudo integrates deeply into Slack, Microsoft Teams, and your core HRIS to sync global employee directory changes automatically. Send appreciation where your teams already work.
               </p>
               <ul className="ep-integrations__list">
                 <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
@@ -233,14 +234,16 @@ export default function Enterprise() {
       </section>
 
       {/* ── Highlight Section ── */}
-      <section className="ep-testimonial ep-testimonial--enterprise">
+      <section className="ep-testimonial ep-testimonial--distributed">
         <div className="ep-container">
           <div className="ep-testimonial__card">
             <svg className="ep-quote-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              WorkKudo provides corporate teams with a dedicated, enterprise-grade workspace that guarantees SSO compliance, strict data residency controls, and bank-level encryption. Keep your company communications secure while scaling cultural recognition across thousands of employees globally.
+              Bridge the distance in hybrid and remote organizations by giving everyone a timezone-friendly space to share greetings. Our asynchronous boards fit naturally into remote work patterns, making it easy to build authentic employee connection across any location.
             </blockquote>
           </div>
         </div>
@@ -251,16 +254,16 @@ export default function Enterprise() {
 
       {/* ── FAQ Section ── */}
       <FAQ 
-        title="Enterprise FAQs" 
-        subtitle="Everything you need to know about WorkKudo for Enterprise." 
-        data={enterpriseFaq}
+        title="Distributed Workforce FAQs" 
+        subtitle="Common questions about celebrating milestones in remote and hybrid environments." 
+        data={distributedFaq}
       />
 
       {/* ── Final CTA ── */}
       <section className="ep-cta">
         <div className="ep-container">
-          <h2>Ready to transform your enterprise culture?</h2>
-          <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
+          <h2>Ready to connect your distributed team?</h2>
+          <p>Join thousands of remote squads building closer relationships with WorkKudo.</p>
           <div className="ep-cta__actions">
             <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
