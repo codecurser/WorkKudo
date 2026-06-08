@@ -2,7 +2,7 @@
 .gifting-page {
   font-family: 'Inter', sans-serif;
   color: var(--text);
-  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/054/581/386/small/thanksgiving-sale-promotional-advertisement-with-gift-box-and-autumn-leaves-on-wooden-table-warm-orange-background-photo.jpeg");
+  background: var(--bg);
   /* Soft off-white */
   padding-top: 80px;
   /* space for navbar */
@@ -60,44 +60,55 @@
   box-shadow: var(--shadow-md);
 }
 
-.gf-hero {
+/* ── Hero Section (Redesigned with CSS-only Soft Gradients) ── */
+/* .gf-hero {
   position: relative;
   padding: 100px 0 120px;
   z-index: 1;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 107, 44, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+    var(--bg-white);
+  border-bottom: 1px solid var(--border-soft);
+} */
+
+.gf-hero {
+  position: relative;
+  padding: 120px 0 140px;
+  z-index: 1;
+  overflow: hidden;
 
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 255, 255, 0.92) 35%,
+      rgba(255, 255, 255, 0.70) 60%,
+      rgba(255, 255, 255, 0.20) 100%),
     url('https://static.vecteezy.com/system/resources/thumbnails/054/581/386/small/thanksgiving-sale-promotional-advertisement-with-gift-box-and-autumn-leaves-on-wooden-table-warm-orange-background-photo.jpeg');
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   border-bottom: 1px solid var(--border-soft);
+}
+
+.gf-hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -150px;
+  top: -100px;
+
+  background: radial-gradient(circle,
+      rgba(255, 107, 44, 0.25) 0%,
+      transparent 70%);
+
+  pointer-events: none;
 }
 
 .gf-hero-overlay {
   display: none;
-}
-
-.gf-hero__title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  line-height: 1.05;
-  margin-bottom: 24px;
-  letter-spacing: -0.03em;
-  color: #ffffff; /* White text for contrast */
-}
-
-.gf-hero__subtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9); /* High contrast subtitle */
-  margin-bottom: 40px;
-  font-weight: 400;
-  line-height: 1.7;
+  /* No longer needed for CSS gradient background */
 }
 
 .gf-hero .gf-container {
@@ -127,13 +138,23 @@
   }
 }
 
-.gf-hero__title {
+/* .gf-hero__title {
   font-size: 4.5rem;
   font-weight: 800;
   line-height: 1.05;
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   color: var(--navy);
+} */
+
+.gf-hero__title {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  max-width: 700px;
 }
 
 .gf-highlight {
@@ -155,12 +176,22 @@
   }
 }
 
+/* 
 .gf-hero__subtitle {
   font-size: 1.25rem;
   color: var(--text-light);
   margin-bottom: 40px;
   font-weight: 400;
   line-height: 1.7;
+} */
+
+.gf-hero__subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 40px;
+  font-weight: 500;
+  line-height: 1.8;
+  max-width: 580px;
 }
 
 .gf-hero__actions {
@@ -191,11 +222,54 @@
   }
 }
 
-.gf-canvas-wrapper {
+/* .gf-canvas-wrapper {
   width: 100%;
   height: 100%;
   border-radius: 24px;
   position: relative;
+} */
+
+/* Premium Card Container */
+.gf-canvas-wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: 340px;
+
+  background: rgba(0, 0, 0, 0.322);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+}
+
+/* Remove the orange glow completely */
+.gf-canvas-wrapper::before {
+  display: none;
+}
+
+.gf-hero__visual {
+  animation: premiumFloat 5s ease-in-out infinite;
+}
+
+@keyframes premiumFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* ── Section Header ── */
@@ -326,7 +400,7 @@
 }
 
 .gf-dynamic-preview-panel {
-  background: var(--bg-white);
+  background: #1F2937;
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 32px;
