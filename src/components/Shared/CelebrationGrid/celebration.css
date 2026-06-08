@@ -3,72 +3,96 @@
    ============================================================ */
 
 .celebration-section {
-  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, var(--orange-50) 0%, var(--orange-100) 100%);
+  border-top: 1px solid rgba(255, 107, 44, 0.12);
+  border-bottom: 1px solid rgba(255, 107, 44, 0.12);
 }
 
 /* Theme variations */
 .celebration-section.celebration-section--rose {
-  background: linear-gradient(135deg, #ff7675 0%, #d63031 100%) !important;
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFE3E3 100%) !important;
+  border-top: 1px solid rgba(224, 49, 49, 0.12) !important;
+  border-bottom: 1px solid rgba(224, 49, 49, 0.12) !important;
 }
 
 .celebration-section.celebration-section--green {
-  background: linear-gradient(135deg, #00b894 0%, #00876c 100%) !important;
+  background: linear-gradient(135deg, #F4FBF7 0%, #D1FAE5 100%) !important;
+  border-top: 1px solid rgba(16, 185, 129, 0.12) !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.12) !important;
 }
 
 .celebration-section.celebration-section--dark {
-  background: linear-gradient(135deg, #0b0f19 0%, #060913 100%) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%) !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.15) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15) !important;
 }
 
 .celebration-section.celebration-section--navy {
-  background: linear-gradient(135deg, #1A2B4A 0%, #0f1c33 100%) !important;
+  background: linear-gradient(135deg, var(--navy-50) 0%, var(--navy-100) 100%) !important;
+  border-top: 1px solid rgba(26, 43, 74, 0.12) !important;
+  border-bottom: 1px solid rgba(26, 43, 74, 0.12) !important;
 }
 
 .celebration-section.celebration-section--gold {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%) !important;
+  border-top: 1px solid rgba(217, 119, 6, 0.12) !important;
+  border-bottom: 1px solid rgba(217, 119, 6, 0.12) !important;
 }
 
 .celebration-section.celebration-section--blue {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%) !important;
+  border-top: 1px solid rgba(59, 130, 246, 0.12) !important;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.12) !important;
 }
 
 .celebration-section.celebration-section--purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
+  background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%) !important;
+  border-top: 1px solid rgba(139, 92, 246, 0.12) !important;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.12) !important;
 }
 
 .celebration-section.celebration-section--pink {
-  background: linear-gradient(135deg, #ec4899 0%, #be185d 100%) !important;
+  background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 100%) !important;
+  border-top: 1px solid rgba(236, 72, 153, 0.12) !important;
+  border-bottom: 1px solid rgba(236, 72, 153, 0.12) !important;
 }
 
 .celebration-section.celebration-section--red {
-  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
+  background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%) !important;
+  border-top: 1px solid rgba(239, 68, 68, 0.12) !important;
+  border-bottom: 1px solid rgba(239, 68, 68, 0.12) !important;
 }
 
 .celebration-section.celebration-section--teal {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%) !important;
+  background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%) !important;
+  border-top: 1px solid rgba(13, 148, 136, 0.12) !important;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.12) !important;
 }
 
 .celebration-section.celebration-section--forest {
-  background: linear-gradient(135deg, #14392c 0%, #0d251d 100%) !important;
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%) !important;
+  border-top: 1px solid rgba(21, 57, 44, 0.12) !important;
+  border-bottom: 1px solid rgba(21, 57, 44, 0.12) !important;
 }
 
 .celebration-section.celebration-section--indigo {
-  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%) !important;
+  background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%) !important;
+  border-top: 1px solid rgba(99, 102, 241, 0.12) !important;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.12) !important;
 }
 
 .celebration-section.celebration-section--cyan {
-  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%) !important;
+  background: linear-gradient(135deg, #ECFEFF 0%, #CFFAFE 100%) !important;
+  border-top: 1px solid rgba(8, 145, 178, 0.12) !important;
+  border-bottom: 1px solid rgba(8, 145, 178, 0.12) !important;
 }
 
 .celebration-section .section-title {
-  color: #ffffff;
+  color: var(--navy);
 }
 
 .celebration-section .section-subtitle {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text-light);
 }
 
 .celebration-grid {
