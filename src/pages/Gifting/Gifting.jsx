@@ -2,8 +2,135 @@ import React, { useRef, useState, useEffect } from 'react';
 import './Gifting.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import CelebrationGrid from '../../components/Shared/CelebrationGrid/CelebrationGrid';
 import FAQ from '../../components/FAQ/FAQ';
+import WorkkudoCard from '../../components/WorkkudoCard/WorkkudoCard';
+
+import physicalGiftsImg from '../../assets/physical_gifts.png';
+import giftCardsImg from '../../assets/gift_cards.png';
+import momentsImg from '../../assets/moments.png';
+import theBoardImg from '../../assets/the-board.png';
+import invitePeopleImg from '../../assets/invite-people.png';
+import dashboardImg from '../../assets/dashboard.png';
+
+const TYPING_WORDS = ['personal touch.', 'lasting impact.', 'digital twist.'];
+
+const steps = [
+  {
+    number: "01",
+    title: "Create a Board",
+    desc: "Start a WorkKudo board for any occasion. Set up the recipient, target date, and select a theme template in minutes.",
+    icon: "📋",
+    color: "#FF6B2C"
+  },
+  {
+    number: "02",
+    title: "Collect Contributions",
+    desc: "Invite teammates to add messages, photos, videos, and memories. Collaborate asynchronously from anywhere.",
+    icon: "💬",
+    color: "#3B82F6"
+  },
+  {
+    number: "03",
+    title: "Add Gifts or Rewards",
+    desc: "Enhance the card with physical gifts, digital rewards, or electronic gift cards within your preferred budget.",
+    icon: "🎁",
+    color: "#10B981"
+  },
+  {
+    number: "04",
+    title: "Deliver Together",
+    desc: "Send one complete experience combining recognition and rewards. Delivered on schedule via email, Slack, or MS Teams.",
+    icon: "🚀",
+    color: "#8B5CF6"
+  }
+];
+
+const features = [
+  { icon: "💌", title: "Digital Cards", desc: "Group appreciation cards signed by the whole team.", image: theBoardImg },
+  { icon: "📝", title: "Personal Messages", desc: "Express appreciation with rich text, emojis, and media.", image: momentsImg },
+  { icon: "📸", title: "Photo & Video Sharing", desc: "Teammates can post photos and recorded video greetings.", image: invitePeopleImg },
+  { icon: "🎁", title: "Physical Gifts", desc: "Employees choose from 250,000+ top-brand products.", image: physicalGiftsImg },
+  { icon: "💳", title: "Digital Rewards", desc: "Redemptions from 2,000+ local and global e-gift cards.", image: giftCardsImg },
+  { icon: "📱", title: "Accessible Anywhere", desc: "Seamless mobile and desktop access, no app install required.", image: dashboardImg }
+];
+
+const choiceTabs = [
+  {
+    id: "physical",
+    icon: "🎁",
+    label: "Physical Gifts",
+    title: "Curated products for meaningful celebrations",
+    desc: "Delight your team with tangible rewards. From top-tier tech accessories to gourmet treats and custom swag, employees choose from a curated catalog of premium physical items delivered worldwide.",
+    tagline: "Worldwide physical delivery powered by global logistics networks.",
+    badge: "Most Popular",
+    badgeColor: "#FF6B2C"
+  },
+  {
+    id: "digital",
+    icon: "💳",
+    label: "Digital Gift Cards",
+    title: "Convenient rewards that can be redeemed instantly",
+    desc: "Provide instant utility. Recipient gets a balance to redeem at their choice of over 2,000 brand eCards globally (including Amazon, Visa, Starbucks, Uber, and local leaders).",
+    tagline: "Zero delay, zero delivery fees, infinite possibilities.",
+    badge: "Instant Delivery",
+    badgeColor: "#3B82F6"
+  },
+  {
+    id: "experiences",
+    icon: "🌟",
+    label: "Reward Experiences",
+    title: "Flexible options that allow employees to choose what matters most",
+    desc: "Go beyond standard rewards. Let them choose unforgettable activities, classes, dining experiences, or subscriptions that match their personal style and hobbies.",
+    tagline: "Memories that last far beyond the working day.",
+    badge: "Unique Experience",
+    badgeColor: "#8B5CF6"
+  },
+  {
+    id: "recognition",
+    icon: "🏆",
+    label: "Recognition-First Celebrations",
+    title: "Combine rewards with personal messages, photos, and appreciation",
+    desc: "Make it emotional. The gift is attached directly to a group appreciation card packed with photos, videos, and congratulatory notes signed by the whole team.",
+    tagline: "Because a reward is twice as sweet when paired with heartfelt praise.",
+    badge: "Appreciation Plus",
+    badgeColor: "#10B981"
+  }
+];
+
+const environments = [
+  {
+    id: "office",
+    icon: "🏢",
+    label: "In-office",
+    title: "Celebrate together at the desk",
+    desc: "Display group cards on the big screen during team meetings, drop premium physical gifts directly at their desk, and enjoy sharing moments together in-person.",
+    highlight: "Great for office cohesion"
+  },
+  {
+    id: "remote",
+    icon: "🏠",
+    label: "Remote",
+    title: "Bridge distances seamlessly",
+    desc: "Send cards instantly via Slack, MS Teams, or email. Enable home-delivery for physical packages with custom-printed greeting inserts.",
+    highlight: "100% borderless delivery"
+  },
+  {
+    id: "hybrid",
+    icon: "🔄",
+    label: "Hybrid",
+    title: "The best of both worlds",
+    desc: "Open card signatures online, run hybrid video calls for live reveals, and give options for digital vouchers or physical office handovers.",
+    highlight: "Flexible team alignments"
+  },
+  {
+    id: "distributed",
+    icon: "🌍",
+    label: "Distributed Teams",
+    title: "Truly global celebrations",
+    desc: "Handle automated local tax adjustments, global customs clearance, localized brand catalog selections, and multiple currency options.",
+    highlight: "150+ countries supported"
+  }
+];
 
 const giftingFaq = [
   {
@@ -27,13 +154,6 @@ const giftingFaq = [
     a: "Yes, you can customize the email invitation, redemption page, eCards, and packaging inserts with your logo, corporate colors, and custom brand messages."
   }
 ];
-import WorkkudoCard from '../../components/WorkkudoCard/WorkkudoCard';
-import physicalGiftsImg from '../../assets/physical_gifts.png';
-import giftCardsImg from '../../assets/gift_cards.png';
-import momentsImg from '../../assets/moments.png';
-import heroBgImg from '../../assets/minimalist_hero_bg.png';
-
-const TYPING_WORDS = ['personal touch.', 'lasting impact.', 'digital twist.'];
 
 function Typewriter({ words }) {
   const [index, setIndex] = useState(0);
@@ -69,6 +189,17 @@ function Typewriter({ words }) {
 
 export default function Gifting() {
   const featuresRef = useRef(null);
+  const [activeStep, setActiveStep] = useState(0);
+  const [activeChoiceIndex, setActiveChoiceIndex] = useState(0);
+  const [activeEnvIndex, setActiveEnvIndex] = useState(1); // Default to remote
+
+  // Auto transition timeline steps
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleMouseMove = (e) => {
     if (!featuresRef.current) return;
@@ -82,18 +213,101 @@ export default function Gifting() {
     }
   };
 
+  // Render a dynamic preview graphic based on the active stepper index
+  const renderStepPreview = (stepIdx) => {
+    switch (stepIdx) {
+      case 0:
+        return (
+          <div className="gf-step-preview-box step-0-preview">
+            <div className="gf-preview-board-mockup">
+              <div className="mockup-nav">
+                <span className="dots"><span className="r"></span><span className="y"></span><span className="g"></span></span>
+                <span className="title">New Board Creator</span>
+              </div>
+              <div className="mockup-content">
+                <label>Who is this board for?</label>
+                <div className="input-field">Sarah Jenkins</div>
+                <label>Choose Occasion</label>
+                <div className="occasion-options">
+                  <span className="opt active">🎂 Birthday</span>
+                  <span className="opt">🏖 Farewell</span>
+                  <span className="opt">🎉 Promotion</span>
+                </div>
+                <button className="create-btn">Create Board & Invite Team</button>
+              </div>
+            </div>
+          </div>
+        );
+      case 1:
+        return (
+          <div className="gf-step-preview-box step-1-preview">
+            <div className="gf-preview-signatures">
+              <div className="sig-card card-1">
+                <div className="sig-header"><span>👋 Alex R.</span></div>
+                <p>Happy anniversary, Sarah! You make work so much fun!</p>
+              </div>
+              <div className="sig-card card-2">
+                <div className="sig-header"><span>🎉 Michelle W.</span></div>
+                <p>Thanks for being a fantastic mentor! Wishing you all the best.</p>
+              </div>
+              <div className="sig-card card-3">
+                <div className="sig-header"><span>📸 David L.</span></div>
+                <div className="photo-placeholder">📸 Group Photo.jpg</div>
+              </div>
+            </div>
+          </div>
+        );
+      case 2:
+        return (
+          <div className="gf-step-preview-box step-2-preview">
+            <div className="gf-preview-gift-selection">
+              <h4>Choose Reward Type</h4>
+              <div className="gift-grid-mini">
+                <div className="gift-item active">
+                  <span className="emoji">🎁</span>
+                  <span>Physical Gift</span>
+                </div>
+                <div className="gift-item">
+                  <span className="emoji">💳</span>
+                  <span>Gift Card</span>
+                </div>
+                <div className="gift-item">
+                  <span className="emoji">🌟</span>
+                  <span>Experience</span>
+                </div>
+              </div>
+              <div className="budget-slider">
+                <span>Budget: <strong>$50 USD</strong></span>
+                <div className="slider-bar"><div className="fill"></div></div>
+              </div>
+            </div>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="gf-step-preview-box step-3-preview">
+            <div className="gf-preview-delivery">
+              <div className="envelope-box">
+                <span className="mail-icon">✉️</span>
+                <div className="glowing-pulse"></div>
+              </div>
+              <h4>Complete Experience Sent!</h4>
+              <p>Delivered via email & Slack</p>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="gifting-page">
       <Navbar />
 
       {/* ── Hero Section ── */}
-      <section 
-        className="gf-hero gf-hero--minimalist"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
-      >
-        {/* Dark overlay for text readability */}
+      <section className="gf-hero gf-hero--minimalist">
         <div className="gf-hero-overlay"></div>
-
         <div className="gf-container">
           <div className="gf-hero__content">
             <h1 className="gf-hero__title">
@@ -117,108 +331,188 @@ export default function Gifting() {
         </div>
       </section>
 
-      {/* ── Features Section ── */}
+      {/* ── Section 1: How Gifting Works (Redesigned Side-by-Side) ── */}
+      <section className="gf-how-it-works">
+        <div className="gf-container">
+          <div className="gf-section-header">
+            <h2>Recognition and Gifting in One Experience</h2>
+            <p>Make every workplace celebration more meaningful by combining recognition, appreciation, and rewards in a single experience.</p>
+          </div>
+
+          <div className="gf-interactive-stepper">
+            <div className="gf-stepper-left">
+              {steps.map((step, idx) => {
+                const isActive = idx === activeStep;
+                return (
+                  <div
+                    key={step.number}
+                    className={`gf-stepper-row ${isActive ? 'active' : ''}`}
+                    onClick={() => setActiveStep(idx)}
+                    style={{ '--step-theme': step.color }}
+                  >
+                    <div className="gf-stepper-num-col">
+                      <span className="num-badge">{step.number}</span>
+                      {idx < steps.length - 1 && <span className="stepper-line"></span>}
+                    </div>
+                    <div className="gf-stepper-content-col">
+                      <h4>
+                        <span className="step-icon-inline">{step.icon}</span>
+                        {step.title}
+                      </h4>
+                      <p>{step.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="gf-stepper-right">
+              <div className="gf-dynamic-preview-panel">
+                <div className="gf-preview-header">
+                  <span className="status-indicator"></span> Live Mockup Preview
+                </div>
+                {renderStepPreview(activeStep)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 2: Recognition + Gifting ── */}
       <section className="gf-features" onMouseMove={handleMouseMove}>
         <div className="gf-container">
           <div className="gf-section-header">
-            <h2>Gifting that brings recognition to life</h2>
-            <p>Turn corporate gifts into meaningful moments for employees — pair any WorkKudo board with gifts or digital rewards to elevate impact.</p>
+            <h2>More Than a Gift. A Moment They’ll Remember.</h2>
+            <p>A gift is meaningful. Recognition makes it memorable.</p>
           </div>
           
           <div className="gf-grid" ref={featuresRef}>
-            
-            <div className="gf-glass-card">
-              <div className="gf-glass-card__image">
-                <img src={physicalGiftsImg} alt="Physical gifts delivered" />
+            {features.map((feat, idx) => (
+              <div key={idx} className="gf-glass-card">
+                <div className="gf-glass-card-spotlight"></div>
+                <div className="gf-glass-card-image">
+                  <img src={feat.image} alt={feat.title} />
+                </div>
+                <div className="gf-glass-card__content">
+                  <div className="gf-glass-card-emoji-header">
+                    <span className="gf-glass-card-emoji">{feat.icon}</span>
+                    <h3>{feat.title}</h3>
+                  </div>
+                  <p>{feat.desc}</p>
+                </div>
               </div>
-              <h3>Physical gifts delivered</h3>
-              <p>Powered by Snappy, employees can choose from 250,000+ gifts from top brands, delivered straight to their door with global fulfillment.</p>
-            </div>
-
-            <div className="gf-glass-card">
-              <div className="gf-glass-card__image">
-                <img src={giftCardsImg} alt="Instant digital gift cards" />
-              </div>
-              <h3>Gift cards instant</h3>
-              <p>Digital gifting, simplified. Employees choose from 2,000+ electronic gift card options with instant delivery worldwide.</p>
-              <div className="gf-tag-list">
-                <span>Visa</span>
-                <span>Amazon</span>
-                <span>Best Buy</span>
-              </div>
-            </div>
-
-            <div className="gf-glass-card">
-              <div className="gf-glass-card__image">
-                <img src={momentsImg} alt="Personalized corporate moments" />
-              </div>
-              <h3>Personalized moments felt</h3>
-              <p>Every gift is powered by WorkKudo — from 1-to-1 eCards to group boards with personal messages, images, and videos.</p>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── Use Cases Section (Bento Grid) ── */}
-      <section className="gf-use-cases">
+      {/* ── Section 3: Employee Choice ── */}
+      <section className="gf-employee-choice">
         <div className="gf-container">
-           <div className="gf-use-cases__header">
-             <h2>Corporate Gifting Employees Love</h2>
-             <p className="gf-use-cases__subtitle">Gifting for all meaningful moments</p>
-             <p className="gf-use-cases__desc">
-               Corporate gifting supports employees through the moments that define their experience. WorkKudo makes it simple to match each occasion with the right gift and meaningful message.
-             </p>
-           </div>
+          <div className="gf-section-header">
+            <h2>Give Thoughtfully, Let Employees Choose</h2>
+            <p>Every employee is different. Provide flexible reward options that fit their preferences.</p>
+          </div>
 
-           <div className="gf-bento-grid">
-             {/* Large Card */}
-             <div className="gf-bento-card gf-bento-large">
-               <div className="gf-bento-content">
-                 <h3>Onboarding & Welcomes</h3>
-                 <p>Welcome new hires with a business gift and messages from their team, setting the tone for employee engagement from day one. From cookies to candles, artwork, and electronics, WorkKudo has plenty of gifts to shop for.</p>
-                 <button className="gf-link-btn">Explore Onboarding <span>→</span></button>
-               </div>
-               <div className="gf-bento-bg bento-pulse"></div>
-             </div>
+          <div className="gf-choice-showcase">
+            <div className="gf-choice-tabs">
+              {choiceTabs.map((tab, idx) => {
+                const isActive = idx === activeChoiceIndex;
+                return (
+                  <button
+                    key={tab.id}
+                    className={`gf-choice-tab-btn ${isActive ? 'active' : ''}`}
+                    onClick={() => setActiveChoiceIndex(idx)}
+                  >
+                    <span className="gf-choice-tab-icon">{tab.icon}</span>
+                    <span className="gf-choice-tab-label">{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
 
-             {/* Medium Card 1 */}
-             <div className="gf-bento-card">
-               <div className="gf-bento-content">
-                 <h3>Birthdays & Milestones</h3>
-                 <p>Never miss a work anniversary or birthday. Automate group cards attached to premium digital rewards.</p>
-               </div>
-             </div>
+            <div className="gf-choice-display">
+              <div className="gf-choice-info">
+                <span 
+                  className="gf-choice-badge" 
+                  style={{ backgroundColor: `${choiceTabs[activeChoiceIndex].badgeColor}15`, color: choiceTabs[activeChoiceIndex].badgeColor, borderColor: choiceTabs[activeChoiceIndex].badgeColor }}
+                >
+                  {choiceTabs[activeChoiceIndex].badge}
+                </span>
+                <h3>{choiceTabs[activeChoiceIndex].title}</h3>
+                <p className="gf-choice-desc">{choiceTabs[activeChoiceIndex].desc}</p>
+                <p className="gf-choice-tagline">
+                  <span className="gf-check-icon">✓</span> {choiceTabs[activeChoiceIndex].tagline}
+                </p>
+              </div>
 
-             {/* Medium Card 2 */}
-             <div className="gf-bento-card">
-               <div className="gf-bento-content">
-                 <h3>Holidays & Appreciation</h3>
-                 <p>Scale your end-of-year gifting effortlessly. Send custom seasonal cards loaded with choice-based gift links.</p>
-               </div>
-             </div>
-
-             {/* Wide Bottom Card */}
-             <div className="gf-bento-card gf-bento-wide">
-               <div className="gf-bento-content">
-                 <div className="gf-bento-wide-inner">
-                   <div className="gf-bento-col">
-                     <h3>Life Events & Support</h3>
-                     <p>Offer comfort and congratulations during major life events with a unified team message and thoughtful care packages.</p>
-                   </div>
-                   <div className="gf-bento-col">
-                     <h3>Contests, Spiffs & Spot Bonuses</h3>
-                     <p>Drive performance by rewarding top achievers instantly with digital currency they can spend anywhere.</p>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+              <div className="gf-choice-preview">
+                {/* Dynamic visually rich preview mockup */}
+                <div className="gf-mockup-card">
+                  <div className="gf-mockup-header">
+                    <span className="gf-mockup-logo">WorkKudo Gift Choice</span>
+                    <span className="gf-mockup-status">Redeemable</span>
+                  </div>
+                  <div className="gf-mockup-body">
+                    <div className="gf-mockup-illustration">
+                      <span className="gf-mockup-emoji">{choiceTabs[activeChoiceIndex].icon}</span>
+                    </div>
+                    <h4>{choiceTabs[activeChoiceIndex].label}</h4>
+                    <p>Select from curated global options.</p>
+                  </div>
+                  <div className="gf-mockup-footer">
+                    <button className="gf-mockup-btn">Claim Reward</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="dark" />
+      {/* ── Section 4: Built for Modern Teams ── */}
+      <section className="gf-modern-teams">
+        <div className="gf-container">
+          <div className="gf-section-header">
+            <h2>Support Teams Wherever They Work</h2>
+            <p>WorkKudo helps organizations celebrate employees consistently regardless of where work happens.</p>
+          </div>
+
+          <div className="gf-teams-layout">
+            <div className="gf-teams-cards">
+              {environments.map((env, idx) => {
+                const isActive = idx === activeEnvIndex;
+                return (
+                  <div
+                    key={env.id}
+                    className={`gf-env-card ${isActive ? 'active' : ''}`}
+                    onClick={() => setActiveEnvIndex(idx)}
+                  >
+                    <div className="gf-env-card-header">
+                      <span className="gf-env-icon">{env.icon}</span>
+                      <h4>{env.label}</h4>
+                    </div>
+                    <p>{env.desc}</p>
+                    <span className="gf-env-highlight">{env.highlight}</span>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="gf-teams-visualization">
+              <div className="gf-visualization-box">
+                <span className="gf-vis-emoji">{environments[activeEnvIndex].icon}</span>
+                <h3>{environments[activeEnvIndex].title}</h3>
+                <p>{environments[activeEnvIndex].desc}</p>
+                <div className="gf-vis-indicator">
+                  <span className="gf-vis-ping"></span>
+                  Active Setup: {environments[activeEnvIndex].label}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ Section ── */}
       <FAQ 

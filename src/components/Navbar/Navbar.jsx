@@ -6,17 +6,17 @@ import logo from '../../assets/workkudosvg.svg'
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const occasions = [
-  { emoji: '👋', label: 'Send-Off',         desc: 'Send off a colleague with warmth' },
-  { emoji: '🎂', label: 'Birthday',          desc: 'Celebrate their special day' },
-  { emoji: '💌', label: 'Appreciation',      desc: 'Express genuine appreciation' },
-  { emoji: '🏖', label: 'Retirement',        desc: 'Honor years of dedication' },
-  { emoji: '💙', label: 'Condolence',        desc: 'Offer comfort and support' },
-  { emoji: '🏆', label: 'Work Milestone',    desc: 'Milestone worth celebrating' },
-  { emoji: '🌼', label: 'Speedy Recovery',   desc: 'Lift someone\'s spirits' },
-  { emoji: '👶', label: 'Baby Arrival',      desc: 'Welcome the newest member' },
-  { emoji: '🎉', label: 'Onboarding',        desc: 'Make a great first impression' },
-  { emoji: '🥳', label: 'Kudos',             desc: 'Celebrate achievements big & small' },
-  { emoji: '🎄', label: 'Festive Season',    desc: 'Season\'s greetings for everyone' },
+  { emoji: '👋', label: 'Send-Off', desc: 'Send off a colleague with warmth' },
+  { emoji: '🎂', label: 'Birthday', desc: 'Celebrate their special day' },
+  { emoji: '💌', label: 'Appreciation', desc: 'Express genuine appreciation' },
+  { emoji: '🏖', label: 'Retirement', desc: 'Honor years of dedication' },
+  { emoji: '💙', label: 'Condolence', desc: 'Offer comfort and support' },
+  { emoji: '🏆', label: 'Work Milestone', desc: 'Milestone worth celebrating' },
+  { emoji: '🌼', label: 'Speedy Recovery', desc: 'Lift someone\'s spirits' },
+  { emoji: '👶', label: 'Baby Arrival', desc: 'Welcome the newest member' },
+  { emoji: '🎉', label: 'Onboarding', desc: 'Make a great first impression' },
+  { emoji: '🥳', label: 'Kudos', desc: 'Celebrate achievements big & small' },
+  { emoji: '🎄', label: 'Festive Season', desc: 'Season\'s greetings for everyone' },
 ]
 
 const events = [
@@ -58,13 +58,13 @@ const recognitionCards = [
 ]
 
 const extras = [
-  { emoji: '💌', label: 'Digital Cards',       desc: 'Digital cards with personality' },
-  { emoji: '🎁', label: 'Business Gifts',      desc: 'Meaningful, curated gifts' },
-  { emoji: '🎟', label: 'Reward Vouchers',     desc: 'Let them choose their reward' },
-  { emoji: '📋', label: 'Shared Group Cards',  desc: 'Sign together, anywhere' },
-  { emoji: '📖', label: 'Printed Keepsakes',   desc: 'Physical keepsakes that last' },
-  { emoji: '🖼', label: 'Photo Mosaics',       desc: 'Photo memories, beautifully arranged' },
-  { emoji: '🎞', label: 'Memory Reels',        desc: 'Video-style memory reels' },
+  { emoji: '💌', label: 'Digital Cards', desc: 'Digital cards with personality' },
+  { emoji: '🎁', label: 'Business Gifts', desc: 'Meaningful, curated gifts' },
+  { emoji: '🎟', label: 'Reward Vouchers', desc: 'Let them choose their reward' },
+  { emoji: '📋', label: 'Shared Group Cards', desc: 'Sign together, anywhere' },
+  { emoji: '📖', label: 'Printed Keepsakes', desc: 'Physical keepsakes that last' },
+  { emoji: '🖼', label: 'Photo Mosaics', desc: 'Photo memories, beautifully arranged' },
+  { emoji: '🎞', label: 'Memory Reels', desc: 'Video-style memory reels' },
 ]
 
 /* Tab definitions for the Build mega menu */
@@ -104,32 +104,32 @@ const createTabs = [
 ]
 
 const platformFeatures = [
-  { icon: '📊', label: 'Appreciation Walls',     desc: 'Group cards your team can sign' },
-  { icon: '📈', label: 'Group Insights',          desc: 'Visualize recognition in real-time' },
-  { icon: '🔍', label: 'Metrics',                 desc: 'Insights into team engagement' },
-  { icon: '🎨', label: 'Festive Layouts',         desc: 'Beautiful ready-made designs' },
-  { icon: '💡', label: 'Staff Motivation',        desc: 'Tools that motivate your people' },
-  { icon: '📋', label: 'Data Reports',            desc: 'Export data and share results' },
-  { icon: '🔗', label: 'Connections',             desc: 'Slack, Teams, HRIS and more' },
-  { icon: '🔔', label: 'Alerts',                  desc: 'Never miss a milestone' },
+  { icon: '📊', label: 'Appreciation Walls', desc: 'Group cards your team can sign' },
+  { icon: '📈', label: 'Group Insights', desc: 'Visualize recognition in real-time' },
+  { icon: '🔍', label: 'Metrics', desc: 'Insights into team engagement' },
+  { icon: '🎨', label: 'Festive Layouts', desc: 'Beautiful ready-made designs' },
+  { icon: '💡', label: 'Staff Motivation', desc: 'Tools that motivate your people' },
+  { icon: '📋', label: 'Data Reports', desc: 'Export data and share results' },
+  { icon: '🔗', label: 'Connections', desc: 'Slack, Teams, HRIS and more' },
+  { icon: '🔔', label: 'Alerts', desc: 'Never miss a milestone' },
 ]
 
 const platformBenefits = [
-  { icon: '🚀', label: 'Boost team spirit',         color: '#FF6B2C' },
-  { icon: '💬', label: 'Enhance participation',     color: '#3B82F6' },
-  { icon: '🌱', label: 'Build community',           color: '#22C55E' },
-  { icon: '🎯', label: 'Honor achievements',        color: '#F59E0B' },
-  { icon: '🌐', label: 'Remote workforce',          color: '#8B5CF6' },
-  { icon: '🏡', label: 'Virtual appreciation',      color: '#EC4899' },
+  { icon: '🚀', label: 'Boost team spirit', color: '#FF6B2C' },
+  { icon: '💬', label: 'Enhance participation', color: '#3B82F6' },
+  { icon: '🌱', label: 'Build community', color: '#22C55E' },
+  { icon: '🎯', label: 'Honor achievements', color: '#F59E0B' },
+  { icon: '🌐', label: 'Remote workforce', color: '#8B5CF6' },
+  { icon: '🏡', label: 'Virtual appreciation', color: '#EC4899' },
 ]
 
 const customersData = {
-  'By Industry':     ['Corporations & Enterprise', 'Medical & Healthcare', 'Charities & NGOs'],
-  'By Team':         ['Distributed Workforces', 'People & Culture Teams', 'Early-Stage Ventures'],
+  'By Industry': ['Corporations & Enterprise', 'Medical & Healthcare', 'Charities & NGOs'],
+  'By Team': ['Distributed Workforces', 'People & Culture Teams', 'Early-Stage Ventures'],
 }
 
 const resourcesData = {
-  Guides:     ['Support Hub', 'Layouts', 'Appreciation Handbook', 'Insights'],
+  Guides: ['Support Hub', 'Layouts', 'Appreciation Handbook', 'Insights'],
   Assistance: ['Reach Us', 'Common Questions', 'Forum'],
 }
 
@@ -137,21 +137,21 @@ const resourcesData = {
 const ChevronIcon = ({ className = '' }) => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className={`nav-chevron ${className}`}>
     <path d="M3 5l4 4 4-4" stroke="currentColor" strokeWidth="1.6"
-          strokeLinecap="round" strokeLinejoin="round"/>
+      strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 
 const ArrowIcon = () => (
   <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
     <path d="M2 6.5h9M7.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5"
-          strokeLinecap="round" strokeLinejoin="round"/>
+      strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
 
 /* ─── Create Mega Menu — Sidebar Tab UI ────────────────────── */
 function CreateMegaMenu({ onItemClick }) {
   const [activeTab, setActiveTab] = useState('occasions')
-  const [animKey, setAnimKey]     = useState(0)
+  const [animKey, setAnimKey] = useState(0)
 
   const tab = createTabs.find(t => t.id === activeTab)
 
@@ -209,17 +209,17 @@ function CreateMegaMenu({ onItemClick }) {
                 <Link
                   key={item.label}
                   to={
-                    item.label === 'Send-Off'      ? "/send-off"       :
-                    item.label === 'Birthday'      ? "/birthday"       :
-                    item.label === 'Appreciation'  ? "/appreciation"   :
-                    item.label === 'Retirement'    ? "/retirement"     :
-                    item.label === 'Condolence'    ? "/condolence"     :
-                    item.label === 'Work Milestone' ? "/work-milestone" :
-                    item.label === 'Speedy Recovery' ? "/speedy-recovery" :
-                    item.label === 'Baby Arrival'   ? "/baby-arrival"   :
-                    item.label === 'Onboarding'     ? "/onboarding"     :
-                    item.label === 'Kudos'          ? "/kudos"          :
-                    "/festive-season"
+                    item.label === 'Send-Off' ? "/send-off" :
+                      item.label === 'Birthday' ? "/birthday" :
+                        item.label === 'Appreciation' ? "/appreciation" :
+                          item.label === 'Retirement' ? "/retirement" :
+                            item.label === 'Condolence' ? "/condolence" :
+                              item.label === 'Work Milestone' ? "/work-milestone" :
+                                item.label === 'Speedy Recovery' ? "/speedy-recovery" :
+                                  item.label === 'Baby Arrival' ? "/baby-arrival" :
+                                    item.label === 'Onboarding' ? "/onboarding" :
+                                      item.label === 'Kudos' ? "/kudos" :
+                                        "/festive-season"
                   }
                   className="panel-item"
                   style={{ animationDelay: `${i * 18}ms` }}
@@ -385,12 +385,12 @@ function MobileAccordion({ label, children }) {
 }
 
 /* ─── Main Navbar ──────────────────────────────────────────── */
-const NAV_ITEMS      = ['Build', 'Solutions', 'Gifting', 'Business', 'Community', 'Learn', 'Pricing']
-const MEGA_ITEMS     = ['Build', 'Solutions']
+const NAV_ITEMS = ['Build', 'Solutions', 'Gifting', 'Community', 'Learn', 'Pricing']
+const MEGA_ITEMS = ['Build', 'Solutions']
 const DROPDOWN_ITEMS = ['Community', 'Learn']
 
 export default function Navbar() {
-  const [scrolled, setScrolled]   = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const location = useLocation()
@@ -413,9 +413,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const openMenu  = (name) => { clearTimeout(closeTimer.current); setActiveMenu(name) }
-  const closeMenu = ()     => { closeTimer.current = setTimeout(() => setActiveMenu(null), 140) }
-  const keepOpen  = ()     => clearTimeout(closeTimer.current)
+  const openMenu = (name) => { clearTimeout(closeTimer.current); setActiveMenu(name) }
+  const closeMenu = () => { closeTimer.current = setTimeout(() => setActiveMenu(null), 140) }
+  const keepOpen = () => clearTimeout(closeTimer.current)
 
   const hasMegaOrDropdown = (item) =>
     MEGA_ITEMS.includes(item) || DROPDOWN_ITEMS.includes(item)
@@ -453,14 +453,14 @@ export default function Navbar() {
                   </Link>
                 ) : (
                   <a href={`#${item.toLowerCase()}`} className="nav-link"
-                     aria-haspopup={hasMegaOrDropdown(item)}
-                     aria-expanded={activeMenu === item}>
+                    aria-haspopup={hasMegaOrDropdown(item)}
+                    aria-expanded={activeMenu === item}>
                     {item}
                     {hasMegaOrDropdown(item) && <ChevronIcon />}
                   </a>
                 )}
 
-                {item === 'Build'     && activeMenu === 'Build'     && (
+                {item === 'Build' && activeMenu === 'Build' && (
                   <div className="menu-wrapper menu-wrapper--mega" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <CreateMegaMenu onItemClick={() => setActiveMenu(null)} />
                   </div>
@@ -475,7 +475,7 @@ export default function Navbar() {
                     <SmallDropdown data={customersData} />
                   </div>
                 )}
-                {item === 'Learn'     && activeMenu === 'Learn'     && (
+                {item === 'Learn' && activeMenu === 'Learn' && (
                   <div className="menu-wrapper menu-wrapper--small" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <SmallDropdown data={resourcesData} />
                   </div>
@@ -491,7 +491,7 @@ export default function Navbar() {
               Create a Board
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                 <path d="M2.5 7.5h10M8 3l5 4.5L8 12" stroke="currentColor" strokeWidth="1.8"
-                      strokeLinecap="round" strokeLinejoin="round"/>
+                  strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
           </div>
@@ -559,7 +559,7 @@ export default function Navbar() {
           </MobileAccordion>
 
           <Link to="/pricing" className="mobile-top-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <a href="#signin"  className="mobile-top-link">Sign In</a>
+          <a href="#signin" className="mobile-top-link">Sign In</a>
         </div>
 
         <div className="mobile-menu__footer">
