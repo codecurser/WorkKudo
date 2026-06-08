@@ -38,6 +38,7 @@ import Startups from './pages/Startups/Startups'
 import AwardStyle from './pages/AwardStyle/AwardStyle'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Programs from './pages/Programs/Programs'
+import Connect from './pages/Connect/Connect'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -242,6 +243,7 @@ export default function App() {
       <Route path="/gifting" element={<Gifting />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/programs" element={<Programs />} />
+      <Route path="/connect" element={<Connect />} />
     </Routes>
     </>
   )

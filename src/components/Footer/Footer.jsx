@@ -129,7 +129,14 @@ export default function Footer() {
                     href = '/about-us'
                     isRouterLink = true
                   } else if (link === 'Contact Us') {
-                    href = 'mailto:support@proso.ai'
+                    href = '/connect#contact'
+                    isRouterLink = true
+                  } else if (link === 'Careers') {
+                    href = '/connect#careers'
+                    isRouterLink = true
+                  } else if (link === 'Request a Demo') {
+                    href = '/connect#demo'
+                    isRouterLink = true
                   } else if (link === 'Corporations & Enterprise') {
                     href = '/solutions/enterprise'
                     isRouterLink = true
