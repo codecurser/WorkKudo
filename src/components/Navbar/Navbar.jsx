@@ -104,14 +104,14 @@ const createTabs = [
 ]
 
 const platformFeatures = [
-  { icon: '📊', label: 'Appreciation Walls', desc: 'Group cards your team can sign' },
-  { icon: '📈', label: 'Group Insights', desc: 'Visualize recognition in real-time' },
-  { icon: '🔍', label: 'Metrics', desc: 'Insights into team engagement' },
-  { icon: '🎨', label: 'Festive Layouts', desc: 'Beautiful ready-made designs' },
-  { icon: '💡', label: 'Staff Motivation', desc: 'Tools that motivate your people' },
-  { icon: '📋', label: 'Data Reports', desc: 'Export data and share results' },
-  { icon: '🔗', label: 'Connections', desc: 'Slack, Teams, HRIS and more' },
-  { icon: '🔔', label: 'Alerts', desc: 'Never miss a milestone' },
+  { icon: '📊', label: 'Appreciation Walls', desc: 'Group cards your team can sign', to: '/features/appreciation-walls' },
+  { icon: '📈', label: 'Group Insights', desc: 'Visualize recognition in real-time', to: '/features/group-insights' },
+  { icon: '🔍', label: 'Metrics', desc: 'Insights into team engagement', to: '/features/metrics' },
+  { icon: '🎨', label: 'Festive Layouts', desc: 'Beautiful ready-made designs', to: '/features/festive-layouts' },
+  { icon: '💡', label: 'Staff Motivation', desc: 'Tools that motivate your people', to: '/features/staff-motivation' },
+  { icon: '📋', label: 'Data Reports', desc: 'Export data and share results', to: '/features/data-reports' },
+  { icon: '🔗', label: 'Connections', desc: 'Slack, Teams, HRIS and more', to: '/features/connections' },
+  { icon: '🔔', label: 'Alerts', desc: 'Never miss a milestone', to: '/features/alerts' },
 ]
 
 const platformBenefits = [
@@ -305,13 +305,13 @@ function PlatformMegaMenu() {
           <p className="mega-col__title">FEATURES</p>
           <div className="platform-list">
             {platformFeatures.map(f => (
-              <a key={f.label} href="#" className="platform-item">
+              <Link key={f.label} to={f.to} className="platform-item">
                 <span className="platform-item__icon">{f.icon}</span>
                 <div>
                   <p className="platform-item__label">{f.label}</p>
                   <p className="platform-item__desc">{f.desc}</p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

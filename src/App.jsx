@@ -39,6 +39,14 @@ import AwardStyle from './pages/AwardStyle/AwardStyle'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Programs from './pages/Programs/Programs'
 import Connect from './pages/Connect/Connect'
+import AppreciationWalls from './pages/Features/AppreciationWalls'
+import GroupInsights from './pages/Features/GroupInsights'
+import Metrics from './pages/Features/Metrics'
+import FestiveLayouts from './pages/Features/FestiveLayouts'
+import StaffMotivation from './pages/Features/StaffMotivation'
+import DataReports from './pages/Features/DataReports'
+import Connections from './pages/Features/Connections'
+import Alerts from './pages/Features/Alerts'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -244,6 +252,14 @@ export default function App() {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/programs" element={<Programs />} />
       <Route path="/connect" element={<Connect />} />
+      <Route path="/features/appreciation-walls" element={<AppreciationWalls />} />
+      <Route path="/features/group-insights" element={<GroupInsights />} />
+      <Route path="/features/metrics" element={<Metrics />} />
+      <Route path="/features/festive-layouts" element={<FestiveLayouts />} />
+      <Route path="/features/staff-motivation" element={<StaffMotivation />} />
+      <Route path="/features/data-reports" element={<DataReports />} />
+      <Route path="/features/connections" element={<Connections />} />
+      <Route path="/features/alerts" element={<Alerts />} />
     </Routes>
     </>
   )

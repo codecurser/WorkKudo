@@ -100,18 +100,6 @@ function HeroSection() {
             <button className="pg-btn pg-btn--ghost">Explore Programs</button>
           </motion.div>
 
-          {/* Type pills */}
-          <motion.div className="pg-hero-pills" variants={fadeUp} initial="hidden" animate="visible" custom={0.4}>
-            {['🎉 Celebrations', '🏆 Recognition', '🌎 Culture & Inclusion'].map((pill, i) => (
-              <motion.span
-                key={pill}
-                className="pg-pill"
-                whileHover={{ scale: 1.06, y: -2 }}
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.5 }}
-              >{pill}</motion.span>
-            ))}
-          </motion.div>
         </div>
 
         {/* RIGHT — Illustration */}
