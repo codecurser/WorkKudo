@@ -252,30 +252,42 @@ function CreateMegaMenu({ onItemClick }) {
 
         {tab.type === 'cards' && (
           <div className="create-panel__cards">
-            {tab.items.map((card, i) => (
-              <Link
-                key={card.title}
-                to="/award-style"
-                className="panel-card"
-                style={{
-                  background: card.bg,
-                  borderColor: card.border,
-                  animationDelay: `${i * 60}ms`,
-                }}
-                onClick={onItemClick}
-              >
-                <div className="panel-card__icon" style={{ background: card.border }}>
-                  {card.emoji}
-                </div>
-                <div>
-                  <p className="panel-card__title" style={{ color: card.accent }}>{card.title}</p>
-                  <p className="panel-card__desc">{card.desc}</p>
-                </div>
-                <span className="panel-card__arrow" style={{ color: card.accent }}>
-                  <ArrowIcon />
-                </span>
-              </Link>
-            ))}
+            {tab.items.map((card, i) => {
+              // Programs & Drives tab — link each card to its section
+              const isProgramsTab = activeTab === 'events';
+              const programsHref = isProgramsTab
+                ? card.title === 'Celebrations'
+                  ? '/programs#celebrations'
+                  : card.title === 'Recognition'
+                  ? '/programs#recognition'
+                  : '/programs#culture'
+                : '/award-style';
+
+              return (
+                <Link
+                  key={card.title}
+                  to={programsHref}
+                  className="panel-card"
+                  style={{
+                    background: card.bg,
+                    borderColor: card.border,
+                    animationDelay: `${i * 60}ms`,
+                  }}
+                  onClick={onItemClick}
+                >
+                  <div className="panel-card__icon" style={{ background: card.border }}>
+                    {card.emoji}
+                  </div>
+                  <div>
+                    <p className="panel-card__title" style={{ color: card.accent }}>{card.title}</p>
+                    <p className="panel-card__desc">{card.desc}</p>
+                  </div>
+                  <span className="panel-card__arrow" style={{ color: card.accent }}>
+                    <ArrowIcon />
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
@@ -535,7 +547,18 @@ export default function Navbar() {
             ))}
             <div className="mobile-section-title" style={{ marginTop: 14 }}>PROGRAMS</div>
             {events.map(e => (
-              <a key={e.title} href="#" className="mobile-link">{e.emoji} {e.title}</a>
+              <Link
+                key={e.title}
+                to={
+                  e.title === 'Celebrations' ? '/programs#celebrations' :
+                  e.title === 'Recognition' ? '/programs#recognition' :
+                  '/programs#culture'
+                }
+                className="mobile-link"
+                onClick={() => setMobileOpen(false)}
+              >
+                {e.emoji} {e.title}
+              </Link>
             ))}
           </MobileAccordion>
 
