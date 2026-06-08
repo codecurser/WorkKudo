@@ -250,7 +250,7 @@ export default function DistributedWorkforces() {
       </section>
 
       {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="navy" />
+      <CelebrationGrid themeClass="cyan" />
 
       {/* ── FAQ Section ── */}
       <FAQ 

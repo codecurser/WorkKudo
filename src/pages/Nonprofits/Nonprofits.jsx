@@ -250,7 +250,7 @@ export default function Nonprofits() {
       </section>
 
       {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="navy" />
+      <CelebrationGrid themeClass="forest" />
 
       {/* ── FAQ Section ── */}
       <FAQ 

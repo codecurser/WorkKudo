@@ -248,7 +248,7 @@ export default function PeopleCulture() {
       </section>
 
       {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="navy" />
+      <CelebrationGrid themeClass="purple" />
 
       {/* ── FAQ Section ── */}
       <FAQ 

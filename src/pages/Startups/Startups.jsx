@@ -248,7 +248,7 @@ export default function Startups() {
       </section>
 
       {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="navy" />
+      <CelebrationGrid themeClass="indigo" />
 
       {/* ── FAQ Section ── */}
       <FAQ 

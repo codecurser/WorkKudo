@@ -127,9 +127,8 @@ const platformBenefits = [
 ]
 
 const customersData = {
-  Sectors:           ['New Ventures', 'Studios', 'Academia', 'Medical', 'Charities'],
-  'Trusted By':      ['Distributed Teams', 'People Teams', 'Entrepreneurs', 'Workforce Ops'],
-  'Win Stories':     ['Success Highlights', 'Use Cases'],
+  'By Industry':     ['Corporations & Enterprise', 'Medical & Healthcare', 'Charities & NGOs'],
+  'By Team':         ['Distributed Workforces', 'People & Culture Teams', 'Early-Stage Ventures'],
 }
 
 const resourcesData = {
@@ -342,23 +341,25 @@ function SmallDropdown({ data }) {
         <div key={section} className="small-dropdown__section">
           <p className="small-dropdown__title">{section}</p>
           <ul>
-            {items.map(item => (
-              <li key={item}>
-                {item === 'Distributed Teams' ? (
-                  <Link to="/solutions/distributed" className="small-dropdown__item">{item}</Link>
-                ) : item === 'People Teams' ? (
-                  <Link to="/solutions/people-culture" className="small-dropdown__item">{item}</Link>
-                ) : item === 'Medical' ? (
-                  <Link to="/solutions/healthcare" className="small-dropdown__item">{item}</Link>
-                ) : item === 'Charities' ? (
-                  <Link to="/solutions/nonprofits" className="small-dropdown__item">{item}</Link>
-                ) : item === 'New Ventures' ? (
-                  <Link to="/solutions/startups" className="small-dropdown__item">{item}</Link>
-                ) : (
-                  <a href="#" className="small-dropdown__item">{item}</a>
-                )}
-              </li>
-            ))}
+            {items.map(item => {
+              let to = '#';
+              if (item === 'Corporations & Enterprise') to = '/solutions/enterprise';
+              else if (item === 'Medical & Healthcare') to = '/solutions/healthcare';
+              else if (item === 'Charities & NGOs') to = '/solutions/nonprofits';
+              else if (item === 'Distributed Workforces') to = '/solutions/distributed';
+              else if (item === 'People & Culture Teams') to = '/solutions/people-culture';
+              else if (item === 'Early-Stage Ventures') to = '/solutions/startups';
+
+              return (
+                <li key={item}>
+                  {to !== '#' ? (
+                    <Link to={to} className="small-dropdown__item">{item}</Link>
+                  ) : (
+                    <a href="#" className="small-dropdown__item">{item}</a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}

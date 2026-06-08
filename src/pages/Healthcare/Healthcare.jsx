@@ -248,7 +248,7 @@ export default function Healthcare() {
       </section>
 
       {/* ── Celebration Grid ── */}
-      <CelebrationGrid themeClass="navy" />
+      <CelebrationGrid themeClass="teal" />
 
       {/* ── FAQ Section ── */}
       <FAQ 
