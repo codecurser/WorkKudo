@@ -135,7 +135,10 @@ export default function Footer() {
                   let href = '#'
                   let isRouterLink = false
 
-                  if (link === 'Contact Us') {
+                  if (link === 'About Us') {
+                    href = '/about-us'
+                    isRouterLink = true
+                  } else if (link === 'Contact Us') {
                     href = 'mailto:support@proso.ai'
                   } else if (link === 'Corporations & Enterprise') {
                     href = '/solutions/enterprise'
