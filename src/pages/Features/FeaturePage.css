@@ -633,7 +633,8 @@
 @media (max-width: 1024px) {
   .fp-deepdive-grid { grid-template-columns: repeat(2, 1fr); }
   .fp-benefits-grid { grid-template-columns: repeat(2, 1fr); }
-  .fp-usecases-grid { grid-template-columns: repeat(2, 1fr); }
+  .fp-showcase-grid { grid-template-columns: repeat(3, 1fr); }
+  .fp-sc-card--large { grid-column: span 2; }
 }
 
 @media (max-width: 900px) {
@@ -642,9 +643,8 @@
   .fp-problem-inner { grid-template-columns: 1fr; gap: 48px; }
   .fp-how-layout { grid-template-columns: 1fr; }
   .fp-how-panel { position: static; }
-  .fp-bento { grid-template-columns: repeat(2, 1fr); }
-  .fp-bento-item--large, .fp-bento-item--wide { grid-column: span 2; }
-  .fp-bento-item--tall { grid-row: span 1; }
+  .fp-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+  .fp-sc-card--large { grid-column: span 2; }
   .fp-hero::after { height: 50px; }
 }
 
@@ -654,16 +654,17 @@
   .fp-section-title { font-size: 2rem; }
   .fp-deepdive-grid { grid-template-columns: 1fr; }
   .fp-benefits-grid { grid-template-columns: 1fr; }
-  .fp-usecases-grid { grid-template-columns: 1fr 1fr; }
-  .fp-bento { grid-template-columns: 1fr; }
-  .fp-bento-item--large, .fp-bento-item--wide, .fp-bento-item--tall { grid-column: span 1; grid-row: span 1; }
+  .fp-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+  .fp-sc-card--large { grid-column: span 2; }
   .fp-hero-ctas { flex-direction: column; align-items: flex-start; }
+  .fp-marquee-card { min-width: 210px; }
   .fp-problem, .fp-deepdive, .fp-how,
   .fp-usecases, .fp-showcase, .fp-benefits, .fp-cta { padding: 72px 0; }
 }
 
 @media (max-width: 480px) {
   .fp-container { padding: 0 16px; }
-  .fp-usecases-grid { grid-template-columns: 1fr; }
+  .fp-showcase-grid { grid-template-columns: 1fr 1fr; }
+  .fp-sc-card--large { grid-column: span 2; }
   .fp-hero-badge { font-size: 12px; padding: 6px 14px; }
 }
