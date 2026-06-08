@@ -1,31 +1,20 @@
-import React from 'react';
 import BenefitPage from './BenefitPage';
 
 const data = {
-  accent: '#FF6B2C',
-  accentSoft: '#FFF3EE',
+  heroVariant: 'v4',   // Full dark + number metric cards
   icon: '💬',
   category: 'Enhance Participation',
-  heroTitle: 'Encourage More Employees to Get Involved',
+  heroTitle: 'Encourage Every Employee to Get Involved',
   heroDesc: 'Recognition programs only succeed when people actively participate. WorkKudo removes every barrier so contributing feels as natural as sending a message.',
   ctaPrimary: 'Get More People Involved',
   ctaSecondary: 'See How It Works',
-  heroChips: ['📩 Easy Contributions', '🌍 Remote-Friendly', '⚡ No Friction'],
-  heroStats: [ { icon: '🔗', label: 'No Account Needed' }, { icon: '📱', label: 'Mobile-First' }, { icon: '🔔', label: 'Auto Reminders' } ],
-  heroCardContent: (
-    <>
-      {[
-        { text: '"Added my message in 30 seconds from my phone 📱"', from: 'Alex R.', color: '#FF6B2C', bg: '#FFF3EE' },
-        { text: '"No account needed — just clicked the link and signed 💛"', from: 'Maya S.', color: '#A78BFA', bg: '#F5F3FF' },
-        { text: '"Got a reminder and contributed before the deadline 🔔"', from: 'Jordan L.', color: '#34D399', bg: '#ECFDF5' },
-      ].map((n, i) => (
-        <div key={i} className="fp-note" style={{ borderLeftColor: n.color, background: n.bg }}>
-          <span className="fp-note-av" style={{ background: n.color }}>{n.from[0]}</span>
-          <div><p>{n.text}</p><span>{n.from}</span></div>
-        </div>
-      ))}
-    </>
-  ),
+
+  numCards: [
+    { icon: '🔗', val: '0', unit: '', label: 'Accounts needed', accent: false },
+    { icon: '⚡', val: '<1', unit: 'min', label: 'To contribute', accent: true },
+    { icon: '📱', val: '100', unit: '%', label: 'Mobile-ready', accent: false },
+    { icon: '🔔', val: '3×', unit: '', label: 'Higher participation', accent: true },
+  ],
 
   problemTitle: 'Low Participation Is the Most Common Reason Recognition Programs Fail',
   problemDesc: 'Even the best-designed recognition program delivers little value if only a fraction of employees participate. Busy schedules, platform friction, and lack of reminders keep contribution rates low.',
@@ -37,18 +26,18 @@ const data = {
     'Complex contribution processes deter busy employees from getting involved',
   ],
   problemIllustration: (
-    <div className="fp-problem-illus">
+    <>
       {[
         { icon: '🔗', label: 'Shareable Link Access', sub: 'No account required to contribute' },
         { icon: '📱', label: 'Mobile Participation', sub: 'Contribute from any device, anywhere' },
         { icon: '🔔', label: 'Automated Reminders', sub: 'Timely nudges before deadlines' },
       ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
+        <div key={i} className="bpg-widget-row">
+          <div className="bpg-widget-icon">{r.icon}</div>
           <div><strong>{r.label}</strong><span>{r.sub}</span></div>
         </div>
       ))}
-    </div>
+    </>
   ),
 
   deepDiveTitle: 'Every Feature Built to Drive Higher Participation',
@@ -79,11 +68,11 @@ const data = {
   ],
 
   showcase: [
-    { icon: '📩', label: 'Instant Contribution Flow', desc: 'Click a link, add a message, done. No barriers between intent and participation.', size: 'large', bg: '#FFF3EE', tags: ['No Sign-up', 'Mobile', '< 1 Minute'] },
-    { icon: '🔔', label: 'Contribution Reminder', size: 'small', bg: '#ECFDF5', desc: 'Automated nudge before a board closes.' },
-    { icon: '💬', label: 'Slack Notification', size: 'small', bg: '#F5F3FF', desc: 'Board invitations inside your workspace.' },
-    { icon: '📱', label: 'Mobile View', size: 'small', bg: '#FFFBEB', desc: 'Full contribution experience on any device.' },
-    { icon: '🌍', label: 'Global Reach', size: 'large', bg: '#EEF1F7', tags: ['All Timezones', 'Any Device', 'Any Language'] },
+    { icon: '📩', label: 'Instant Contribution Flow', desc: 'Click a link, add a message, done. No barriers between intent and participation.', bg: '#FFF3EE', tags: ['No Sign-up', 'Mobile', '< 1 Minute'] },
+    { icon: '🔔', label: 'Contribution Reminder', bg: '#ECFDF5', desc: 'Automated nudge before a board closes.' },
+    { icon: '💬', label: 'Slack Notification', bg: '#F5F3FF', desc: 'Board invitations inside your workspace.' },
+    { icon: '📱', label: 'Mobile View', bg: '#FFFBEB', tags: ['iOS', 'Android', 'No App'] },
+    { icon: '🌍', label: 'Global Reach', bg: '#EEF1F7', desc: 'All timezones, any device, any language.' },
   ],
 
   benefits: [

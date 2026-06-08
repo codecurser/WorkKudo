@@ -1,57 +1,58 @@
-import React from 'react';
 import BenefitPage from './BenefitPage';
 
 const data = {
-  accent: '#FF6B2C',
-  accentSoft: '#FFF3EE',
+  heroVariant: 'v1',   // Diagonal dark/light split
   icon: '🏡',
   category: 'Virtual Appreciation',
   heroTitle: 'Make Recognition Possible Anywhere',
-  heroDesc: 'Appreciation shouldn\'t depend on physical location. WorkKudo delivers rich, personal recognition experiences that feel just as meaningful for remote employees as for those in the office.',
+  heroDesc: "Appreciation shouldn't depend on physical location. WorkKudo delivers rich, personal recognition experiences that feel just as meaningful for remote employees as for those in the office.",
   ctaPrimary: 'Start Appreciating',
   ctaSecondary: 'See How It Works',
   heroChips: ['🌐 Digital-First', '💌 Personal', '⚡ Instant'],
-  heroStats: [ { icon: '🌐', label: 'Digital-First' }, { icon: '💌', label: 'Personal' }, { icon: '⚡', label: 'Instant' } ],
-  heroCardContent: (
-    <>
-      {[
-        { text: '"The virtual card felt more personal than any in-office gift I\'ve received 💛"', from: 'Priya K. · Remote', color: '#FF6B2C', bg: '#FFF3EE' },
-        { text: '"Opened the board on my laptop — 40 messages from the team. I cried 🌟"', from: 'Marcus L. · Hybrid', color: '#A78BFA', bg: '#F5F3FF' },
-        { text: '"Our appreciation wall brought our global team closer than any meeting 🤝"', from: 'Aisha T. · Distributed', color: '#34D399', bg: '#ECFDF5' },
-      ].map((n, i) => (
-        <div key={i} className="fp-note" style={{ borderLeftColor: n.color, background: n.bg }}>
-          <span className="fp-note-av" style={{ background: n.color }}>{n.from[0]}</span>
-          <div><p>{n.text}</p><span>{n.from}</span></div>
-        </div>
-      ))}
-    </>
-  ),
-
-  problemTitle: 'Modern Workplaces Have Moved Online — Recognition Hasn\'t Kept Up',
-  problemDesc: 'Remote work, hybrid schedules, and global teams have transformed where and how people work. But many recognition practices are still designed for physical proximity — birthday cakes, office gift cards, in-person acknowledgments.',
-  problemDesc2: 'WorkKudo is built for the modern workplace reality: digital-first, async-capable, and personal enough to feel genuinely meaningful whether someone is in the office or working from the other side of the world.',
-  problemPoints: [
-    'Traditional recognition formats don\'t translate to remote or hybrid environments',
-    'Digital appreciation often feels impersonal — a one-line Slack message can\'t replace a real celebration',
-    'Hybrid teams experience recognition inequity between office-based and remote employees',
-    'Global organizations struggle to create appreciation experiences that reach everyone equally',
+  heroStats: [
+    { val: '40+', label: 'Contributors avg' },
+    { val: '98%', label: 'Participation rate' },
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
+  heroCardContent: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
       {[
-        { icon: '💌', label: 'Digital Recognition', sub: 'Rich, personal online experiences' },
-        { icon: '📋', label: 'Online Celebration Boards', sub: 'Collaborative appreciation anywhere' },
-        { icon: '🚀', label: 'Real-time Collaboration', sub: 'Everyone contributes together' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
+        { text: '"The virtual card felt more personal than any in-office gift 💛"', from: 'Priya K. · Remote', color: '#FF6B2C', bg: '#FFF3EE' },
+        { text: '"40 messages from the team. I genuinely cried 🌟"', from: 'Marcus L. · Hybrid', color: '#A78BFA', bg: '#F5F3FF' },
+        { text: '"Our appreciation wall brought the global team closer 🤝"', from: 'Aisha T. · Distributed', color: '#34D399', bg: '#ECFDF5' },
+      ].map((n, i) => (
+        <div key={i} className="bpg-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+          <span className="bpg-note-av" style={{ background: n.color }}>{n.from[0]}</span>
+          <div><p>{n.text}</p><span>{n.from}</span></div>
         </div>
       ))}
     </div>
   ),
 
-  deepDiveTitle: 'Digital Recognition Experiences That Feel Genuinely Personal',
+  problemTitle: 'Modern Workplaces Have Moved Online — Recognition Hasn\'t Kept Up',
+  problemDesc: 'Remote work, hybrid schedules, and global teams have transformed where and how people work. But many recognition practices are still designed for physical proximity.',
+  problemDesc2: 'WorkKudo is built for the modern workplace reality: digital-first, async-capable, and personal enough to feel meaningful wherever someone works.',
+  problemPoints: [
+    'Traditional recognition formats don\'t translate to remote or hybrid environments',
+    'Digital appreciation often feels impersonal — a one-line Slack message can\'t replace a real celebration',
+    'Hybrid teams experience recognition inequity between office-based and remote employees',
+    'Global organizations struggle to create appreciation that reaches everyone equally',
+  ],
+  problemIllustration: (
+    <>
+      {[
+        { icon: '💌', label: 'Digital Recognition', sub: 'Rich, personal online experiences' },
+        { icon: '📋', label: 'Online Celebration Boards', sub: 'Collaborative appreciation anywhere' },
+        { icon: '🚀', label: 'Real-time Collaboration', sub: 'Everyone contributes together' },
+      ].map((r, i) => (
+        <div key={i} className="bpg-widget-row">
+          <div className="bpg-widget-icon">{r.icon}</div>
+          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
+        </div>
+      ))}
+    </>
+  ),
+
+  deepDiveTitle: 'Digital Recognition That Feels Genuinely Personal',
   deepDiveDesc: 'WorkKudo creates virtual appreciation that goes far beyond a Slack message or a generic digital card.',
   deepDiveFeatures: [
     { icon: '📋', title: 'Virtual Group Cards', desc: 'Collaborative boards where every team member adds a personal message, photo, or GIF — from anywhere.' },
@@ -79,20 +80,20 @@ const data = {
   ],
 
   showcase: [
-    { icon: '💌', label: 'Virtual Group Card', desc: 'A rich digital card with personal messages, photos, and appreciation from the whole team.', size: 'large', bg: '#FFF3EE', tags: ['Personal', 'Rich Media', 'Permanent'] },
-    { icon: '🏆', label: 'Appreciation Wall', size: 'small', bg: '#FFFBEB', desc: 'Ongoing public recognition online.' },
-    { icon: '📣', label: 'Digital Campaign', size: 'small', bg: '#F5F3FF', desc: 'Organization-wide virtual appreciation.' },
-    { icon: '🎨', label: 'Themed Layout', size: 'small', bg: '#ECFDF5', desc: 'Occasion-specific premium design.' },
-    { icon: '📥', label: 'Digital Keepsake', size: 'large', bg: '#EEF1F7', tags: ['Download', 'Print-Ready', 'Kept Forever'] },
+    { icon: '💌', label: 'Virtual Group Card', desc: 'A rich digital card with personal messages, photos, and appreciation from the whole team.', bg: '#FFF3EE', tags: ['Personal', 'Rich Media', 'Permanent'] },
+    { icon: '🏆', label: 'Appreciation Wall', bg: '#FFFBEB', desc: 'Ongoing public recognition online.' },
+    { icon: '📣', label: 'Digital Campaign', bg: '#F5F3FF', desc: 'Organization-wide virtual appreciation.' },
+    { icon: '🎨', label: 'Themed Layout', bg: '#ECFDF5', tags: ['Birthday', 'Farewell', 'Anniversary'] },
+    { icon: '📥', label: 'Digital Keepsake', bg: '#EEF1F7', desc: 'Download, print, keep forever.' },
   ],
 
   benefits: [
     { icon: '🌐', title: 'Accessible Recognition', desc: 'Every employee receives the same quality of appreciation regardless of their location or work model.' },
     { icon: '⚡', title: 'Faster Participation', desc: 'Digital contribution is instant — no scheduling, no shipping, no coordination across locations.' },
-    { icon: '🌍', title: 'Greater Inclusivity', desc: 'Remote and hybrid employees receive recognition that is equal in quality to what in-office peers experience.' },
+    { icon: '🌍', title: 'Greater Inclusivity', desc: 'Remote and hybrid employees receive recognition equal in quality to what in-office peers experience.' },
     { icon: '💛', title: 'Consistent Appreciation', desc: 'Digital recognition is repeatable and scalable — every employee gets appreciated consistently.' },
-    { icon: '😊', title: 'Genuinely Personal', desc: 'Rich messages, photos, and personal notes make virtual appreciation feel warm and authentic, not generic.' },
-    { icon: '📈', title: 'Better Engagement', desc: 'Employees who receive meaningful digital recognition are more engaged and connected to their organization.' },
+    { icon: '😊', title: 'Genuinely Personal', desc: 'Rich messages, photos, and personal notes make virtual appreciation feel warm and authentic.' },
+    { icon: '📈', title: 'Better Engagement', desc: 'Employees who receive meaningful digital recognition are more engaged and connected.' },
   ],
 
   faqTitle: 'Virtual Appreciation — FAQs',

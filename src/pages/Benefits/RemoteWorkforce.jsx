@@ -1,31 +1,20 @@
-import React from 'react';
 import BenefitPage from './BenefitPage';
 
 const data = {
-  accent: '#FF6B2C',
-  accentSoft: '#FFF3EE',
+  heroVariant: 'v6',   // Dark navy + live global contribution pins
   icon: '🌐',
   category: 'Remote Workforce',
   heroTitle: 'Bring Distributed Teams Closer Together',
-  heroDesc: 'Distance shouldn\'t prevent meaningful recognition. WorkKudo makes it possible for remote and globally distributed teams to celebrate, appreciate, and connect — regardless of location or timezone.',
+  heroDesc: "Distance shouldn't prevent meaningful recognition. WorkKudo makes it possible for remote and globally distributed teams to celebrate, appreciate, and connect — regardless of location or timezone.",
   ctaPrimary: 'Connect Your Remote Team',
   ctaSecondary: 'See How It Works',
-  heroChips: ['🌍 Global Teams', '⏰ Async-First', '📱 Any Device'],
-  heroStats: [ { icon: '🌍', label: 'Global Access' }, { icon: '⏰', label: 'Async-First' }, { icon: '📱', label: 'Any Device' } ],
-  heroCardContent: (
-    <>
-      {[
-        { text: '"Celebrating from Singapore — so grateful to be part of this team 🌏"', from: 'Wei L. · Singapore', color: '#FF6B2C', bg: '#FFF3EE' },
-        { text: '"Distance never felt smaller. Thank you for including everyone 💛"', from: 'Amara K. · Lagos', color: '#A78BFA', bg: '#F5F3FF' },
-        { text: '"Signed from Toronto — this board made my week! 🎉"', from: 'James P. · Toronto', color: '#34D399', bg: '#ECFDF5' },
-      ].map((n, i) => (
-        <div key={i} className="fp-note" style={{ borderLeftColor: n.color, background: n.bg }}>
-          <span className="fp-note-av" style={{ background: n.color }}>{n.from[0]}</span>
-          <div><p>{n.text}</p><span>{n.from}</span></div>
-        </div>
-      ))}
-    </>
-  ),
+
+  globalPins: [
+    { flag: '🇸🇬', name: 'Wei Liu · Singapore', msg: '"So grateful to be part of this 🌏"' },
+    { flag: '🇳🇬', name: 'Amara Osei · Lagos', msg: '"Distance never felt smaller 💛"' },
+    { flag: '🇨🇦', name: 'James Park · Toronto', msg: '"This board made my week! 🎉"' },
+    { flag: '🇩🇪', name: 'Lena Müller · Berlin', msg: '"Signed and celebrating with you 🚀"' },
+  ],
 
   problemTitle: 'Remote Employees Miss Out on the Recognition Moments That Build Culture',
   problemDesc: 'In-office birthday cakes, hallway congratulations, and after-work celebrations simply don\'t reach remote employees. The informal recognition that builds culture in physical offices is invisible online.',
@@ -37,18 +26,18 @@ const data = {
     'Distributed teams struggle to build shared culture without shared experiences',
   ],
   problemIllustration: (
-    <div className="fp-problem-illus">
+    <>
       {[
         { icon: '🌍', label: 'Global Accessibility', sub: 'Works in every country and timezone' },
         { icon: '⏰', label: 'Async Participation', sub: 'Contribute when it works for you' },
         { icon: '📱', label: 'Any Device, Anywhere', sub: 'Phone, tablet, or desktop — no install' },
       ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
+        <div key={i} className="bpg-widget-row">
+          <div className="bpg-widget-icon">{r.icon}</div>
           <div><strong>{r.label}</strong><span>{r.sub}</span></div>
         </div>
       ))}
-    </div>
+    </>
   ),
 
   deepDiveTitle: 'Recognition Built for How Distributed Teams Actually Work',
@@ -79,11 +68,11 @@ const data = {
   ],
 
   showcase: [
-    { icon: '🌍', label: 'Global Celebration Board', desc: 'Contributors from across the world — all on one board, signed asynchronously.', size: 'large', bg: '#FFF3EE', tags: ['Async', 'Global', 'No Timezone Barrier'] },
-    { icon: '⏰', label: 'Async Contribution', size: 'small', bg: '#ECFDF5', desc: 'Each contributor joins when ready.' },
-    { icon: '📱', label: 'Mobile Access', size: 'small', bg: '#F5F3FF', desc: 'Full experience on any device.' },
-    { icon: '💬', label: 'Slack Delivery', size: 'small', bg: '#FFFBEB', desc: 'Recognition delivered inside the workspace.' },
-    { icon: '🗺️', label: 'Distributed Team Reach', size: 'large', bg: '#EEF1F7', tags: ['Any Location', 'Any Language', 'Any Device'] },
+    { icon: '🌍', label: 'Global Celebration Board', desc: 'Contributors from across the world — all on one board, signed asynchronously.', bg: '#FFF3EE', tags: ['Async', 'Global', 'No Timezone Barrier'] },
+    { icon: '⏰', label: 'Async Contribution', bg: '#ECFDF5', desc: 'Each contributor joins when ready.' },
+    { icon: '📱', label: 'Mobile Access', bg: '#F5F3FF', desc: 'Full experience on any device.' },
+    { icon: '💬', label: 'Slack Delivery', bg: '#FFFBEB', tags: ['Slack', 'Teams', 'Email'] },
+    { icon: '🗺️', label: 'Distributed Reach', bg: '#EEF1F7', desc: 'Any location, any language, any device.' },
   ],
 
   benefits: [

@@ -1,31 +1,20 @@
-import React from 'react';
 import BenefitPage from './BenefitPage';
 
 const data = {
-  accent: '#FF6B2C',
-  accentSoft: '#FFF3EE',
+  heroVariant: 'v2',   // Centered + dashboard board preview
   icon: '🚀',
   category: 'Boost Team Spirit',
   heroTitle: 'Build Teams That Celebrate Success Together',
   heroDesc: 'Strong teams are built through appreciation, recognition, and shared experiences. WorkKudo gives every team the space to celebrate wins and strengthen the bonds that make work meaningful.',
   ctaPrimary: 'Start Celebrating',
   ctaSecondary: 'See How It Works',
-  heroChips: ['🎉 Celebrations', '🏆 Recognition', '💛 Team Wins'],
-  heroStats: [ { icon: '🎉', label: 'Team Celebrations' }, { icon: '🏆', label: 'Recognition' }, { icon: '💛', label: 'Shared Wins' } ],
-  heroCardContent: (
-    <>
-      {[
-        { text: '"Incredible work on the launch — every single one of you! 🚀"', from: 'Engineering Team', color: '#FF6B2C', bg: '#FFF3EE' },
-        { text: '"Proudest quarter yet. Thank you for showing up every day 💛"', from: 'Leadership', color: '#A78BFA', bg: '#F5F3FF' },
-        { text: '"This team is the reason we keep winning 🌟"', from: 'Product Team', color: '#34D399', bg: '#ECFDF5' },
-      ].map((n, i) => (
-        <div key={i} className="fp-note" style={{ borderLeftColor: n.color, background: n.bg }}>
-          <span className="fp-note-av" style={{ background: n.color }}>{n.from[0]}</span>
-          <div><p>{n.text}</p><span>{n.from}</span></div>
-        </div>
-      ))}
-    </>
-  ),
+  heroChips: ['🎉 Celebrations', '🏆 Recognition', '💛 Team Wins', '🤝 Together'],
+
+  previewNotes: [
+    { name: 'Sarah Chen', role: 'Engineering · Lead', color: '#FF6B2C', msg: '"Incredible work on the launch — every single one of you! Couldn\'t be prouder 🚀"' },
+    { name: 'Marcus R.', role: 'Product · Manager', color: '#A78BFA', msg: '"Proudest quarter yet. Thank you for showing up every day, this win belongs to all of us 💛"' },
+    { name: 'Aiko T.', role: 'Design · Director', color: '#34D399', msg: '"This team is the reason we keep winning. You make everything look beautiful 🌟"' },
+  ],
 
   problemTitle: 'Teams That Don\'t Celebrate Together Drift Apart',
   problemDesc: 'When wins go unacknowledged, team spirit weakens quietly. People do great work, hit milestones, and support each other — but without shared celebration, the effort feels invisible.',
@@ -37,18 +26,18 @@ const data = {
     'Managers carry the entire recognition burden, which limits reach and consistency',
   ],
   problemIllustration: (
-    <div className="fp-problem-illus">
+    <>
       {[
         { icon: '🎉', label: 'Team Celebrations', sub: 'Shared moments that build connection' },
         { icon: '🏆', label: 'Recognition Campaigns', sub: 'Organized appreciation across teams' },
         { icon: '🌟', label: 'Shared Milestones', sub: 'Every win acknowledged together' },
       ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
+        <div key={i} className="bpg-widget-row">
+          <div className="bpg-widget-icon">{r.icon}</div>
           <div><strong>{r.label}</strong><span>{r.sub}</span></div>
         </div>
       ))}
-    </div>
+    </>
   ),
 
   deepDiveTitle: 'Every Tool Your Team Needs to Celebrate Together',
@@ -79,11 +68,11 @@ const data = {
   ],
 
   showcase: [
-    { icon: '🚀', label: 'Launch Celebration Board', desc: 'A team board capturing every message from the product launch.', size: 'large', bg: '#FFF3EE', tags: ['Engineering', 'Product', 'Design'] },
-    { icon: '🏆', label: 'Team Win Wall', size: 'small', bg: '#ECFDF5', desc: 'Public recognition of a quarterly achievement.' },
-    { icon: '💛', label: 'Appreciation Post', size: 'small', bg: '#F5F3FF', desc: 'Peer-to-peer celebration in one click.' },
-    { icon: '🎊', label: 'Company Milestone', size: 'small', bg: '#FFFBEB', desc: 'Organization-wide shared celebration.' },
-    { icon: '📸', label: 'Memory Board', size: 'large', bg: '#EEF1F7', tags: ['Photos', 'Messages', 'Team Moments'] },
+    { icon: '🚀', label: 'Launch Celebration Board', desc: 'A team board capturing every message from the product launch.', bg: '#FFF3EE', tags: ['Engineering', 'Product', 'Design'] },
+    { icon: '🏆', label: 'Team Win Wall', bg: '#ECFDF5', desc: 'Public recognition of a quarterly achievement.' },
+    { icon: '💛', label: 'Appreciation Post', bg: '#F5F3FF', desc: 'Peer-to-peer celebration in one click.' },
+    { icon: '🎊', label: 'Company Milestone', bg: '#FFFBEB', tags: ['Company-wide', 'Shared'] },
+    { icon: '📸', label: 'Memory Board', bg: '#EEF1F7', desc: 'Photos + messages = lasting team memory.' },
   ],
 
   benefits: [
