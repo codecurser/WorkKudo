@@ -1,24 +1,48 @@
 /* Nonprofits Specific Styles */
-/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+/* Inherits layout, scroll animations, and typography from Enterprise.css */
+
+/* ── Hero accent override for Nonprofits (forest green) ── */
+.nonprofits-page .ep-hero {
+  background:
+    radial-gradient(ellipse at top left,
+      rgba(16, 185, 129, 0.18),
+      transparent 50%),
+    radial-gradient(ellipse at bottom right,
+      rgba(255, 107, 44, 0.08),
+      transparent 50%),
+    linear-gradient(160deg,
+      #14392C 0%,
+      #0a2019 100%);
+}
+
+.nonprofits-page .ep-hero__bg {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.nonprofits-page .ep-badge {
+  background: rgba(16, 185, 129, 0.18);
+  color: #6EE7B7;
+  border-color: rgba(16, 185, 129, 0.4);
+}
 
 /* ── Nonprofits Testimonial/Highlight Color Theme ── */
 .ep-testimonial--nonprofits {
-  background: #f8fafc;
+  background: #F8F7F4;
 }
 
 .ep-testimonial--nonprofits .ep-testimonial__card {
-  background: linear-gradient(135deg, #14392c 0%, #0d251d 100%);
+  background: linear-gradient(135deg, #14392c 0%, #0a2019 100%);
   color: white;
-  box-shadow: 0 20px 45px rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 20px 48px rgba(20, 57, 44, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ep-testimonial--nonprofits .ep-quote-icon {
-  color: rgba(16, 185, 129, 0.25);
+  color: rgba(16, 185, 129, 0.4);
 }
 
 .ep-testimonial--nonprofits blockquote {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .ep-testimonial--nonprofits .ep-testimonial__author strong {
@@ -26,5 +50,12 @@
 }
 
 .ep-testimonial--nonprofits .ep-testimonial__author span {
-  color: #a7f3d0;
+  color: #6EE7B7;
+}
+
+/* ── CTA override for Nonprofits ── */
+.nonprofits-page .ep-cta {
+  background:
+    radial-gradient(ellipse at top left, rgba(16, 185, 129, 0.15), transparent 50%),
+    linear-gradient(135deg, #14392C 0%, #0a2019 100%);
 }

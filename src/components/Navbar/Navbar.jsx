@@ -129,8 +129,8 @@ const customersData = {
 }
 
 const resourcesData = {
-  Guides: ['Support Hub', 'Layouts', 'Appreciation Handbook', 'Insights'],
-  Assistance: ['Reach Us', 'Common Questions', 'Forum'],
+  Guides: ['Support Hub', 'Appreciation Handbook'],
+  Assistance: ['Reach Us', 'Common Questions', 'Contact Us'],
 }
 
 /* ─── Icons ─────────────────────────────────────────────────── */
@@ -359,6 +359,11 @@ function SmallDropdown({ data }) {
               else if (item === 'Distributed Workforces') to = '/solutions/distributed';
               else if (item === 'People & Culture Teams') to = '/solutions/people-culture';
               else if (item === 'Early-Stage Ventures') to = '/solutions/startups';
+              else if (item === 'Support Hub') to = '/learn/assistance#support-hub';
+              else if (item === 'Appreciation Handbook') to = '/learn/assistance#appreciation-handbook';
+              else if (item === 'Reach Us') to = '/learn/assistance#reach-us';
+              else if (item === 'Common Questions') to = '/learn/assistance#common-questions';
+              else if (item === 'Contact Us') to = '/learn/assistance#contact-us';
 
               return (
                 <li key={item}>
@@ -576,7 +581,19 @@ export default function Navbar() {
             {Object.entries(resourcesData).map(([sec, items]) => (
               <div key={sec}>
                 <div className="mobile-section-title">{sec}</div>
-                {items.map(i => <a key={i} href="#" className="mobile-link">{i}</a>)}
+                {items.map(i => {
+                  let to = '#'
+                  if (i === 'Support Hub') to = '/learn/assistance#support-hub'
+                  else if (i === 'Appreciation Handbook') to = '/learn/assistance#appreciation-handbook'
+                  else if (i === 'Reach Us') to = '/learn/assistance#reach-us'
+                  else if (i === 'Common Questions') to = '/learn/assistance#common-questions'
+                  else if (i === 'Contact Us') to = '/learn/assistance#contact-us'
+                  return to !== '#' ? (
+                    <Link key={i} to={to} className="mobile-link" onClick={() => setMobileOpen(false)}>{i}</Link>
+                  ) : (
+                    <a key={i} href="#" className="mobile-link">{i}</a>
+                  )
+                })}
               </div>
             ))}
           </MobileAccordion>

@@ -1,24 +1,48 @@
 /* Startups Specific Styles */
-/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+/* Inherits layout, scroll animations, and typography from Enterprise.css */
+
+/* ── Hero accent override for Startups (indigo) ── */
+.startups-page .ep-hero {
+  background:
+    radial-gradient(ellipse at top left,
+      rgba(99, 102, 241, 0.18),
+      transparent 50%),
+    radial-gradient(ellipse at bottom right,
+      rgba(255, 107, 44, 0.08),
+      transparent 50%),
+    linear-gradient(160deg,
+      #1E1B4B 0%,
+      #12102e 100%);
+}
+
+.startups-page .ep-hero__bg {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.startups-page .ep-badge {
+  background: rgba(99, 102, 241, 0.18);
+  color: #C7D2FE;
+  border-color: rgba(99, 102, 241, 0.4);
+}
 
 /* ── Startups Testimonial/Highlight Color Theme ── */
 .ep-testimonial--startups {
-  background: #f8fafc;
+  background: #F8F7F4;
 }
 
 .ep-testimonial--startups .ep-testimonial__card {
   background: linear-gradient(135deg, #1e1b4b 0%, #12102e 100%);
   color: white;
-  box-shadow: 0 20px 45px rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.14), 0 0 0 1px rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ep-testimonial--startups .ep-quote-icon {
-  color: rgba(99, 102, 241, 0.25);
+  color: rgba(99, 102, 241, 0.4);
 }
 
 .ep-testimonial--startups blockquote {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .ep-testimonial--startups .ep-testimonial__author strong {
@@ -26,5 +50,12 @@
 }
 
 .ep-testimonial--startups .ep-testimonial__author span {
-  color: #c7d2fe;
+  color: #C7D2FE;
+}
+
+/* ── CTA override for Startups ── */
+.startups-page .ep-cta {
+  background:
+    radial-gradient(ellipse at top left, rgba(99, 102, 241, 0.15), transparent 50%),
+    linear-gradient(135deg, #1E1B4B 0%, #12102e 100%);
 }

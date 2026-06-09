@@ -20,7 +20,6 @@ const columns = [
     heading: 'Company',
     links: [
       'About Us',
-      'Blog',
       'Careers',
       'Contact Us',
       'Request a Demo',
@@ -31,9 +30,9 @@ const columns = [
     links: [
       'Support Hub',
       'Appreciation Handbook',
+      'Reach Us',
       'Common Questions',
-      'Insights',
-      'Forum',
+      'Contact Us',
     ],
   },
 ]
@@ -129,13 +128,25 @@ export default function Footer() {
                     href = '/about-us'
                     isRouterLink = true
                   } else if (link === 'Contact Us') {
-                    href = '/connect#contact'
+                    href = '/learn/assistance#contact-us'
                     isRouterLink = true
                   } else if (link === 'Careers') {
                     href = '/connect#careers'
                     isRouterLink = true
                   } else if (link === 'Request a Demo') {
                     href = '/connect#demo'
+                    isRouterLink = true
+                  } else if (link === 'Support Hub') {
+                    href = '/learn/assistance#support-hub'
+                    isRouterLink = true
+                  } else if (link === 'Appreciation Handbook') {
+                    href = '/learn/assistance#appreciation-handbook'
+                    isRouterLink = true
+                  } else if (link === 'Reach Us') {
+                    href = '/learn/assistance#reach-us'
+                    isRouterLink = true
+                  } else if (link === 'Common Questions') {
+                    href = '/learn/assistance#common-questions'
                     isRouterLink = true
                   } else if (link === 'Corporations & Enterprise') {
                     href = '/solutions/enterprise'

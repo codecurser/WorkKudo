@@ -1,24 +1,48 @@
 /* Healthcare Specific Styles */
-/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+/* Inherits layout, scroll animations, and typography from Enterprise.css */
+
+/* ── Hero accent override for Healthcare (teal) ── */
+.healthcare-page .ep-hero {
+  background:
+    radial-gradient(ellipse at top left,
+      rgba(13, 148, 136, 0.18),
+      transparent 50%),
+    radial-gradient(ellipse at bottom right,
+      rgba(255, 107, 44, 0.08),
+      transparent 50%),
+    linear-gradient(160deg,
+      #0D3B42 0%,
+      #051C20 100%);
+}
+
+.healthcare-page .ep-hero__bg {
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.healthcare-page .ep-badge {
+  background: rgba(13, 148, 136, 0.18);
+  color: #5EEAD4;
+  border-color: rgba(13, 148, 136, 0.4);
+}
 
 /* ── Healthcare Testimonial/Highlight Color Theme ── */
 .ep-testimonial--healthcare {
-  background: #f8fafc;
+  background: #F8F7F4;
 }
 
 .ep-testimonial--healthcare .ep-testimonial__card {
-  background: linear-gradient(135deg, #0d3b42 0%, #072226 100%);
+  background: linear-gradient(135deg, #0d3b42 0%, #051C20 100%);
   color: white;
-  box-shadow: 0 20px 45px rgba(13, 148, 136, 0.12);
-  border: 1px solid rgba(13, 148, 136, 0.25);
+  box-shadow: 0 20px 48px rgba(13, 59, 66, 0.25), 0 0 0 1px rgba(13, 148, 136, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ep-testimonial--healthcare .ep-quote-icon {
-  color: rgba(13, 148, 136, 0.25);
+  color: rgba(13, 148, 136, 0.4);
 }
 
 .ep-testimonial--healthcare blockquote {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .ep-testimonial--healthcare .ep-testimonial__author strong {
@@ -26,5 +50,12 @@
 }
 
 .ep-testimonial--healthcare .ep-testimonial__author span {
-  color: #99f6e4;
+  color: #5EEAD4;
+}
+
+/* ── CTA override for Healthcare ── */
+.healthcare-page .ep-cta {
+  background:
+    radial-gradient(ellipse at top left, rgba(13, 148, 136, 0.15), transparent 50%),
+    linear-gradient(135deg, #0D3B42 0%, #051C20 100%);
 }

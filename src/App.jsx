@@ -53,6 +53,7 @@ import BuildCommunity from './pages/Benefits/BuildCommunity'
 import HonorAchievements from './pages/Benefits/HonorAchievements'
 import RemoteWorkforce from './pages/Benefits/RemoteWorkforce'
 import VirtualAppreciation from './pages/Benefits/VirtualAppreciation'
+import Assistance from './pages/Assistance/Assistance'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -272,6 +273,7 @@ export default function App() {
       <Route path="/benefits/honor-achievements" element={<HonorAchievements />} />
       <Route path="/benefits/remote-workforce" element={<RemoteWorkforce />} />
       <Route path="/benefits/virtual-appreciation" element={<VirtualAppreciation />} />
+      <Route path="/learn/assistance" element={<Assistance />} />
     </Routes>
     </>
   )

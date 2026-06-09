@@ -1,25 +1,61 @@
 /* Distributed Workforces Specific Styles */
-/* Inherits layout, scroll animations, and typography styles directly from Enterprise.css */
+/* Inherits layout, scroll animations, and typography from Enterprise.css */
+
+/* ── Hero accent override for Distributed (cyan/teal) ── */
+.distributed-page .ep-hero {
+  background:
+    radial-gradient(ellipse at top left,
+      rgba(6, 182, 212, 0.18),
+      transparent 50%),
+    radial-gradient(ellipse at bottom right,
+      rgba(255, 107, 44, 0.08),
+      transparent 50%),
+    linear-gradient(160deg,
+      #0b0f19 0%,
+      #060913 100%);
+}
+
+.distributed-page .ep-hero__bg {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.distributed-page .ep-badge {
+  background: rgba(6, 182, 212, 0.18);
+  color: #67E8F9;
+  border-color: rgba(6, 182, 212, 0.4);
+}
 
 /* ── Distributed Testimonial Color Theme ── */
 .ep-testimonial--distributed {
-  background: #f8fafc;
+  background: #F8F7F4;
 }
+
 .ep-testimonial--distributed .ep-testimonial__card {
   background: linear-gradient(135deg, #0b0f19 0%, #060913 100%);
   color: white;
-  box-shadow: 0 20px 45px rgba(6, 182, 212, 0.12);
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 20px 48px rgba(6, 182, 212, 0.12), 0 0 0 1px rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
+
 .ep-testimonial--distributed .ep-quote-icon {
-  color: rgba(6, 182, 212, 0.25);
+  color: rgba(6, 182, 212, 0.4);
 }
+
 .ep-testimonial--distributed blockquote {
-  color: white;
+  color: rgba(255, 255, 255, 0.88);
 }
+
 .ep-testimonial--distributed .ep-testimonial__author strong {
   color: white;
 }
+
 .ep-testimonial--distributed .ep-testimonial__author span {
-  color: #22d3ee;
+  color: #67E8F9;
+}
+
+/* ── CTA override for Distributed ── */
+.distributed-page .ep-cta {
+  background:
+    radial-gradient(ellipse at top left, rgba(6, 182, 212, 0.15), transparent 50%),
+    linear-gradient(135deg, #0b0f19 0%, #060913 100%);
 }
