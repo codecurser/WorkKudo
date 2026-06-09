@@ -1118,3 +1118,286 @@
   }
   .assist-support-info__item:last-child::after { display: none; }
 }
+
+/* ────────────────────────────────────────────────────────────
+   APPRECIATION HANDBOOK — COMPACT SINGLE CARD
+──────────────────────────────────────────────────────────── */
+.assist-hb-compact {
+  background: #fff;
+  border: 1px solid rgba(26,43,74,0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.assist-hb-compact__why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 40px 36px;
+  align-items: start;
+}
+
+.assist-hb-compact__title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 10px 0 12px;
+}
+
+.assist-hb-compact__body {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.assist-hb-compact__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assist-hb-compact__divider {
+  height: 1px;
+  background: rgba(26,43,74,0.07);
+  margin: 0 40px;
+}
+
+.assist-hb-compact__section {
+  padding: 32px 40px;
+}
+
+/* Inline practice rows */
+.assist-hb-compact__practices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assist-hb-compact__practice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg);
+  border: 1px solid rgba(26,43,74,0.07);
+  border-radius: 12px;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.assist-hb-compact__practice:hover {
+  border-color: rgba(246,112,33,0.2);
+  background: var(--orange-50);
+}
+
+.assist-hb-compact__practice-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.assist-hb-compact__practice strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.assist-hb-compact__practice span {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Example tabs inside compact card */
+.assist-hb-compact__ex-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   REACH US — MERGED SINGLE CARD
+──────────────────────────────────────────────────────────── */
+.assist-reach-merged {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: #fff;
+  border: 1.5px solid rgba(246,112,33,0.22);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(246,112,33,0.08), var(--shadow-sm);
+  margin-bottom: 32px;
+}
+
+/* Left pane — dark navy */
+.assist-reach-merged__left {
+  background: linear-gradient(160deg, #1A2B4A 0%, #0F1C33 100%);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle orange glow top-right */
+.assist-reach-merged__left::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(246,112,33,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.assist-reach-merged__icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: rgba(255,107,44,0.15);
+  border: 1px solid rgba(255,107,44,0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: #FFB380;
+  flex-shrink: 0;
+}
+
+.assist-reach-merged__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.assist-reach-merged__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FF6B2C;
+  text-decoration: none;
+  background: rgba(255,107,44,0.12);
+  border: 1px solid rgba(255,107,44,0.3);
+  padding: 9px 18px;
+  border-radius: 12px;
+  align-self: flex-start;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.assist-reach-merged__email:hover {
+  background: rgba(255,107,44,0.2);
+  border-color: rgba(255,107,44,0.5);
+}
+
+.assist-reach-merged__desc {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+.assist-reach-merged__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Right pane — white */
+.assist-reach-merged__right {
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #fff;
+}
+
+.assist-reach-merged__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(26,43,74,0.07);
+  background: var(--bg);
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.assist-reach-merged__item:hover {
+  border-color: rgba(246,112,33,0.2);
+  transform: translateX(3px);
+}
+
+.assist-reach-merged__item-icon {
+  font-size: 18px;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.assist-reach-merged__item strong {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.assist-reach-merged__item span {
+  font-size: 12.5px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE — compact handbook + merged reach
+──────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .assist-hb-compact__why {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .assist-hb-compact__stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .assist-hb-compact__stats .assist-hb-stat {
+    flex: 1;
+    min-width: 140px;
+  }
+  .assist-reach-merged {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .assist-hb-compact__why,
+  .assist-hb-compact__section {
+    padding: 24px 20px;
+  }
+  .assist-hb-compact__divider {
+    margin: 0 20px;
+  }
+  .assist-reach-merged__left,
+  .assist-reach-merged__right {
+    padding: 28px 24px;
+  }
+  .assist-hb-compact__stats {
+    flex-direction: column;
+  }
+}

@@ -363,19 +363,23 @@ export default function Assistance() {
             <p className="assist-section-sub">Your guide to building a culture of recognition that actually resonates.</p>
           </div>
 
-          {/* Why Recognition Matters */}
-          <div className={`assist-hb-why ${hbVisible ? 'assist-in assist-in--d1' : ''}`}>
-            <div className="assist-hb-why__content">
-              <div className="assist-eyebrow" style={{ justifyContent: 'flex-start' }}><span className="assist-eyebrow-dot" />Why It Matters</div>
-              <h3 className="assist-hb-why__title">Why Recognition Matters</h3>
-              <p className="assist-hb-why__body">
-                Employee recognition helps teams feel valued, improves engagement, and strengthens workplace culture. When people know their contributions are seen and appreciated, they show up with more energy, stay longer, and bring their best every day.
-              </p>
-              <div className="assist-hb-why__stats">
+          {/* Compact single card */}
+          <div className={`assist-hb-compact ${hbVisible ? 'assist-in assist-in--d1' : ''}`}>
+
+            {/* Row 1 — Why + Stats */}
+            <div className="assist-hb-compact__why">
+              <div className="assist-hb-compact__why-text">
+                <div className="assist-eyebrow" style={{ justifyContent: 'flex-start' }}><span className="assist-eyebrow-dot" />Why It Matters</div>
+                <h3 className="assist-hb-compact__title">Why Recognition Matters</h3>
+                <p className="assist-hb-compact__body">
+                  Employee recognition helps teams feel valued, improves engagement, and strengthens workplace culture. When people know their contributions are seen and appreciated, they stay longer and bring their best every day.
+                </p>
+              </div>
+              <div className="assist-hb-compact__stats">
                 {[
-                  { value: '63%', label: 'of employees who feel recognised are unlikely to look for a new job' },
-                  { value: '2×', label: 'more likely to rate their culture as positive when peers recognise each other' },
-                  { value: '40%', label: 'higher engagement in organisations with strong recognition programs' },
+                  { value: '63%', label: 'less likely to job-hunt when feeling recognised' },
+                  { value: '2×', label: 'more positive culture with peer recognition' },
+                  { value: '40%', label: 'higher engagement with strong programs' },
                 ].map((s, i) => (
                   <div key={i} className="assist-hb-stat">
                     <span className="assist-hb-stat__value">{s.value}</span>
@@ -384,51 +388,40 @@ export default function Assistance() {
                 ))}
               </div>
             </div>
-            <div className="assist-hb-why__visual">
-              <div className="assist-hb-card-stack">
-                {[
-                  { emoji: '💛', text: '"Your work this sprint was outstanding."', from: 'Team Lead', color: '#F67021', bg: '#FFF3EE' },
-                  { emoji: '🌟', text: "Couldn't have done this without you!", from: 'Teammate', color: '#3B82F6', bg: '#EFF6FF' },
-                  { emoji: '🏆', text: '"5 years — thank you for everything."', from: 'Manager', color: '#10B981', bg: '#ECFDF5' },
-                ].map((c, i) => (
-                  <div key={i} className="assist-hb-mini-card" style={{ background: c.bg, borderColor: `${c.color}30`, '--card-delay': `${i * 0.12}s` }}>
-                    <span className="assist-hb-mini-card__emoji">{c.emoji}</span>
-                    <p className="assist-hb-mini-card__text">{c.text}</p>
-                    <span className="assist-hb-mini-card__from" style={{ color: c.color }}>{c.from}</span>
+
+            <div className="assist-hb-compact__divider" />
+
+            {/* Row 2 — Best Practices */}
+            <div className="assist-hb-compact__section">
+              <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '16px' }}><span className="assist-eyebrow-dot" />Best Practices</div>
+              <div className="assist-hb-compact__practices">
+                {bestPractices.map((p, i) => (
+                  <div key={i} className="assist-hb-compact__practice">
+                    <span className="assist-hb-compact__practice-icon">{p.icon}</span>
+                    <div>
+                      <strong>{p.title}</strong>
+                      <span>{p.desc}</span>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Best Practices */}
-          <div className={`assist-hb-practices ${hbVisible ? 'assist-in assist-in--d2' : ''}`}>
-            <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '24px' }}><span className="assist-eyebrow-dot" />Best Practices</div>
-            <div className="assist-hb-practices__grid">
-              {bestPractices.map((p, i) => (
-                <div key={i} className="assist-hb-practice-card" style={{ animationDelay: `${i * 60}ms` }}>
-                  <span className="assist-hb-practice-card__icon">{p.icon}</span>
-                  <h4 className="assist-hb-practice-card__title">{p.title}</h4>
-                  <p className="assist-hb-practice-card__desc">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+            <div className="assist-hb-compact__divider" />
 
-          {/* Recognition Examples */}
-          <div className={`assist-hb-examples ${hbVisible ? 'assist-in assist-in--d3' : ''}`}>
-            <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '24px' }}><span className="assist-eyebrow-dot" />Recognition Examples</div>
-            <div className="assist-hb-examples__tabs">
-              {recognitionExamples.map((ex, i) => (
-                <button key={i}
-                  className={`assist-hb-ex-tab ${activeEx === i ? 'assist-hb-ex-tab--active' : ''}`}
-                  style={activeEx === i ? { background: ex.bg, borderColor: ex.border, color: ex.color } : {}}
-                  onClick={() => setActiveEx(i)}>
-                  {ex.tag}
-                </button>
-              ))}
-            </div>
-            <div className="assist-hb-ex-panel">
+            {/* Row 3 — Recognition Examples */}
+            <div className="assist-hb-compact__section">
+              <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '16px' }}><span className="assist-eyebrow-dot" />Recognition Examples</div>
+              <div className="assist-hb-compact__ex-tabs">
+                {recognitionExamples.map((ex, i) => (
+                  <button key={i}
+                    className={`assist-hb-ex-tab ${activeEx === i ? 'assist-hb-ex-tab--active' : ''}`}
+                    style={activeEx === i ? { background: ex.bg, borderColor: ex.border, color: ex.color } : {}}
+                    onClick={() => setActiveEx(i)}>
+                    {ex.tag}
+                  </button>
+                ))}
+              </div>
               {recognitionExamples.map((ex, i) => (
                 <div key={i} className={`assist-hb-ex-card ${activeEx === i ? 'assist-hb-ex-card--active' : ''}`}
                   style={{ borderColor: ex.border, background: ex.bg }}>
@@ -450,8 +443,8 @@ export default function Assistance() {
                 </div>
               ))}
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
@@ -465,54 +458,44 @@ export default function Assistance() {
             <h2 className="assist-section-title">Reach Us</h2>
             <p className="assist-section-sub">Our team is ready to help.</p>
           </div>
-          <div className={`assist-support-cards ${reachVisible ? 'assist-in assist-in--d1' : ''}`}>
-            <div className="assist-support-card">
-              <div className="assist-support-card__icon-wrap" style={{ background: '#FFF3EE', color: '#F67021' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+          <div className={`assist-reach-merged ${reachVisible ? 'assist-in assist-in--d1' : ''}`}>
+            {/* Left — info */}
+            <div className="assist-reach-merged__left">
+              <div className="assist-reach-merged__icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
               </div>
-              <span className="assist-support-card__label" style={{ color: '#F67021' }}>Customer Support</span>
-              <h3 className="assist-support-card__title">Get help fast</h3>
-              <p className="assist-support-card__desc">Get help with account issues, board creation, contributor access, and troubleshooting.</p>
-              <span className="assist-support-card__badge" style={{ background: '#FFF3EE', color: '#F67021' }}>
-                <span className="assist-bdot" style={{ background: '#F67021' }} />Typically replies in 2h
+              <h3 className="assist-reach-merged__title">Email us directly</h3>
+              <a href="mailto:support@proso.ai" className="assist-reach-merged__email">support@proso.ai</a>
+              <p className="assist-reach-merged__desc">
+                Whether you need help with a board, have billing questions, want to explore enterprise plans, or just want to learn best practices — one email gets you to the right person.
+              </p>
+              <span className="assist-reach-merged__badge">
+                <span className="assist-bdot" style={{ background: '#F67021' }} />
+                Typically replies within 2 hours on business days
               </span>
-              <button className="assist-support-card__cta" style={{ background: '#F67021', boxShadow: '0 4px 14px rgba(246,112,33,0.35)' }}
-                onClick={() => scrollTo('contact-us')}>
-                Contact Support
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </button>
             </div>
-            <div className="assist-support-card assist-support-card--featured">
-              <span className="assist-support-card__featured-badge">Most Popular</span>
-              <div className="assist-support-card__icon-wrap" style={{ background: '#EFF6FF', color: '#3B82F6' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
-              </div>
-              <span className="assist-support-card__label" style={{ color: '#3B82F6' }}>Sales & Enterprise</span>
-              <h3 className="assist-support-card__title">Scale your team</h3>
-              <p className="assist-support-card__desc">Talk with our team about enterprise deployments, integrations, SSO, and large-scale recognition programs.</p>
-              <span className="assist-support-card__badge" style={{ background: '#EFF6FF', color: '#3B82F6' }}>
-                <span className="assist-bdot" style={{ background: '#3B82F6' }} />Priority response
-              </span>
-              <button className="assist-support-card__cta" style={{ background: '#1A2B4A', boxShadow: '0 4px 14px rgba(26,43,74,0.25)' }}
-                onClick={() => scrollTo('contact-us')}>
-                Talk to Sales
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </button>
-            </div>
-            <div className="assist-support-card">
-              <div className="assist-support-card__icon-wrap" style={{ background: '#F0FDF4', color: '#10B981' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-              </div>
-              <span className="assist-support-card__label" style={{ color: '#10B981' }}>Customer Success</span>
-              <h3 className="assist-support-card__title">Maximise impact</h3>
-              <p className="assist-support-card__desc">Learn best practices for employee recognition, engagement, and celebration programs.</p>
-              <span className="assist-support-card__badge" style={{ background: '#F0FDF4', color: '#10B981' }}>
-                <span className="assist-bdot" style={{ background: '#10B981' }} />30-min session
-              </span>
-              <button className="assist-support-card__cta" style={{ background: '#10B981', boxShadow: '0 4px 14px rgba(16,185,129,0.3)' }}
-                onClick={() => scrollTo('contact-us')}>
-                Book Consultation
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+
+            {/* Right — service list */}
+            <div className="assist-reach-merged__right">
+              {[
+                { icon: '💬', label: 'Customer Support', desc: 'Account issues, board creation, contributor access, troubleshooting.', color: '#F67021', bg: '#FFF3EE' },
+                { icon: '🏢', label: 'Sales & Enterprise', desc: 'Enterprise deployments, SSO, integrations, large-scale programs.', color: '#3B82F6', bg: '#EFF6FF' },
+                { icon: '🌟', label: 'Customer Success', desc: 'Recognition best practices, engagement strategy, program consulting.', color: '#10B981', bg: '#ECFDF5' },
+              ].map((item, i) => (
+                <div key={i} className="assist-reach-merged__item">
+                  <span className="assist-reach-merged__item-icon" style={{ background: item.bg, color: item.color }}>{item.icon}</span>
+                  <div>
+                    <strong style={{ color: item.color }}>{item.label}</strong>
+                    <span>{item.desc}</span>
+                  </div>
+                </div>
+              ))}
+              <button className="assist-btn" style={{ marginTop: '8px' }} onClick={() => scrollTo('contact-us')}>
+                Send a Message
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M8 3l4.5 4.5L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
             </div>
           </div>
@@ -630,9 +613,9 @@ export default function Assistance() {
               </div>
               <div className="assist-contact-channels">
                 {[
-                  { icon: '✉️', label: 'Email Support', sub: 'support@workkudo.com', color: '#F67021' },
+                  { icon: '✉️', label: 'Email Support', sub: 'support@proso.ai', color: '#F67021' },
                   { icon: '📖', label: 'Help Center', sub: 'Browse our guides and docs', color: '#A78BFA' },
-                  { icon: '🤝', label: 'Partnerships', sub: 'partners@workkudo.com', color: '#34D399' },
+                  { icon: '🤝', label: 'Partnerships', sub: 'support@proso.ai', color: '#34D399' },
                 ].map((ch, i) => (
                   <div key={i} className="assist-contact-channel">
                     <span className="assist-contact-channel__icon" style={{ background: `${ch.color}18`, color: ch.color }}>{ch.icon}</span>

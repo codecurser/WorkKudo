@@ -10,17 +10,14 @@ export default function Appreciation() {
   const bgRef = useRef(null)
 
   useEffect(() => {
-    // Entrance animation
     const t = setTimeout(() => setMounted(true), 60)
     return () => clearTimeout(t)
   }, [])
 
   useEffect(() => {
-    // Parallax: move bg at 40% of scroll speed
     const handleScroll = () => {
       if (!bgRef.current) return
-      const scrollY = window.scrollY
-      bgRef.current.style.transform = `translateY(${scrollY * 0.4}px)`
+      bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -57,6 +54,12 @@ export default function Appreciation() {
 
           {/* Left */}
           <div className={`ap-hero-left ${mounted ? 'ap-hero-left--visible' : ''}`}>
+
+            <div className="ap-eyebrow">
+              <span className="ap-eyebrow__dot" aria-hidden="true" />
+              Appreciation Handbook
+            </div>
+
             <h1 className="ap-hero-heading">
               Show appreciation<br />
               <span className="ap-hero-heading-accent">the right way.</span>
@@ -76,26 +79,60 @@ export default function Appreciation() {
               <a href="#memory-map-shared" className="ap-cta-ghost">How it works</a>
             </div>
 
-            {/* Minimal trust line */}
             <p className="ap-hero-trust">
               Flat fee · $5 per board · Unlimited signers · Yours forever
             </p>
+
+            {/* Social proof */}
+            <div className="ap-social-proof">
+              <div className="ap-social-proof__avatars">
+                {['#FF6B6B','#4ECDC4','#45B7D1','#96CEB4'].map((bg, i) => (
+                  <span key={i} className="ap-sp-av" style={{ background: bg }} />
+                ))}
+              </div>
+              <span className="ap-social-proof__text">
+                <strong>4,200+</strong> appreciation boards sent this month
+              </span>
+            </div>
           </div>
 
           {/* Right — floating card */}
           <div className={`ap-hero-right ${mounted ? 'ap-hero-right--visible' : ''}`}>
             <div className="ap-quote-card">
-              <div className="ap-quote-card__label">Appreciation Card</div>
+
+              {/* Card header */}
+              <div className="ap-quote-card__header">
+                <div className="ap-quote-card__label">
+                  <span className="ap-label-dot" aria-hidden="true" />
+                  Kudos Board
+                </div>
+                <div className="ap-quote-card__board-meta">
+                  <span className="ap-live-badge">
+                    <span className="ap-live-dot" aria-hidden="true" />
+                    Live
+                  </span>
+                </div>
+              </div>
 
               <blockquote className="ap-quote-card__quote">
-                "Feeling appreciated is one of the most important needs in the workplace. Thank you for always going above and beyond and being an exceptional colleague!"
+                "Feeling appreciated is one of the most important needs in the workplace. Thank you for always going above and beyond — you make this entire team so much better!"
               </blockquote>
+
+              {/* Reaction chips */}
+              <div className="ap-reactions">
+                {[['❤️','24'],['🙌','18'],['⭐','31'],['🎉','12']].map(([emoji, count], i) => (
+                  <div key={i} className="ap-reaction-chip">
+                    <span>{emoji}</span>
+                    <span>{count}</span>
+                  </div>
+                ))}
+              </div>
 
               <div className="ap-quote-card__footer">
                 <div className="ap-quote-card__avatars">
                   <span className="ap-avatar" style={{ background: '#00B894' }}>S</span>
                   <span className="ap-avatar" style={{ background: '#7C3AED' }}>O</span>
-                  <span className="ap-avatar" style={{ background: '#FDCB6E' }}>F</span>
+                  <span className="ap-avatar" style={{ background: '#FDCB6E', color: '#1a1a1a' }}>F</span>
                   <span className="ap-avatar ap-avatar--more">+15</span>
                 </div>
                 <span className="ap-quote-card__signers">18 teammates signed</span>
@@ -106,36 +143,40 @@ export default function Appreciation() {
                 <span className="ap-price-badge">$5</span>
               </div>
 
-              {/* Animated shimmer line */}
               <div className="ap-quote-card__shimmer" aria-hidden="true" />
             </div>
           </div>
 
         </div>
-
       </section>
 
-      {/* ── HOW IT WORKS SECTION ── */}
+      {/* ── HOW IT WORKS ── */}
       <FeatureCards pageType="appreciation" />
 
-      {/* ── GLOBAL MEMORY MAP SECTION ── */}
+      {/* ── MEMORY MAP ── */}
       <MemoryMap pageType="appreciation" />
 
       {/* ── CELEBRATION GRID ── */}
       <CelebrationGrid themeClass="green" />
 
-      {/* ── FAQ SECTION ── */}
+      {/* ── FAQ ── */}
       <FAQ data={faqItems} subtitle="Got questions? We've got answers." />
 
       {/* ── BOTTOM CTA ── */}
       <section className="appreciation-cta">
         <div className="container">
           <div className="appreciation-cta-box">
+            <div className="ap-cta-icon" aria-hidden="true">✦</div>
             <h2 className="cta-title">Ready to create a memorable kudos card?</h2>
             <p className="cta-desc">Start building an appreciation board for your colleague in just 2 minutes.</p>
             <a href="#create" className="btn-primary btn-large animate-pulse-green">
               Create a Board for $5
             </a>
+            <div className="ap-cta-trust">
+              <span>✓ No subscription</span>
+              <span>✓ Unlimited signers</span>
+              <span>✓ Yours forever</span>
+            </div>
           </div>
         </div>
       </section>
