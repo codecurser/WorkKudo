@@ -118,7 +118,7 @@ export default function Nonprofits() {
               Keep volunteers and non-profit staff appreciated, connected, and aligned with your mission. Build community, recognize dedication, and coordinate celebrations seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
               <button className="ep-btn ep-btn--secondary">Explore Non-Profit Benefits</button>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function Nonprofits() {
           <h2>Ready to coordinate your NGO appreciation?</h2>
           <p>Join global non-profit teams and charities who use WorkKudo to keep volunteers engaged and appreciated.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>

@@ -1084,7 +1084,8 @@ function FinalCTA() {
           that strengthen workplace connections.
         </motion.p>
         <motion.div className="pg-cta-actions" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.2}>
-          <motion.button
+          <motion.a
+            href="https://workkudo.ai/signin"
             className="pg-btn pg-btn--cta-primary"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
@@ -1093,7 +1094,7 @@ function FinalCTA() {
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </motion.button>
+          </motion.a>
           <motion.button
             className="pg-btn pg-btn--cta-ghost"
             whileHover={{ scale: 1.04, y: -2 }}

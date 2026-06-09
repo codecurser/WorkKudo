@@ -116,7 +116,7 @@ export default function Enterprise() {
               Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
               <button className="ep-btn ep-btn--secondary">Contact Sales</button>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function Enterprise() {
           <h2>Ready to transform your enterprise culture?</h2>
           <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>

@@ -204,7 +204,7 @@ export default function Examples() {
         </div>
 
         <div className="examples__action">
-          <a href="#create" className="btn-primary">
+          <a href="https://workkudo.ai/signin" className="btn-primary">
             Start a Board
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M3 9h12M9.5 4.5l5 4.5-5 4.5" stroke="currentColor"

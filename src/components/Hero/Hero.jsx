@@ -163,7 +163,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="hero__ctas animate-fade-up delay-200" style={{ opacity: 0 }}>
-              <a href="#signup" className="hero__btn-primary">
+              <a href="https://workkudo.ai/signin" className="hero__btn-primary">
                 Start Free Today
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M3 9h12M9.5 4.5l5 4.5-5 4.5" stroke="currentColor"

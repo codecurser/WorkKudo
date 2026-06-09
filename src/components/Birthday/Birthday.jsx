@@ -67,7 +67,7 @@ export default function Birthday() {
             </p>
 
             <div className="bd-hero-ctas">
-              <a href="#create" className="bd-cta-primary">
+              <a href="https://workkudo.ai/signin" className="bd-cta-primary">
                 Create a Birthday Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -133,7 +133,7 @@ export default function Birthday() {
           <div className="birthday-cta-box">
             <h2 className="cta-title">Ready to create a memorable birthday card?</h2>
             <p className="cta-desc">Start building a celebration board for your colleague in just 2 minutes.</p>
-            <a href="#create" className="btn-primary btn-large animate-pulse-rose">
+            <a href="https://workkudo.ai/signin" className="btn-primary btn-large animate-pulse-rose">
               Create a Board for $5
             </a>
           </div>

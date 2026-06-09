@@ -118,7 +118,7 @@ export default function DistributedWorkforces() {
               Build connection, trust, and alignment across timezones. WorkKudo's hybrid-friendly recognition platform bridges the physical distance to keep remote teammates closer than ever.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Start Global Board</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Start Global Board</a>
               <button className="ep-btn ep-btn--secondary">See Remote Demos</button>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function DistributedWorkforces() {
           <h2>Ready to connect your distributed team?</h2>
           <p>Join thousands of remote squads building closer relationships with WorkKudo.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>

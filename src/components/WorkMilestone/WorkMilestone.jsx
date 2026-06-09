@@ -76,7 +76,7 @@ export default function WorkMilestone() {
             </p>
 
             <div className="wm-hero-ctas">
-              <a href="#create" className="wm-cta-primary">
+              <a href="https://workkudo.ai/signin" className="wm-cta-primary">
                 Create a Milestone Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -157,7 +157,7 @@ export default function WorkMilestone() {
           <div className="milestone-cta-box">
             <h2 className="wm-cta-title">Ready to celebrate a career milestone?</h2>
             <p className="wm-cta-desc">Build a stunning milestone board for your teammate in just 2 minutes.</p>
-            <a href="#create" className="wm-btn-primary wm-animate-pulse">
+            <a href="https://workkudo.ai/signin" className="wm-btn-primary wm-animate-pulse">
               Create a Board for $5
             </a>
           </div>

@@ -73,7 +73,7 @@ export default function Retirement() {
             </p>
 
             <div className="ret-hero-ctas">
-              <a href="#create" className="ret-cta-primary">
+              <a href="https://workkudo.ai/signin" className="ret-cta-primary">
                 Create a Retirement Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -157,7 +157,7 @@ export default function Retirement() {
           <div className="retirement-cta-box">
             <h2 className="ret-cta-title">Ready to celebrate their golden chapter?</h2>
             <p className="ret-cta-desc">Start building a heartfelt retirement board for your colleague in just 2 minutes.</p>
-            <a href="#create" className="ret-btn-primary ret-animate-pulse">
+            <a href="https://workkudo.ai/signin" className="ret-btn-primary ret-animate-pulse">
               Create a Board for $5
             </a>
           </div>

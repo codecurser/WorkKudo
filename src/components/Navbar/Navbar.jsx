@@ -186,7 +186,7 @@ function CreateMegaMenu({ onItemClick }) {
 
         {/* Bottom CTA */}
         <div className="create-rail__footer">
-          <a href="#create" className="create-rail__cta">
+          <a href="https://workkudo.ai/signin" className="create-rail__cta">
             🎉 Create a Board
           </a>
         </div>
@@ -503,8 +503,8 @@ export default function Navbar() {
 
           {/* Right */}
           <div className="navbar__actions">
-            <a href="#signin" className="navbar__signin">Sign In</a>
-            <a href="#create" className="navbar__cta">
+            <a href="https://workkudo.ai/signin" className="navbar__signin">Sign In</a>
+            <a href="https://workkudo.ai/signin" className="navbar__cta">
               Create a Board
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                 <path d="M2.5 7.5h10M8 3l5 4.5L8 12" stroke="currentColor" strokeWidth="1.8"
@@ -599,11 +599,11 @@ export default function Navbar() {
           </MobileAccordion>
 
           <Link to="/pricing" className="mobile-top-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <a href="#signin" className="mobile-top-link">Sign In</a>
+          <a href="https://workkudo.ai/signin" className="mobile-top-link">Sign In</a>
         </div>
 
         <div className="mobile-menu__footer">
-          <a href="#create" className="navbar__cta mobile-cta">🎉 Create a Board</a>
+          <a href="https://workkudo.ai/signin" className="navbar__cta mobile-cta">🎉 Create a Board</a>
         </div>
       </div>
 

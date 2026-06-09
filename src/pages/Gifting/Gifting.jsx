@@ -318,8 +318,7 @@ export default function Gifting() {
               Corporate gifting made simple — global fulfillment, 250,000+ business gift options, paired perfectly with personalized employee recognition.
             </p>
             <div className="gf-hero__actions">
-              <button className="gf-btn gf-btn--primary">Get Started Today</button>
-              <button className="gf-btn gf-btn--secondary">Browse Gift Catalog</button>
+              <a href="https://workkudo.ai/signin" className="gf-btn gf-btn--primary">Get Started Today</a>
             </div>
           </div>
           

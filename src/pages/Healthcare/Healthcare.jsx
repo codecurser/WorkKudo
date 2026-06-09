@@ -118,7 +118,7 @@ export default function Healthcare() {
               Improve staff morale, reduce burnout, and support healthcare compliance. Celebrate medical milestones, peer achievements, and administrative successes seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
               <button className="ep-btn ep-btn--secondary">Explore Care Benefits</button>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function Healthcare() {
           <h2>Ready to support your clinical teams?</h2>
           <p>Join healthcare networks who trust WorkKudo to keep their care teams appreciated and connected.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>

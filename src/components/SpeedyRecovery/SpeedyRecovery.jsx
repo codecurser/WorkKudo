@@ -76,7 +76,7 @@ export default function SpeedyRecovery() {
             </p>
 
             <div className="rec-hero-ctas">
-              <a href="#create" className="rec-cta-primary">
+              <a href="https://workkudo.ai/signin" className="rec-cta-primary">
                 Create a Get-Well Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -161,7 +161,7 @@ export default function SpeedyRecovery() {
           <div className="recovery-cta-box">
             <h2 className="rec-cta-title">Brighten someone's recovery today</h2>
             <p className="rec-cta-desc">Build a cheerful get-well board in just 2 minutes and send healing wishes their way.</p>
-            <a href="#create" className="rec-btn-primary rec-animate-pulse">
+            <a href="https://workkudo.ai/signin" className="rec-btn-primary rec-animate-pulse">
               Create a Board for $5
             </a>
           </div>

@@ -77,7 +77,7 @@ export default function Condolence() {
             </p>
 
             <div className="con-hero-ctas">
-              <a href="#create" className="con-cta-primary">
+              <a href="https://workkudo.ai/signin" className="con-cta-primary">
                 Create a Tribute Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -149,7 +149,7 @@ export default function Condolence() {
           <div className="condolence-cta-box">
             <h2 className="con-cta-title">Create a heartfelt tribute today</h2>
             <p className="con-cta-desc">Help your team come together to honour and remember a cherished colleague in just 2 minutes.</p>
-            <a href="#create" className="con-btn-primary con-animate-pulse">
+            <a href="https://workkudo.ai/signin" className="con-btn-primary con-animate-pulse">
               Create a Tribute for $5
             </a>
           </div>

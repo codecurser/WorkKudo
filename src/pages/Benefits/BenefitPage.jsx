@@ -654,7 +654,7 @@ function FinalCTA({ data }) {
         <motion.h2 className="bpg-cta__h2" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.1}>{data.ctaHeadline}</motion.h2>
         <motion.p className="bpg-cta__sub" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.18}>{data.ctaDesc}</motion.p>
         <motion.div className="bpg-cta__actions" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.26}>
-          <motion.a href="#create" className="bpg-btn bpg-btn--primary" style={{ padding:'15px 32px', fontSize:15.5 }}
+          <motion.a href="https://workkudo.ai/signin" className="bpg-btn bpg-btn--primary" style={{ padding:'15px 32px', fontSize:15.5 }}
             whileHover={{ scale:1.05, y:-2 }} whileTap={{ scale:0.97 }}>
             {data.ctaPrimary} <Arrow />
           </motion.a>

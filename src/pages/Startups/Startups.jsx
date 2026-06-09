@@ -118,7 +118,7 @@ export default function Startups() {
               Fast-moving recognition for rapid-growth teams. Keep your team motivated, align wins with startup values, and celebrate milestones seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request Startup Plan</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request Startup Plan</a>
               <button className="ep-btn ep-btn--secondary">Explore Growth Benefits</button>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function Startups() {
           <h2>Ready to build a strong startup culture?</h2>
           <p>Join fast-growing startup teams using WorkKudo to scale appreciation and values.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>

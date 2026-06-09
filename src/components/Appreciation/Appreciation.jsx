@@ -70,7 +70,7 @@ export default function Appreciation() {
             </p>
 
             <div className="ap-hero-ctas">
-              <a href="#create" className="ap-cta-primary">
+              <a href="https://workkudo.ai/signin" className="ap-cta-primary">
                 Create a Kudos Board
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -169,7 +169,7 @@ export default function Appreciation() {
             <div className="ap-cta-icon" aria-hidden="true">✦</div>
             <h2 className="cta-title">Ready to create a memorable kudos card?</h2>
             <p className="cta-desc">Start building an appreciation board for your colleague in just 2 minutes.</p>
-            <a href="#create" className="btn-primary btn-large animate-pulse-green">
+            <a href="https://workkudo.ai/signin" className="btn-primary btn-large animate-pulse-green">
               Create a Board for $5
             </a>
             <div className="ap-cta-trust">

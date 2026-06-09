@@ -55,7 +55,7 @@ function Hero({ data }) {
             initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.28 }}
           >
-            <a href="#create" className="fp-btn fp-btn--primary">
+            <a href="https://workkudo.ai/signin" className="fp-btn fp-btn--primary">
               {data.ctaPrimary}
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                 <path d="M3 7.5h9M8 3l4.5 4.5L8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -404,10 +404,10 @@ function FinalCTA({ data }) {
         <motion.div className="fp-cta-actions"
           variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.2}
         >
-          <motion.a href="#create" className="fp-btn fp-btn--cta-primary"
+          <motion.a href="https://workkudo.ai/signin" className="fp-btn fp-btn--cta-primary"
             whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
           >{data.ctaPrimary}</motion.a>
-          <motion.a href="#create" className="fp-btn fp-btn--cta-ghost"
+          <motion.a href="https://workkudo.ai/signin" className="fp-btn fp-btn--cta-ghost"
             whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
           >{data.ctaSecondary}</motion.a>
         </motion.div>

@@ -243,7 +243,7 @@ export default function AwardStyle() {
             <h2>Ready to recognize your team?</h2>
             <p>Start a board in 2 minutes. No subscription required, invite unlimited co-signers, and customize layouts effortlessly.</p>
             <div className="aw-cta-actions">
-              <a href="#create" className="aw-btn aw-btn--primary" style={{ background: 'linear-gradient(135deg, #F97316 0%, #3B82F6 100%)', boxShadow: '0 8px 24px rgba(59, 130, 246, 0.25)' }}>
+              <a href="https://workkudo.ai/signin" className="aw-btn aw-btn--primary" style={{ background: 'linear-gradient(135deg, #F97316 0%, #3B82F6 100%)', boxShadow: '0 8px 24px rgba(59, 130, 246, 0.25)' }}>
                 Start recognition board
               </a>
               <a href="#demo" className="aw-btn aw-btn--secondary">

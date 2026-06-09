@@ -287,7 +287,7 @@ export default function AboutUs() {
               </p>
 
               <div className="au-hero__actions">
-                <a href="/#build" className="au-btn au-btn--primary">
+                <a href="https://workkudo.ai/signin" className="au-btn au-btn--primary">
                   Start a Board
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8h10M8.5 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -580,7 +580,7 @@ export default function AboutUs() {
                 Thousands of meaningful moments happen inside organizations every day. WorkKudo makes sure none of them go unnoticed.
               </p>
               <div className="au-cta-box__actions">
-                <a href="/#build" className="au-btn au-btn--primary">
+                <a href="https://workkudo.ai/signin" className="au-btn au-btn--primary">
                   Start a Board Today
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8h10M8.5 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

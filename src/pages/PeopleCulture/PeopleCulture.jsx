@@ -118,7 +118,7 @@ export default function PeopleCulture() {
               Bring teams together with personalized milestone celebrations, peer-to-peer kudos, and meaningful rewards. Retain your top talent by making appreciation a daily habit.
             </p>
             <div className="ep-hero__actions">
-              <button className="ep-btn ep-btn--primary">Request a Demo</button>
+              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
               <button className="ep-btn ep-btn--secondary">Explore Benefits</button>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function PeopleCulture() {
           <h2>Ready to build a thriving workplace culture?</h2>
           <p>Join thousands of People Operations teams who trust WorkKudo to recognize their employees.</p>
           <div className="ep-cta__actions">
-            <button className="ep-btn ep-btn--primary">Schedule a Consultation</button>
+            <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
             <button className="ep-btn ep-btn--outline">View Pricing</button>
           </div>
         </div>
