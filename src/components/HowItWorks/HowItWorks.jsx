@@ -155,7 +155,7 @@ export default function HowItWorks() {
                             <span style={{ background: '#FEBC2E' }} />
                             <span style={{ background: '#28C840' }} />
                           </div>
-                          <div className="hiw__mac-url">workkudo.app</div>
+                          <div className="hiw__mac-url">workkudo.ai</div>
                         </div>
                         <img src={step.image} alt={step.title} className="hiw__mac-img" />
                       </div>

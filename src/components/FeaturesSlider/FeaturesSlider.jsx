@@ -79,7 +79,7 @@ export default function FeaturesSlider() {
                       <span style={{ background: '#FEBC2E' }} />
                       <span style={{ background: '#28C840' }} />
                     </div>
-                    <div className="feature-card__mac-url">workkudo.app</div>
+                    <div className="feature-card__mac-url">workkudo.ai</div>
                   </div>
                   <img src={feature.image} alt={feature.title} className="feature-card__img" />
                 </div>
