@@ -83,10 +83,9 @@ export default function FeaturesSlider() {
                   </div>
                   <img src={feature.image} alt={feature.title} className="feature-card__img" />
                 </div>
-                <div className="feature-card__content">
-                  <span className="feature-card__label">{feature.label}</span>
-                  <h3 className="feature-card__title">{feature.title}</h3>
-                  <p className="feature-card__desc">{feature.desc}</p>
+                <div className="feature-card__caption">
+                  <span className="feature-card__caption-label">{feature.label}</span>
+                  <span className="feature-card__caption-title">{feature.title}</span>
                 </div>
               </div>
             )

@@ -172,20 +172,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Trust strip (Infinite slider) */}
-            <div className="hero__trust animate-fade-up delay-300" style={{ opacity: 0 }}>
-              <span className="hero__trust-label">Trusted by teams at</span>
-              <div className="hero__trust-slider-container">
-                <div className="hero__trust-slider">
-                  {/* Duplicate 3 times for seamless infinite scroll */}
-                  {[...trustBadges, ...trustBadges, ...trustBadges].map((name, i) => (
-                    <span key={i} className="hero__trust-pill">
-                      {name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+
 
           </div>
 
