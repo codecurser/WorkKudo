@@ -478,22 +478,22 @@ export default function Navbar() {
                 )}
 
                 {item === 'Build' && activeMenu === 'Build' && (
-                  <div className="menu-wrapper menu-wrapper--mega" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
+                  <div className="menu-wrapper menu-wrapper--mega" style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }} onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <CreateMegaMenu onItemClick={() => setActiveMenu(null)} />
                   </div>
                 )}
                 {item === 'Solutions' && activeMenu === 'Solutions' && (
-                  <div className="menu-wrapper menu-wrapper--platform" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
+                  <div className="menu-wrapper menu-wrapper--platform" style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }} onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <PlatformMegaMenu />
                   </div>
                 )}
                 {item === 'Community' && activeMenu === 'Community' && (
-                  <div className="menu-wrapper menu-wrapper--small" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
+                  <div className="menu-wrapper menu-wrapper--small" style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }} onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <SmallDropdown data={customersData} />
                   </div>
                 )}
                 {item === 'Learn' && activeMenu === 'Learn' && (
-                  <div className="menu-wrapper menu-wrapper--small" onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
+                  <div className="menu-wrapper menu-wrapper--small" style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }} onMouseEnter={keepOpen} onMouseLeave={closeMenu}>
                     <SmallDropdown data={resourcesData} />
                   </div>
                 )}
@@ -525,7 +525,7 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`}>
+      <div className={`mobile-menu ${mobileOpen ? 'mobile-menu--open' : ''}`} style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }}>
         <div className="mobile-menu__body">
           <MobileAccordion label="Build">
             <div className="mobile-section-title">MOMENTS</div>
@@ -607,7 +607,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {mobileOpen && <div className="mobile-overlay" onClick={() => setMobileOpen(false)} />}
+      {mobileOpen && <div className="mobile-overlay" style={{ top: scrolled ? 'var(--nav-height-scrolled)' : 'var(--nav-height)' }} onClick={() => setMobileOpen(false)} />}
     </>
   )
 }
