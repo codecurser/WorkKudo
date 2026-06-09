@@ -1,20 +1,32 @@
 import BenefitPage from './BenefitPage';
 
 const data = {
-  heroVariant: 'v4',   // Full dark + number metric cards
+  heroVariant: 'v1',
   icon: '💬',
   category: 'Enhance Participation',
   heroTitle: 'Encourage Every Employee to Get Involved',
   heroDesc: 'Recognition programs only succeed when people actively participate. WorkKudo removes every barrier so contributing feels as natural as sending a message.',
   ctaPrimary: 'Get More People Involved',
   ctaSecondary: 'See How It Works',
-
-  numCards: [
-    { icon: '🔗', val: '0', unit: '', label: 'Accounts needed', accent: false },
-    { icon: '⚡', val: '<1', unit: 'min', label: 'To contribute', accent: true },
-    { icon: '📱', val: '100', unit: '%', label: 'Mobile-ready', accent: false },
-    { icon: '🔔', val: '3×', unit: '', label: 'Higher participation', accent: true },
+  heroChips: ['📩 Easy Contributions', '🌍 Remote-Friendly', '⚡ No Friction'],
+  heroStats: [
+    { val: '<1min', label: 'To contribute' },
+    { val: '3×', label: 'Higher participation' },
   ],
+  heroCardContent: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      {[
+        { text: '"Added my message in 30 seconds from my phone — zero friction 📱"', from: 'Alex R. · Remote', color: '#FF6B2C', bg: '#FFF3EE' },
+        { text: '"No account needed, just clicked the link and signed the board 💛"', from: 'Maya S. · Hybrid', color: '#A78BFA', bg: '#F5F3FF' },
+        { text: '"Got a reminder and contributed right before the deadline 🔔"', from: 'Jordan L. · Distributed', color: '#34D399', bg: '#ECFDF5' },
+      ].map((n, i) => (
+        <div key={i} className="bpg-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+          <span className="bpg-note-av" style={{ background: n.color }}>{n.from[0]}</span>
+          <div><p>{n.text}</p><span>{n.from}</span></div>
+        </div>
+      ))}
+    </div>
+  ),
 
   problemTitle: 'Low Participation Is the Most Common Reason Recognition Programs Fail',
   problemDesc: 'Even the best-designed recognition program delivers little value if only a fraction of employees participate. Busy schedules, platform friction, and lack of reminders keep contribution rates low.',
@@ -65,14 +77,6 @@ const data = {
     { icon: '🌱', title: 'Culture Initiatives', desc: 'Build participation habits through regular, low-friction recognition touchpoints.' },
     { icon: '🤝', title: 'Onboarding Welcome Boards', desc: 'Help new hires feel immediately welcomed with a board signed by the whole team on day one.' },
     { icon: '📣', title: 'Team Shout-outs', desc: 'Enable spontaneous peer-to-peer recognition that anyone can initiate and everyone can join.' },
-  ],
-
-  showcase: [
-    { icon: '📩', label: 'Instant Contribution Flow', desc: 'Click a link, add a message, done. No barriers between intent and participation.', bg: '#FFF3EE', tags: ['No Sign-up', 'Mobile', '< 1 Minute'] },
-    { icon: '🔔', label: 'Contribution Reminder', bg: '#ECFDF5', desc: 'Automated nudge before a board closes.' },
-    { icon: '💬', label: 'Slack Notification', bg: '#F5F3FF', desc: 'Board invitations inside your workspace.' },
-    { icon: '📱', label: 'Mobile View', bg: '#FFFBEB', tags: ['iOS', 'Android', 'No App'] },
-    { icon: '🌍', label: 'Global Reach', bg: '#EEF1F7', desc: 'All timezones, any device, any language.' },
   ],
 
   benefits: [

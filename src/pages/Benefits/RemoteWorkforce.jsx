@@ -1,20 +1,32 @@
 import BenefitPage from './BenefitPage';
 
 const data = {
-  heroVariant: 'v6',   // Dark navy + live global contribution pins
+  heroVariant: 'v1',
   icon: '🌐',
   category: 'Remote Workforce',
   heroTitle: 'Bring Distributed Teams Closer Together',
   heroDesc: "Distance shouldn't prevent meaningful recognition. WorkKudo makes it possible for remote and globally distributed teams to celebrate, appreciate, and connect — regardless of location or timezone.",
   ctaPrimary: 'Connect Your Remote Team',
   ctaSecondary: 'See How It Works',
-
-  globalPins: [
-    { flag: '🇸🇬', name: 'Wei Liu · Singapore', msg: '"So grateful to be part of this 🌏"' },
-    { flag: '🇳🇬', name: 'Amara Osei · Lagos', msg: '"Distance never felt smaller 💛"' },
-    { flag: '🇨🇦', name: 'James Park · Toronto', msg: '"This board made my week! 🎉"' },
-    { flag: '🇩🇪', name: 'Lena Müller · Berlin', msg: '"Signed and celebrating with you 🚀"' },
+  heroChips: ['🌍 Global Teams', '⏰ Async-First', '📱 Any Device'],
+  heroStats: [
+    { val: '192+', label: 'Countries reached' },
+    { val: '100%', label: 'Async-first design' },
   ],
+  heroCardContent: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      {[
+        { text: '"Celebrating from Singapore — so grateful to be part of this team 🌏"', from: 'Wei L. · Singapore', color: '#FF6B2C', bg: '#FFF3EE' },
+        { text: '"Distance never felt smaller. Thank you for including everyone 💛"', from: 'Amara K. · Lagos', color: '#A78BFA', bg: '#F5F3FF' },
+        { text: '"Signed from Toronto — this board made my entire week! 🎉"', from: 'James P. · Toronto', color: '#34D399', bg: '#ECFDF5' },
+      ].map((n, i) => (
+        <div key={i} className="bpg-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+          <span className="bpg-note-av" style={{ background: n.color }}>{n.from[0]}</span>
+          <div><p>{n.text}</p><span>{n.from}</span></div>
+        </div>
+      ))}
+    </div>
+  ),
 
   problemTitle: 'Remote Employees Miss Out on the Recognition Moments That Build Culture',
   problemDesc: 'In-office birthday cakes, hallway congratulations, and after-work celebrations simply don\'t reach remote employees. The informal recognition that builds culture in physical offices is invisible online.',
@@ -65,14 +77,6 @@ const data = {
     { icon: '🤝', title: 'Distributed Onboarding', desc: 'Welcome new remote employees with a board signed by the entire team before day one.' },
     { icon: '👋', title: 'Virtual Farewells', desc: 'Send off departing remote employees with a farewell board from their global colleagues.' },
     { icon: '🌱', title: 'Culture Initiatives', desc: 'Run inclusion and culture programs that are equally accessible to all locations.' },
-  ],
-
-  showcase: [
-    { icon: '🌍', label: 'Global Celebration Board', desc: 'Contributors from across the world — all on one board, signed asynchronously.', bg: '#FFF3EE', tags: ['Async', 'Global', 'No Timezone Barrier'] },
-    { icon: '⏰', label: 'Async Contribution', bg: '#ECFDF5', desc: 'Each contributor joins when ready.' },
-    { icon: '📱', label: 'Mobile Access', bg: '#F5F3FF', desc: 'Full experience on any device.' },
-    { icon: '💬', label: 'Slack Delivery', bg: '#FFFBEB', tags: ['Slack', 'Teams', 'Email'] },
-    { icon: '🗺️', label: 'Distributed Reach', bg: '#EEF1F7', desc: 'Any location, any language, any device.' },
   ],
 
   benefits: [

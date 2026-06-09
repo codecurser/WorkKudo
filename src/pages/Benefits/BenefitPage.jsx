@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import './BenefitPage.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import FAQ from '../../components/FAQ/FAQ';
 
 /* ── animation helpers ── */
 const ease = [0.25, 1, 0.5, 1];
@@ -635,45 +636,6 @@ function BenefitsSection({ data }) {
 }
 
 /* ════════════════════════════════════════════
-   FAQ
-════════════════════════════════════════════ */
-function FAQSection({ data }) {
-  const [open, setOpen] = useState(null);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once:true, margin:'-80px' });
-  if (!data.faq) return null;
-  return (
-    <section className="bpg-faq" ref={ref}>
-      <div className="bpg-container">
-        <div className="bpg-sec-hd">
-          <motion.div className="bpg-eyebrow bpg-eyebrow--orange" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0}>? FAQ</motion.div>
-          <motion.h2 className="bpg-h2 bpg-h2--center" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.08}>{data.faqTitle || 'Frequently Asked Questions'}</motion.h2>
-          {data.faqSubtitle && (
-            <motion.p className="bpg-section-sub" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.14}>{data.faqSubtitle}</motion.p>
-          )}
-        </div>
-        <motion.div className="bpg-faq__list" variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.2}>
-          {data.faq.map((item, i) => (
-            <div key={i} className={`bpg-faq__item${open===i?' open':''}`}>
-              <button className="bpg-faq__q" onClick={() => setOpen(open===i ? null : i)}>
-                {item.q}
-                <motion.span className="bpg-faq__chevron" animate={{ rotate: open===i ? 180 : 0 }} transition={{ duration:0.28 }}>▼</motion.span>
-              </button>
-              <motion.div className="bpg-faq__body"
-                initial={false}
-                animate={{ maxHeight: open===i ? 300 : 0, opacity: open===i ? 1 : 0 }}
-                transition={{ duration:0.38, ease:[0.25,1,0.5,1] }}>
-                <div className="bpg-faq__body-inner">{item.a}</div>
-              </motion.div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════════
    FINAL CTA
 ════════════════════════════════════════════ */
 function FinalCTA({ data }) {
@@ -722,7 +684,7 @@ export default function BenefitPage({ data }) {
       <HowItWorks       data={data} />
       <UseCases         data={data} />
       <BenefitsSection  data={data} />
-      <FAQSection       data={data} />
+      <FAQ data={data.faq} title={data.faqTitle} subtitle={data.faqSubtitle} />
       <FinalCTA         data={data} />
       <Footer />
     </div>

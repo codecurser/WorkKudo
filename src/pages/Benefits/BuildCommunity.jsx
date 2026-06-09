@@ -1,27 +1,32 @@
 import BenefitPage from './BenefitPage';
 
 const data = {
-  heroVariant: 'v3',   // Bold text + floating card mosaic
+  heroVariant: 'v1',
   icon: '🌱',
   category: 'Build Community',
   heroTitle: 'Create a Workplace Where People Feel Connected',
   heroDesc: 'Employees thrive when they feel they belong to a supportive community. WorkKudo helps organizations build that sense of connection through shared experiences and genuine appreciation.',
   ctaPrimary: 'Build Your Community',
   ctaSecondary: 'See How It Works',
-
-  heroStats3: [
+  heroChips: ['🤝 Belonging', '💛 Connection', '🌍 Inclusive'],
+  heroStats: [
     { val: '4×', label: 'Higher retention' },
     { val: '91%', label: 'Feel they belong' },
-    { val: '1 day', label: 'Welcome on day one' },
   ],
-
-  mosaicCards: [
-    { icon: '🤝', title: 'New Hire Welcome', sub: 'Signed by the whole team', tall: true },
-    { icon: '🎉', title: 'Shared Celebrations', sub: 'Moments that connect' },
-    { icon: '💌', title: 'Appreciation Campaigns', sub: 'Recognition for all' },
-    { icon: '🌍', title: 'Global Inclusion', sub: 'Every timezone included' },
-    { icon: '👥', title: 'Employee Spotlights', sub: 'Visible contributions' },
-  ],
+  heroCardContent: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      {[
+        { text: '"Welcome to the team, Sarah! So excited to have you here 🌱"', from: 'The Whole Team', color: '#FF6B2C', bg: '#FFF3EE' },
+        { text: '"This community is what makes coming to work worthwhile every day 💛"', from: 'People Team · HR', color: '#A78BFA', bg: '#F5F3FF' },
+        { text: '"Five years together — thank you all for making it meaningful 🌟"', from: 'Jordan L. · Member', color: '#34D399', bg: '#ECFDF5' },
+      ].map((n, i) => (
+        <div key={i} className="bpg-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+          <span className="bpg-note-av" style={{ background: n.color }}>{n.from[0]}</span>
+          <div><p>{n.text}</p><span>{n.from}</span></div>
+        </div>
+      ))}
+    </div>
+  ),
 
   problemTitle: 'Workplaces Without Community Leave People Feeling Isolated',
   problemDesc: 'Community doesn\'t form automatically. Without intentional recognition, shared celebrations, and visible appreciation, employees — especially in remote and distributed settings — feel disconnected.',
@@ -72,14 +77,6 @@ const data = {
     { icon: '🌟', title: 'Employee Spotlights', desc: 'Feature individuals publicly so the whole community can show appreciation.' },
     { icon: '💌', title: 'Appreciation Months', desc: 'Run company-wide appreciation campaigns that turn recognition into a community-building event.' },
     { icon: '🌍', title: 'Cross-Team Connection', desc: 'Bridge teams and departments through shared recognition experiences that span organizational lines.' },
-  ],
-
-  showcase: [
-    { icon: '🌱', label: 'New Hire Welcome Board', desc: 'The entire team signs a welcome board before the new hire\'s first day.', bg: '#FFF3EE', tags: ['Whole Team', 'Day One', 'Belonging'] },
-    { icon: '🏆', label: 'Recognition Campaign', bg: '#ECFDF5', desc: 'Company-wide appreciation in one experience.' },
-    { icon: '💌', label: 'Team Appreciation', bg: '#F5F3FF', desc: 'Peer messages that build real connection.' },
-    { icon: '🎊', label: 'Milestone Memory', bg: '#FFFBEB', tags: ['Shared', 'Lasting'] },
-    { icon: '👥', label: 'Employee Spotlight', bg: '#EEF1F7', desc: 'Public recognition across the whole org.' },
   ],
 
   benefits: [

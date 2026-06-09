@@ -1,23 +1,32 @@
 import BenefitPage from './BenefitPage';
 
 const data = {
-  heroVariant: 'v5',   // Warm gradient + award card leaderboard
+  heroVariant: 'v1',
   icon: '🎯',
   category: 'Honor Achievements',
   heroTitle: 'Recognize Every Contribution That Matters',
   heroDesc: 'Achievements deserve visibility and appreciation. WorkKudo gives organizations a structured way to honor accomplishments at every level — from individual wins to organization-wide milestones.',
   ctaPrimary: 'Start Recognizing',
   ctaSecondary: 'See How It Works',
-  heroChips: ['🏆 Achievements', '⭐ Recognition', '🌟 Milestones'],
-  floatChips: ['🏆 Just promoted', '⭐ 5-year milestone'],
-
-  awardCardTitle: 'Recognition Board — Q4 2024',
-  awardCardSub: '3 achievements celebrated this week',
-  awardRows: [
-    { name: 'Priya Sharma', role: 'Engineering Lead · Promoted', color: '#FF6B2C', badge: '🚀 Promoted' },
-    { name: 'Marcus Chen', role: 'Design · 5-Year Anniversary', color: '#A78BFA', badge: '⭐ 5 Years' },
-    { name: 'Aiko Tanaka', role: 'Product · Project Launch', color: '#34D399', badge: '🎯 Launch' },
+  heroChips: ['🏆 Achievements', '⭐ Milestones', '🌟 Recognition'],
+  heroStats: [
+    { val: '5×', label: 'More motivation' },
+    { val: '93%', label: 'Feel seen & valued' },
   ],
+  heroCardContent: (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
+      {[
+        { text: '"Congratulations on your promotion — so well deserved! 🚀"', from: 'Leadership Team', color: '#FF6B2C', bg: '#FFF3EE' },
+        { text: '"5 years of brilliance. Thank you for everything you have built 🏆"', from: 'Engineering Team', color: '#A78BFA', bg: '#F5F3FF' },
+        { text: '"Your work on this project changed the product forever ⭐"', from: 'Product Team', color: '#34D399', bg: '#ECFDF5' },
+      ].map((n, i) => (
+        <div key={i} className="bpg-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+          <span className="bpg-note-av" style={{ background: n.color }}>{n.from[0]}</span>
+          <div><p>{n.text}</p><span>{n.from}</span></div>
+        </div>
+      ))}
+    </div>
+  ),
 
   problemTitle: 'Most Achievements Go Unrecognized Until It\'s Too Late',
   problemDesc: 'Work anniversaries pass quietly. Promotions get a brief announcement. Project successes are celebrated in a meeting and forgotten by the following week. Individual contributions rarely receive the visibility they deserve.',
@@ -43,7 +52,7 @@ const data = {
     </>
   ),
 
-  deepDiveTitle: 'Recognition Experiences Built for Every Type of Achievement',
+  deepDiveTitle: 'Recognition Built for Every Type of Achievement',
   deepDiveDesc: 'WorkKudo provides tools to honor achievements at the individual, team, and organizational level — consistently and memorably.',
   deepDiveFeatures: [
     { icon: '🏆', title: 'Recognition Walls', desc: 'Public appreciation spaces where achievements are acknowledged and remain visible over time.' },
@@ -68,14 +77,6 @@ const data = {
     { icon: '🌟', title: 'Individual Success Stories', desc: 'Give exceptional individual contributors company-wide visibility and appreciation.' },
     { icon: '📣', title: 'Monthly Recognition', desc: 'Run structured monthly recognition programs that ensure achievements are honored consistently.' },
     { icon: '👔', title: 'Leadership Acknowledgements', desc: 'Enable leaders to recognize employees publicly in a way that resonates and is remembered.' },
-  ],
-
-  showcase: [
-    { icon: '🏆', label: 'Promotion Celebration Board', desc: 'A board signed by the whole organization honoring a career milestone.', bg: '#FFF3EE', tags: ['Team-wide', 'Personal', 'Lasting'] },
-    { icon: '⭐', label: 'Recognition Wall', bg: '#FFFBEB', desc: 'Public achievements visible to all.' },
-    { icon: '👏', label: 'Employee Spotlight', bg: '#F5F3FF', desc: 'Individual contributions made visible.' },
-    { icon: '📥', label: 'PDF Keepsake', bg: '#ECFDF5', tags: ['Download', 'Print', 'Frame'] },
-    { icon: '📅', label: 'Milestone Timeline', bg: '#EEF1F7', desc: 'Anniversaries, promotions, project wins.' },
   ],
 
   benefits: [
