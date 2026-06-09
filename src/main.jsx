@@ -1,13 +1,23 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root')
+
+const AppTree = (
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// react-snap pre-renders HTML into the root — use hydrate so React
+// attaches to existing markup instead of wiping and re-rendering.
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, AppTree)
+} else {
+  createRoot(rootElement).render(AppTree)
+}
