@@ -527,19 +527,6 @@ export default function Assistance() {
               </button>
             </div>
           </div>
-          <div className={`assist-support-info ${reachVisible ? 'assist-in assist-in--d2' : ''}`}>
-            {[
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F67021" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'Standard Support', sub: 'Monday – Friday, 9am – 6pm EST' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: 'Enterprise Support', sub: 'Priority 24/7 support for enterprise customers' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>, title: 'Average Response', sub: 'Under 2 hours during business hours' },
-            ].map((item, i) => (
-              <div key={i} className="assist-support-info__item">
-                {item.icon}
-                <div><strong>{item.title}</strong><span>{item.sub}</span></div>
-                {i < 2 && <span className="assist-support-info__sep" />}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
