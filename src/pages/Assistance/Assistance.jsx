@@ -357,94 +357,122 @@ export default function Assistance() {
       ══════════════════════════════════════════ */}
       <section id="appreciation-handbook" className="assist-section assist-section--handbook" ref={hbRef}>
         <div className="container">
+
+          {/* ── Section header ── */}
           <div className={`assist-section-header ${hbVisible ? 'assist-in' : ''}`}>
-            <div className="assist-eyebrow"><span className="assist-eyebrow-dot" />Guides</div>
-            <h2 className="assist-section-title">Appreciation Handbook</h2>
-            <p className="assist-section-sub">Your guide to building a culture of recognition that actually resonates.</p>
+            <div className="assist-eyebrow"><span className="assist-eyebrow-dot" />Appreciation Handbook</div>
+            <h2 className="assist-section-title">Build a Culture of Recognition</h2>
+            <p className="assist-section-sub">Everything you need to make appreciation a habit — not an afterthought.</p>
           </div>
 
-          {/* Compact single card */}
-          <div className={`assist-hb-compact ${hbVisible ? 'assist-in assist-in--d1' : ''}`}>
-
-            {/* Row 1 — Why + Stats */}
-            <div className="assist-hb-compact__why">
-              <div className="assist-hb-compact__why-text">
-                <div className="assist-eyebrow" style={{ justifyContent: 'flex-start' }}><span className="assist-eyebrow-dot" />Why It Matters</div>
-                <h3 className="assist-hb-compact__title">Why Recognition Matters</h3>
-                <p className="assist-hb-compact__body">
-                  Employee recognition helps teams feel valued, improves engagement, and strengthens workplace culture. When people know their contributions are seen and appreciated, they stay longer and bring their best every day.
-                </p>
-              </div>
-              <div className="assist-hb-compact__stats">
-                {[
-                  { value: '63%', label: 'less likely to job-hunt when feeling recognised' },
-                  { value: '2×', label: 'more positive culture with peer recognition' },
-                  { value: '40%', label: 'higher engagement with strong programs' },
-                ].map((s, i) => (
-                  <div key={i} className="assist-hb-stat">
-                    <span className="assist-hb-stat__value">{s.value}</span>
-                    <span className="assist-hb-stat__label">{s.label}</span>
-                  </div>
-                ))}
-              </div>
+          {/* ── Row 1: Why it matters — dark hero banner ── */}
+          <div className={`assist-hb-why-banner ${hbVisible ? 'assist-in assist-in--d1' : ''}`}>
+            <div className="assist-hb-why-banner__glow" aria-hidden="true" />
+            <div className="assist-hb-why-banner__left">
+              <div className="assist-eyebrow assist-eyebrow--light"><span className="assist-eyebrow-dot" style={{ background: '#FFB380' }} />Why It Matters</div>
+              <h3 className="assist-hb-why-banner__title">Recognition isn't a&nbsp;perk.<br />It's a&nbsp;performance driver.</h3>
+              <p className="assist-hb-why-banner__body">
+                Employees who feel genuinely appreciated stay longer, perform better, and lift everyone around them. WorkKudo makes it effortless to celebrate the people who make a difference — every single day.
+              </p>
             </div>
-
-            <div className="assist-hb-compact__divider" />
-
-            {/* Row 2 — Best Practices */}
-            <div className="assist-hb-compact__section">
-              <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '16px' }}><span className="assist-eyebrow-dot" />Best Practices</div>
-              <div className="assist-hb-compact__practices">
-                {bestPractices.map((p, i) => (
-                  <div key={i} className="assist-hb-compact__practice">
-                    <span className="assist-hb-compact__practice-icon">{p.icon}</span>
-                    <div>
-                      <strong>{p.title}</strong>
-                      <span>{p.desc}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="assist-hb-why-banner__stats">
+              {[
+                { value: '63%', label: 'less likely to job-hunt', icon: '📉' },
+                { value: '2×', label: 'stronger team culture', icon: '🤝' },
+                { value: '40%', label: 'higher engagement', icon: '📈' },
+              ].map((s, i) => (
+                <div key={i} className="assist-hb-why-stat">
+                  <span className="assist-hb-why-stat__icon">{s.icon}</span>
+                  <span className="assist-hb-why-stat__value">{s.value}</span>
+                  <span className="assist-hb-why-stat__label">{s.label}</span>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <div className="assist-hb-compact__divider" />
-
-            {/* Row 3 — Recognition Examples */}
-            <div className="assist-hb-compact__section">
-              <div className="assist-eyebrow" style={{ justifyContent: 'flex-start', marginBottom: '16px' }}><span className="assist-eyebrow-dot" />Recognition Examples</div>
-              <div className="assist-hb-compact__ex-tabs">
-                {recognitionExamples.map((ex, i) => (
-                  <button key={i}
-                    className={`assist-hb-ex-tab ${activeEx === i ? 'assist-hb-ex-tab--active' : ''}`}
-                    style={activeEx === i ? { background: ex.bg, borderColor: ex.border, color: ex.color } : {}}
-                    onClick={() => setActiveEx(i)}>
-                    {ex.tag}
-                  </button>
-                ))}
-              </div>
-              {recognitionExamples.map((ex, i) => (
-                <div key={i} className={`assist-hb-ex-card ${activeEx === i ? 'assist-hb-ex-card--active' : ''}`}
-                  style={{ borderColor: ex.border, background: ex.bg }}>
-                  <div className="assist-hb-ex-card__header" style={{ borderBottomColor: `${ex.color}22` }}>
-                    <div className="assist-hb-ex-card__dots">
-                      <span style={{ background: '#ff5f57' }} /><span style={{ background: '#febc2e' }} /><span style={{ background: '#28c840' }} />
-                    </div>
-                    <span className="assist-hb-ex-card__title-bar">{ex.name}</span>
-                  </div>
-                  <div className="assist-hb-ex-card__body">
-                    <div className="assist-hb-ex-card__av" style={{ background: ex.color }}>
-                      {ex.from.split(' ').pop()[0]}
-                    </div>
-                    <div className="assist-hb-ex-card__bubble">
-                      <p className="assist-hb-ex-card__msg">{ex.msg}</p>
-                      <span className="assist-hb-ex-card__from" style={{ color: ex.color }}>{ex.from}</span>
-                    </div>
+          {/* ── Row 2: Best Practices — 2-col grid ── */}
+          <div className={`assist-hb-practices-wrap ${hbVisible ? 'assist-in assist-in--d2' : ''}`}>
+            <div className="assist-hb-practices-header">
+              <div className="assist-eyebrow"><span className="assist-eyebrow-dot" />Best Practices</div>
+              <h3 className="assist-hb-practices-title">5 Ways to Make Recognition Land</h3>
+            </div>
+            <div className="assist-hb-practices-grid">
+              {bestPractices.map((p, i) => (
+                <div key={i} className="assist-hb-practice-pill">
+                  <span className="assist-hb-practice-pill__num">0{i + 1}</span>
+                  <span className="assist-hb-practice-pill__icon">{p.icon}</span>
+                  <div className="assist-hb-practice-pill__text">
+                    <strong>{p.title}</strong>
+                    <span>{p.desc}</span>
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
+
+          {/* ── Row 3: Recognition Examples — tab + card ── */}
+          <div className={`assist-hb-examples-wrap ${hbVisible ? 'assist-in assist-in--d3' : ''}`}>
+            <div className="assist-hb-examples-header">
+              <div className="assist-eyebrow"><span className="assist-eyebrow-dot" />Real Examples</div>
+              <h3 className="assist-hb-practices-title">Recognition Messages That Resonate</h3>
+            </div>
+
+            <div className="assist-hb-examples-layout">
+              {/* Tab buttons — vertical on left */}
+              <div className="assist-hb-ex-sidebar">
+                {recognitionExamples.map((ex, i) => (
+                  <button
+                    key={i}
+                    className={`assist-hb-ex-sitem ${activeEx === i ? 'assist-hb-ex-sitem--active' : ''}`}
+                    style={activeEx === i ? { '--ex-color': ex.color, '--ex-bg': ex.bg, '--ex-border': ex.border } : {}}
+                    onClick={() => setActiveEx(i)}
+                  >
+                    <span className="assist-hb-ex-sitem__tag" style={activeEx === i ? { background: ex.bg, color: ex.color, borderColor: ex.border } : {}}>
+                      {ex.tag}
+                    </span>
+                    <span className="assist-hb-ex-sitem__name">{ex.name}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Preview card — right */}
+              <div className="assist-hb-ex-preview">
+                {recognitionExamples.map((ex, i) => (
+                  <div
+                    key={i}
+                    className={`assist-hb-ex-preview-card ${activeEx === i ? 'assist-hb-ex-preview-card--active' : ''}`}
+                    style={{ '--ex-color': ex.color, '--ex-bg': ex.bg, '--ex-border': ex.border }}
+                  >
+                    {/* Faux browser chrome */}
+                    <div className="assist-hb-ex-chrome">
+                      <span className="assist-hb-ex-chrome__dot" style={{ background: '#ff5f57' }} />
+                      <span className="assist-hb-ex-chrome__dot" style={{ background: '#febc2e' }} />
+                      <span className="assist-hb-ex-chrome__dot" style={{ background: '#28c840' }} />
+                      <span className="assist-hb-ex-chrome__title">{ex.name}</span>
+                      <span className="assist-hb-ex-chrome__badge" style={{ background: ex.bg, color: ex.color, borderColor: ex.border }}>{ex.tag}</span>
+                    </div>
+                    {/* Message body */}
+                    <div className="assist-hb-ex-body">
+                      <div className="assist-hb-ex-avatar" style={{ background: `linear-gradient(135deg, ${ex.color}cc 0%, ${ex.color} 100%)` }}>
+                        {ex.from.split(' ').slice(-2, -1)[0]?.[0] ?? '★'}
+                      </div>
+                      <div className="assist-hb-ex-bubble" style={{ borderColor: ex.border, background: '#fff' }}>
+                        <p className="assist-hb-ex-msg">{ex.msg}</p>
+                        <span className="assist-hb-ex-from" style={{ color: ex.color }}>— {ex.from}</span>
+                      </div>
+                    </div>
+                    {/* Bottom action row */}
+                    <div className="assist-hb-ex-actions">
+                      <span className="assist-hb-ex-action">👍 Like</span>
+                      <span className="assist-hb-ex-action">💬 Reply</span>
+                      <span className="assist-hb-ex-action">✨ Celebrate</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
