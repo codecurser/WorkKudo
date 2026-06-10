@@ -211,22 +211,22 @@ export default function Nonprofits() {
             <div className="ep-integrations__content">
               <h2>Connect Your Purpose-Driven Teams</h2>
               <p>
-                WorkKudo integrates with Slack and Microsoft Teams to broadcast volunteer wins. Sync directory lists with your database to welcome global volunteers.
+                WorkKudo helps you recognize volunteers and staff wherever they collaborate. Share boards through Notion or a direct link — no technical setup required.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>

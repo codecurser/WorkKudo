@@ -100,7 +100,7 @@ const data = {
     { q: 'What does Group Insights actually measure?', a: 'It surfaces participation patterns across teams and departments — which groups are engaging with recognition programs, contributing to boards, and participating in culture initiatives.' },
     { q: 'Is this real-time or historical?', a: 'Both. You can view current activity in near real-time and also explore historical trends to see how engagement changes over time.' },
     { q: 'Can I filter insights by department or team?', a: 'Yes. Insights can be segmented by department, team, location, or custom group depending on your organizational setup.' },
-    { q: 'Does this require any setup or integrations?', a: 'Basic insights are available automatically as your team uses WorkKudo. For deeper group segmentation, HRIS integration is recommended.' },
+    { q: 'Does this require any setup or integrations?', a: 'Basic insights are available automatically as your team uses WorkKudo. Deeper group segmentation can be set up by your admin.' },
     { q: 'Who can access Group Insights?', a: 'Access is role-based. HR admins and leadership can access full organizational views, while managers see data relevant to their teams.' },
   ],
 

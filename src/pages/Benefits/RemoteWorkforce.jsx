@@ -58,9 +58,9 @@ const data = {
     { icon: '⏰', title: 'Async-First Design', desc: 'Contributors add messages on their own schedule — no need to coordinate across timezones.' },
     { icon: '🌍', title: 'Global Accessibility', desc: 'WorkKudo works in every country, on every device, with no geographic restrictions or limitations.' },
     { icon: '📱', title: 'Mobile-Optimized', desc: 'Full contribution experience on any smartphone — remote employees can participate from anywhere.' },
-    { icon: '💬', title: 'Slack & Teams Integration', desc: 'Recognition delivered inside Slack and Microsoft Teams channels, where remote teams already work.' },
+    { icon: '💬', title: 'Notion Integration', desc: 'Recognition shared inside Notion workspaces, where teams already document and collaborate.' },
     { icon: '🔔', title: 'Timezone-Aware Reminders', desc: 'Contribution reminders reach employees at appropriate times, accounting for global distribution.' },
-    { icon: '📥', title: 'Digital Delivery', desc: 'Finished recognition experiences are delivered digitally via email, Slack, or Teams — wherever the recipient is.' },
+    { icon: '📥', title: 'Digital Delivery', desc: 'Finished recognition experiences are delivered digitally via email or shareable link — wherever the recipient is.' },
   ],
 
   howItWorks: [
@@ -94,7 +94,7 @@ const data = {
     { q: 'Can contributors in different timezones still participate?', a: 'Yes. WorkKudo is async-first — there\'s no real-time requirement. Contributors join when it works for them.' },
     { q: 'Does WorkKudo work without a VPN or corporate network?', a: 'Yes. WorkKudo is fully web-based and accessible on any internet connection, anywhere in the world.' },
     { q: 'Can remote employees contribute without creating an account?', a: 'Absolutely. Anyone with the shareable link can contribute without signing up — from any device, anywhere.' },
-    { q: 'Can recognition be delivered to remote employees via Slack or Teams?', a: 'Yes. When integrations are connected, boards and notifications are delivered directly in Slack or Microsoft Teams.' },
+    { q: 'Can recognition be delivered to remote employees via Notion?', a: 'Yes. When the Notion integration is connected, boards and updates are shared directly in your team workspace.' },
     { q: 'How does WorkKudo help remote employees feel included in in-office celebrations?', a: 'Boards are digital and async — every remote employee has the same opportunity to contribute and receive recognition as in-office colleagues.' },
   ],
 

@@ -39,7 +39,7 @@ const steps = [
   {
     number: "04",
     title: "Deliver Together",
-    desc: "Send one complete experience combining recognition and rewards. Delivered on schedule via email, Slack, or MS Teams.",
+    desc: "Send one complete experience combining recognition and rewards. Delivered on schedule via email or shareable link.",
     icon: "🚀",
     color: "#8B5CF6"
   }
@@ -111,7 +111,7 @@ const environments = [
     icon: "🏠",
     label: "Remote",
     title: "Bridge distances seamlessly",
-    desc: "Send cards instantly via Slack, MS Teams, or email. Enable home-delivery for physical packages with custom-printed greeting inserts.",
+    desc: "Send cards instantly via Notion or email. Enable home-delivery for physical packages with custom-printed greeting inserts.",
     highlight: "100% borderless delivery"
   },
   {
@@ -292,7 +292,7 @@ export default function Gifting() {
                 <div className="glowing-pulse"></div>
               </div>
               <h4>Complete Experience Sent!</h4>
-              <p>Delivered via email & Slack</p>
+              <p>Delivered via email & Notion</p>
             </div>
           </div>
         );

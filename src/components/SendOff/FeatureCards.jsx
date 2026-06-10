@@ -204,7 +204,7 @@ const cards = [
 
         {[
           { text: "Download print-ready high-res PDF", y: 164 },
-          { text: "Copy private link for Slack or Teams", y: 176 },
+          { text: "Copy private link to share", y: 176 },
           { text: "Schedule automated email reveal", y: 188 }
         ].map((item, idx) => (
           <g key={item.y} className={`fc-svg-check-${idx}`}>

@@ -20,12 +20,12 @@ const distributedFaq = [
     a: "No. Whether you have a small remote engineering squad of 10 or a massive global team of 10,000, our boards scale infinitely with unlimited contributors, signers, and files."
   },
   {
-    q: "Does it support Slack & Microsoft Teams?",
-    a: "Yes, we have native integrations that let you announce milestone celebrations, share board invite links, and notify the channel once a board has been completed and sent."
+    q: "Does WorkKudo integrate with my existing tools?",
+    a: "Yes. WorkKudo currently integrates with Notion, and boards can be shared via email or direct link — no extra accounts needed. More integrations are on the way."
   },
   {
-    q: "How secure is data sharing across international networks?",
-    a: "We implement bank-level AES-256 encryption at rest and TLS 1.3 in transit. WorkKudo is SOC 2 Type II compliant and meets all GDPR and CCPA privacy standards for global enterprises."
+    q: "How does WorkKudo handle data security?",
+    a: "WorkKudo takes data privacy seriously with secure data transmission and role-based access controls. Reach out to our team for details on how we manage data across global teams."
   }
 ];
 
@@ -163,8 +163,8 @@ export default function DistributedWorkforces() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
-                <h3>Slack & Teams Sync</h3>
-                <p>Celebrate wins directly in your shared channels. Share invite links, send notifications, and celebrate completions without leaving your daily chat space.</p>
+                <h3>Notion & Link Sharing</h3>
+                <p>Keep recognition visible where your team collaborates. Share board links via Notion, email, or direct URL — no extra accounts needed.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
@@ -179,8 +179,8 @@ export default function DistributedWorkforces() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                 </div>
-                <h3>HRIS Automations</h3>
-                <p>Sync directories seamlessly with Workday, BambooHR, and Rippling to automate onboarding greets, work anniversaries, and birthday templates.</p>
+                <h3>Milestone Reminders</h3>
+                <p>Set up email-based reminders for upcoming birthdays, work anniversaries, and onboarding milestones so nothing slips through the cracks.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#f59e0b' }}>
@@ -209,24 +209,24 @@ export default function DistributedWorkforces() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Remote Teams in Their Daily Workspaces</h2>
+              <h2>Keep Remote Teams Connected</h2>
               <p>
-                WorkKudo integrates deeply into Slack, Microsoft Teams, and your core HRIS to sync global employee directory changes automatically. Send appreciation where your teams already work.
+                WorkKudo works wherever your distributed team does. Share recognition boards via link or Notion, and reach everyone regardless of timezone or location.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>

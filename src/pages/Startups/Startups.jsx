@@ -13,7 +13,7 @@ const startupFaq = [
   },
   {
     q: "How fast can we set up WorkKudo?",
-    a: "In under two minutes. You can create a board, select a background layout, and share the contribution link directly in your Slack or Teams channel immediately."
+    a: "In under two minutes. You can create a board, select a background layout, and share the contribution link directly in your team's Notion page or via email immediately."
   },
   {
     q: "Can we customize boards with our startup's branding?",
@@ -24,8 +24,8 @@ const startupFaq = [
     a: "When a board is completed, the recipient can select their preferred reward from a catalog of digital vouchers supported in over 150 countries with local currency conversion."
   },
   {
-    q: "Does WorkKudo integrate with Slack?",
-    a: "Yes. Our native Slack app lets you launch boards, collect signatures asynchronously, and broadcast milestone wins directly within your shared workspaces."
+    q: "Does WorkKudo integrate with Notion?",
+    a: "Yes. WorkKudo connects with Notion so you can surface recognition boards and updates directly inside your team workspace."
   }
 ];
 
@@ -179,8 +179,8 @@ export default function Startups() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </div>
-                <h3>Slack & Teams Sync</h3>
-                <p>Post wins directly where your team collaborates. Send invite links and celebrate board completions inside your daily chat workspace channels.</p>
+                <h3>Notion Integration</h3>
+                <p>Keep recognition visible where your team collaborates. Share board links in Notion or via email — no extra accounts needed.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
@@ -209,24 +209,24 @@ export default function Startups() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>deep Slack and Workspace Integrations</h2>
+              <h2>Works With the Tools You Already Use</h2>
               <p>
-                WorkKudo integrates directly into your Slack or MS Teams workspace. Set up directory syncs automatically to welcome new hires before day one.
+                WorkKudo plugs into your existing workflow. Start with our Notion integration to keep recognition visible where your team collaborates every day.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function Startups() {
       {/* ── FAQ Section ── */}
       <FAQ 
         title="Startups FAQs" 
-        subtitle="Common questions about startup discounts, rapid setups, and Slack integrations." 
+      subtitle="Common questions about startup discounts, rapid setups, and integrations." 
         data={startupFaq}
       />
 

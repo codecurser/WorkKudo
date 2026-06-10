@@ -171,7 +171,7 @@ const howItWorks = [
       </svg>
     ),
     title: 'Invite Your Team',
-    desc: 'Share a link via Slack, Teams, or email. Contributors add messages, photos, and GIFs — no login required.',
+    desc: 'Share a link via Notion, email, or direct URL. Contributors add messages, photos, and GIFs — no login required.',
     color: '#3B82F6',
     bg: '#EFF6FF',
     border: '#BFDBFE',
@@ -392,7 +392,7 @@ export default function AboutUs() {
               <div className="au-eyebrow"><span className="au-eyebrow__dot" />Our Story</div>
               <h2 className="au-section-title">Recognition shouldn't be an afterthought</h2>
               <p className="au-body-text">
-                WorkKudo was born from a simple frustration: meaningful employee moments were being missed. Birthdays forgotten. Work anniversaries left unacknowledged. Promotions barely noticed in a packed Slack thread.
+                WorkKudo was born from a simple frustration: meaningful employee moments were being missed. Birthdays forgotten. Work anniversaries left unacknowledged. Promotions barely noticed in a packed chat thread.
               </p>
               <p className="au-body-text">
                 We built WorkKudo to change that — a platform where teams of any size can create beautiful, collaborative appreciation boards in under two minutes. No complicated setup. No lengthy onboarding. Just genuine recognition, made effortless.

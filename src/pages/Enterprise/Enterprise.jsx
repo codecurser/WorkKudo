@@ -7,24 +7,24 @@ import FAQ from '../../components/FAQ/FAQ';
 
 const enterpriseFaq = [
   {
-    q: "How does SSO integration work?",
-    a: "WorkKudo supports SAML 2.0, Okta, Azure Active Directory, Ping Identity, and other custom SSO providers. Integration can be set up in under 30 minutes with our technical support team."
-  },
-  {
-    q: "Is WorkKudo SOC2 compliant?",
-    a: "Yes, WorkKudo is SOC 2 Type II certified. We undergo annual audits to verify security, availability, and confidentiality controls. All user data is encrypted in transit and at rest."
+    q: "How does WorkKudo handle data privacy?",
+    a: "WorkKudo takes data privacy seriously. All data is transmitted securely and we follow responsible data handling practices. Reach out to our team for details on how we manage data for your organization."
   },
   {
     q: "Can we restrict signing to internal employees only?",
-    a: "Absolutely. With enterprise permissions, you can lock signing to verified corporate email domains, restrict visibility to internal networks, or require employee SSO authentication to access any boards."
+    a: "Yes. With enterprise permissions, you can lock board access to verified corporate email domains so only your internal employees can view and contribute to boards."
   },
   {
-    q: "What support SLA does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, 24/7/365 priority support with a guaranteed response time of under 1 hour for critical issues, and customized onboarding programs for your workforce."
+    q: "What support does the Enterprise plan offer?",
+    a: "Enterprise customers receive a dedicated Customer Success Manager, priority support, and a customized onboarding program to get your workforce up and running quickly."
   },
   {
-    q: "Can we integrate with our HRIS system?",
-    a: "Yes, we support native API integrations and direct syncs with Workday, BambooHR, Rippling, HiBob, and standard SFTP CSV uploads to automate birthday, onboarding, and milestone celebrations."
+    q: "Can we connect WorkKudo to our existing tools?",
+    a: "WorkKudo currently integrates with Notion and supports email delivery and shareable links out of the box. More integrations are on the roadmap — reach out to our team to discuss your specific needs."
+  },
+  {
+    q: "How do we get started with the Enterprise plan?",
+    a: "Get in touch with our sales team and we'll walk you through onboarding, configuration, and any customization your organization needs."
   }
 ];
 
@@ -113,7 +113,7 @@ export default function Enterprise() {
           <div className="ep-hero__content">
             <h1 className="ep-hero__title">Elevate Corporate Culture at Global Scale</h1>
             <p className="ep-hero__subtitle">
-              Empower your distributed workforce with WorkKudo's secure, compliant, and infinitely scalable recognition platform. Build a unified culture across thousands of employees.
+              Empower your distributed workforce with a recognition platform built for scale. Build a unified culture across teams of any size, anywhere in the world.
             </p>
             <div className="ep-hero__actions">
               <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
@@ -144,7 +144,7 @@ export default function Enterprise() {
 
             <div className="ep-container ep-section-header ep-section-header--sticky">
               <h2>Enterprise-Grade Infrastructure</h2>
-              <p>Designed for absolute security, compliance, and total administrative control.</p>
+              <p>Designed for administrative control, team scale, and consistent recognition across your organization.</p>
             </div>
 
             <div className="ep-horizontal-track" ref={trackRef}>
@@ -153,8 +153,8 @@ export default function Enterprise() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 </div>
-                <h3>Security & Compliance</h3>
-                <p>Bank-level encryption, SOC2 Type II compliance, GDPR readiness, and seamless enterprise SSO (SAML, Okta, Azure AD) integration.</p>
+                <h3>Privacy & Access Controls</h3>
+                <p>Role-based permissions, domain-restricted boards, and responsible data handling — giving your org the control it needs.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#10b981' }}>
@@ -193,8 +193,8 @@ export default function Enterprise() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                 </div>
-                <h3>HRIS Integrations</h3>
-                <p>Fully automate onboarding flows, birthday triggers, and work anniversary celebrations by syncing directly with Workday, BambooHR, and Rippling.</p>
+                <h3>Integrations</h3>
+                <p>Connect WorkKudo to your existing tools via our API. We currently offer a Notion integration, with more on the way.</p>
               </div>
 
             </div>
@@ -207,24 +207,24 @@ export default function Enterprise() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Meet Your Teams Where They Already Work</h2>
+              <h2>Fits Right Into How Your Team Works</h2>
               <p>
-                WorkKudo deeply integrates with your existing tech stack. Celebrate wins directly in Slack or Microsoft Teams, and let our HRIS integrations handle the data syncing in the background.
+                WorkKudo connects with the tools your team already uses. Our Notion integration keeps everything in one place, with more integrations on the way.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function Enterprise() {
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              WorkKudo provides corporate teams with a dedicated, enterprise-grade workspace that guarantees SSO compliance, strict data residency controls, and bank-level encryption. Keep your company communications secure while scaling cultural recognition across thousands of employees globally.
+              WorkKudo gives corporate teams a dedicated workspace for recognition at scale. Set up boards, manage access, and celebrate employees across thousands of people — without the complexity.
             </blockquote>
           </div>
         </div>

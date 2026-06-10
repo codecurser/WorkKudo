@@ -33,7 +33,7 @@ const data = {
   problemDesc2: 'WorkKudo is built for the modern workplace reality: digital-first, async-capable, and personal enough to feel meaningful wherever someone works.',
   problemPoints: [
     'Traditional recognition formats don\'t translate to remote or hybrid environments',
-    'Digital appreciation often feels impersonal — a one-line Slack message can\'t replace a real celebration',
+    'Digital appreciation often feels impersonal — a one-line chat message can\'t replace a real celebration',
     'Hybrid teams experience recognition inequity between office-based and remote employees',
     'Global organizations struggle to create appreciation that reaches everyone equally',
   ],
@@ -53,7 +53,7 @@ const data = {
   ),
 
   deepDiveTitle: 'Digital Recognition That Feels Genuinely Personal',
-  deepDiveDesc: 'WorkKudo creates virtual appreciation that goes far beyond a Slack message or a generic digital card.',
+  deepDiveDesc: 'WorkKudo creates virtual appreciation that goes far beyond a quick chat message or a generic digital card.',
   deepDiveFeatures: [
     { icon: '📋', title: 'Virtual Group Cards', desc: 'Collaborative boards where every team member adds a personal message, photo, or GIF — from anywhere.' },
     { icon: '🏆', title: 'Appreciation Walls', desc: 'Persistent digital spaces where appreciation is publicly visible and permanently accessible to everyone.' },
@@ -67,7 +67,7 @@ const data = {
     { n: '01', icon: '💌', title: 'Create the Experience', desc: 'Choose a themed layout for the occasion and set up the recognition board in minutes.' },
     { n: '02', icon: '📩', title: 'Invite Your Team', desc: 'Share a link — everyone contributes digitally, no account or app install required.' },
     { n: '03', icon: '💬', title: 'Rich Contributions', desc: 'Team members add personal messages, photos, and reactions that make the experience meaningful.' },
-    { n: '04', icon: '🎉', title: 'Deliver Digitally', desc: 'The finished experience is delivered via email, Slack, or Teams — wherever the recipient is.' },
+    { n: '04', icon: '🎉', title: 'Deliver Digitally', desc: 'The finished experience is delivered via email or direct link — wherever the recipient is.' },
   ],
 
   useCases: [
@@ -102,7 +102,7 @@ const data = {
     { q: 'Can virtual appreciation feel as personal as in-person recognition?', a: 'Yes. When 20–40 colleagues add personal messages, photos, and heartfelt notes to a board, the experience is deeply personal — often more so than a generic office gift.' },
     { q: 'Do contributors need to be online at the same time?', a: 'No. WorkKudo is async — everyone contributes when it works for them, across any timezone.' },
     { q: 'Can virtual boards include photos and videos?', a: 'Yes. Contributors can add text, photos, GIFs, and short video messages to make appreciation rich and personal.' },
-    { q: 'How are completed boards delivered to the recipient?', a: 'Via email, Slack, Microsoft Teams, or a direct link — wherever the recipient prefers to receive it.' },
+    { q: 'How are completed boards delivered to the recipient?', a: 'Via email, Notion, or a direct link — wherever the recipient prefers to receive it.' },
     { q: 'Can boards be printed or kept as physical keepsakes?', a: 'Yes. Every board can be downloaded as a high-resolution PDF ready for printing, framing, or sharing.' },
   ],
 

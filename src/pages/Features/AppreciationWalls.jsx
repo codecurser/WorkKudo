@@ -27,7 +27,7 @@ const data = {
   ),
 
   problemTitle: 'Recognition Happens Privately and Is Quickly Forgotten',
-  problemDesc: 'Most workplace recognition lives in private messages, one-on-one conversations, or fleeting Slack threads that scroll away within hours.',
+  problemDesc: 'Most workplace recognition lives in private messages, one-on-one conversations, or fleeting chat threads that scroll away within hours.',
   problemDesc2: 'Organizations need a central, persistent space where employees can publicly celebrate achievements, share appreciation, and acknowledge contributions in a way that the whole team can see and participate in.',
   problemPoints: [
     'Private praise disappears — it doesn\'t build team culture',

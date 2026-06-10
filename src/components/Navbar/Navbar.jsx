@@ -110,7 +110,7 @@ const platformFeatures = [
   { icon: '🎨', label: 'Festive Layouts', desc: 'Beautiful ready-made designs', to: '/features/festive-layouts' },
   { icon: '💡', label: 'Staff Motivation', desc: 'Tools that motivate your people', to: '/features/staff-motivation' },
   { icon: '📋', label: 'Data Reports', desc: 'Export data and share results', to: '/features/data-reports' },
-  { icon: '🔗', label: 'Connections', desc: 'Slack, Teams, HRIS and more', to: '/features/connections' },
+  { icon: '🔗', label: 'Connections', desc: 'Notion, email, and more', to: '/features/connections' },
   { icon: '🔔', label: 'Alerts', desc: 'Never miss a milestone', to: '/features/alerts' },
 ]
 

@@ -65,7 +65,7 @@ const data = {
     { n: '01', icon: '🎨', title: 'Choose a Layout', desc: 'Browse occasion-specific templates and select the design that matches your celebration.' },
     { n: '02', icon: '✏️', title: 'Customize', desc: 'Add your company branding, personalize the message, and configure the details for the recipient.' },
     { n: '03', icon: '📩', title: 'Invite Contributors', desc: 'Share the board with teammates who can add their personal messages within the themed experience.' },
-    { n: '04', icon: '🎉', title: 'Deliver', desc: 'Send the finished celebration experience via email, Slack, or as a printable PDF keepsake.' },
+    { n: '04', icon: '🎉', title: 'Deliver', desc: 'Send the finished celebration experience via email, Notion, or as a printable PDF keepsake.' },
   ],
 
   useCases: [

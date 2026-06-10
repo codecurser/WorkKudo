@@ -8,8 +8,8 @@ import FAQ from '../../components/FAQ/FAQ';
 
 const healthcareFaq = [
   {
-    q: "Is WorkKudo HIPAA compliant?",
-    a: "Yes. WorkKudo prioritizes user privacy and security. We support secure SSO, TLS 1.3 encryption, and administrative parameters that restrict data viewing to authorized company branches to protect healthcare staff details and meet HIPAA standards."
+    q: "How does WorkKudo handle data privacy for healthcare teams?",
+    a: "WorkKudo follows responsible data handling practices with role-based access controls so only authorized team members can view relevant boards. Reach out to our team to discuss specific requirements for your organization."
   },
   {
     q: "How does this fit into busy, rotating shift schedules?",
@@ -115,7 +115,7 @@ export default function Healthcare() {
             <div className="ep-badge">Solutions for Healthcare Providers</div>
             <h1 className="ep-hero__title">Foster Connection and Recognition in Care Teams</h1>
             <p className="ep-hero__subtitle">
-              Improve staff morale, reduce burnout, and support healthcare compliance. Celebrate medical milestones, peer achievements, and administrative successes seamlessly.
+              Improve staff morale, reduce burnout, and bring recognition to care teams. Celebrate medical milestones, peer achievements, and administrative successes seamlessly.
             </p>
             <div className="ep-hero__actions">
               <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
@@ -187,8 +187,8 @@ export default function Healthcare() {
                 <div className="ep-feature-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 </div>
-                <h3>HIPAA-Compliant Security</h3>
-                <p>Protect staff data with SSO validation, role-based controls, and secure data pipelines that comply with strict healthcare industry regulations.</p>
+                <h3>Access Controls</h3>
+                <p>Restrict board access with role-based permissions so the right people see the right content across your teams and departments.</p>
               </div>
 
               <div className="ep-feature-card" style={{ '--accent': '#ec4899' }}>
@@ -209,24 +209,24 @@ export default function Healthcare() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Integrate with Hospital Communication Systems</h2>
+              <h2>Connect Your Team Without Extra Complexity</h2>
               <p>
-                Push recognition feeds directly to Slack, Microsoft Teams, or local intranets. Sync staff records in real-time with HRIS directories to manage branch onboarding.
+                WorkKudo fits into your existing workflow without requiring new infrastructure. Share recognition through Notion or via direct link — no extra setup needed.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function Healthcare() {
       {/* ── FAQ Section ── */}
       <FAQ 
         title="Healthcare FAQs" 
-        subtitle="Common questions about compliance, shift coordination, and employee celebrations in healthcare." 
+        subtitle="Common questions about privacy, shift coordination, and employee celebrations in healthcare." 
         data={healthcareFaq}
       />
 

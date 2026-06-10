@@ -58,14 +58,14 @@ const data = {
     { icon: '🔗', title: 'Zero-Account Contribution', desc: 'Anyone with the link can add a message, photo, or GIF without creating an account. No onboarding, no friction.' },
     { icon: '📱', title: 'Mobile-First Experience', desc: 'Fully optimized for phones and tablets — employees can contribute from anywhere in under a minute.' },
     { icon: '🔔', title: 'Automated Reminders', desc: 'Scheduled reminders notify contributors when boards are open and again as deadlines approach.' },
-    { icon: '💬', title: 'Slack & Teams Integration', desc: 'Board invitations and contribution links are delivered directly inside Slack and Microsoft Teams.' },
+    { icon: '💬', title: 'Notion Integration', desc: 'Board invitations and contribution links can be shared directly inside your Notion workspace.' },
     { icon: '📅', title: 'Flexible Timing', desc: 'Contributors can participate at any time — async-first design accommodates every timezone and schedule.' },
     { icon: '🌍', title: 'Global Accessibility', desc: 'Every WorkKudo experience works across geographies, languages, and devices without technical barriers.' },
   ],
 
   howItWorks: [
     { n: '01', icon: '✨', title: 'Create the Board', desc: 'Launch a recognition board or celebration in minutes and set a delivery date.' },
-    { n: '02', icon: '📩', title: 'Invite Contributors', desc: 'Share a link via Slack, email, or Teams — no account required to participate.' },
+    { n: '02', icon: '📩', title: 'Invite Contributors', desc: 'Share a link via email, Notion, or direct URL — no account required to participate.' },
     { n: '03', icon: '💬', title: 'Everyone Contributes', desc: 'Team members add messages at their own pace. Automated reminders keep participation high.' },
     { n: '04', icon: '🎉', title: 'Deliver Together', desc: 'The completed experience is delivered with contributions from the whole team.' },
   ],
@@ -92,7 +92,7 @@ const data = {
   faqSubtitle: 'How WorkKudo helps maximize employee participation in recognition programs.',
   faq: [
     { q: 'Do employees need a WorkKudo account to contribute?', a: 'No. Anyone with the shareable link can add messages, photos, and GIFs without creating an account.' },
-    { q: 'How are contribution reminders sent?', a: 'Reminders are delivered via email, and through Slack or Microsoft Teams when those integrations are connected.' },
+    { q: 'How are contribution reminders sent?', a: 'Reminders are delivered via email. When Notion is connected, updates are also visible in your team workspace.' },
     { q: 'Can employees contribute from their phone?', a: 'Yes. WorkKudo is fully mobile-optimized. Employees can contribute from any smartphone or tablet without installing an app.' },
     { q: 'How much time does it take to contribute?', a: 'Most contributors are done in under a minute — add a message, optionally attach a photo, and submit.' },
     { q: 'Can I see who has and hasn\'t contributed yet?', a: 'Board creators can see contribution counts and, on certain plans, individual contributor status to help with follow-up.' },

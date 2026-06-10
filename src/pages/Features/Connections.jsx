@@ -10,13 +10,13 @@ const data = {
   heroDesc: 'WorkKudo integrates into your existing workplace ecosystem so recognition happens where employees already work — no additional apps to learn or platforms to switch between.',
   ctaPrimary: 'Explore Integrations',
   ctaSecondary: 'See How It Works',
-  heroChips: ['💬 Slack', '🟦 Teams', '🔄 HRIS'],
+  heroChips: ['📝 Notion', '📧 Email', '🔗 Link Sharing'],
   heroCardContent: (
     <>
       {[
-        { icon: '💬', label: 'Slack Integration', sub: 'Send recognition from within Slack', color: '#6366F1' },
-        { icon: '🟦', label: 'Microsoft Teams', sub: 'Celebrate inside Teams channels', color: '#3B82F6' },
-        { icon: '🔄', label: 'HRIS Sync', sub: 'Automated milestone triggers', color: '#34D399' },
+        { icon: '📝', label: 'Notion Integration', sub: 'Keep recognition visible in Notion', color: '#6366F1' },
+        { icon: '📧', label: 'Email Delivery', sub: 'Reach any inbox, no account needed', color: '#3B82F6' },
+        { icon: '🔗', label: 'Shareable Links', sub: 'Contribute from any device, anywhere', color: '#34D399' },
       ].map((r, i) => (
         <div key={i} className="fp-illus-row" style={{ borderLeft: `3px solid ${r.color}` }}>
           <span className="fp-illus-icon">{r.icon}</span>
@@ -33,8 +33,7 @@ const data = {
     'New platforms create adoption friction that limits participation',
     'Employees won\'t check a separate app for recognition',
     'Disconnected tools mean missed milestones and manual effort',
-    'HRIS data stays siloed, preventing automated celebrations',
-  ],
+    'Employee data stays siloed across different platforms',  ],
   problemIllustration: (
     <div className="fp-problem-illus">
       {[
@@ -53,59 +52,59 @@ const data = {
   deepDiveTitle: 'Bring Recognition Into Your Existing Workplace Ecosystem',
   deepDiveDesc: 'Connections integrate WorkKudo with the platforms and systems your organization already depends on.',
   deepDiveFeatures: [
-    { icon: '💬', title: 'Slack Integration', desc: 'Send and receive recognition directly from Slack. Board links, contribution reminders, and delivery notifications all flow through Slack channels.' },
-    { icon: '🟦', title: 'Microsoft Teams', desc: 'Celebrate teammates inside Microsoft Teams with embedded board previews, contribution invitations, and recognition notifications.' },
-    { icon: '🔄', title: 'HRIS Integrations', desc: 'Sync with Workday, BambooHR, Rippling, and HiBob to automatically trigger recognition for birthdays, anniversaries, and new hires.' },
-    { icon: '📧', title: 'Email Delivery', desc: 'Deliver completed recognition boards via beautifully formatted email — with full board preview and personal message.' },
+    { icon: '📝', title: 'Notion Integration', desc: 'Connect WorkKudo to Notion to surface recognition boards inside your team workspace, keeping celebrations visible alongside your everyday work.' },
+    { icon: '📧', title: 'Email Delivery', desc: 'Deliver completed recognition boards via beautifully formatted email — with full board preview and personal message. Works for every account.' },
+    { icon: '🔗', title: 'Shareable Links', desc: 'Generate a unique contribution link for any board. Anyone can add messages or photos without creating an account — from any device.' },
     { icon: '🔌', title: 'API Access', desc: 'Connect WorkKudo with any internal tool or workflow using our API for custom integrations and automation.' },
-    { icon: '🤖', title: 'Workflow Automation', desc: 'Set up automated recognition flows that trigger based on HRIS events, calendar dates, or custom organizational logic.' },
+    { icon: '🤖', title: 'More Coming Soon', desc: 'We\'re actively building integrations with popular workplace tools. Your feedback shapes what gets added next.' },
+    { icon: '⚡', title: 'Zero Friction Setup', desc: 'Integrations are designed to take minutes, not days. Our support team is on hand to help if anything needs configuring.' },
   ],
 
   howItWorks: [
-    { n: '01', icon: '🔌', title: 'Connect Your Tools', desc: 'Set up integrations with your existing platforms — Slack, Teams, HRIS — in just a few steps.' },
+    { n: '01', icon: '🔌', title: 'Connect Your Tools', desc: 'Set up the Notion integration or configure email delivery in just a few steps.' },
     { n: '02', icon: '⚡', title: 'Recognition Flows In', desc: 'Contribution invitations, reminders, and board links are delivered through your connected platforms.' },
-    { n: '03', icon: '💬', title: 'Teams Participate', desc: 'Employees contribute directly from within Slack or Teams — no platform switching needed.' },
+    { n: '03', icon: '🔗', title: 'Teams Participate', desc: 'Employees contribute via shareable link or Notion — no platform switching or new accounts needed.' },
     { n: '04', icon: '🎉', title: 'Celebrate Together', desc: 'Completed recognition experiences are delivered through your connected channels and tools.' },
   ],
 
   useCases: [
-    { icon: '💬', title: 'Slack Integration', desc: 'Enable the full WorkKudo experience within Slack — contributions, reminders, and board delivery.' },
-    { icon: '🟦', title: 'Microsoft Teams', desc: 'Bring recognition into Teams channels where employees collaborate every day.' },
-    { icon: '🔄', title: 'HR Systems', desc: 'Sync with your HRIS to automate recognition for birthdays, anniversaries, and onboarding.' },
+    { icon: '📝', title: 'Notion Integration', desc: 'Keep recognition visible inside your Notion workspace — right alongside where your team already works.' },
     { icon: '📧', title: 'Email Delivery', desc: 'Deliver recognition experiences directly to employee inboxes with beautifully formatted emails.' },
-    { icon: '🤖', title: 'Workflow Automation', desc: 'Build automated recognition workflows triggered by HRIS events or organizational milestones.' },
+    { icon: '🔗', title: 'Shareable Links', desc: 'Share a board link in any channel, doc, or message — contributors join without signing up.' },
     { icon: '🔌', title: 'Custom Integrations', desc: 'Use the WorkKudo API to connect recognition with any internal tool in your tech stack.' },
+    { icon: '🤖', title: 'More Integrations', desc: 'More workplace tools are on the roadmap. Reach out to request or vote on what\'s next.' },
+    { icon: '⚡', title: 'Simple Setup', desc: 'Get connected in minutes with clear documentation and hands-on support from our team.' },
   ],
 
   showcase: [
-    { icon: '💬', label: 'Slack Integration', desc: 'Contribute to boards, receive reminders, and celebrate colleagues without leaving Slack.', size: 'large', bg: '#EEF2FF', tags: ['Channels', 'DMs', 'Notifications'] },
-    { icon: '🟦', label: 'Microsoft Teams', size: 'small', bg: '#EFF6FF', desc: 'Embedded recognition in Teams.' },
-    { icon: '🔄', label: 'HRIS Sync', size: 'small', bg: '#ECFDF5', desc: 'Automated milestone triggers.' },
+    { icon: '📝', label: 'Notion Integration', desc: 'Keep recognition visible inside your team workspace without ever leaving Notion.', size: 'large', bg: '#EEF2FF', tags: ['Pages', 'Databases', 'Updates'] },
+    { icon: '📧', label: 'Email Delivery', size: 'small', bg: '#EFF6FF', desc: 'Boards delivered to any inbox.' },
+    { icon: '🔗', label: 'Shareable Links', size: 'small', bg: '#ECFDF5', desc: 'Contribute from any device.' },
     { icon: '🔌', label: 'API Access', size: 'small', bg: '#FFFBEB', desc: 'Custom integration workflows.' },
-    { icon: '🤖', label: 'Automation Hub', size: 'large', bg: '#FFF3EE', tags: ['HRIS Events', 'Calendar Dates', 'Custom Triggers'] },
+    { icon: '🤖', label: 'More Coming Soon', size: 'large', bg: '#FFF3EE', tags: ['Your Feedback', 'Active Roadmap', 'New Tools'] },
   ],
 
   benefits: [
     { icon: '⚡', title: 'Easy Adoption', desc: 'Recognition that lives inside existing tools gets used. No new platform means no adoption barrier.' },
-    { icon: '🔗', title: 'Reduced Friction', desc: 'Employees contribute to boards without leaving Slack or Teams — making participation effortless.' },
+    { icon: '🔗', title: 'Reduced Friction', desc: 'Employees contribute to boards via shareable link or Notion — no extra logins or platform switching needed.' },
     { icon: '🤝', title: 'Better Participation', desc: 'Meeting employees where they work dramatically increases contribution rates and recognition frequency.' },
     { icon: '🌊', title: 'Seamless Workflows', desc: 'Automated triggers and notifications keep recognition moving without requiring manual effort from HR.' },
-    { icon: '⏱️', title: 'Time Savings', desc: 'HRIS sync eliminates manual milestone tracking and ensures no celebration is ever missed.' },
+    { icon: '⏱️', title: 'Time Savings', desc: 'Simple integrations and automated reminders eliminate manual tracking and ensure no celebration is ever missed.' },
     { icon: '🏗️', title: 'Future-Proof', desc: 'API access means WorkKudo can connect with any platform you adopt in the future.' },
   ],
 
   faqTitle: 'Connections — FAQs',
   faqSubtitle: 'How WorkKudo integrates with your existing workplace tools.',
   faq: [
-    { q: 'Which integrations does WorkKudo support?', a: 'WorkKudo integrates with Slack, Microsoft Teams, and HRIS platforms including Workday, BambooHR, Rippling, and HiBob. Email delivery is available for all accounts.' },
-    { q: 'Do employees need a WorkKudo account to contribute through Slack?', a: 'No. Contributors can add messages and photos directly through Slack or via a shared link without creating a WorkKudo account.' },
-    { q: 'How does HRIS sync work?', a: 'When connected to your HRIS, WorkKudo automatically reads employee birthdays, work anniversaries, and start dates to trigger timely recognition boards.' },
+    { q: 'Which integrations does WorkKudo support?', a: 'WorkKudo currently integrates with Notion. Email delivery is available for all accounts, and boards can be shared via direct link. More integrations are coming soon.' },
+    { q: 'Do employees need a WorkKudo account to contribute?', a: 'No. Contributors can add messages and photos directly via a shared link without creating a WorkKudo account.' },
+    { q: 'How does the Notion integration work?', a: 'When connected to Notion, WorkKudo can surface recognition boards and updates directly inside your team workspace, keeping celebration visible where work happens.' },
     { q: 'Is there an API available for custom integrations?', a: 'Yes. WorkKudo provides API access for teams that need to build custom integrations with internal tools, directories, or workflow automation systems.' },
     { q: 'How long does integration setup take?', a: 'Most integrations are set up in under 30 minutes. Our support team provides guided setup documentation and technical assistance where needed.' },
   ],
 
   ctaHeadline: 'Make Recognition Part of How Your Team Already Works',
-  ctaDesc: 'Connect WorkKudo to Slack, Teams, your HRIS, and more — so recognition happens naturally, consistently, and without friction.',
+  ctaDesc: 'Connect WorkKudo to Notion and reach your team via email or shareable link — so recognition happens naturally, consistently, and without friction.',
 };
 
 export default function Connections() {

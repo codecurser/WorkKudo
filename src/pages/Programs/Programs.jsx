@@ -689,7 +689,7 @@ function HowItWorks() {
     { n: '01', icon: '✨', title: 'Create', desc: 'Launch a celebration, recognition initiative, or culture program in minutes. Choose a template or start from scratch.', color: '#FF6B2C' },
     { n: '02', icon: '📩', title: 'Invite', desc: 'Bring employees, teams, or entire departments together via a shareable link — no account needed.', color: '#A78BFA' },
     { n: '03', icon: '💬', title: 'Participate', desc: 'Contributors share appreciation, messages, photos, and support. Async-friendly so everyone joins on their own time.', color: '#34D399' },
-    { n: '04', icon: '🎉', title: 'Celebrate', desc: 'Deliver a memorable experience — digitally, via Slack, Teams, or email — that employees will genuinely treasure.', color: '#F59E0B' },
+    { n: '04', icon: '🎉', title: 'Celebrate', desc: 'Deliver a memorable experience — digitally, via Notion, or email — that employees will genuinely treasure.', color: '#F59E0B' },
   ];
 
   useEffect(() => {

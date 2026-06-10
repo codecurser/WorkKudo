@@ -194,7 +194,7 @@ const sendOffCards = [
 
         {[
           { text: "Download print-ready high-res PDF", y: 164 },
-          { text: "Copy private link for Slack or Teams", y: 176 },
+          { text: "Copy private link to share", y: 176 },
           { text: "Schedule automated email reveal", y: 188 }
         ].map((item, idx) => (
           <g key={item.y} className={`fc-svg-check-${idx}`}>
@@ -449,7 +449,7 @@ const appreciationCards = [
     step: 4,
     label: "Surprise Reveal",
     tag: "Celebrate",
-    desc: "Generate private web pages, high-res PDF exports, or Slack sharing links.",
+    desc: "Generate private web pages, high-res PDF exports, or shareable links.",
     accent: "#ff7675",
     bg: "linear-gradient(145deg, #ffebee, #ffcdd2)",
     svg: (
@@ -485,7 +485,7 @@ const appreciationCards = [
 
         {[
           { text: "Download print-ready high-res PDF", y: 164 },
-          { text: "Copy private link for Slack or Teams", y: 176 },
+          { text: "Copy private link to share", y: 176 },
           { text: "Schedule automated email reveal", y: 188 }
         ].map((item, idx) => (
           <g key={item.y} className={`fc-svg-check-${idx}`}>
@@ -677,7 +677,7 @@ const retirementCards = [
         <text x="16" y="177" fontSize="6.5" fill="#7c3aed" fontWeight="800" fontFamily="var(--font-sans)">REVEAL CHECKLIST</text>
         {[
           { text: "Download print-ready high-res PDF", y: 190 },
-          { text: "Copy private link for Slack / Teams", y: 199 },
+          { text: "Copy private link to share", y: 199 },
         ].map((item, idx) => (
           <g key={item.y}>
             <circle cx="18" cy={item.y - 2} r="3.5" fill="#f5f3ff"/>
@@ -1228,7 +1228,7 @@ const speedyRecoveryCards = [
         <text x="16" y="145" fontSize="6.5" fill="#10b981" fontWeight="800" fontFamily="var(--font-sans)">CHEER CHECKLIST</text>
         <line x1="8" y1="150" x2="140" y2="150" stroke="#f3f4f6" strokeWidth="1"/>
         {[
-          { text: "Share private link via Slack / Teams", y: 163 },
+          { text: "Share private link to contribute", y: 163 },
           { text: "Download high-res print-ready PDF",    y: 176 },
           { text: "Schedule a cheerful email delivery",   y: 189 },
         ].map((item, idx) => (

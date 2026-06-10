@@ -11,7 +11,7 @@ const stylesData = {
     accent: '#F97316',
     accentLight: '#FFE4D5',
     themeClass: 'award-theme--orange',
-    intro: 'Automate celebrations for employee birthdays, promotions, career retirements, and long-term service milestones. Ensure no milestone goes unnoticed with HRIS integrations.',
+    intro: 'Recognize employee birthdays, promotions, career retirements, and long-term service milestones. Set up reminders ahead of time so no milestone goes unnoticed.',
     cards: [
       {
         emoji: '🎂',
@@ -39,7 +39,7 @@ const stylesData = {
       }
     ],
     details: [
-      { icon: '📅', label: 'HRIS Automated Triggers', desc: 'Sync automatically with Workday, BambooHR, or Rippling to trigger boards before the date.' },
+      { icon: '📅', label: 'Milestone Reminders', desc: 'Set up email reminders ahead of key dates so boards are always ready before the moment arrives.' },
       { icon: '🎁', label: 'Curated Gifts & Books', desc: 'Add optional physical gifts or print a high-quality hardcover keepsake book with all co-signed messages.' },
       { icon: '👥', label: 'Multi-Department Signing', desc: 'Easily coordinate large-scale boards that span multiple teams, geographical divisions, or external partners.' }
     ]
@@ -104,7 +104,7 @@ const stylesData = {
       {
         emoji: '🍕',
         title: 'Friday Deployment Savior',
-        message: 'Huge thanks to the devops team for ensuring a smooth release on Friday evening! Celebrating with pizza in the Slack channel. Appreciate you all!',
+        message: 'Huge thanks to the devops team for ensuring a smooth release on Friday evening! Celebrating with pizza — appreciate you all!',
         author: 'Arjun Mehta',
         role: 'Release Manager',
         tag: 'Team Shoutout'
@@ -120,7 +120,7 @@ const stylesData = {
     ],
     details: [
       { icon: '🔓', label: 'Zero-Friction Access', desc: 'Teammates can sign instantly via single sign-on (SSO) or magic links without managing complex credentials.' },
-      { icon: '💬', label: 'Slack & Teams Integrations', desc: 'Let employees send kudos directly from Slack or MS Teams without changing their workspace workflows.' },
+      { icon: '💬', label: 'Notion Integration', desc: 'Keep recognition visible inside your team workspace where everyone already collaborates daily.' },
       { icon: '🎉', label: 'Interactive Confetti & Media', desc: 'Allow co-signers to attach GIFs, customized background styles, photos, and animated greetings to highlight card uniqueness.' }
     ]
   }

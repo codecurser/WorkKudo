@@ -57,14 +57,14 @@ const data = {
     { icon: '🔔', title: 'Contribution Reminders', desc: 'Automated reminders are sent to contributors when a board is open, ensuring maximum participation before delivery.' },
     { icon: '⏰', title: 'Deadline Notifications', desc: 'Board creators and contributors receive timely warnings when delivery deadlines are approaching.' },
     { icon: '🎯', title: 'Smart Scheduling', desc: 'Set alerts to trigger days or weeks before a milestone so there\'s always enough time to prepare a meaningful celebration.' },
-    { icon: '🔄', title: 'HRIS-Powered Automation', desc: 'When connected to your HRIS, WorkKudo automatically imports employee dates and creates alerts without any manual setup.' },
-    { icon: '📧', title: 'Multi-Channel Delivery', desc: 'Alerts are delivered via email, Slack, or Microsoft Teams — wherever your team is most likely to act on them.' },
+    { icon: '🔄', title: 'Reminder Automation', desc: 'WorkKudo automatically schedules milestone reminders so your team always has enough time to prepare.' },
+    { icon: '📧', title: 'Multi-Channel Delivery', desc: 'Alerts are delivered via email or shareable link — wherever your team is most likely to act on them.' },
   ],
 
   howItWorks: [
-    { n: '01', icon: '🔌', title: 'Connect or Configure', desc: 'Connect your HRIS for automatic milestone import, or manually add key dates for your team.' },
+    { n: '01', icon: '🔌', title: 'Connect or Configure', desc: 'Connect your Notion workspace or manually add key milestone dates for your team.' },
     { n: '02', icon: '📅', title: 'Alerts Are Scheduled', desc: 'WorkKudo creates a timeline of upcoming milestones and schedules alerts based on your preferences.' },
-    { n: '03', icon: '🔔', title: 'Teams Are Notified', desc: 'The right people receive timely notifications through email, Slack, or Teams — with enough time to act.' },
+    { n: '03', icon: '🔔', title: 'Teams Are Notified', desc: 'The right people receive timely notifications through email or Notion — with enough time to act.' },
     { n: '04', icon: '🎉', title: 'Nothing Gets Missed', desc: 'Every milestone is captured, every celebration is organized, and every employee feels recognized on their special day.' },
   ],
 
@@ -73,7 +73,7 @@ const data = {
     { icon: '🎊', title: 'Work Anniversaries', desc: 'Automatically surface upcoming work anniversaries so managers can prepare meaningful recognition.' },
     { icon: '🚀', title: 'Promotions', desc: 'Alert HR and team leads when a promotion is logged so recognition can be organized immediately.' },
     { icon: '👋', title: 'Farewells', desc: 'Set deadline alerts for farewell boards so colleagues have enough time to contribute before the last day.' },
-    { icon: '🏖', title: 'Retirement Events', desc: 'Plan retirement celebrations well ahead of time with automated milestone alerts tied to HRIS data.' },
+    { icon: '🏖', title: 'Retirement Events', desc: 'Plan retirement celebrations well ahead of time with automated milestone alerts set up in WorkKudo.' },
     { icon: '⏰', title: 'Campaign Deadlines', desc: 'Remind contributors before recognition campaigns close so participation stays high throughout the program.' },
     { icon: '🎯', title: 'Recognition Drives', desc: 'Send timely reminders during recognition campaigns to sustain participation momentum.' },
     { icon: '🔔', title: 'Custom Milestones', desc: 'Set alerts for any custom organizational milestone — project completions, team formations, or company events.' },
@@ -84,7 +84,7 @@ const data = {
     { icon: '🔔', label: 'Contribution Reminder', size: 'small', bg: '#FFF3EE', desc: 'Nudges for open boards.' },
     { icon: '⏰', label: 'Deadline Alert', size: 'small', bg: '#F5F3FF', desc: '24h warning before delivery.' },
     { icon: '📧', label: 'Email Notification', size: 'small', bg: '#ECFDF5', desc: 'Delivered to the right person.' },
-    { icon: '🔄', label: 'HRIS-Powered Timeline', size: 'large', bg: '#EEF1F7', tags: ['Auto-Import', 'No Manual Entry', 'Always Up-to-Date'] },
+    { icon: '🔄', label: 'Reminder Timeline', size: 'large', bg: '#EEF1F7', tags: ['Auto-Schedule', 'No Manual Entry', 'Always On Time'] },
   ],
 
   benefits: [
@@ -92,7 +92,7 @@ const data = {
     { icon: '🔔', title: 'Consistent Recognition', desc: 'Automated alerts ensure recognition happens consistently — not just when someone remembers.' },
     { icon: '💛', title: 'Fewer Missed Moments', desc: 'No employee\'s birthday, anniversary, or milestone goes unacknowledged because of a forgotten date.' },
     { icon: '🌱', title: 'Stronger Culture', desc: 'Consistent, timely recognition signals to employees that the organization genuinely cares.' },
-    { icon: '⚡', title: 'Less Manual Work', desc: 'HRIS sync and automated scheduling eliminates manual calendar tracking across large organizations.' },
+    { icon: '⚡', title: 'Less Manual Work', desc: 'Automated scheduling and reminders eliminate manual calendar tracking, saving time for HR and managers.' },
     { icon: '😊', title: 'Employee Confidence', desc: 'Employees feel more secure knowing that their milestones will always be acknowledged and celebrated.' },
   ],
 
@@ -100,8 +100,8 @@ const data = {
   faqSubtitle: 'How WorkKudo ensures no important moment goes uncelebrated.',
   faq: [
     { q: 'How far in advance do alerts trigger?', a: 'Alerts can be configured to notify teams days or weeks before a milestone. The default is 7 days for birthdays and anniversaries, but this is fully customizable.' },
-    { q: 'Do alerts require HRIS integration to work?', a: 'No. You can manually add employee dates and milestone events directly in WorkKudo. HRIS sync automates this for larger organizations.' },
-    { q: 'Where are alerts delivered?', a: 'Alerts are delivered via email by default. When Slack or Microsoft Teams are connected, alerts also appear in your configured channels.' },
+    { q: 'Do alerts require integration to work?', a: 'No. You can manually add employee dates and milestone events directly in WorkKudo — no external integration required.' },
+    { q: 'Where are alerts delivered?', a: 'Alerts are delivered via email by default. When Notion is connected, updates also appear in your configured workspace.' },
     { q: 'Can I customize which events trigger alerts?', a: 'Yes. You can configure which milestone types trigger alerts, how far in advance notifications are sent, and who receives them.' },
     { q: 'Can alerts be paused or snoozed?', a: 'Individual alerts can be dismissed, and alert schedules can be paused during company holidays or blackout periods.' },
   ],

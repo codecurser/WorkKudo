@@ -101,7 +101,7 @@ const data = {
     { q: 'Can small teams use this effectively?', a: 'Absolutely. Recognition culture is equally powerful in teams of 5 or 5,000. WorkKudo scales to any organization size.' },
     { q: 'How does ongoing recognition differ from annual reviews?', a: 'Annual reviews are backward-looking. Ongoing recognition is immediate, personal, and connected to real moments — which makes it far more motivating.' },
     { q: 'Can I set up automated recognition for milestones like birthdays?', a: 'Yes. WorkKudo can automatically trigger recognition boards for birthdays, work anniversaries, promotions, and custom milestones.' },
-    { q: 'How do I get the whole team to participate?', a: 'WorkKudo sends contribution reminders, makes participation frictionless with no account required, and integrates with Slack and Teams to reach employees where they already work.' },
+    { q: 'How do I get the whole team to participate?', a: 'WorkKudo sends contribution reminders, makes participation frictionless with no account required, and works within Notion or via direct link to reach employees where they already work.' },
   ],
 
   ctaHeadline: 'Build a Workplace People Are Proud to Be Part Of',

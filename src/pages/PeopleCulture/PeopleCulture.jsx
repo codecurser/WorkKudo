@@ -13,7 +13,7 @@ const peopleCultureFaq = [
   },
   {
     q: "Can we automate celebrations for birthdays and work anniversaries?",
-    a: "Yes! By integrating WorkKudo with your HRIS provider (such as Workday, BambooHR, HiBob, or Rippling), milestones automatically trigger card creation and notify teammates to add signatures and messages in advance."
+    a: "Yes! WorkKudo can be set up to send reminder emails ahead of upcoming milestones like birthdays and work anniversaries, so teammates have time to add their messages before delivery."
   },
   {
     q: "How do we allocate and manage appreciation budgets?",
@@ -209,24 +209,24 @@ export default function PeopleCulture() {
         <div className="ep-container">
           <div className="ep-integrations__inner">
             <div className="ep-integrations__content">
-              <h2>Integrate with Your Everyday HR Stack</h2>
+              <h2>Fits Into Your Existing Workflow</h2>
               <p>
-                Connect WorkKudo directly to Slack and Microsoft Teams to share celebrations. Keep employee records up-to-date automatically with native HRIS integrations.
+                WorkKudo connects with the tools your HR team already relies on. Use our Notion integration to keep recognition visible, and reach employees via email or shareable link.
               </p>
               <ul className="ep-integrations__list">
-                <li><span className="ep-check">✓</span> Slack & Microsoft Teams</li>
-                <li><span className="ep-check">✓</span> Workday & BambooHR</li>
-                <li><span className="ep-check">✓</span> Okta & Azure AD (SSO)</li>
-                <li><span className="ep-check">✓</span> Outlook & Google Workspace</li>
+                <li><span className="ep-check">✓</span> Notion</li>
+                <li><span className="ep-check">✓</span> Email delivery (all accounts)</li>
+                <li><span className="ep-check">✓</span> Shareable links & embeds</li>
+                <li><span className="ep-check">✓</span> More integrations coming soon</li>
               </ul>
             </div>
             <div className="ep-integrations__visual">
               <div className="ep-sync-circle">
                 <div className="ep-sync-core">WorkKudo</div>
-                <div className="ep-sync-node node-1">Slack</div>
-                <div className="ep-sync-node node-2">Teams</div>
-                <div className="ep-sync-node node-3">Okta</div>
-                <div className="ep-sync-node node-4">HRIS</div>
+                <div className="ep-sync-node node-1">Notion</div>
+                <div className="ep-sync-node node-2">Email</div>
+                <div className="ep-sync-node node-3">Links</div>
+                <div className="ep-sync-node node-4">More</div>
               </div>
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function PeopleCulture() {
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
             <blockquote style={{ margin: 0 }}>
-              Streamline your people operations by automating employee birthdays and work anniversaries directly through your HRIS. By introducing positive recognition loops and peer-to-peer appreciation daily, you build a workplace culture where employees feel valued and motivated to stay.
+              Streamline your people operations by setting up milestone reminders for employee birthdays and work anniversaries directly in WorkKudo. By introducing positive recognition loops and peer-to-peer appreciation daily, you build a workplace culture where employees feel valued and motivated to stay.
             </blockquote>
           </div>
         </div>

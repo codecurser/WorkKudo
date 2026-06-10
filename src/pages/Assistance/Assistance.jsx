@@ -12,11 +12,11 @@ const popularSearches = ['Creating Boards', 'Employee Recognition', 'Team Celebr
 const faqData = [
   { q: 'How do I create a WorkKudo board?', a: 'Creating a board takes under two minutes. Click "Create a Board", choose your occasion template, customise the layout and message, then share the invite link with your team. No account is required for contributors.' },
   { q: 'Can I edit a board after publishing?', a: 'Yes — as the board creator you can edit the title, background, and settings at any time before the recipient receives it. Contributor messages can be moderated or removed from your admin panel.' },
-  { q: 'How do contributors add messages?', a: 'Share the unique invite link via email, Slack, or Teams. Contributors simply click the link, add their message, photo, or GIF, and submit — no account sign-up required.' },
-  { q: 'Does WorkKudo support SSO?', a: 'Yes. We support SAML 2.0, Okta, Azure Active Directory, and Ping Identity. SSO can be configured in under 30 minutes with our technical onboarding team.' },
-  { q: 'Can we automate employee milestones?', a: 'Yes. Connect WorkKudo to your HRIS (Workday, BambooHR, Rippling, HiBob) and birthdays, work anniversaries, and onboarding boards are created and sent automatically.' },
+  { q: 'How do contributors add messages?', a: 'Share the unique invite link via email or Notion. Contributors simply click the link, add their message, photo, or GIF, and submit — no account sign-up required.' },
+  { q: 'Does WorkKudo support SSO?', a: 'Enterprise authentication options are available. Please contact our team to discuss SSO and access control configuration for your organization.' },
+  { q: 'Can we automate employee milestones?', a: 'Yes. WorkKudo can be set up to remind your team ahead of birthdays, work anniversaries, and onboarding dates via email or Notion.' },
   { q: 'Can I schedule celebrations in advance?', a: 'Yes. Set a delivery date when creating the board and WorkKudo will notify the recipient automatically on that day. You can collect signatures asynchronously beforehand.' },
-  { q: 'Is employee data secure?', a: 'WorkKudo is SOC 2 Type II certified with AES-256 encryption at rest and TLS 1.3 in transit. We are fully GDPR and CCPA compliant with role-based access controls and data residency options.' },
+  { q: 'Is employee data secure?', a: 'WorkKudo takes data privacy seriously. All data is transmitted securely and we follow responsible data handling practices. Contact our team for details on how we handle data for your organization.' },
   { q: 'Can I upgrade or change my plan later?', a: 'Yes — you can upgrade, downgrade, or cancel your plan at any time from your account settings. Upgrades take effect immediately and billing is prorated automatically.' },
 ]
 
@@ -274,7 +274,7 @@ export default function Assistance() {
                 <div className="assist-hub-cards">
                   {[
                     { icon: '🎉', title: 'Create a Board', desc: 'Choose an occasion, pick a template, and personalise your board in under two minutes.', link: '#contact-us' },
-                    { icon: '✉️', title: 'Invite Contributors', desc: 'Share your unique invite link via email, Slack, Teams, or any messaging platform.', link: '#contact-us' },
+                    { icon: '✉️', title: 'Invite Contributors', desc: 'Share your unique invite link via email, Notion, or any messaging platform.', link: '#contact-us' },
                     { icon: '💬', title: 'Add Messages & Photos', desc: 'Team members can add text, photos, GIFs, and drawings — no account required.', link: '#contact-us' },
                     { icon: '🎁', title: 'Deliver a Board', desc: 'Schedule delivery or send immediately. The recipient gets a beautiful notification.', link: '#contact-us' },
                   ].map((c, i) => (
