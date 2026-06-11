@@ -32,10 +32,6 @@ function HeroV1({ data }) {
         <div className="bpg-hero-v1__left-bg" />
         <div className="bpg-hero-v1__dots" />
         <div style={{ position:'relative', zIndex:1, maxWidth:460 }}>
-          <motion.div className="bpg-eyebrow bpg-eyebrow--white"
-            initial={{ opacity:0, y:-14 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-            <span className="bpg-eyebrow-dot bpg-eyebrow-dot--w" /> {data.icon} {data.category}
-          </motion.div>
           <motion.h1 className="bpg-h1 bpg-h1--white"
             initial={{ opacity:0, y:28 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
             {data.heroTitle}
@@ -65,14 +61,6 @@ function HeroV1({ data }) {
       </div>
       {/* ── Right light panel ── */}
       <div className="bpg-hero-v1__right">
-        {data.heroStats?.map((s, i) => (
-          <motion.div key={i} className={`bpg-hero-v1__stat bpg-hero-v1__stat--${i===0?'a':'b'}`}
-            initial={{ opacity:0, x:20 }} animate={{ opacity:1, x:0 }}
-            transition={{ delay:0.5+i*0.15, ...spring }}>
-            <span className="bpg-hero-v1__stat-val">{s.val}</span>
-            {s.label}
-          </motion.div>
-        ))}
         <motion.div className="bpg-hero-v1__card"
           initial={{ opacity:0, y:32, scale:0.95 }} animate={{ opacity:1, y:0, scale:1 }}
           transition={{ duration:0.78, delay:0.18, ease }} style={{ position:'relative', zIndex:1 }}>
@@ -101,10 +89,6 @@ function HeroV2({ data }) {
 
       {/* centered text */}
       <div className="bpg-hero-v2__text">
-        <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
-          initial={{ opacity:0, y:-12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-          <span className="bpg-eyebrow-dot" /> {data.icon} {data.category}
-        </motion.div>
         <motion.h1 className="bpg-h1 bpg-h1--dark bpg-hero-v2__h1"
           initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
           {data.heroTitle}
@@ -177,10 +161,6 @@ function HeroV3({ data }) {
         <div className="bpg-hero-v3__inner">
           {/* left */}
           <div className="bpg-hero-v3__left">
-            <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
-              initial={{ opacity:0, y:-12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-              <span className="bpg-eyebrow-dot" /> {data.icon} {data.category}
-            </motion.div>
             <motion.h1 className="bpg-h1 bpg-h1--dark"
               initial={{ opacity:0, y:26 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
               {data.heroTitle}
@@ -215,14 +195,12 @@ function HeroV3({ data }) {
             initial={{ opacity:0, x:36 }} animate={{ opacity:1, x:0 }}
             transition={{ duration:0.78, delay:0.18, ease }}>
             {(data.mosaicCards || []).map((mc, i) => (
-              <motion.div key={i}
-                className={`bpg-hero-v3__mc${mc.tall?' bpg-hero-v3__mc--tall':''}`}
-                animate={{ y:[0, i%2===0 ? -7 : 7, 0] }}
-                transition={{ duration:3.8+i*0.5, repeat:Infinity, ease:'easeInOut', delay:i*0.38 }}>
+              <div key={i}
+                className={`bpg-hero-v3__mc${mc.tall?' bpg-hero-v3__mc--tall':''}`}>
                 <div className="bpg-hero-v3__mc-icon">{mc.icon}</div>
                 <span className="bpg-hero-v3__mc-title">{mc.title}</span>
                 <span className="bpg-hero-v3__mc-sub">{mc.sub}</span>
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </div>
@@ -244,10 +222,6 @@ function HeroV4({ data }) {
         <div className="bpg-hero-v4__inner">
           {/* left */}
           <div>
-            <motion.div className="bpg-eyebrow bpg-eyebrow--white"
-              initial={{ opacity:0, y:-14 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-              <span className="bpg-eyebrow-dot bpg-eyebrow-dot--w" /> {data.icon} {data.category}
-            </motion.div>
             <motion.h1 className="bpg-h1 bpg-h1--white"
               initial={{ opacity:0, y:28 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
               {data.heroTitle}
@@ -299,10 +273,6 @@ function HeroV5({ data }) {
         <div className="bpg-hero-v5__inner">
           {/* left */}
           <div>
-            <motion.div className="bpg-eyebrow bpg-eyebrow--orange"
-              initial={{ opacity:0, y:-12 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-              <span className="bpg-eyebrow-dot" /> {data.icon} {data.category}
-            </motion.div>
             <motion.h1 className="bpg-h1 bpg-h1--dark"
               initial={{ opacity:0, y:26 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
               {data.heroTitle}
@@ -331,18 +301,6 @@ function HeroV5({ data }) {
           <motion.div className="bpg-hero-v5__right"
             initial={{ opacity:0, x:36 }} animate={{ opacity:1, x:0 }}
             transition={{ duration:0.78, delay:0.18, ease }}>
-            {data.floatChips && (
-              <>
-                <motion.div className="bpg-hero-v5__float bpg-hero-v5__float--a"
-                  animate={{ y:[0,-9,0] }} transition={{ duration:4, repeat:Infinity, ease:'easeInOut' }}>
-                  {data.floatChips[0]}
-                </motion.div>
-                <motion.div className="bpg-hero-v5__float bpg-hero-v5__float--b"
-                  animate={{ y:[0,8,0] }} transition={{ duration:4.6, repeat:Infinity, ease:'easeInOut', delay:0.8 }}>
-                  {data.floatChips[1]}
-                </motion.div>
-              </>
-            )}
             <div className="bpg-hero-v5__card">
               <div className="bpg-hero-v5__card-top">
                 <div className="bpg-hero-v5__trophy">{data.icon}</div>
@@ -388,10 +346,6 @@ function HeroV6({ data }) {
         <div className="bpg-hero-v6__inner">
           {/* left */}
           <div>
-            <motion.div className="bpg-eyebrow bpg-eyebrow--white"
-              initial={{ opacity:0, y:-14 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
-              <span className="bpg-eyebrow-dot bpg-eyebrow-dot--w" /> {data.icon} {data.category}
-            </motion.div>
             <motion.h1 className="bpg-h1 bpg-h1--white"
               initial={{ opacity:0, y:28 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.72, delay:0.1, ease }}>
               {data.heroTitle}
@@ -479,12 +433,40 @@ function Challenge({ data }) {
           </div>
         </div>
         <motion.div variants={fadeRight} initial="hidden" animate={inView?'visible':'hidden'} custom={0.1}>
-          <div className="bpg-widget">
-            <div className="bpg-widget__hd">
-              <span className="bpg-widget__hd-icon">📊</span>
-              <span className="bpg-widget__hd-title">Team Health Overview</span>
+          <div className="bpg-board-mockup">
+            <div className="bpg-board-mockup__header">
+              <div className="bpg-mock-dots">
+                <span style={{ background:'#FF5F57' }} />
+                <span style={{ background:'#FEBC2E' }} />
+                <span style={{ background:'#28C840' }} />
+              </div>
+              <div className="bpg-mock-title">✨ Key Milestones Board</div>
             </div>
-            <div className="bpg-widget__body">{data.problemIllustration}</div>
+            <div className="bpg-board-mockup__cards">
+              {[
+                { emoji:'🎂', tag:'Birthday', title:'Happy Birthday, Sarah!', msg:'"Wishing you the happiest of birthdays! Thank you for bringing so much energy and passion to the product team every single day."', name:'Marcus Vance', role:'Director of Product', delay:0 },
+                { emoji:'🏆', tag:'Milestone', title:'Happy 5-Year Work Anniversary!', msg:'"Five years of absolute dedication, building code bases, and leading our team to success. We are incredibly lucky to have you, David."', name:'Elena Rostova', role:'VP of Engineering', delay:100 },
+                { emoji:'🎖', tag:'Promotion', title:'Congrats on the Promotion!', msg:'"So well-deserved, Clara! Your leadership during the Q1 launch was outstanding. Excited to see you excel in your new Senior Manager role!"', name:'James Patel', role:'Head of Operations', delay:200 },
+              ].map((card, i) => (
+                <motion.div key={i} className="bpg-mock-card"
+                  initial={{ opacity:0, y:22 }} animate={inView ? { opacity:1, y:0 } : {}}
+                  transition={{ delay:0.35 + card.delay/1000, duration:0.55, ease }}>
+                  <div className="bpg-mock-card__header">
+                    <span className="bpg-mock-card__emoji">{card.emoji}</span>
+                    <span className="bpg-mock-card__tag">{card.tag}</span>
+                  </div>
+                  <h4 className="bpg-mock-card__title">{card.title}</h4>
+                  <p className="bpg-mock-card__msg">{card.msg}</p>
+                  <div className="bpg-mock-card__footer">
+                    <div className="bpg-mock-card__av">{card.name[0]}</div>
+                    <div>
+                      <strong>{card.name}</strong>
+                      <span>{card.role}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
