@@ -296,12 +296,11 @@ export default function Assistance() {
                   <span className="assist-hub-group__icon" style={{ background: '#EFF6FF', color: '#3B82F6' }}>💳</span>
                   <div>
                     <h3 className="assist-hub-group__title">Account & Billing</h3>
-                    <p className="assist-hub-group__sub">Manage your team accounts and payment details.</p>
+                    <p className="assist-hub-group__sub">Manage your account and payment details.</p>
                   </div>
                 </div>
                 <div className="assist-hub-cards">
                   {[
-                    { icon: '👥', title: 'Team Accounts', desc: 'Add seats, manage member permissions, and control access across your organisation.', link: '#contact-us' },
                     { icon: '💰', title: 'Payment Questions', desc: 'Update billing details, view invoices, and get answers about charges.', link: '#contact-us' },
                   ].map((c, i) => (
                     <a key={i} href={c.link} onClick={e => { e.preventDefault(); scrollTo('contact-us') }} className="assist-hub-card">
