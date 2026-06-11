@@ -148,9 +148,26 @@ function ProblemSection({ data }) {
 /* ════════════════════════════════════
    FEATURE DEEP DIVE
 ════════════════════════════════════ */
+
+const DEEPDIVE_IMAGES = [
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&q=80',
+  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=80',
+  'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&q=80',
+  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80',
+  'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=700&q=80',
+  'https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=700&q=80',
+];
+
 function DeepDive({ data }) {
+  const [active, setActive] = useState(0);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const features = data.deepDiveFeatures;
+  const total = features.length;
+  const accent = data.accent || '#FF6B2C';
+
+  const prev = () => setActive(i => (i - 1 + total) % total);
+  const next = () => setActive(i => (i + 1) % total);
 
   return (
     <section className="fp-deepdive" ref={ref}>
@@ -164,20 +181,67 @@ function DeepDive({ data }) {
           >{data.deepDiveDesc}</motion.p>
         </div>
 
-        <div className="fp-deepdive-grid">
-          {data.deepDiveFeatures.map((f, i) => (
-            <motion.div key={i} className="fp-feature-card"
-              variants={scaleIn} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1 + i * 0.08}
-              whileHover={{ y: -6 }}
+        <motion.div
+          className="fp-dd-carousel"
+          style={{ '--dd-accent': accent }}
+          variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.15}
+        >
+          {/* Active card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              className="fp-dd-card"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
             >
-              <div className="fp-feature-card-icon">
-                {f.icon}
+              <div className="fp-dd-card-img-wrap">
+                <img
+                  src={features[active].img || DEEPDIVE_IMAGES[active % DEEPDIVE_IMAGES.length]}
+                  alt={features[active].title}
+                  className="fp-dd-card-img"
+                />
+                {/* counter badge */}
+                <span className="fp-dd-badge">{active + 1} / {total}</span>
               </div>
-              <h3>{f.title}</h3>
-              <p>{f.desc}</p>
+
+              <div className="fp-dd-card-body">
+                <div className="fp-dd-card-top">
+                  <span className="fp-dd-icon">{features[active].icon}</span>
+                  <h3 className="fp-dd-title">{features[active].title}</h3>
+                </div>
+                <p className="fp-dd-desc">{features[active].desc}</p>
+
+                {/* dot indicators */}
+                <div className="fp-dd-dots">
+                  {features.map((_, i) => (
+                    <button
+                      key={i}
+                      className={`fp-dd-dot ${i === active ? 'active' : ''}`}
+                      onClick={() => setActive(i)}
+                      aria-label={`Feature ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
-          ))}
-        </div>
+          </AnimatePresence>
+
+          {/* Nav buttons */}
+          <div className="fp-dd-nav">
+            <button className="fp-dd-nav-btn" onClick={prev} aria-label="Previous">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M11 13L7 9l4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button className="fp-dd-nav-btn" onClick={next} aria-label="Next">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M7 13l4-4-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -366,10 +430,7 @@ function FinalCTA({ data }) {
         >
           <motion.a href="https://workkudo.ai/signin" className="fp-btn fp-btn--cta-primary"
             whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
-          >{data.ctaPrimary}</motion.a>
-          <motion.a href="https://workkudo.ai/signin" className="fp-btn fp-btn--cta-ghost"
-            whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}
-          >{data.ctaSecondary}</motion.a>
+          >Create a Board</motion.a>
         </motion.div>
       </div>
     </section>
