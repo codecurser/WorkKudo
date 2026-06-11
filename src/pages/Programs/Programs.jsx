@@ -51,12 +51,7 @@ function HeroSection() {
     { text: '"Your leadership inspires us all ⭐"', from: 'Priya M.', color: '#F59E0B', bg: '#FFFBEB', delay: 0.8 },
   ];
 
-  const floatingBadges = [
-    { text: '🎉 Celebration', x: -160, y: -80, delay: 0.3 },
-    { text: '🏆 Recognition', x: 160, y: -60, delay: 0.5 },
-    { text: '🌎 Culture', x: -140, y: 120, delay: 0.7 },
-    { text: '💌 Appreciation', x: 155, y: 110, delay: 0.9 },
-  ];
+  
 
   return (
     <section className="pg-hero" onMouseMove={handleMouseMove}>
@@ -284,35 +279,18 @@ function OverviewIllustration() {
 ───────────────────────────────────────────── */
 function CelebrationsSection() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y1 = useTransform(scrollYProgress, [0, 1], [40, -40]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [-30, 30]);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   const features = ['🎂 Birthdays', '🚀 Promotions', '🎊 Work Anniversaries', '👋 Farewells', '🏢 Company Milestones', '🥳 Team Successes'];
 
-  const boardMessages = [
-    { text: '"Happy Birthday! Wishing you the most amazing year ahead! 🎂"', from: 'The Whole Team', color: '#FF6B2C', bg: '#FFF3EE' },
-    { text: '"Congratulations on your promotion! You deserve it! 🚀"', from: 'Engineering Team', color: '#A78BFA', bg: '#F5F3FF' },
-    { text: '"5 incredible years together — here\'s to many more! 🎊"', from: 'HR & Leadership', color: '#34D399', bg: '#ECFDF5' },
-    { text: '"Your farewell leaves a mark. We\'ll miss you every day 💙"', from: 'Your Squad', color: '#3B82F6', bg: '#EFF6FF' },
+  const cards = [
+    { emoji: '🎂', tag: 'Birthday', title: 'Happy Birthday, Sarah!', msg: 'Wishing you the happiest of birthdays! Thank you for bringing so much energy and passion to the product team every single day.', author: 'The Whole Team', role: 'Company-wide', accent: '#FF6B2C' },
+    { emoji: '🚀', tag: 'Promotion', title: 'Congrats on Your Promotion!', msg: 'So well-deserved! Your leadership during the Q1 launch was outstanding. Excited to see you thrive in your new Senior Manager role.', author: 'Engineering Team', role: 'VP of Engineering', accent: '#A78BFA' },
+    { emoji: '🎊', tag: 'Anniversary', title: 'Happy 5-Year Work Anniversary!', msg: 'Five years of absolute dedication and building our team to success. We are incredibly lucky to have you. Here is to five more!', author: 'HR & Leadership', role: 'People Team', accent: '#34D399' },
   ];
 
   return (
     <section className="pg-feature-section pg-celebrations" ref={ref} id="celebrations">
-      {/* Confetti background particles */}
-      <div className="pg-celebrations-bg" aria-hidden="true">
-        {[...Array(18)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="pg-confetti-piece"
-            style={{ left: `${i * 5.6}%`, top: `${10 + (i % 5) * 16}%`, background: ['#FF6B2C','#FFB347','#A78BFA','#34D399','#F59E0B'][i % 5] }}
-            animate={{ y: [0, -24, 0], rotate: [0, 180, 360], opacity: [0.3, 0.8, 0.3] }}
-            transition={{ duration: 4 + i % 3, repeat: Infinity, delay: i * 0.22 }}
-          />
-        ))}
-      </div>
-
       <div className="pg-container pg-feature-inner">
         {/* Left content */}
         <div className="pg-feature-content">
@@ -326,67 +304,49 @@ function CelebrationsSection() {
           </motion.p>
           <motion.p className="pg-feature-desc" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.25}>
             WorkKudo helps teams create meaningful celebration experiences through collaborative boards,
-            messages, photos, memories, and appreciation. Transform simple occasions into memorable
-            experiences employees genuinely cherish.
+            messages, photos, memories, and appreciation.
           </motion.p>
-
           <motion.div className="pg-feature-tags" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.3}>
             {features.map((f, i) => (
-              <motion.span
-                key={f}
-                className="pg-feature-tag pg-feature-tag--celebrations"
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.35 + i * 0.07 }}
-                whileHover={{ scale: 1.06, y: -2 }}
+              <motion.span key={f} className="pg-feature-tag pg-feature-tag--celebrations"
+                initial={{ opacity: 0, scale: 0.85 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.35 + i * 0.07 }} whileHover={{ scale: 1.06, y: -2 }}
               >{f}</motion.span>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — interactive board */}
-        <motion.div className="pg-feature-visual" style={{ y: y1 }}>
-          <div className="pg-cel-board">
-            <div className="pg-cel-board-header">
+        {/* Right — Award-style board mockup */}
+        <motion.div className="pg-board-mockup-wrap"
+          initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 1, 0.5, 1] }}>
+          <div className="pg-aw-board">
+            <div className="pg-aw-board__header">
               <div className="pg-board-dots"><span /><span /><span /></div>
-              <span>🎉 Celebration Board</span>
-              <span className="pg-cel-live">● Live</span>
+              <span className="pg-aw-board__title">✨ Celebrations Board</span>
             </div>
-            <div className="pg-cel-board-body">
-              {boardMessages.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  className="pg-cel-note"
-                  style={{ background: msg.bg, borderLeft: `3px solid ${msg.color}` }}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.4 + i * 0.15 }}
-                  whileHover={{ scale: 1.02, x: -3, boxShadow: `0 8px 24px ${msg.color}22` }}
-                >
-                  <p className="pg-cel-note-text">{msg.text}</p>
-                  <span className="pg-cel-note-from" style={{ color: msg.color }}>— {msg.from}</span>
+            <div className="pg-aw-board__cards">
+              {cards.map((card, i) => (
+                <motion.div key={i} className="pg-aw-card"
+                  initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.14, ease: [0.25, 1, 0.5, 1] }}>
+                  <div className="pg-aw-card__header">
+                    <span className="pg-aw-card__emoji">{card.emoji}</span>
+                    <span className="pg-aw-card__tag" style={{ background: `${card.accent}18`, color: card.accent }}>{card.tag}</span>
+                  </div>
+                  <h4 className="pg-aw-card__title">{card.title}</h4>
+                  <p className="pg-aw-card__msg">"{card.msg}"</p>
+                  <div className="pg-aw-card__footer">
+                    <div className="pg-aw-card__av" style={{ background: card.accent }}>{card.author[0]}</div>
+                    <div>
+                      <strong>{card.author}</strong>
+                      <span>{card.role}</span>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
-            <div className="pg-cel-board-footer">
-              <div className="pg-cel-avs">
-                {['#FF6B2C','#A78BFA','#34D399','#3B82F6','#F59E0B'].map((c,i)=>(
-                  <span key={i} style={{background:c}}>{['A','M','S','J','K'][i]}</span>
-                ))}
-                <span className="more">+11</span>
-              </div>
-              <motion.span
-                className="pg-cel-add"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-              >＋ Add Message</motion.span>
-            </div>
           </div>
-
-          {/* Floating stickers */}
-          <motion.div className="pg-sticker pg-sticker--1" animate={{ rotate: [-8, 8, -8], y: [0, -6, 0] }} transition={{ duration: 4, repeat: Infinity }}>🎉</motion.div>
-          <motion.div className="pg-sticker pg-sticker--2" animate={{ rotate: [6, -6, 6], y: [0, 5, 0] }} transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}>🎊</motion.div>
-          <motion.div className="pg-sticker pg-sticker--3" animate={{ rotate: [-4, 10, -4], y: [0, -8, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }}>🌟</motion.div>
         </motion.div>
       </div>
     </section>
@@ -405,101 +365,50 @@ function TransitionCelebToRecog() {
 ───────────────────────────────────────────── */
 function RecognitionSection() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y1 = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   const features = ['⭐ Peer Recognition', '💜 Appreciation Walls', '🏅 Achievement Highlights', '👏 Employee Spotlights', '🚀 Team Wins', '🌟 Culture Champions'];
 
-  const badges = [
-    { label: '⭐ Top Performer', color: '#F59E0B', bg: '#FFFBEB', border: 'rgba(245,158,11,0.25)' },
-    { label: '🔥 Innovator', color: '#FF6B2C', bg: '#FFF3EE', border: 'rgba(255,107,44,0.25)' },
-    { label: '💪 Team Player', color: '#3B82F6', bg: '#EFF6FF', border: 'rgba(59,130,246,0.25)' },
-    { label: '🧠 Problem Solver', color: '#A78BFA', bg: '#F5F3FF', border: 'rgba(167,139,250,0.25)' },
-    { label: '❤️ Culture Champ', color: '#EC4899', bg: '#FDF2F8', border: 'rgba(236,72,153,0.25)' },
-    { label: '🚀 Go-Getter', color: '#34D399', bg: '#ECFDF5', border: 'rgba(52,211,153,0.25)' },
-  ];
-
-  const spotlights = [
-    { name: 'Jordan L.', role: 'Engineering', note: '"Shipped 3 features ahead of schedule"', color: '#F59E0B' },
-    { name: 'Priya M.', role: 'Design', note: '"Elevated our design system this quarter"', color: '#A78BFA' },
+  const cards = [
+    { emoji: '⭐', tag: 'Top Performer', title: 'Excellence in Q1 Delivery', msg: 'Kudos to Jordan for shipping 3 features ahead of schedule. Your dedication and technical leadership set the bar for the whole team.', author: 'Jordan L.', role: 'Engineering Lead', accent: '#F59E0B' },
+    { emoji: '🔥', tag: 'Innovator', title: 'Innovation in Action', msg: 'Priya\'s refactoring of the backend API reduced latency by 45%. This perfectly embodies our core value of technical innovation.', author: 'Priya M.', role: 'Senior Engineer', accent: '#FF6B2C' },
+    { emoji: '❤️', tag: 'Culture Champ', title: 'Kudos from the Team', msg: 'You set the bar for everyone around you. Your kindness, positivity, and commitment to collaboration make this a better place to work.', author: 'The Whole Team', role: 'Company-wide', accent: '#A78BFA' },
   ];
 
   return (
     <section className="pg-feature-section pg-recognition" ref={ref} id="recognition">
-      <div className="pg-recognition-bg" aria-hidden="true">
-        {[...Array(12)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="pg-star-particle"
-            style={{ left: `${i * 8.5}%`, top: `${15 + (i % 4) * 18}%` }}
-            animate={{ opacity: [0.2, 1, 0.2], scale: [0.8, 1.3, 0.8] }}
-            transition={{ duration: 2.5 + i % 3, repeat: Infinity, delay: i * 0.3 }}
-          >⭐</motion.div>
-        ))}
-      </div>
-
       <div className="pg-container pg-feature-inner pg-feature-inner--reverse">
-        {/* Left — Recognition workspace */}
-        <motion.div className="pg-feature-visual" style={{ y: y1 }}>
-          <div className="pg-recog-workspace">
-            {/* Badge grid */}
-            <div className="pg-recog-badges-title">🏆 Recognition Wall</div>
-            <div className="pg-recog-badges">
-              {badges.map((b, i) => (
-                <motion.span
-                  key={i}
-                  className="pg-recog-badge"
-                  style={{ background: b.bg, color: b.color, border: `1px solid ${b.border}` }}
-                  initial={{ opacity: 0, scale: 0.7 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1, type: 'spring', stiffness: 200 }}
-                  whileHover={{ scale: 1.08, y: -3, boxShadow: `0 6px 20px ${b.border}` }}
-                >{b.label}</motion.span>
-              ))}
+        {/* Left — Award-style board mockup */}
+        <motion.div className="pg-board-mockup-wrap pg-board-mockup-wrap--reverse"
+          initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 1, 0.5, 1] }}>
+          <div className="pg-aw-board pg-aw-board--reverse">
+            <div className="pg-aw-board__header">
+              <div className="pg-board-dots"><span /><span /><span /></div>
+              <span className="pg-aw-board__title">🏆 Recognition Wall</span>
             </div>
-
-            {/* Spotlight cards */}
-            <div className="pg-recog-spotlights-title">👏 Employee Spotlights</div>
-            <div className="pg-recog-spotlights">
-              {spotlights.map((s, i) => (
-                <motion.div
-                  key={i}
-                  className="pg-recog-spotlight"
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.6 + i * 0.2 }}
-                  whileHover={{ y: -4, boxShadow: `0 12px 32px ${s.color}22` }}
-                >
-                  <span className="pg-recog-spotlight-av" style={{ background: s.color }}>{s.name[0]}</span>
-                  <div>
-                    <strong>{s.name}</strong>
-                    <span>{s.role}</span>
-                    <p>{s.note}</p>
+            <div className="pg-aw-board__cards">
+              {cards.map((card, i) => (
+                <motion.div key={i} className="pg-aw-card"
+                  initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.14, ease: [0.25, 1, 0.5, 1] }}>
+                  <div className="pg-aw-card__header">
+                    <span className="pg-aw-card__emoji">{card.emoji}</span>
+                    <span className="pg-aw-card__tag" style={{ background: `${card.accent}18`, color: card.accent }}>{card.tag}</span>
+                  </div>
+                  <h4 className="pg-aw-card__title">{card.title}</h4>
+                  <p className="pg-aw-card__msg">"{card.msg}"</p>
+                  <div className="pg-aw-card__footer">
+                    <div className="pg-aw-card__av" style={{ background: card.accent }}>{card.author[0]}</div>
+                    <div>
+                      <strong>{card.author}</strong>
+                      <span>{card.role}</span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-
-            {/* Kudos card */}
-            <motion.div
-              className="pg-kudos-card"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.8 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <span className="pg-kudos-icon">💜</span>
-              <div>
-                <strong>Kudos from the Team</strong>
-                <p>"You set the bar for everyone around you"</p>
-              </div>
-            </motion.div>
           </div>
-
-          {/* Floating stars */}
-          <motion.div className="pg-sticker pg-sticker--gold-1" animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }} transition={{ duration: 6, repeat: Infinity }}>🏆</motion.div>
-          <motion.div className="pg-sticker pg-sticker--gold-2" animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }} transition={{ duration: 4, repeat: Infinity, delay: 1 }}>⭐</motion.div>
         </motion.div>
 
         {/* Right content */}
@@ -518,13 +427,9 @@ function RecognitionSection() {
           </motion.p>
           <motion.div className="pg-feature-tags" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.3}>
             {features.map((f, i) => (
-              <motion.span
-                key={f}
-                className="pg-feature-tag pg-feature-tag--recognition"
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.35 + i * 0.07 }}
-                whileHover={{ scale: 1.06, y: -2 }}
+              <motion.span key={f} className="pg-feature-tag pg-feature-tag--recognition"
+                initial={{ opacity: 0, scale: 0.85 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.35 + i * 0.07 }} whileHover={{ scale: 1.06, y: -2 }}
               >{f}</motion.span>
             ))}
           </motion.div>
@@ -546,35 +451,18 @@ function TransitionRecogToCulture() {
 ───────────────────────────────────────────── */
 function CultureSection() {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y1 = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   const features = ['🤝 Belonging', '🌍 Diversity', '🎓 Onboarding', '💚 Employee Wellbeing', '👥 Community Building', '🌐 Distributed Teams'];
 
-  const people = [
-    { emoji: '🧑', name: 'Alex', angle: 0 },
-    { emoji: '👩', name: 'Maya', angle: 60 },
-    { emoji: '👨', name: 'Sam', angle: 120 },
-    { emoji: '🧕', name: 'Priya', angle: 180 },
-    { emoji: '🧑‍💻', name: 'Lee', angle: 240 },
-    { emoji: '👩‍🎤', name: 'Kim', angle: 300 },
+  const cards = [
+    { emoji: '🤝', tag: 'Belonging', title: 'Welcome to the Team, Alex!', msg: 'We are so glad you are here. Your unique perspective and skills make our team stronger. Can\'t wait to see all the amazing things you will accomplish with us.', author: 'The Whole Team', role: 'Company-wide', accent: '#34D399' },
+    { emoji: '🌍', tag: 'Inclusion', title: 'Celebrating Our Diversity', msg: 'Every voice here matters. Thank you for bringing your authentic self to work every day and making this a place where everyone truly belongs.', author: 'People & Culture', role: 'HR Team', accent: '#3B82F6' },
+    { emoji: '💚', tag: 'Community', title: 'Your Perspective Makes Us Stronger', msg: 'Our team thrives because of people like you who show up with empathy, curiosity, and kindness. We are grateful to build this community together.', author: 'Jordan Lee', role: 'Culture Lead', accent: '#A78BFA' },
   ];
 
   return (
     <section className="pg-feature-section pg-culture" ref={ref} id="culture">
-      <div className="pg-culture-bg" aria-hidden="true">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="pg-culture-orb"
-            style={{ left: `${10 + i * 9}%`, top: `${20 + (i % 3) * 25}%` }}
-            animate={{ scale: [1, 1.4, 1], opacity: [0.15, 0.35, 0.15] }}
-            transition={{ duration: 4 + i * 0.5, repeat: Infinity, delay: i * 0.4 }}
-          />
-        ))}
-      </div>
-
       <div className="pg-container pg-feature-inner">
         {/* Left content */}
         <div className="pg-feature-content">
@@ -592,84 +480,44 @@ function CultureSection() {
           </motion.p>
           <motion.div className="pg-feature-tags" variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.3}>
             {features.map((f, i) => (
-              <motion.span
-                key={f}
-                className="pg-feature-tag pg-feature-tag--culture"
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.35 + i * 0.07 }}
-                whileHover={{ scale: 1.06, y: -2 }}
+              <motion.span key={f} className="pg-feature-tag pg-feature-tag--culture"
+                initial={{ opacity: 0, scale: 0.85 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: 0.35 + i * 0.07 }} whileHover={{ scale: 1.06, y: -2 }}
               >{f}</motion.span>
             ))}
           </motion.div>
         </div>
 
-        {/* Right — community illustration */}
-        <motion.div className="pg-feature-visual" style={{ y: y1 }}>
-          <div className="pg-culture-community">
-            <div className="pg-community-graph">
-              {/* Center heart */}
-              <motion.div
-                className="pg-community-center"
-                animate={{ scale: [1, 1.08, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-              >💛</motion.div>
-
-              {/* Orbiting people */}
-              {people.map((p, i) => {
-                const r = 110;
-                const rad = (p.angle * Math.PI) / 180;
-                const cx = 50 + (r / 2.8) * Math.cos(rad);
-                const cy = 50 + (r / 2.8) * Math.sin(rad);
-                return (
-                  <motion.div
-                    key={i}
-                    className="pg-community-person"
-                    style={{ left: `${cx}%`, top: `${cy}%` }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.4 + i * 0.15, type: 'spring', stiffness: 160 }}
-                    whileHover={{ scale: 1.2 }}
-                  >
-                    <span>{p.emoji}</span>
-                    <span className="pg-community-name">{p.name}</span>
-                  </motion.div>
-                );
-              })}
-
-              {/* Pulsing rings */}
-              {[1, 2, 3].map(r => (
-                <motion.div
-                  key={r}
-                  className="pg-community-ring"
-                  style={{ width: `${r * 30}%`, height: `${r * 30}%` }}
-                  animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.08, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: r * 0.4 }}
-                />
+        {/* Right — Award-style board mockup */}
+        <motion.div className="pg-board-mockup-wrap"
+          initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 1, 0.5, 1] }}>
+          <div className="pg-aw-board">
+            <div className="pg-aw-board__header">
+              <div className="pg-board-dots"><span /><span /><span /></div>
+              <span className="pg-aw-board__title">💚 Culture & Community Board</span>
+            </div>
+            <div className="pg-aw-board__cards">
+              {cards.map((card, i) => (
+                <motion.div key={i} className="pg-aw-card"
+                  initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.14, ease: [0.25, 1, 0.5, 1] }}>
+                  <div className="pg-aw-card__header">
+                    <span className="pg-aw-card__emoji">{card.emoji}</span>
+                    <span className="pg-aw-card__tag" style={{ background: `${card.accent}18`, color: card.accent }}>{card.tag}</span>
+                  </div>
+                  <h4 className="pg-aw-card__title">{card.title}</h4>
+                  <p className="pg-aw-card__msg">"{card.msg}"</p>
+                  <div className="pg-aw-card__footer">
+                    <div className="pg-aw-card__av" style={{ background: card.accent }}>{card.author[0]}</div>
+                    <div>
+                      <strong>{card.author}</strong>
+                      <span>{card.role}</span>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
-
-            {/* Message cards */}
-            <motion.div
-              className="pg-culture-msg"
-              initial={{ opacity: 0, x: -20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.8 }}
-              whileHover={{ x: 4 }}
-            >
-              <span>🤝</span>
-              <span>"Welcome to the team! We're so glad you're here."</span>
-            </motion.div>
-            <motion.div
-              className="pg-culture-msg pg-culture-msg--2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 1 }}
-              whileHover={{ x: -4 }}
-            >
-              <span>💚</span>
-              <span>"Your perspective makes us stronger together."</span>
-            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -816,13 +664,16 @@ function WhySection() {
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
               custom={0.1 + i * 0.08}
-              whileHover={{ y: -8, scale: 1.02, boxShadow: '0 20px 48px rgba(26,43,74,0.12)' }}
+              whileHover={{ y: -8, scale: 1.02 }}
             >
-              <motion.span
-                className="pg-why-icon"
-                whileHover={{ scale: 1.2, rotate: -8 }}
-                transition={{ type: 'spring', stiffness: 260 }}
-              >{card.icon}</motion.span>
+              <div className="pg-why-card__header">
+                <motion.div
+                  className="pg-why-icon"
+                  whileHover={{ scale: 1.1, rotate: -7 }}
+                  transition={{ type: 'spring', stiffness: 260 }}
+                >{card.icon}</motion.div>
+                <span className="pg-why-card__num">{String(i + 1).padStart(2, '0')}</span>
+              </div>
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
             </motion.div>

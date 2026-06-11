@@ -210,8 +210,6 @@ export default function Footer() {
             <Link to="/privacy" className="footer__legal">Privacy Policy</Link>
             <span className="footer__divider">|</span>
             <Link to="/terms" className="footer__legal">Terms of Service</Link>
-            <span className="footer__divider">|</span>
-            <a href="#" className="footer__legal">Cookie Settings</a>
           </div>
         </div>
       </div>
