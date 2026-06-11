@@ -112,14 +112,12 @@ export default function PeopleCulture() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Solutions for People & Culture</div>
             <h1 className="ep-hero__title">Foster a Vibrant, Value-Driven Culture</h1>
             <p className="ep-hero__subtitle">
               Bring teams together with personalized milestone celebrations, peer-to-peer kudos, and meaningful rewards. Retain your top talent by making appreciation a daily habit.
             </p>
             <div className="ep-hero__actions">
-              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
-              <button className="ep-btn ep-btn--secondary">Explore Benefits</button>
+              <a href="/learn/assistance#contact-us" className="ep-btn ep-btn--primary">Request a Demo</a>
             </div>
           </div>
           <div className="ep-hero__visual">

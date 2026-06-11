@@ -112,14 +112,12 @@ export default function DistributedWorkforces() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Solutions for Remote Teams</div>
             <h1 className="ep-hero__title">Empower Distributed Teams at Global Scale</h1>
             <p className="ep-hero__subtitle">
               Build connection, trust, and alignment across timezones. WorkKudo's hybrid-friendly recognition platform bridges the physical distance to keep remote teammates closer than ever.
             </p>
             <div className="ep-hero__actions">
-              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Start Global Board</a>
-              <button className="ep-btn ep-btn--secondary">See Remote Demos</button>
+              <a href="/learn/assistance#contact-us" className="ep-btn ep-btn--primary">Request a Demo</a>
             </div>
           </div>
           <div className="ep-hero__visual">

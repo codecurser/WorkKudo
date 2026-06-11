@@ -112,14 +112,12 @@ export default function Healthcare() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Solutions for Healthcare Providers</div>
             <h1 className="ep-hero__title">Foster Connection and Recognition in Care Teams</h1>
             <p className="ep-hero__subtitle">
               Improve staff morale, reduce burnout, and bring recognition to care teams. Celebrate medical milestones, peer achievements, and administrative successes seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
-              <button className="ep-btn ep-btn--secondary">Explore Care Benefits</button>
+              <a href="/learn/assistance#contact-us" className="ep-btn ep-btn--primary">Request a Demo</a>
             </div>
           </div>
           <div className="ep-hero__visual">

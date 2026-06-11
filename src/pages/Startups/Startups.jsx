@@ -112,14 +112,12 @@ export default function Startups() {
         <div className="ep-hero__bg"></div>
         <div className="ep-container">
           <div className="ep-hero__content">
-            <div className="ep-badge">Solutions for Early-Stage Startups</div>
             <h1 className="ep-hero__title">Scale Startup Culture from Day One</h1>
             <p className="ep-hero__subtitle">
               Fast-moving recognition for rapid-growth teams. Keep your team motivated, align wins with startup values, and celebrate milestones seamlessly.
             </p>
             <div className="ep-hero__actions">
-              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request Startup Plan</a>
-              <button className="ep-btn ep-btn--secondary">Explore Growth Benefits</button>
+              <a href="/learn/assistance#contact-us" className="ep-btn ep-btn--primary">Request a Demo</a>
             </div>
           </div>
           <div className="ep-hero__visual">

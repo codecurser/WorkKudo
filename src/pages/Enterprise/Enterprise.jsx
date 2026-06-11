@@ -116,8 +116,7 @@ export default function Enterprise() {
               Empower your distributed workforce with a recognition platform built for scale. Build a unified culture across teams of any size, anywhere in the world.
             </p>
             <div className="ep-hero__actions">
-              <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Request a Demo</a>
-              <button className="ep-btn ep-btn--secondary">Contact Sales</button>
+              <a href="/learn/assistance#contact-us" className="ep-btn ep-btn--primary">Request a Demo</a>
             </div>
           </div>
           <div className="ep-hero__visual">
