@@ -310,6 +310,19 @@ export default function Gifting() {
         <div className="gf-hero-overlay"></div>
         <div className="gf-container">
           <div className="gf-hero__content">
+            <div className="gf-coming-soon-badge" style={{
+              display: "inline-block",
+              background: "linear-gradient(135deg, #FF6B2C, #FCA048)",
+              color: "white",
+              padding: "6px 16px",
+              borderRadius: "50px",
+              fontWeight: "700",
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              letterSpacing: "1px",
+              marginBottom: "16px",
+              boxShadow: "0 4px 12px rgba(255, 107, 44, 0.3)"
+            }}>🚀 Coming Soon</div>
             <h1 className="gf-hero__title">
               Corporate gifts with a <br/>
               <Typewriter words={TYPING_WORDS} />
@@ -318,7 +331,6 @@ export default function Gifting() {
               Corporate gifting made simple — global fulfillment, 250,000+ business gift options, paired perfectly with personalized employee recognition.
             </p>
             <div className="gf-hero__actions">
-              <a href="https://workkudo.ai/signin" className="gf-btn gf-btn--primary">Get Started Today</a>
             </div>
           </div>
           
@@ -329,6 +341,37 @@ export default function Gifting() {
           </div>
         </div>
       </section>
+
+      {/* ── Coming Soon Overlay Container ── */}
+      <div style={{ position: "relative", overflow: "hidden" }}>
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(255, 255, 255, 0.65)",
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
+          zIndex: 100,
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "center",
+          paddingTop: "15vh"
+        }}>
+          <div style={{
+            background: "white",
+            padding: "50px 60px",
+            borderRadius: "24px",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            textAlign: "center",
+            border: "1px solid rgba(255,107,44,0.2)",
+            maxWidth: "600px",
+            position: "sticky",
+            top: "20vh"
+          }}>
+            <span style={{ fontSize: "5rem", display: "block", marginBottom: "16px" }}>🎁</span>
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "800", color: "var(--navy-dark)", marginBottom: "16px", fontFamily: "var(--font-sans)" }}>Gifting is Launching Soon</h2>
+            <p style={{ fontSize: "1.15rem", color: "var(--text-light)", lineHeight: "1.6", marginBottom: "32px", fontFamily: "var(--font-sans)" }}>We're putting the finishing touches on our global gifting experience. Check back soon!</p>
+          </div>
+        </div>
 
       {/* ── Section 1: How Gifting Works (Redesigned Side-by-Side) ── */}
       <section className="gf-how-it-works">
@@ -517,6 +560,8 @@ export default function Gifting() {
         subtitle="Everything you need to know about corporate gifting." 
         data={giftingFaq}
       />
+
+      </div>
 
       <Footer />
     </div>

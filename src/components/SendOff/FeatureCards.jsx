@@ -270,7 +270,7 @@ export default function FeatureCards() {
       fontFamily: "var(--font-sans)",
       padding: "100px 20px 80px",
     }}>
-      <h1 style={{
+      <h2 style={{
         fontSize: "clamp(2.25rem, 4.5vw, 3rem)",
         fontWeight: "800",
         color: "var(--navy-dark)",
@@ -280,7 +280,7 @@ export default function FeatureCards() {
         fontFamily: "var(--font-sans)",
       }}>
         How it works
-      </h1>
+      </h2>
       <p style={{
         fontSize: "1.15rem",
         color: "var(--text-light)",
