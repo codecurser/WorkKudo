@@ -20,23 +20,19 @@ const scaleIn = {
 ════════════════════════════════════ */
 function Hero({ data }) {
   return (
-    <section className="fp-hero">
-      <div className="fp-hero-bg" aria-hidden="true">
-        <div className="fp-blob fp-blob--1" />
-        <div className="fp-blob fp-blob--2" />
-        <div className="fp-blob fp-blob--3" />
-      </div>
+    <section
+      className="fp-hero"
+      style={data.heroImage ? {
+        backgroundImage: `url(${data.heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      } : {}}
+    >
+      {/* Dark overlay so text stays readable over the image */}
+      {data.heroImage && <div className="fp-hero-img-overlay" aria-hidden="true" />}
 
       <div className="fp-container fp-hero-inner">
         <div className="fp-hero-content">
-          <motion.div className="fp-hero-badge"
-            initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span>{data.icon}</span>
-            {data.category}
-          </motion.div>
-
           <motion.h1 className="fp-hero-title"
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.08 }}
@@ -65,26 +61,18 @@ function Hero({ data }) {
           </motion.div>
         </div>
 
-        <motion.div className="fp-hero-visual"
+        {/* Static glassmorphism tile */}
+        <motion.div className="fp-hero-glass"
           initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.15 }}
         >
-          <div className="fp-hero-card">
-            <div className="fp-hero-card-header">
-              <div className="fp-dots"><span /><span /><span /></div>
-              <span className="fp-hero-card-title">WorkKudo — {data.category}</span>
-            </div>
-            <div className="fp-hero-card-body">
-              {data.heroCardContent}
-            </div>
+          <div className="fp-hero-glass-header">
+            <div className="fp-dots"><span /><span /><span /></div>
+            <span className="fp-hero-glass-title">WorkKudo — {data.category}</span>
           </div>
-
-          {data.heroChips?.map((chip, i) => (
-            <motion.div key={i} className={`fp-chip fp-chip--${i}`}
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.6 }}
-            >{chip}</motion.div>
-          ))}
+          <div className="fp-hero-glass-body">
+            {data.heroCardContent}
+          </div>
         </motion.div>
       </div>
     </section>
@@ -127,7 +115,30 @@ function ProblemSection({ data }) {
         <motion.div className="fp-problem-visual"
           variants={scaleIn} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0.1}
         >
-          {data.problemIllustration}
+          {data.problemMockup ? (
+            <div className="fp-board-mockup" style={{ '--fp-accent': data.accent || 'var(--orange)' }}>
+              <div className="fp-board-mockup__header">
+                <div className="fp-mock-dots"><span /><span /><span /></div>
+                <div className="fp-mock-title">{data.problemMockup.title}</div>
+              </div>
+              <div className="fp-board-mockup__cards">
+                {data.problemMockup.cards.map((card, i) => (
+                  <div key={i} className="fp-mock-card" style={{ animationDelay: `${i * 100}ms` }}>
+                    <div className="fp-mock-card__header">
+                      <span className="fp-mock-card__emoji">{card.emoji}</span>
+                      <span className="fp-mock-card__tag">{card.tag}</span>
+                    </div>
+                    <h4 className="fp-mock-card__title">{card.title}</h4>
+                    <p className="fp-mock-card__msg">"{card.msg}"</p>
+                    <div className="fp-mock-card__footer">
+                      <strong>{card.from}</strong>
+                      <span>{card.role}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : data.problemIllustration}
         </motion.div>
       </div>
     </section>
@@ -299,57 +310,6 @@ function UseCases({ data }) {
 }
 
 /* ════════════════════════════════════
-   VISUAL SHOWCASE — Compact abstract grid
-════════════════════════════════════ */
-function Showcase({ data }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
-
-  return (
-    <section className="fp-showcase" ref={ref}>
-      <div className="fp-container">
-        <div className="fp-section-header">
-          <motion.h2 className="fp-section-title"
-            variants={fadeUp} initial="hidden" animate={inView ? 'visible' : 'hidden'} custom={0}
-          >See It In Action</motion.h2>
-        </div>
-
-        <div className="fp-showcase-grid">
-          {data.showcase.map((item, i) => (
-            <motion.div
-              key={i}
-              className={`fp-sc-card ${item.size === 'large' ? 'fp-sc-card--large' : ''}`}
-              variants={scaleIn}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              custom={0.08 + i * 0.09}
-              whileHover={{ y: -5, boxShadow: '0 18px 44px rgba(255,107,44,0.12)' }}
-            >
-              <div className="fp-sc-card-inner" style={{ background: item.bg || 'var(--orange-50)' }}>
-                <div className="fp-sc-icon-wrap">
-                  <span className="fp-sc-emoji">{item.icon}</span>
-                </div>
-                <div className="fp-sc-content">
-                  <span className="fp-sc-label">{item.label}</span>
-                  {item.desc && <p className="fp-sc-desc">{item.desc}</p>}
-                  {item.tags && (
-                    <div className="fp-sc-tags">
-                      {item.tags.map(t => (
-                        <span key={t}>{t}</span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════
    BENEFITS
 ════════════════════════════════════ */
 function Benefits({ data }) {
@@ -428,7 +388,6 @@ export default function FeaturePage({ data }) {
       <DeepDive data={data} />
       <HowItWorks data={data} />
       <UseCases data={data} />
-      <Showcase data={data} />
       <Benefits data={data} />
       <FAQ
         title={data.faqTitle}

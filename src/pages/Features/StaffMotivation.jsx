@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/moments.png';
 
 const data = {
   accent: '#34D399',
   accentSoft: '#ECFDF5',
   icon: '💡',
   category: 'Staff Motivation',
+  heroImage: heroImg,
   heroTitle: 'Create a Workplace Where Employees Feel Genuinely Valued',
   heroDesc: 'Move beyond surface-level perks. Build the kind of recognition culture where employees feel seen, appreciated, and motivated to bring their best every day.',
   ctaPrimary: 'Motivate Your Team',
@@ -35,20 +37,14 @@ const data = {
     'Inconsistent recognition creates unfair workplace experiences',
     'Motivation drops when effort isn\'t acknowledged',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '🌱', label: 'Recognition Journeys', sub: 'Ongoing appreciation experiences', color: '#34D399' },
-        { icon: '💛', label: 'Genuine Appreciation', sub: 'Personal, meaningful recognition', color: '#FF6B2C' },
-        { icon: '🏆', label: 'Achievement Celebration', sub: 'Milestones recognized publicly', color: '#A78BFA' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '💡 Staff Recognition Board',
+    cards: [
+      { emoji: '💛', tag: 'Valued', title: 'You Made a Real Difference', msg: "The way you showed up for the team during the restructuring meant everything. Your consistency and warmth kept morale high when it was needed most.", from: 'Oliver Grant', role: 'Team Manager' },
+      { emoji: '🤝', tag: 'Belonging', title: 'Welcome to the Team, Mei!', msg: "Three months in and you already feel like you've been here for years. Your contributions have been incredible — so glad you're here.", from: 'Tanya Osei', role: 'Head of Design' },
+      { emoji: '🌱', tag: 'Growth', title: 'Your Progress Has Been Incredible', msg: "From your first week to now — the growth you've shown is remarkable. You've earned every bit of what's coming next.", from: 'Sam Rivera', role: 'Engineering Lead' },
+    ],
+  },
 
   deepDiveTitle: 'Recognition Experiences That Build Lasting Motivation',
   deepDiveDesc: 'Staff Motivation connects appreciation, belonging, and achievement into a continuous workplace experience.',

@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/analytics.png';
 
 const data = {
   accent: '#8B5CF6',
   accentSoft: '#F5F3FF',
   icon: '🔍',
   category: 'Metrics',
+  heroImage: heroImg,
   heroTitle: 'Measure the Impact of Recognition Across Your Organization',
   heroDesc: 'Gain clear visibility into activity levels, engagement patterns, and program performance — so you can build recognition programs that actually work.',
   ctaPrimary: 'View Metrics',
@@ -35,20 +37,14 @@ const data = {
     'Leadership cannot evaluate culture initiative ROI',
     'Recognition gaps go undetected until they cause disengagement',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '📊', label: 'Activity Summary', sub: 'Overview of all program activity', color: '#8B5CF6' },
-        { icon: '📈', label: 'Engagement Trend', sub: 'How participation changes over time', color: '#FF6B2C' },
-        { icon: '🎯', label: 'Program Performance', sub: 'How well each initiative performs', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '🔍 Recognition Metrics Dashboard',
+    cards: [
+      { emoji: '✅', tag: 'Activity', title: '148 Boards Delivered This Quarter', msg: "Seeing the total number of boards delivered gave leadership the concrete evidence they needed to expand the program budget.", from: 'Helen Park', role: 'Chief People Officer' },
+      { emoji: '👥', tag: 'Engagement', title: 'Contributor Rate: 78% Org-Wide', msg: "Nearly 8 in 10 employees participated in at least one recognition experience. That number would have been invisible without metrics.", from: 'Chris Thornton', role: 'Employee Experience Lead' },
+      { emoji: '📈', tag: 'Trend', title: 'Engagement Up Month-over-Month', msg: "The upward trend in participation directly correlated with the team celebration we ran in February. Metrics made the connection clear.", from: 'Amara Diallo', role: 'HR Analytics Manager' },
+    ],
+  },
 
   deepDiveTitle: 'Clear Visibility Into Every Dimension of Recognition',
   deepDiveDesc: 'Metrics give HR teams, managers, and leadership the context they need to run effective recognition programs.',

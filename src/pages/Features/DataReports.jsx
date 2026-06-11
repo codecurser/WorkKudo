@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/analytics.png';
 
 const data = {
   accent: '#06B6D4',
   accentSoft: '#ECFEFF',
   icon: '📋',
   category: 'Data Reports',
+  heroImage: heroImg,
   heroTitle: 'Transform Recognition Activity Into Actionable Insights',
   heroDesc: 'Give HR leaders, managers, and executives structured, exportable reports on recognition programs, participation, and culture initiative performance.',
   ctaPrimary: 'Access Reports',
@@ -35,20 +37,14 @@ const data = {
     'Manual data collection is time-consuming and error-prone',
     'Reports need to be tailored for different audiences and purposes',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '📋', label: 'Structured Reports', sub: 'Organized, ready-to-share data', color: '#06B6D4' },
-        { icon: '📤', label: 'One-Click Export', sub: 'PDF and CSV downloads', color: '#3B82F6' },
-        { icon: '👔', label: 'Leadership-Ready', sub: 'Formatted for executive reviews', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '📊 Recognition Reports',
+    cards: [
+      { emoji: '📋', tag: 'Summary', title: 'Q2 Program Overview Ready', msg: "Leadership had the full participation breakdown in their inboxes before the quarterly review. Structured, clean, no manual work.", from: 'Claire Mendes', role: 'VP of People' },
+      { emoji: '📈', tag: 'Participation', title: 'Engineering at 94% Engagement', msg: "We finally had numbers to show the exec team. The report made our case for expanding the recognition program.", from: 'Tom Walsh', role: 'HR Director' },
+      { emoji: '📤', tag: 'Export', title: 'CSV Exported in One Click', msg: "Pulled the full participation dataset for our annual culture audit. Took seconds, not a whole afternoon of spreadsheet work.", from: 'Ana Ruiz', role: 'Culture & Inclusion Lead' },
+    ],
+  },
 
   deepDiveTitle: 'Reports Built for Every Stakeholder',
   deepDiveDesc: 'Data Reports give HR teams, managers, and leadership the context they need — in the format that works for them.',

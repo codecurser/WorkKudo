@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/birthday_backdrop.png';
 
 const data = {
   accent: '#F59E0B',
   accentSoft: '#FFFBEB',
   icon: '🎨',
   category: 'Festive Layouts',
+  heroImage: heroImg,
   heroTitle: 'Beautiful Experiences for Every Workplace Celebration',
   heroDesc: 'Move beyond generic cards and repetitive templates. Give every occasion its own premium, professionally designed visual experience.',
   ctaPrimary: 'Browse Layouts',
@@ -35,20 +37,14 @@ const data = {
     'Building custom layouts takes time teams don\'t have',
     'Different occasions deserve different visual treatments',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '🎨', label: '50+ Occasion Templates', sub: 'Purpose-built for every moment', color: '#F59E0B' },
-        { icon: '🏷️', label: 'Custom Branding', sub: 'Add your logo and colors', color: '#FF6B2C' },
-        { icon: '⚡', label: 'Instant Setup', sub: 'Ready in seconds, not hours', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '🎨 Festive Celebration Boards',
+    cards: [
+      { emoji: '🎂', tag: 'Birthday', title: 'Happy Birthday, Sarah!', msg: "Wishing you the happiest of birthdays! Thank you for bringing so much energy and passion to the product team every single day.", from: 'Marcus Vance', role: 'Director of Product' },
+      { emoji: '🚀', tag: 'Promotion', title: 'Congrats on the Promotion!', msg: "So well-deserved, Clara! Your leadership during the Q1 launch was outstanding. Excited to see you excel in your new Senior Manager role!", from: 'James Patel', role: 'Head of Operations' },
+      { emoji: '🎊', tag: 'Anniversary', title: 'Happy 5-Year Work Anniversary!', msg: "Five years of absolute dedication, building and leading our team to success. We are incredibly lucky to have you, David.", from: 'Elena Rostova', role: 'VP of Engineering' },
+    ],
+  },
 
   deepDiveTitle: 'Every Occasion Has Its Own Premium Experience',
   deepDiveDesc: 'Festive Layouts are professionally designed templates built specifically for workplace celebrations.',

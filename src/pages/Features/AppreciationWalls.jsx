@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/the-board.png';
 
 const data = {
   accent: '#FF6B2C',
   accentSoft: '#FFF3EE',
   icon: '📊',
   category: 'Appreciation Walls',
+  heroImage: heroImg,
   heroTitle: 'Create Recognition Spaces That Bring Teams Together',
   heroDesc: 'Give your organization a shared place where appreciation is visible, persistent, and felt by everyone — across every team and timezone.',
   ctaPrimary: 'Create a Wall',
@@ -14,11 +16,11 @@ const data = {
   heroCardContent: (
     <>
       {[
-        { text: '"Your leadership made this launch possible 🌟"', from: 'Engineering Team', color: '#FF6B2C', bg: '#FFF3EE' },
-        { text: '"Thank you for always going above and beyond 💛"', from: 'Sarah M.', color: '#A78BFA', bg: '#F5F3FF' },
-        { text: '"Proudest moment of the quarter — your work! 🎉"', from: 'Product Team', color: '#34D399', bg: '#ECFDF5' },
+        { text: '"Your leadership made this launch possible 🌟"', from: 'Engineering Team', color: '#FF6B2C' },
+        { text: '"Thank you for always going above and beyond 💛"', from: 'Sarah M.', color: '#A78BFA' },
+        { text: '"Proudest moment of the quarter — your work! 🎉"', from: 'Product Team', color: '#34D399' },
       ].map((n, i) => (
-        <div key={i} className="fp-note" style={{ borderLeftColor: n.color, background: n.bg }}>
+        <div key={i} className="fp-note" style={{ borderLeftColor: n.color }}>
           <span className="fp-note-av" style={{ background: n.color }}>{n.from[0]}</span>
           <div><p>{n.text}</p><span>{n.from}</span></div>
         </div>
@@ -35,23 +37,14 @@ const data = {
     'Managers carry the burden of recognition alone',
     'Remote employees feel overlooked and disconnected',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '👥', label: 'Team Recognition', sub: 'Visible to everyone', color: '#FF6B2C' },
-        { icon: '📌', label: 'Pinned Appreciation', sub: 'Stays permanently', color: '#A78BFA' },
-        { icon: '🔔', label: 'Real-time Updates', sub: 'Notifies contributors', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div>
-            <strong>{r.label}</strong>
-            <span>{r.sub}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '✨ Appreciation Wall',
+    cards: [
+      { emoji: '🌟', tag: 'Shout-out', title: 'Thank You, Priya!', msg: "Your calm under pressure during the launch week kept the whole team going. We wouldn't have shipped without you.", from: 'Daniel Okafor', role: 'VP of Engineering' },
+      { emoji: '💛', tag: 'Appreciation', title: 'Always Going Above & Beyond', msg: 'Every single detail you caught saved us hours. You make this team better every day — thank you.', from: 'Sophie Laval', role: 'Product Lead' },
+      { emoji: '🏆', tag: 'Recognition', title: 'Standout Performer This Quarter', msg: 'The way you mentored new joiners while delivering your own work was remarkable. Truly inspiring.', from: 'Marcus Webb', role: 'Head of People' },
+    ],
+  },
 
   deepDiveTitle: 'Everything Your Team Needs to Recognize Each Other',
   deepDiveDesc: 'Appreciation Walls bring together messages, media, milestones, and contributors in one shared experience.',

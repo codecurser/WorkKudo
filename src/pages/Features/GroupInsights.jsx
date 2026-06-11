@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/dashboard.png';
 
 const data = {
   accent: '#3B82F6',
   accentSoft: '#EFF6FF',
   icon: '📈',
   category: 'Group Insights',
+  heroImage: heroImg,
   heroTitle: 'Understand How Recognition Flows Across Your Organization',
   heroDesc: 'See participation patterns, engagement activity, and culture adoption across groups — without fabricated metrics or fake analytics.',
   ctaPrimary: 'Explore Insights',
@@ -35,20 +37,14 @@ const data = {
     'Program effectiveness is difficult to measure without data',
     'Leadership lacks insight to make culture-driven decisions',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '👥', label: 'Team Participation View', sub: 'See activity across all groups', color: '#3B82F6' },
-        { icon: '📊', label: 'Department Engagement', sub: 'Compare across departments', color: '#A78BFA' },
-        { icon: '🔍', label: 'Trend Analysis', sub: 'Track changes over time', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '📈 Group Engagement Insights',
+    cards: [
+      { emoji: '👥', tag: 'Engineering', title: 'Highest Participation This Quarter', msg: "Engineering hit 91% participation in the recognition program — the highest of any department. This data helped us replicate their approach org-wide.", from: 'Fatima Al-Hassan', role: 'Head of HR' },
+      { emoji: '📊', tag: 'Product', title: 'Engagement Up 34% After Campaign', msg: "After the appreciation campaign, Product team recognition activity jumped significantly. Group insights made that visible.", from: 'Raj Mehta', role: 'Culture Program Manager' },
+      { emoji: '🔍', tag: 'Trend', title: 'Q3 vs Q2 Participation Trend', msg: "Seeing participation by department over time helped us identify which teams were drifting and reach out proactively.", from: 'Yuki Tanaka', role: 'People Analytics Lead' },
+    ],
+  },
 
   deepDiveTitle: 'See the Full Picture of Recognition Across Your Organization',
   deepDiveDesc: 'Group Insights surfaces engagement patterns and participation trends across every team, department, and initiative.',

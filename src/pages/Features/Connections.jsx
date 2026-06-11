@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/invite-people.png';
 
 const data = {
   accent: '#6366F1',
   accentSoft: '#EEF2FF',
   icon: '🔗',
   category: 'Connections',
+  heroImage: heroImg,
   heroTitle: 'Connect Recognition With the Tools Your Team Already Uses',
   heroDesc: 'WorkKudo integrates into your existing workplace ecosystem so recognition happens where employees already work — no additional apps to learn or platforms to switch between.',
   ctaPrimary: 'Explore Integrations',
@@ -34,20 +36,14 @@ const data = {
     'Employees won\'t check a separate app for recognition',
     'Disconnected tools mean missed milestones and manual effort',
     'Employee data stays siloed across different platforms',  ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '🔌', label: 'Seamless Integration', sub: 'Works inside tools you already use', color: '#6366F1' },
-        { icon: '⚡', label: 'Zero Friction', sub: 'No platform switching required', color: '#3B82F6' },
-        { icon: '🤖', label: 'Automated Workflows', sub: 'Trigger recognition automatically', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '🔗 WorkKudo Connections',
+    cards: [
+      { emoji: '�', tag: 'Notion', title: 'Recognition Inside Your Workspace', msg: "The board appeared right inside our Notion page. The team loved it — no extra tool, no extra step. Just celebration where we work.", from: 'Lena Fischer', role: 'Head of Engineering' },
+      { emoji: '📧', tag: 'Email', title: 'Delivered to Every Inbox', msg: "Even colleagues without a WorkKudo account received the board beautifully formatted in their email. Zero friction.", from: 'James Adeyemi', role: 'People Ops Lead' },
+      { emoji: '🔗', tag: 'Link', title: 'Contributed From Anywhere', msg: "I shared the link in our Slack channel and 18 people added messages within the hour. No sign-ups, no barriers.", from: 'Priya Nair', role: 'Team Lead' },
+    ],
+  },
 
   deepDiveTitle: 'Bring Recognition Into Your Existing Workplace Ecosystem',
   deepDiveDesc: 'Connections integrate WorkKudo with the platforms and systems your organization already depends on.',

@@ -1,11 +1,13 @@
 import React from 'react';
 import FeaturePage from './FeaturePage';
+import heroImg from '../../assets/new-board.png';
 
 const data = {
   accent: '#EC4899',
   accentSoft: '#FDF2F8',
   icon: '🔔',
   category: 'Alerts',
+  heroImage: heroImg,
   heroTitle: 'Never Miss a Meaningful Moment Again',
   heroDesc: 'Automated alerts ensure important milestones, celebration deadlines, and recognition opportunities are always captured — before it\'s too late.',
   ctaPrimary: 'Set Up Alerts',
@@ -35,20 +37,14 @@ const data = {
     'Missed celebrations signal to employees that they aren\'t valued',
     'Board contribution deadlines arrive before anyone has contributed',
   ],
-  problemIllustration: (
-    <div className="fp-problem-illus">
-      {[
-        { icon: '📅', label: 'Upcoming Milestones', sub: 'Always know what\'s coming next', color: '#EC4899' },
-        { icon: '🔔', label: 'Timely Reminders', sub: 'Notify contributors before deadlines', color: '#FF6B2C' },
-        { icon: '⚡', label: 'Automated Tracking', sub: 'No manual calendar management', color: '#34D399' },
-      ].map((r, i) => (
-        <div key={i} className="fp-illus-row">
-          <span className="fp-illus-icon">{r.icon}</span>
-          <div><strong>{r.label}</strong><span>{r.sub}</span></div>
-        </div>
-      ))}
-    </div>
-  ),
+  problemMockup: {
+    title: '🔔 Upcoming Milestones',
+    cards: [
+      { emoji: '🎂', tag: 'Birthday', title: 'Alex R. — Birthday in 3 Days', msg: "Alert sent to the team 5 days in advance. Board was fully signed by 22 people before Alex even woke up on her birthday.", from: 'WorkKudo Alerts', role: 'Engineering Team · Auto-notified' },
+      { emoji: '🎊', tag: 'Anniversary', title: "Maya's 5-Year Work Anniversary", msg: "The reminder came two weeks out — plenty of time to organize a proper celebration. She was genuinely moved by the response.", from: 'WorkKudo Alerts', role: 'Product Design · Auto-notified' },
+      { emoji: '⏰', tag: 'Deadline', title: "Sarah's Farewell Board Closes in 24h", msg: "12 contributors had already signed. The deadline alert pushed 8 more teammates to add their messages before the board was delivered.", from: 'WorkKudo Alerts', role: 'People Ops · Auto-notified' },
+    ],
+  },
 
   deepDiveTitle: 'Intelligent Alerts That Keep Recognition on Schedule',
   deepDiveDesc: 'Alerts automatically surface what matters and notify the right people at the right time.',
