@@ -51,7 +51,12 @@ function HeroSection() {
     { text: '"Your leadership inspires us all ⭐"', from: 'Priya M.', color: '#F59E0B', bg: '#FFFBEB', delay: 0.8 },
   ];
 
-  
+  const floatingBadges = [
+    { text: '🎉 Team Win', x: -70, y: -50, delay: 0.6 },
+    { text: '🏆 Top Performer', x: 80, y: -30, delay: 0.8 },
+    { text: '💌 Appreciation', x: -60, y: 70, delay: 1.0 },
+    { text: '🌟 Milestone', x: 75, y: 60, delay: 1.2 },
+  ];
 
   return (
     <section className="pg-hero" onMouseMove={handleMouseMove}>
