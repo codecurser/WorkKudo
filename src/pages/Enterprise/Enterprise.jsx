@@ -11,14 +11,6 @@ const enterpriseFaq = [
     a: "WorkKudo takes data privacy seriously. All data is transmitted securely and we follow responsible data handling practices. Reach out to our team for details on how we manage data for your organization."
   },
   {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Yes. With enterprise permissions, you can lock board access to verified corporate email domains so only your internal employees can view and contribute to boards."
-  },
-  {
-    q: "What support does the Enterprise plan offer?",
-    a: "Enterprise customers receive a dedicated Customer Success Manager, priority support, and a customized onboarding program to get your workforce up and running quickly."
-  },
-  {
     q: "Can we connect WorkKudo to our existing tools?",
     a: "WorkKudo currently integrates with Notion and supports email delivery and shareable links out of the box. More integrations are on the roadmap — reach out to our team to discuss your specific needs."
   },
