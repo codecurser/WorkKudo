@@ -12,7 +12,7 @@ export default function CelebrationGrid({ themeClass = "" }) {
         <header className="section-header">
           <h2 className="section-title">Celebrate Every Milestone</h2>
           <p className="section-subtitle">
-            Choose from 15+ occasion templates to start a board. Hover over a card to begin.
+            Choose from 15+ occasion templates to start a board.
           </p>
         </header>
         <div className="celebration-grid">

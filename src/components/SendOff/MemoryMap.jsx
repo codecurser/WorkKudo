@@ -293,7 +293,7 @@ export default function MemoryMap() {
           <span className="so-map-badge">Worldwide Connections</span>
           <h2 className="so-map-title">Global Memory Map</h2>
           <p className="so-map-subtitle">
-            Remote colleagues in Tokyo, London, Lagos, and beyond show up as glowing dots on an interactive map. Tap on a pin or reaction card to engage.
+            Connect from everywhere. Tap a pin to engage.
           </p>
         </header>
 

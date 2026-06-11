@@ -854,7 +854,7 @@ const getMapConfig = (pageType) => {
         pins: sendOffPins,
         badgeText: "Worldwide Connections",
         title: "Global Memory Map",
-        subtitle: "Remote colleagues in Tokyo, London, Lagos, and beyond show up as glowing dots on an interactive map. Tap on a pin or reaction card to engage.",
+        subtitle: "Connect from everywhere. Tap a pin to engage.",
         badgeBg: "rgba(124, 58, 237, 0.08)",
         badgeColor: "var(--navy)",
         badgeBorder: "rgba(124, 58, 237, 0.15)",
