@@ -674,18 +674,22 @@
 .fp-marquee-card p  { font-size: 12px; color: var(--text-light); line-height: 1.5; margin: 0; }
 
 /* ════════════════════════════════════════════
-   BENEFITS — Off-white, premium feature cards
+   BENEFITS — Dark navy bg matching footer
 ════════════════════════════════════════════ */
-.fp-benefits { padding: 100px 0; background: var(--bg); }
+.fp-benefits { padding: 100px 0; background: #0F1C33; }
+
+.fp-benefits .fp-section-title { color: #ffffff; }
+.fp-benefits .fp-section-sub   { color: rgba(255, 255, 255, 0.6); }
+.fp-benefits .fp-overline       { background: rgba(255,107,44,0.15); border-color: rgba(255,107,44,0.3); color: #FFB347; }
 
 .fp-benefits-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
 .fp-benefit-card {
-  background: white;
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 22px; padding: 34px 28px;
-  box-shadow: var(--shadow-sm); cursor: default;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2); cursor: default;
   position: relative; overflow: hidden;
   transition: transform 0.3s var(--ease), box-shadow 0.3s ease, border-color 0.25s ease;
 }
@@ -699,8 +703,8 @@
 }
 .fp-benefit-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(255,107,44,0.1), var(--shadow-md);
-  border-color: rgba(255,107,44,0.2);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 107, 44, 0.4);
 }
 .fp-benefit-card:hover::before { transform: scaleY(1); }
 
@@ -709,8 +713,8 @@
   transition: transform 0.3s var(--ease);
 }
 .fp-benefit-card:hover .fp-benefit-icon { transform: scale(1.15) rotate(-8deg); }
-.fp-benefit-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 9px; }
-.fp-benefit-card p { font-size: 0.93rem; color: var(--text-light); line-height: 1.66; margin: 0; }
+.fp-benefit-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy, #1A2B4A); margin-bottom: 9px; }
+.fp-benefit-card p  { font-size: 0.93rem; color: var(--text-light, #6B7280); line-height: 1.66; margin: 0; }
 
 /* ════════════════════════════════════════════
    FINAL CTA — Navy bg with orange accents

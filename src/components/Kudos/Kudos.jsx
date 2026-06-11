@@ -63,7 +63,6 @@ export default function Kudos() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <a href="#" className="ku-cta-ghost">View an Example</a>
             </div>
 
             <div className="ku-hero-trust">

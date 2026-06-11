@@ -63,9 +63,6 @@ export default function Condolence() {
           <div className={`con-hero-left ${mounted ? 'con-hero-left--visible' : ''}`}>
 
             {/* Badge */}
-            <div className="con-hero-badge">
-              🕊️ Condolence
-            </div>
 
             <h1 className="con-hero-heading">
               Offer comfort<br />
@@ -83,7 +80,6 @@ export default function Condolence() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#memory-map-shared" className="con-cta-ghost">See how it works</a>
             </div>
 
             <p className="con-hero-trust">

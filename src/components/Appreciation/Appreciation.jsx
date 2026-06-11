@@ -55,10 +55,10 @@ export default function Appreciation() {
           {/* Left */}
           <div className={`ap-hero-left ${mounted ? 'ap-hero-left--visible' : ''}`}>
 
-            <div className="ap-eyebrow">
+            {/* <div className="ap-eyebrow">
               <span className="ap-eyebrow__dot" aria-hidden="true" />
               Appreciation Handbook
-            </div>
+            </div> */}
 
             <h1 className="ap-hero-heading">
               Show appreciation<br />
@@ -76,7 +76,6 @@ export default function Appreciation() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#memory-map-shared" className="ap-cta-ghost">How it works</a>
             </div>
 
             <p className="ap-hero-trust">

@@ -79,7 +79,6 @@ export default function Retirement() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="#memory-map-shared" className="ret-cta-ghost">See how it works</a>
             </div>
 
             <p className="ret-hero-trust">

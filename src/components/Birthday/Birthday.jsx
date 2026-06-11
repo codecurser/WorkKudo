@@ -73,7 +73,6 @@ export default function Birthday() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="#birthday-memory-map" className="bd-cta-ghost">How it works</a>
             </div>
 
             {/* Minimal trust line */}

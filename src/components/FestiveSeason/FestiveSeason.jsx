@@ -63,7 +63,6 @@ export default function FestiveSeason() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <a href="#" className="fs-cta-ghost">View an Example</a>
             </div>
 
             <div className="fs-hero-trust">
