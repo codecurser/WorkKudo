@@ -17,7 +17,7 @@ const faqData = [
   { q: 'Can we automate employee milestones?', a: 'Yes. WorkKudo can be set up to remind your team ahead of birthdays, work anniversaries, and onboarding dates via email or Notion.' },
   { q: 'Can I schedule celebrations in advance?', a: 'Yes. Set a delivery date when creating the board and WorkKudo will notify the recipient automatically on that day. You can collect signatures asynchronously beforehand.' },
   { q: 'Is employee data secure?', a: 'WorkKudo takes data privacy seriously. All data is transmitted securely and we follow responsible data handling practices. Contact our team for details on how we handle data for your organization.' },
-  { q: 'Can I upgrade or change my plan later?', a: 'Yes — you can upgrade, downgrade, or cancel your plan at any time from your account settings. Upgrades take effect immediately and billing is prorated automatically.' },
+  { q: 'Are there any subscriptions or recurring fees?', a: 'No. WorkKudo charges a one-time flat fee of $5 per board. There are no subscriptions, seat fees, or hidden recurring charges.' },
 ]
 
 const recognitionExamples = [
@@ -296,14 +296,13 @@ export default function Assistance() {
                   <span className="assist-hub-group__icon" style={{ background: '#EFF6FF', color: '#3B82F6' }}>💳</span>
                   <div>
                     <h3 className="assist-hub-group__title">Account & Billing</h3>
-                    <p className="assist-hub-group__sub">Manage your subscription, team accounts, and payment details.</p>
+                    <p className="assist-hub-group__sub">Manage your team accounts and payment details.</p>
                   </div>
                 </div>
                 <div className="assist-hub-cards">
                   {[
-                    { icon: '🔄', title: 'Manage Subscription', desc: 'Upgrade, downgrade, or cancel your plan anytime from your account dashboard.', link: '#contact-us' },
                     { icon: '👥', title: 'Team Accounts', desc: 'Add seats, manage member permissions, and control access across your organisation.', link: '#contact-us' },
-                    { icon: '💰', title: 'Payment Questions', desc: 'Update billing details, view invoices, and get answers about charges and prorations.', link: '#contact-us' },
+                    { icon: '💰', title: 'Payment Questions', desc: 'Update billing details, view invoices, and get answers about charges.', link: '#contact-us' },
                   ].map((c, i) => (
                     <a key={i} href={c.link} onClick={e => { e.preventDefault(); scrollTo('contact-us') }} className="assist-hub-card">
                       <span className="assist-hub-card__icon">{c.icon}</span>

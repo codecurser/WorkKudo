@@ -134,24 +134,28 @@ const environments = [
 
 const giftingFaq = [
   {
-    q: "How do employees receive their gifts?",
-    a: "When a board is completed, the recipient receives a secure link via email. They can view their group card and select their preferred gift from our curated business catalog."
+    q: "When will the Gifting feature be available?",
+    a: "We are currently putting the finishing touches on our global gifting experience. Join the waitlist on this page to get early access as soon as we launch!"
   },
   {
-    q: "Do you handle international shipping and taxes?",
-    a: "Yes! We support fulfillment in over 150 countries. We handle all global customs, local duties, shipping logistics, and tax calculations automatically."
+    q: "How will employees receive their gifts?",
+    a: "Once launched, when a board is completed, the recipient will receive a secure link via email. They can view their group card and select their preferred gift from our curated business catalog."
+  },
+  {
+    q: "Will you handle international shipping and taxes?",
+    a: "Yes! We will support fulfillment in over 150 countries. We will handle all global customs, local duties, shipping logistics, and tax calculations automatically."
   },
   {
     q: "Can employees choose their own gifts?",
-    a: "Absolutely. We offer choice-based gifting where you set a budget (e.g., $50) and employees choose from a collection of premium physical products or digital gift cards matching that tier."
+    a: "Absolutely. We will offer choice-based gifting where you set a budget (e.g., $50) and employees choose from a collection of premium physical products or digital gift cards matching that tier."
   },
   {
-    q: "What types of gift cards are available?",
-    a: "We offer over 2,000 top brand electronic cards globally, including Amazon, Visa, Starbucks, Uber, and local retail giants in each country."
+    q: "What types of gift cards will be available?",
+    a: "We will offer over 2,000 top brand electronic cards globally, including Amazon, Visa, Starbucks, Uber, and local retail giants in each country."
   },
   {
     q: "Can we brand the gifting experience?",
-    a: "Yes, you can customize the email invitation, redemption page, eCards, and packaging inserts with your logo, corporate colors, and custom brand messages."
+    a: "Yes, you will be able to customize the email invitation, redemption page, eCards, and packaging inserts with your logo, corporate colors, and custom brand messages."
   }
 ];
 
