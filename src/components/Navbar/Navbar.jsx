@@ -124,13 +124,28 @@ const platformBenefits = [
 ]
 
 const customersData = {
-  'By Industry': ['Corporations & Enterprise', 'Medical & Healthcare', 'Charities & NGOs'],
-  'By Team': ['Distributed Workforces', 'People & Culture Teams', 'Early-Stage Ventures'],
+  'By Industry': [
+    { emoji: '🏢', label: 'Corporations & Enterprise', to: '/solutions/enterprise' },
+    { emoji: '🏥', label: 'Medical & Healthcare', to: '/solutions/healthcare' },
+    { emoji: '🌍', label: 'Charities & NGOs', to: '/solutions/nonprofits' },
+  ],
+  'By Team': [
+    { emoji: '🌐', label: 'Distributed Workforces', to: '/solutions/distributed' },
+    { emoji: '👥', label: 'People & Culture Teams', to: '/solutions/people-culture' },
+    { emoji: '🚀', label: 'Early-Stage Ventures', to: '/solutions/startups' },
+  ],
 }
 
 const resourcesData = {
-  Guides: ['Support Hub', 'Appreciation Handbook'],
-  Assistance: ['Reach Us', 'Common Questions', 'Contact Us'],
+  Guides: [
+    { emoji: '🛟', label: 'Support Hub', to: '/learn/assistance#support-hub' },
+    { emoji: '📖', label: 'Appreciation Handbook', to: '/learn/assistance#appreciation-handbook' },
+  ],
+  Assistance: [
+    { emoji: '📡', label: 'Reach Us', to: '/learn/assistance#reach-us' },
+    { emoji: '❓', label: 'Common Questions', to: '/learn/assistance#common-questions' },
+    { emoji: '✉️', label: 'Contact Us', to: '/learn/assistance#contact-us' },
+  ],
 }
 
 /* ─── Icons ─────────────────────────────────────────────────── */
@@ -331,11 +346,7 @@ function PlatformMegaMenu() {
             ))}
           </div>
 
-          {/* Feature highlight */}
-          <div className="platform-highlight">
-            <p className="platform-highlight__title">Trusted by 50,000+ employees</p>
-            <p className="platform-highlight__sub">Across 120+ countries worldwide</p>
-          </div>
+
         </div>
 
       </div>
@@ -352,25 +363,32 @@ function SmallDropdown({ data }) {
           <p className="small-dropdown__title">{section}</p>
           <ul>
             {items.map(item => {
-              let to = '#';
-              if (item === 'Corporations & Enterprise') to = '/solutions/enterprise';
-              else if (item === 'Medical & Healthcare') to = '/solutions/healthcare';
-              else if (item === 'Charities & NGOs') to = '/solutions/nonprofits';
-              else if (item === 'Distributed Workforces') to = '/solutions/distributed';
-              else if (item === 'People & Culture Teams') to = '/solutions/people-culture';
-              else if (item === 'Early-Stage Ventures') to = '/solutions/startups';
-              else if (item === 'Support Hub') to = '/learn/assistance#support-hub';
-              else if (item === 'Appreciation Handbook') to = '/learn/assistance#appreciation-handbook';
-              else if (item === 'Reach Us') to = '/learn/assistance#reach-us';
-              else if (item === 'Common Questions') to = '/learn/assistance#common-questions';
-              else if (item === 'Contact Us') to = '/learn/assistance#contact-us';
+              // Support both object shape { emoji, label, to } and plain string
+              const isObj = typeof item === 'object'
+              const label = isObj ? item.label : item
+              const emoji = isObj ? item.emoji : null
+
+              let to = isObj ? item.to : '#';
+              if (!isObj) {
+                if (label === 'Support Hub') to = '/learn/assistance#support-hub';
+                else if (label === 'Appreciation Handbook') to = '/learn/assistance#appreciation-handbook';
+                else if (label === 'Reach Us') to = '/learn/assistance#reach-us';
+                else if (label === 'Common Questions') to = '/learn/assistance#common-questions';
+                else if (label === 'Contact Us') to = '/learn/assistance#contact-us';
+              }
 
               return (
-                <li key={item}>
+                <li key={label}>
                   {to !== '#' ? (
-                    <Link to={to} className="small-dropdown__item">{item}</Link>
+                    <Link to={to} className="small-dropdown__item">
+                      {emoji && <span className="small-dropdown__emoji">{emoji}</span>}
+                      {label}
+                    </Link>
                   ) : (
-                    <a href="#" className="small-dropdown__item">{item}</a>
+                    <a href="#" className="small-dropdown__item">
+                      {emoji && <span className="small-dropdown__emoji">{emoji}</span>}
+                      {label}
+                    </a>
                   )}
                 </li>
               );
@@ -503,7 +521,6 @@ export default function Navbar() {
 
           {/* Right */}
           <div className="navbar__actions">
-            <a href="https://workkudo.ai/signin" className="navbar__signin">Sign In</a>
             <a href="https://workkudo.ai/signin" className="navbar__cta">
               Create a Board
               <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
@@ -581,25 +598,16 @@ export default function Navbar() {
             {Object.entries(resourcesData).map(([sec, items]) => (
               <div key={sec}>
                 <div className="mobile-section-title">{sec}</div>
-                {items.map(i => {
-                  let to = '#'
-                  if (i === 'Support Hub') to = '/learn/assistance#support-hub'
-                  else if (i === 'Appreciation Handbook') to = '/learn/assistance#appreciation-handbook'
-                  else if (i === 'Reach Us') to = '/learn/assistance#reach-us'
-                  else if (i === 'Common Questions') to = '/learn/assistance#common-questions'
-                  else if (i === 'Contact Us') to = '/learn/assistance#contact-us'
-                  return to !== '#' ? (
-                    <Link key={i} to={to} className="mobile-link" onClick={() => setMobileOpen(false)}>{i}</Link>
-                  ) : (
-                    <a key={i} href="#" className="mobile-link">{i}</a>
-                  )
-                })}
+                {items.map(i => (
+                  <Link key={i.label} to={i.to} className="mobile-link" onClick={() => setMobileOpen(false)}>
+                    {i.emoji} {i.label}
+                  </Link>
+                ))}
               </div>
             ))}
           </MobileAccordion>
 
           <Link to="/pricing" className="mobile-top-link" onClick={() => setMobileOpen(false)}>Pricing</Link>
-          <a href="https://workkudo.ai/signin" className="mobile-top-link">Sign In</a>
         </div>
 
         <div className="mobile-menu__footer">

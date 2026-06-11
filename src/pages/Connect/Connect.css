@@ -466,31 +466,87 @@
 .cn-jobs-empty h4 { font-size: 1.15rem; font-weight: 800; color: var(--navy); }
 .cn-jobs-empty p { font-size: 0.98rem; color: var(--text-light); line-height: 1.7; max-width: 380px; }
 
-/* Hiring timeline */
+/* Hiring timeline — enhanced */
 .cn-hiring-timeline {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 0; position: relative; margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-top: 36px;
+  padding: 12px 0 40px;
 }
-.cn-hiring-step {
-  position: relative; display: flex; flex-direction: column;
-  align-items: center; text-align: center; padding: 0 16px 0;
-}
-.cn-hiring-num {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--navy); color: white;
-  font-size: 13px; font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 12px; flex-shrink: 0; position: relative; z-index: 1;
-}
-.cn-hiring-icon { font-size: 1.5rem; margin-bottom: 8px; }
-.cn-hiring-step strong { font-size: 14px; font-weight: 800; color: var(--navy); display: block; margin-bottom: 6px; }
-.cn-hiring-step p { font-size: 12.5px; color: var(--text-light); line-height: 1.55; margin: 0; }
-.cn-hiring-connector {
-  position: absolute; top: 22px; left: calc(50% + 22px);
-  width: calc(100% - 44px); height: 2px;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-100) 100%);
+
+/* Continuous track line behind all steps */
+.cn-hiring-timeline::before {
+  content: '';
+  position: absolute;
+  top: 56px;
+  left: calc(12.5% + 22px);
+  width: calc(75% - 44px);
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B2C 0%, #A78BFA 50%, #34D399 100%);
+  border-radius: 99px;
+  opacity: 0.22;
   z-index: 0;
 }
+
+.cn-hiring-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 28px 20px 28px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1.5px solid rgba(26,43,74,0.07);
+  margin: 0 10px;
+  box-shadow: 0 4px 20px rgba(26,43,74,0.05);
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  cursor: default;
+  z-index: 1;
+}
+.cn-hiring-step:hover {
+  border-color: rgba(255,107,44,0.22);
+}
+
+/* Step number badge */
+.cn-hiring-badge {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #FF6B2C 0%, #f97316 100%);
+  color: white;
+  font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  position: absolute;
+  top: -14px; left: 50%; transform: translateX(-50%);
+  box-shadow: 0 4px 14px rgba(255,107,44,0.35);
+  z-index: 2;
+}
+.cn-hiring-step:nth-child(2) .cn-hiring-badge { background: linear-gradient(135deg, #A78BFA 0%, #7C3AED 100%); box-shadow: 0 4px 14px rgba(167,139,250,0.4); }
+.cn-hiring-step:nth-child(3) .cn-hiring-badge { background: linear-gradient(135deg, #34D399 0%, #059669 100%); box-shadow: 0 4px 14px rgba(52,211,153,0.4); }
+.cn-hiring-step:nth-child(4) .cn-hiring-badge { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); box-shadow: 0 4px 14px rgba(245,158,11,0.4); }
+
+/* Icon circle */
+.cn-hiring-icon-wrap {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #FFF3EE;
+  display: flex; align-items: center; justify-content: center;
+  margin: 16px 0 14px;
+  font-size: 1.7rem;
+}
+.cn-hiring-step:nth-child(2) .cn-hiring-icon-wrap { background: #F5F3FF; }
+.cn-hiring-step:nth-child(3) .cn-hiring-icon-wrap { background: #ECFDF5; }
+.cn-hiring-step:nth-child(4) .cn-hiring-icon-wrap { background: #FFFBEB; }
+
+.cn-hiring-icon { font-size: 1.7rem; line-height: 1; }
+.cn-hiring-step strong { font-size: 15px; font-weight: 800; color: var(--navy); display: block; margin-bottom: 8px; }
+.cn-hiring-step p { font-size: 13px; color: var(--text-light); line-height: 1.6; margin: 0; }
+
+/* connector arrow between cards */
+.cn-hiring-connector {
+  display: none; /* replaced by ::before track */
+}
+
 
 /* ══════════════════════════════════════════
    COMMUNITY CTA
@@ -553,8 +609,9 @@
   .cn-contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .cn-demo-grid { grid-template-columns: 1fr; }
   .cn-demo-form-wrap { position: static; }
-  .cn-hiring-timeline { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .cn-hiring-timeline { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; }
   .cn-hiring-connector { display: none; }
+  .cn-hiring-timeline::before { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -568,7 +625,7 @@
   .cn-benefits-grid { grid-template-columns: 1fr; }
   .cn-life-gallery { grid-template-columns: repeat(2, 1fr); }
   .cn-demo-tabs { grid-template-columns: repeat(2, 1fr); }
-  .cn-hiring-timeline { grid-template-columns: 1fr 1fr; }
+  .cn-hiring-timeline { grid-template-columns: 1fr 1fr; gap: 40px 20px; }
   .cn-form-wrap { padding: 24px; }
 }
 
@@ -577,7 +634,7 @@
   .cn-values-grid { grid-template-columns: 1fr; }
   .cn-cat-grid { grid-template-columns: 1fr; }
   .cn-life-gallery { grid-template-columns: repeat(2, 1fr); }
-  .cn-hiring-timeline { grid-template-columns: 1fr; }
+  .cn-hiring-timeline { grid-template-columns: 1fr; gap: 40px; }
   .cn-hero-badges { gap: 6px; }
   .cn-cta { padding: 72px 0; }
 }

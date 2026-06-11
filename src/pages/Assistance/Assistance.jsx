@@ -13,7 +13,7 @@ const faqData = [
   { q: 'How do I create a WorkKudo board?', a: 'Creating a board takes under two minutes. Click "Create a Board", choose your occasion template, customise the layout and message, then share the invite link with your team. No account is required for contributors.' },
   { q: 'Can I edit a board after publishing?', a: 'Yes — as the board creator you can edit the title, background, and settings at any time before the recipient receives it. Contributor messages can be moderated or removed from your admin panel.' },
   { q: 'How do contributors add messages?', a: 'Share the unique invite link via email or Notion. Contributors simply click the link, add their message, photo, or GIF, and submit — no account sign-up required.' },
-  { q: 'Does WorkKudo support SSO?', a: 'Enterprise authentication options are available. Please contact our team to discuss SSO and access control configuration for your organization.' },
+  { q: 'Does WorkKudo support custom login options?', a: 'WorkKudo supports email and social login (Google, GitHub). For enterprise login requirements, reach out to our team to discuss available options.' },
   { q: 'Can we automate employee milestones?', a: 'Yes. WorkKudo can be set up to remind your team ahead of birthdays, work anniversaries, and onboarding dates via email or Notion.' },
   { q: 'Can I schedule celebrations in advance?', a: 'Yes. Set a delivery date when creating the board and WorkKudo will notify the recipient automatically on that day. You can collect signatures asynchronously beforehand.' },
   { q: 'Is employee data secure?', a: 'WorkKudo takes data privacy seriously. All data is transmitted securely and we follow responsible data handling practices. Contact our team for details on how we handle data for your organization.' },
@@ -510,7 +510,7 @@ export default function Assistance() {
             <div className="assist-reach-merged__right">
               {[
                 { icon: '💬', label: 'Customer Support', desc: 'Account issues, board creation, contributor access, troubleshooting.', color: '#F67021', bg: '#FFF3EE' },
-                { icon: '🏢', label: 'Sales & Enterprise', desc: 'Enterprise deployments, SSO, integrations, large-scale programs.', color: '#3B82F6', bg: '#EFF6FF' },
+                { icon: '🏢', label: 'Sales & Enterprise', desc: 'Enterprise deployments, integrations, large-scale programs, and custom setups.', color: '#3B82F6', bg: '#EFF6FF' },
                 { icon: '🌟', label: 'Customer Success', desc: 'Recognition best practices, engagement strategy, program consulting.', color: '#10B981', bg: '#ECFDF5' },
               ].map((item, i) => (
                 <div key={i} className="assist-reach-merged__item">

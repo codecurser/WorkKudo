@@ -119,7 +119,7 @@ const stylesData = {
       }
     ],
     details: [
-      { icon: '🔓', label: 'Zero-Friction Access', desc: 'Teammates can sign instantly via single sign-on (SSO) or magic links without managing complex credentials.' },
+      { icon: '🔓', label: 'Zero-Friction Access', desc: 'Teammates can sign instantly via email or Google login — no complex credentials or account setup required.' },
       { icon: '💬', label: 'Notion Integration', desc: 'Keep recognition visible inside your team workspace where everyone already collaborates daily.' },
       { icon: '🎉', label: 'Interactive Confetti & Media', desc: 'Allow co-signers to attach GIFs, customized background styles, photos, and animated greetings to highlight card uniqueness.' }
     ]

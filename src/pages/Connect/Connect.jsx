@@ -502,8 +502,6 @@ const lifeCards = [
 function CareersSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const [dept, setDept] = useState('All');
-  const [search, setSearch] = useState('');
 
   return (
     <section className="cn-section cn-careers" id="careers" ref={ref}>
@@ -585,38 +583,6 @@ function CareersSection() {
           ))}
         </div>
 
-        {/* Open Opportunities */}
-        <motion.h3 className="cn-sub-heading"
-          variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.5}
-        >Open Opportunities</motion.h3>
-
-        <motion.div className="cn-jobs-controls"
-          variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.55}
-        >
-          <div className="cn-search-wrap">
-            <svg className="cn-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <circle cx="7" cy="7" r="5" stroke="#9CA3AF" strokeWidth="1.5"/>
-              <path d="M11 11l3 3" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-            <input className="cn-search" placeholder="Search roles..." value={search} onChange={e=>setSearch(e.target.value)} />
-          </div>
-          <div className="cn-dept-filters">
-            {departments.map(d => (
-              <button key={d} className={`cn-dept-btn ${dept===d?'active':''}`} onClick={()=>setDept(d)}>{d}</button>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div className="cn-jobs-placeholder"
-          variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.6}
-        >
-          <div className="cn-jobs-empty">
-            <span className="cn-jobs-empty-icon">🔍</span>
-            <h4>Roles Coming Soon</h4>
-            <p>We're growing fast. New positions will be listed here. Follow us or check back soon for the latest openings.</p>
-            <a href="#contact" className="cn-btn cn-btn--ghost cn-btn--sm">Send Us Your CV</a>
-          </div>
-        </motion.div>
 
         {/* Hiring Journey */}
         <motion.h3 className="cn-sub-heading"
@@ -626,9 +592,12 @@ function CareersSection() {
           {hiringSteps.map((s, i) => (
             <motion.div key={i} className="cn-hiring-step"
               variants={fadeUp} initial="hidden" animate={inView?'visible':'hidden'} custom={0.7+i*0.1}
+              whileHover={{ y: -6, boxShadow: '0 20px 50px rgba(26,43,74,0.13)' }}
             >
-              <div className="cn-hiring-num">{s.n}</div>
-              <span className="cn-hiring-icon">{s.icon}</span>
+              <div className="cn-hiring-badge">{s.n}</div>
+              <div className="cn-hiring-icon-wrap">
+                <span className="cn-hiring-icon">{s.icon}</span>
+              </div>
               <strong>{s.title}</strong>
               <p>{s.desc}</p>
               {i < hiringSteps.length - 1 && <div className="cn-hiring-connector" />}

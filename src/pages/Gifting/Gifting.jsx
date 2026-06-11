@@ -367,9 +367,7 @@ export default function Gifting() {
 
             <div className="gf-stepper-right">
               <div className="gf-dynamic-preview-panel">
-                <div className="gf-preview-header">
-                  <span className="status-indicator"></span> Live Mockup Preview
-                </div>
+
                 {renderStepPreview(activeStep)}
               </div>
             </div>
