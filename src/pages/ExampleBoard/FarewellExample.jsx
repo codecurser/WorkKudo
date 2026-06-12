@@ -18,7 +18,8 @@ const COMMENTS = [
     name: "Aishwarya Rao",
     message: "Good luck with your next adventure! It was wonderful working with you.",
     color: "rgba(245, 255, 250, 0.95)",
-    size: "small"
+    size: "small",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -33,7 +34,8 @@ const COMMENTS = [
     name: "Kavya Reddy",
     message: "Farewell! Wishing you incredible success in your future endeavors. ✨",
     color: "rgba(255, 255, 255, 0.95)",
-    size: "small"
+    size: "small",
+    audio: "https://www.w3schools.com/html/horse.mp3"
   },
   {
     id: 5,
@@ -178,6 +180,16 @@ export default function FarewellExample() {
                 className={`farewell-board__card farewell-board__card--${comment.size}`}
                 style={{ backgroundColor: comment.color }}
               >
+                {comment.video && (
+                  <div className="farewell-board__card-video">
+                    <video src={comment.video} controls className="farewell-board__video-element" />
+                  </div>
+                )}
+                {comment.audio && (
+                  <div className="farewell-board__card-audio">
+                    <audio src={comment.audio} controls className="farewell-board__audio-element" />
+                  </div>
+                )}
                 {comment.image && (
                   <div className="farewell-board__card-image">
                     <img src={comment.image} alt="Farewell" />

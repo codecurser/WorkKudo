@@ -57,7 +57,7 @@ export default function FestiveSeason() {
             </p>
 
             <div className="fs-hero-ctas">
-              <a href="#" className="fs-cta-primary">
+              <a href="https://workkudo.ai/signin" className="fs-cta-primary">
                 Create a Holiday Board
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
@@ -109,7 +109,7 @@ export default function FestiveSeason() {
             <p className="fs-cta-desc">
               Start a holiday board in seconds. Invite the company, share the joy, and create a beautiful end-of-year keepsake.
             </p>
-            <a href="#" className="fs-btn-primary fs-animate-pulse">
+            <a href="https://workkudo.ai/signin" className="fs-btn-primary fs-animate-pulse">
               Start for Free
             </a>
           </div>

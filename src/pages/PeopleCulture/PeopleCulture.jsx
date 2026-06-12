@@ -262,7 +262,7 @@ export default function PeopleCulture() {
           <p>Join thousands of People Operations teams who trust WorkKudo to recognize their employees.</p>
           <div className="ep-cta__actions">
             <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
-            <button className="ep-btn ep-btn--outline">View Pricing</button>
+            <a href="/pricing" className="ep-btn ep-btn--outline">View Pricing</a>
           </div>
         </div>
       </section>

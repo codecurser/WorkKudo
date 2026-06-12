@@ -262,7 +262,7 @@ export default function Healthcare() {
           <p>Join healthcare networks who trust WorkKudo to keep their care teams appreciated and connected.</p>
           <div className="ep-cta__actions">
             <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
-            <button className="ep-btn ep-btn--outline">View Pricing</button>
+            <a href="/pricing" className="ep-btn ep-btn--outline">View Pricing</a>
           </div>
         </div>
       </section>

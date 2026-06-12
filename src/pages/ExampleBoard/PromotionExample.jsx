@@ -18,7 +18,8 @@ const COMMENTS = [
     name: "Deepa Nair",
     message: "So proud of you! Congratulations on stepping up to the new role. 📈",
     color: "rgba(255, 245, 250, 0.95)",
-    size: "small"
+    size: "small",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -33,7 +34,8 @@ const COMMENTS = [
     name: "Rhea Chakraborty",
     message: "Congratulations! You are going to be amazing in this new position. ✨",
     color: "rgba(255, 255, 255, 0.95)",
-    size: "small"
+    size: "small",
+    audio: "https://www.w3schools.com/html/horse.mp3"
   },
   {
     id: 5,
@@ -178,6 +180,16 @@ export default function PromotionExample() {
                 className={`promotion-board__card promotion-board__card--${comment.size}`}
                 style={{ backgroundColor: comment.color }}
               >
+                {comment.video && (
+                  <div className="promotion-board__card-video">
+                    <video src={comment.video} controls className="promotion-board__video-element" />
+                  </div>
+                )}
+                {comment.audio && (
+                  <div className="promotion-board__card-audio">
+                    <audio src={comment.audio} controls className="promotion-board__audio-element" />
+                  </div>
+                )}
                 {comment.image && (
                   <div className="promotion-board__card-image">
                     <img src={comment.image} alt="Promotion Celebration" />

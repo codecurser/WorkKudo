@@ -264,7 +264,7 @@ export default function Nonprofits() {
           <p>Join global non-profit teams and charities who use WorkKudo to keep volunteers engaged and appreciated.</p>
           <div className="ep-cta__actions">
             <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
-            <button className="ep-btn ep-btn--outline">View Pricing</button>
+            <a href="/pricing" className="ep-btn ep-btn--outline">View Pricing</a>
           </div>
         </div>
       </section>

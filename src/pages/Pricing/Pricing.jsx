@@ -27,14 +27,8 @@ export default function Pricing() {
 
   const handleApplyPromo = (e) => {
     e.preventDefault()
-    const cleanCode = promoCode.trim().toUpperCase()
-    if (cleanCode === 'WELCOME' || cleanCode === 'KUDOLOVE') {
-      setPromoSuccess(true)
-      setPromoError('')
-    } else {
-      setPromoError('Invalid promo code or credit code. Try "WELCOME" or "KUDOLOVE"')
-      setPromoSuccess(false)
-    }
+    setPromoError('Promo code feature is not yet functional (Coming soon!)')
+    setPromoSuccess(false)
   }
 
   // Calculate pricing

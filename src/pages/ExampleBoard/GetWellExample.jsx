@@ -18,7 +18,8 @@ const COMMENTS = [
     name: "Madhuri Dixit",
     message: "Sending you lots of love and warm hugs. Recover soon! ❤️",
     color: "rgba(255, 250, 240, 0.95)",
-    size: "small"
+    size: "small",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -33,7 +34,8 @@ const COMMENTS = [
     name: "Bhumi Pednekar",
     message: "Thinking of you and hoping for a quick recovery. 🌻",
     color: "rgba(255, 255, 255, 0.95)",
-    size: "small"
+    size: "small",
+    audio: "https://www.w3schools.com/html/horse.mp3"
   },
   {
     id: 5,
@@ -178,6 +180,16 @@ export default function GetWellExample() {
                 className={`getwell-board__card getwell-board__card--${comment.size}`}
                 style={{ backgroundColor: comment.color }}
               >
+                {comment.video && (
+                  <div className="getwell-board__card-video">
+                    <video src={comment.video} controls className="getwell-board__video-element" />
+                  </div>
+                )}
+                {comment.audio && (
+                  <div className="getwell-board__card-audio">
+                    <audio src={comment.audio} controls className="getwell-board__audio-element" />
+                  </div>
+                )}
                 {comment.image && (
                   <div className="getwell-board__card-image">
                     <img src={comment.image} alt="Get Well Soon" />

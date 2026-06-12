@@ -18,7 +18,8 @@ const COMMENTS = [
     name: "Anjali Desai",
     message: "Happy work anniversary! So proud of everything you've achieved.",
     color: "rgba(240, 248, 255, 0.95)",
-    size: "small"
+    size: "small",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -33,7 +34,8 @@ const COMMENTS = [
     name: "Shalini Pandey",
     message: "Congrats on your career milestone! Keep aiming high. 🚀",
     color: "rgba(255, 255, 255, 0.95)",
-    size: "small"
+    size: "small",
+    audio: "https://www.w3schools.com/html/horse.mp3"
   },
   {
     id: 5,
@@ -178,6 +180,16 @@ export default function MilestoneExample() {
                 className={`milestone-board__card milestone-board__card--${comment.size}`}
                 style={{ backgroundColor: comment.color }}
               >
+                {comment.video && (
+                  <div className="milestone-board__card-video">
+                    <video src={comment.video} controls className="milestone-board__video-element" />
+                  </div>
+                )}
+                {comment.audio && (
+                  <div className="milestone-board__card-audio">
+                    <audio src={comment.audio} controls className="milestone-board__audio-element" />
+                  </div>
+                )}
                 {comment.image && (
                   <div className="milestone-board__card-image">
                     <img src={comment.image} alt="Milestone Celebration" />

@@ -253,7 +253,7 @@ export default function Enterprise() {
           <p>Join the world's leading organizations building stronger teams with WorkKudo.</p>
           <div className="ep-cta__actions">
             <a href="https://workkudo.ai/signin" className="ep-btn ep-btn--primary">Schedule a Consultation</a>
-            <button className="ep-btn ep-btn--outline">View Pricing</button>
+            <a href="/pricing" className="ep-btn ep-btn--outline">View Pricing</a>
           </div>
         </div>
       </section>

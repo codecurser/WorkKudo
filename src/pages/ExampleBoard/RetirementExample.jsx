@@ -18,7 +18,8 @@ const COMMENTS = [
     name: "Kajol Mukherjee",
     message: "Wishing you a wonderful retirement! Enjoy the endless weekends. 🌅",
     color: "rgba(250, 245, 255, 0.95)",
-    size: "small"
+    size: "small",
+    video: "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     id: 3,
@@ -33,7 +34,8 @@ const COMMENTS = [
     name: "Deepika Padukone",
     message: "Congratulations on your well-deserved retirement. You will be missed! 💜",
     color: "rgba(255, 255, 255, 0.95)",
-    size: "small"
+    size: "small",
+    audio: "https://www.w3schools.com/html/horse.mp3"
   },
   {
     id: 5,
@@ -178,6 +180,16 @@ export default function RetirementExample() {
                 className={`retirement-board__card retirement-board__card--${comment.size}`}
                 style={{ backgroundColor: comment.color }}
               >
+                {comment.video && (
+                  <div className="retirement-board__card-video">
+                    <video src={comment.video} controls className="retirement-board__video-element" />
+                  </div>
+                )}
+                {comment.audio && (
+                  <div className="retirement-board__card-audio">
+                    <audio src={comment.audio} controls className="retirement-board__audio-element" />
+                  </div>
+                )}
                 {comment.image && (
                   <div className="retirement-board__card-image">
                     <img src={comment.image} alt="Retirement Celebration" />

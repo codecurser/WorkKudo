@@ -186,3 +186,27 @@
 .getwell-board__card--small .getwell-board__message {
   font-size: 1rem;
 }
+
+.getwell-board__card-video {
+  position: relative;
+  z-index: 1;
+}
+
+.getwell-board__video-element {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.getwell-board__card-audio {
+  position: relative;
+  z-index: 1;
+  padding: 16px 16px 0 16px;
+}
+
+.getwell-board__audio-element {
+  width: 100%;
+  display: block;
+}

@@ -212,45 +212,56 @@ const sendOffCards = [
 const birthdayCards = [
   {
     step: 1,
-    label: "Choose Theme",
-    tag: "Design",
-    desc: "Choose from dozens of premium layouts, colors, and birthday templates.",
+    label: "Create Board",
+    tag: "Dashboard",
+    desc: "Start a fun birthday board and set up the celebration",
     accent: "#ff7675",
     bg: "linear-gradient(145deg, #ffebee, #ffcdd2)",
     svg: (
       <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="bd1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ff7675"/>
+            <stop offset="100%" stopColor="#fd79a8"/>
+          </linearGradient>
+        </defs>
         <rect width="148" height="210" fill="#ffebee" opacity="0.4"/>
-        <rect width="148" height="42" fill="#ff7675"/>
-        <text x="74" y="26" fontSize="9" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">BIRTHDAY THEMES</text>
+        <path d="M0,0 H148 V72 Q74,92 0,72 Z" fill="url(#bd1)"/>
         
-        <path d="M 44,175 L 104,175 L 94,162 L 54,162 Z" fill="#b2bec3" />
-        
-        <rect x="34" y="122" width="80" height="40" rx="4" fill="#ff7675" />
-        <rect x="34" y="122" width="80" height="8" fill="#ff8a80" />
-        
-        <rect x="44" y="88" width="60" height="34" rx="4" fill="#fd79a8" />
-        <rect x="44" y="88" width="60" height="6" fill="#ff80ab" />
+        <circle cx="74" cy="36" r="16" fill="white" opacity="0.95" style={{ filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.15))" }}/>
+        <text x="74" y="42" fontSize="18" fill="#ff7675" textAnchor="middle" fontFamily="var(--font-sans)">🎂</text>
+        <text x="74" y="62" fontSize="7" fill="white" fontWeight="700" textAnchor="middle" letterSpacing="0.05em" fontFamily="var(--font-sans)">BIRTHDAY BOARD</text>
 
-        <rect x="56" y="68" width="4" height="20" fill="#74b9ff" />
-        <path d="M 58,68 C 56,63 60,58 58,53 C 58,58 62,63 60,68 Z" fill="#ffa100" className="birthday-candle-flame" />
+        <rect x="8" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="28" y="99" fontSize="10" fill="#ff7675" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">1</text>
+        <text x="28" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Board</text>
+
+        <rect x="54" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="74" y="99" fontSize="10" fill="#fd79a8" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">35</text>
+        <text x="74" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Posts</text>
+
+        <rect x="100" y="86" width="40" height="34" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}/>
+        <text x="120" y="99" fontSize="10" fill="#fdcb6e" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">25</text>
+        <text x="120" y="112" fontSize="5.5" fill="#6b7280" fontWeight="600" textAnchor="middle" fontFamily="var(--font-sans)">Signed</text>
+
+        <rect x="8" y="132" width="132" height="70" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <rect x="8" y="132" width="132" height="20" rx="8" fill="url(#bd1)"/>
+        <rect x="8" y="146" width="132" height="6" fill="white"/>
+        <text x="14" y="144" fontSize="6.5" fill="white" fontWeight="800" fontFamily="var(--font-sans)">Birthday Board</text>
+        <circle cx="20" cy="164" r="8" fill="#ffebee"/>
+        <text x="20" y="167.5" fontSize="9.5" fill="#ff7675" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">A</text>
+        <text x="32" y="163" fontSize="7" fill="#1f2937" fontWeight="700" fontFamily="var(--font-sans)">For Alex Johnson</text>
+        <text x="32" y="170" fontSize="5.5" fill="#9ca3af" fontFamily="var(--font-sans)">Happy Birthday!</text>
         
-        <rect x="72" y="68" width="4" height="20" fill="#a29bfe" />
-        <path d="M 74,68 C 72,63 76,58 74,53 C 74,58 78,63 76,68 Z" fill="#ffa100" className="birthday-candle-flame-delay" />
-
-        <rect x="88" y="68" width="4" height="20" fill="#55efc4" />
-        <path d="M 90,68 C 88,63 92,58 90,53 C 90,58 94,63 92,68 Z" fill="#ffa100" className="birthday-candle-flame" />
-
-        <circle cx="25" cy="80" r="2" fill="#fdcb6e" />
-        <circle cx="125" cy="95" r="1.5" fill="#fdcb6e" />
-        <circle cx="115" cy="70" r="2.5" fill="#ff7675" />
-        <circle cx="30" cy="130" r="1.5" fill="#74b9ff" />
+        <rect x="16" y="180" width="116" height="14" rx="5" fill="#ff7675"/>
+        <text x="74" y="189" fontSize="6.5" fill="white" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">Open Board</text>
       </svg>
     ),
   },
   {
     step: 2,
     label: "Gather Wishes",
-    tag: "Invite",
+    tag: "Collaborate",
     desc: "Collect messages, images, GIFs, and birthday greetings from the team.",
     accent: "#fdcb6e",
     bg: "linear-gradient(145deg, #fffde7, #fff9c4)",
@@ -258,32 +269,42 @@ const birthdayCards = [
       <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
         <rect width="148" height="210" fill="#fffde7" opacity="0.4"/>
         <rect width="148" height="42" fill="#fdcb6e"/>
-        <text x="74" y="26" fontSize="9" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COLLECT WISHES</text>
-
-        <path d="M 50,105 Q 46,135 60,175" stroke="#b2bec3" strokeWidth="1" fill="none" />
-        <g className="fc-svg-balloon-1">
-          <ellipse cx="50" cy="80" rx="16" ry="22" fill="#ff7675" />
-          <polygon points="47,102 53,102 50,98" fill="#ff7675" />
-          <ellipse cx="44" cy="72" rx="4" ry="6" fill="white" opacity="0.3" transform="rotate(-15 44 72)" />
+        <text x="74" y="26" fontSize="8" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">GATHER WISHES</text>
+        
+        <g className="fc-svg-sticky-1">
+          <rect x="8" y="52" width="62" height="54" rx="4" fill="#fef9c3" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(-3,39,79)"/>
+          <text x="14" y="66" fontSize="5" fontWeight="700" fill="#92400e" fontFamily="var(--font-sans)">Happy Birthday!</text>
+          <text x="14" y="74" fontSize="4.5" fill="#92400e" fontFamily="var(--font-sans)">Hope you have a</text>
+          <text x="14" y="82" fontSize="4.5" fill="#92400e" fontFamily="var(--font-sans)">fantastic day! 🎂</text>
+          <text x="14" y="97" fontSize="4.5" fill="#a1a1a1" fontWeight="700" fontFamily="var(--font-sans)">- sarah.m</text>
         </g>
-
-        <path d="M 98,110 Q 104,140 88,175" stroke="#b2bec3" strokeWidth="1" fill="none" />
-        <g className="fc-svg-balloon-2">
-          <ellipse cx="98" cy="85" rx="15" ry="20" fill="#7c3aed" />
-          <polygon points="95,105 101,105 98,101" fill="#7c3aed" />
-          <ellipse cx="92" cy="77" rx="3.5" ry="5.5" fill="white" opacity="0.3" transform="rotate(-15 92 77)" />
+        
+        <g className="fc-svg-sticky-2">
+          <rect x="76" y="52" width="64" height="54" rx="4" fill="#ffebee" style={{ filter: "drop-shadow(0 3px 6px rgba(0,0,0,0.08))" }} transform="rotate(2,108,79)"/>
+          <text x="82" y="66" fontSize="5" fontWeight="700" fill="#c62828" fontFamily="var(--font-sans)">Wishing you the</text>
+          <text x="82" y="74" fontSize="4.5" fill="#c62828" fontFamily="var(--font-sans)">best year ahead!</text>
+          <text x="82" y="82" fontSize="4.5" fill="#c62828" fontFamily="var(--font-sans)">Let's celebrate 🎉</text>
+          <text x="82" y="97" fontSize="4.5" fill="#8baec4" fontWeight="700" fontFamily="var(--font-sans)">- mike.t</text>
         </g>
-
-        <path d="M 74,120 Q 70,145 74,180" stroke="#b2bec3" strokeWidth="1" fill="none" />
-        <g className="fc-svg-balloon-3">
-          <ellipse cx="74" cy="95" rx="14" ry="18" fill="#fdcb6e" />
-          <polygon points="71,113 77,113 74,109" fill="#fdcb6e" />
-          <ellipse cx="69" cy="88" rx="3" ry="5" fill="white" opacity="0.3" transform="rotate(-15 69 88)" />
-        </g>
-
-        <circle cx="28" cy="140" r="1.5" fill="#7c3aed" />
-        <circle cx="120" cy="130" r="2" fill="#ff7675" />
-        <circle cx="110" cy="160" r="1.5" fill="#fdcb6e" />
+        
+        <rect x="8" y="114" width="132" height="90" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.08))" }}/>
+        <text x="16" y="129" fontSize="7" fill="#1f2937" fontWeight="800" fontFamily="var(--font-sans)">CONTRIBUTORS (25)</text>
+        <line x1="8" y1="134" x2="140" y2="134" stroke="#f3f4f6" strokeWidth="1"/>
+        
+        {[
+          { init: "S", name: "Sarah Miller", role: "Creator", color: "#fdcb6e", bg: "#fff9c4", y: 149 },
+          { init: "M", name: "Mike Taylor", role: "Signed", color: "#10b981", bg: "#d1fae5", y: 163 },
+          { init: "J", name: "John Davis", role: "Signed", color: "#10b981", bg: "#d1fae5", y: 177 },
+          { init: "E", name: "Emily White", role: "Invited", color: "#6b7280", bg: "#f3f4f6", y: 191 }
+        ].map((item) => (
+          <g key={item.y}>
+            <circle cx="20" cy={item.y - 2.5} r="6" fill={item.bg}/>
+            <text x="20" y={item.y} fontSize="5.5" fill="#374151" fontWeight="700" textAnchor="middle" fontFamily="var(--font-sans)">{item.init}</text>
+            <text x="32" y={item.y} fontSize="6" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">{item.name}</text>
+            <rect x="106" y={item.y - 7} width="26" height="9" rx="3" fill={item.bg}/>
+            <text x="119" y={item.y - 1} fontSize="4.5" fill={item.color} fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">{item.role}</text>
+          </g>
+        ))}
       </svg>
     ),
   },
@@ -298,25 +319,33 @@ const birthdayCards = [
       <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
         <rect width="148" height="210" fill="#e8f5e9" opacity="0.4"/>
         <rect width="148" height="42" fill="#00b894"/>
-        <text x="74" y="26" fontSize="9" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">DELIVER THE BOOK</text>
-
-        <rect x="34" y="94" width="80" height="66" rx="3" fill="#81c784" />
-        <rect x="71" y="94" width="6" height="66" fill="#ff7675" />
-        <rect x="34" y="124" width="80" height="6" fill="#ff7675" />
-
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">DELIVER THE BOOK</text>
+        
+        <rect x="30" y="90" width="88" height="64" rx="4" fill="#ff7675" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.12))" }}/>
+        <rect x="30" y="90" width="88" height="16" rx="4" fill="#fd79a8"/>
+        <rect x="30" y="100" width="88" height="6" fill="#fd79a8"/>
+        
+        <rect x="70" y="90" width="8" height="64" fill="#fffcf7"/>
+        
         <g className="fc-svg-gift-bow">
-          <path d="M 74,86 C 58,70 52,86 74,86 Z" fill="#ff7675" />
-          <path d="M 74,86 C 90,70 96,86 74,86 Z" fill="#ff7675" />
-          <circle cx="74" cy="86" r="4.5" fill="#d63031" />
+          <path d="M74,84 C60,70 54,84 74,84 Z" fill="#fd79a8"/>
+          <path d="M74,84 C88,70 94,84 74,84 Z" fill="#fd79a8"/>
+          <circle cx="74" cy="84" r="5" fill="#e84393"/>
         </g>
-
-        <g className="fc-svg-gift-lid">
-          <rect x="30" y="84" width="88" height="12" rx="2" fill="#a5d6a7" />
-          <rect x="71" y="84" width="6" height="12" fill="#ff7675" />
-        </g>
-
-        <path d="M22,70 L24,74 L28,74 L25,76 L26,80 L22,78 L18,80 L19,76 L16,74 L20,74 Z" fill="#fdcb6e" />
-        <path d="M124,78 L125,81 L128,81 L126,83 L127,86 L124,84 L121,86 L122,83 L120,81 L123,81 Z" fill="#00b894" />
+        
+        <rect x="40" y="96" width="4" height="52" fill="#00b894"/>
+        <rect x="44" y="96" width="66" height="52" fill="#fffcf0"/>
+        <text x="77" y="126" fontSize="5.5" fill="#00b894" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">Happy</text>
+        <text x="77" y="134" fontSize="5.5" fill="#00b894" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">Birthday!</text>
+        
+        <path d="M22,72 L24,76 L28,76 L25,78 L26,82 L22,80 L18,82 L19,78 L16,76 L20,76 Z" fill="#fdcb6e" />
+        <path d="M126,78 L127.5,81 L131,81 L129,83 L130,86 L127,84.5 L124,86 L125,83 L123,81 L126.5,81 Z" fill="#00b894" />
+        
+        <rect x="8" y="164" width="132" height="38" rx="6" fill="white" style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="178" fontSize="5.5" fill="#00b894" fontWeight="800" fontFamily="var(--font-sans)">SHIPPING DETAILS</text>
+        <text x="16" y="190" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">Delivered to: Alex Johnson · Jun 2026</text>
+        <circle cx="130" cy="181" r="6" fill="#e8f5e9"/>
+        <path d="M127.5,181 L129,182.5 L132.5,178.5" stroke="#00b894" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
       </svg>
     ),
   },
@@ -329,24 +358,45 @@ const birthdayCards = [
     bg: "linear-gradient(145deg, #f3e5f5, #e1bee7)",
     svg: (
       <svg viewBox="0 0 148 210" xmlns="http://www.w3.org/2000/svg" style={{width:"100%",height:"100%",display:"block"}}>
+        <defs>
+          <linearGradient id="bd4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#6c5ce7"/>
+            <stop offset="100%" stopColor="#a29bfe"/>
+          </linearGradient>
+        </defs>
         <rect width="148" height="210" fill="#f3e5f5" opacity="0.4"/>
-        <rect width="148" height="42" fill="#6c5ce7"/>
-        <text x="74" y="26" fontSize="9" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">SURPRISE REVEAL</text>
-
-        <g className="fc-svg-horn">
-          <path d="M 20,180 L 30,190 L 74,138 L 64,128 Z" fill="#a29bfe" />
-          <path d="M 18,177 L 24,183 L 42,165 L 36,159 Z" fill="#fdcb6e" />
+        <rect width="148" height="42" fill="url(#bd4)"/>
+        <text x="74" y="26" fontSize="8.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">SURPRISE REVEAL</text>
+        
+        <rect x="8" y="50" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.06))" }}/>
+        <rect x="14" y="60" width="80" height="14" rx="4" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1"/>
+        <text x="20" y="69" fontSize="5" fill="#9ca3af" fontFamily="var(--font-sans)">workkudo.com/b/alex-bday</text>
+        <g className="fc-svg-copy-btn">
+          <rect x="98" y="60" width="36" height="14" rx="4" fill="#6c5ce7"/>
+          <text x="116" y="69" fontSize="5.5" fill="white" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">COPY LINK</text>
         </g>
-
-        <path d="M 69,130 Q 90,100 115,85" stroke="#ff7675" strokeWidth="1.5" fill="none" className="fc-svg-streamer-1" />
-        <path d="M 69,130 Q 100,120 125,115" stroke="#55efc4" strokeWidth="1.5" fill="none" className="fc-svg-streamer-2" />
-
-        <circle cx="85" cy="95" r="3" fill="#ff7675" className="fc-svg-dot-1" />
-        <circle cx="100" cy="130" r="2" fill="#74b9ff" className="fc-svg-dot-2" />
-        <polygon points="104,60 106,65 111,65 107,69 109,74 104,71 99,74 101,69 97,65 102,65" fill="#fdcb6e" className="fc-svg-star-1" />
-
-        <text x="116" y="70" fontSize="11" className="fc-svg-emoji-1">🎉</text>
-        <text x="110" y="110" fontSize="11" className="fc-svg-emoji-2">🎂</text>
+        <rect x="14" y="82" width="120" height="32" rx="6" fill="#fdfdfd" stroke="#e5e7eb" strokeWidth="1"/>
+        <rect x="20" y="88" width="50" height="11" rx="3" fill="#f3e5f5"/>
+        <text x="45" y="95" fontSize="5" fill="#6c5ce7" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💾 DOWNLOAD PDF</text>
+        <rect x="78" y="88" width="50" height="11" rx="3" fill="#e1bee7"/>
+        <text x="103" y="95" fontSize="5" fill="#6c5ce7" fontWeight="800" textAnchor="middle" fontFamily="var(--font-sans)">💌 SEND EMAIL</text>
+        <circle cx="24" cy="108" r="3" fill="#6c5ce7"/>
+        <text x="32" y="110.5" fontSize="5" fill="#374151" fontWeight="700" fontFamily="var(--font-sans)">Board remains active forever</text>
+        
+        <rect x="8" y="130" width="132" height="72" rx="8" fill="white" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.06))" }}/>
+        <text x="16" y="145" fontSize="6.5" fill="#6c5ce7" fontWeight="800" fontFamily="var(--font-sans)">REVEAL CHECKLIST</text>
+        <line x1="8" y1="150" x2="140" y2="150" stroke="#f3f4f6" strokeWidth="1"/>
+        {[
+          { text: "Download print-ready high-res PDF", y: 163 },
+          { text: "Copy private link to share", y: 176 },
+          { text: "Schedule automated email reveal", y: 189 }
+        ].map((item, idx) => (
+          <g key={item.y}>
+            <circle cx="18" cy={item.y - 2} r="3.5" fill="#f3e5f5"/>
+            <path d="M16.5,161 L17.5,162 L19.5,160" stroke="#6c5ce7" strokeWidth="0.8" strokeLinecap="round" fill="none" transform={`translate(0,${item.y-163})`}/>
+            <text x="26" y={item.y.toString()} fontSize="5" fill="#4b5563" fontWeight="600" fontFamily="var(--font-sans)">{item.text}</text>
+          </g>
+        ))}
       </svg>
     ),
   },

@@ -52,7 +52,7 @@ function useTypewriter(words, typingSpeed = 80, deletingSpeed = 45, pauseMs = 18
 
 
 /* ─── Subtext word-reveal ──────────────────────────────────── */
-const SUBTEXT = 'Build a culture of appreciation that drives real engagement, reduces turnover, and makes your people feel genuinely valued — every day.'
+const SUBTEXT = 'Build a culture of appreciation that drives real engagement, reduces turnover, and makes your people feel genuinely valued every day.'
 
 function AnimatedSubtext() {
   const words = SUBTEXT.split(' ')
@@ -123,7 +123,7 @@ export default function Hero() {
       progress = Math.min(Math.max(progress, 0), 1)
       const ease = 1 - (1 - progress) * (1 - progress)
       
-      const scale = 0.85 + (0.30 * ease)
+    const scale = 0.85 + (0.30 * ease)
       const rotateX = 20 - (20 * ease)
       const translateY = 60 - (60 * ease)
       
@@ -131,6 +131,7 @@ export default function Hero() {
         transform: `perspective(1200px) translateY(${translateY}px) rotateX(${rotateX}deg) scale(${scale})`,
         transition: 'transform 0.1s cubic-bezier(0.2, 0, 0.2, 1)'
       })
+    
     }
     
     window.addEventListener('scroll', handleScroll, { passive: true })

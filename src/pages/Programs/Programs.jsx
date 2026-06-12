@@ -91,13 +91,13 @@ function HeroSection() {
           </motion.p>
 
           <motion.div className="pg-hero-ctas" variants={fadeUp} initial="hidden" animate="visible" custom={0.3}>
-            <button className="pg-btn pg-btn--primary">
+            <a href="https://workkudo.ai/signin" className="pg-btn pg-btn--primary">
               Create a Program
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </button>
-            <button className="pg-btn pg-btn--ghost">Explore Programs</button>
+            </a>
+            <a href="#celebrations" className="pg-btn pg-btn--ghost">Explore Programs</a>
           </motion.div>
 
         </div>
@@ -951,11 +951,12 @@ function FinalCTA() {
               <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </motion.a>
-          <motion.button
+          <motion.a
+            href="#celebrations"
             className="pg-btn pg-btn--cta-ghost"
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-          >Learn More</motion.button>
+          >Learn More</motion.a>
         </motion.div>
       </div>
     </section>
