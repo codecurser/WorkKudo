@@ -210,3 +210,28 @@
   width: 100%;
   display: block;
 }
+
+.promotion-board__media-sticker {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.promotion-board__media-sticker--video {
+  background: rgba(255, 107, 44, 0.85);
+}
+.promotion-board__media-sticker--audio {
+  background: rgba(59, 130, 246, 0.85);
+}

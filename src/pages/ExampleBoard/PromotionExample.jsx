@@ -182,11 +182,17 @@ export default function PromotionExample() {
               >
                 {comment.video && (
                   <div className="promotion-board__card-video">
+                    <div className="promotion-board__media-sticker promotion-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="promotion-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="promotion-board__card-audio">
+                    <div className="promotion-board__media-sticker promotion-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="promotion-board__audio-element" />
                   </div>
                 )}

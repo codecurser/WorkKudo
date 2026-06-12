@@ -182,11 +182,17 @@ export default function FarewellExample() {
               >
                 {comment.video && (
                   <div className="farewell-board__card-video">
+                    <div className="farewell-board__media-sticker farewell-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="farewell-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="farewell-board__card-audio">
+                    <div className="farewell-board__media-sticker farewell-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="farewell-board__audio-element" />
                   </div>
                 )}

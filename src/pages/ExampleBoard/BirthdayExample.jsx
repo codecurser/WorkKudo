@@ -210,11 +210,17 @@ export default function BirthdayExample() {
               >
                 {comment.video && (
                   <div className="example-board__card-video">
+                    <div className="example-board__media-sticker example-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="example-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="example-board__card-audio">
+                    <div className="example-board__media-sticker example-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="example-board__audio-element" />
                   </div>
                 )}

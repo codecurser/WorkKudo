@@ -182,11 +182,17 @@ export default function GetWellExample() {
               >
                 {comment.video && (
                   <div className="getwell-board__card-video">
+                    <div className="getwell-board__media-sticker getwell-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="getwell-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="getwell-board__card-audio">
+                    <div className="getwell-board__media-sticker getwell-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="getwell-board__audio-element" />
                   </div>
                 )}

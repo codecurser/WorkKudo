@@ -182,11 +182,17 @@ export default function RetirementExample() {
               >
                 {comment.video && (
                   <div className="retirement-board__card-video">
+                    <div className="retirement-board__media-sticker retirement-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="retirement-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="retirement-board__card-audio">
+                    <div className="retirement-board__media-sticker retirement-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="retirement-board__audio-element" />
                   </div>
                 )}

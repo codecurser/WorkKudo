@@ -182,11 +182,17 @@ export default function MilestoneExample() {
               >
                 {comment.video && (
                   <div className="milestone-board__card-video">
+                    <div className="milestone-board__media-sticker milestone-board__media-sticker--video">
+                      🎥 Video Message
+                    </div>
                     <video src={comment.video} controls className="milestone-board__video-element" />
                   </div>
                 )}
                 {comment.audio && (
                   <div className="milestone-board__card-audio">
+                    <div className="milestone-board__media-sticker milestone-board__media-sticker--audio">
+                      🎤 Voice Note
+                    </div>
                     <audio src={comment.audio} controls className="milestone-board__audio-element" />
                   </div>
                 )}
