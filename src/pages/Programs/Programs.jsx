@@ -51,12 +51,6 @@ function HeroSection() {
     { text: '"Your leadership inspires us all ⭐"', from: 'Priya M.', color: '#F59E0B', bg: '#FFFBEB', delay: 0.8 },
   ];
 
-  const floatingBadges = [
-    { text: '🎉 Team Win', x: -70, y: -50, delay: 0.6 },
-    { text: '🏆 Top Performer', x: 80, y: -30, delay: 0.8 },
-    { text: '💌 Appreciation', x: -60, y: 70, delay: 1.0 },
-    { text: '🌟 Milestone', x: 75, y: 60, delay: 1.2 },
-  ];
 
   return (
     <section className="pg-hero" onMouseMove={handleMouseMove}>
@@ -148,17 +142,6 @@ function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Floating badges around the board */}
-            {floatingBadges.map((b, i) => (
-              <motion.div
-                key={i}
-                className="pg-float-chip"
-                style={{ x: b.x, y: b.y }}
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1, y: [b.y, b.y - 8, b.y] }}
-                transition={{ opacity: { delay: b.delay }, scale: { delay: b.delay }, y: { duration: 3, repeat: Infinity, delay: b.delay } }}
-              >{b.text}</motion.div>
-            ))}
 
             {/* Live status pill */}
             <motion.div
