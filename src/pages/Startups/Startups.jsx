@@ -183,7 +183,7 @@ export default function Startups() {
 
               <div className="ep-feature-card" style={{ '--accent': '#8b5cf6' }}>
                 <div className="ep-feature-card__icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2z"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 </div>
                 <h3>Rapid Configuration</h3>
                 <p>Create appreciation boards in under two minutes with no setup guides or complex admin onboarding. Invite collaborators immediately via links.</p>
