@@ -296,14 +296,7 @@ export default function AboutUs() {
                 <a href="/pricing" className="au-btn au-btn--ghost">View Pricing</a>
               </div>
 
-              <div className="au-hero__trust">
-                <span className="au-hero__trust-label">Trusted by teams at</span>
-                <div className="au-hero__trust-pills">
-                  {['Slack', 'Shopify', 'Stripe', 'Figma', 'Notion'].map(n => (
-                    <span key={n} className="au-hero__trust-pill">{n}</span>
-                  ))}
-                </div>
-              </div>
+
             </div>
 
             {/* Right: Dashboard image */}
