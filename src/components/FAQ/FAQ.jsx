@@ -37,14 +37,6 @@ const FAQ_DATA = [
   {
     q: "How does WorkKudo help build community?",
     a: "WorkKudo fosters community by creating shared experiences, such as welcome boards for new hires and milestone celebrations, making every employee feel genuinely connected across departments."
-  },
-  {
-    q: "Do you offer an Enterprise plan?",
-    a: "Yes. Our Enterprise plan offers dedicated support, customized onboarding, and advanced controls designed for large organizations."
-  },
-  {
-    q: "Can we restrict signing to internal employees only?",
-    a: "Yes. With enterprise permissions, you can lock board access to verified corporate email domains so only your internal employees can view and contribute."
   }
 ];
 
