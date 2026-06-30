@@ -5,7 +5,7 @@
  */
 
 // Grab all raw markdown files at build time
-const rawFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', import: 'default', eager: true })
+const rawFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true })
 
 /**
  * Lightweight frontmatter parser — splits on '---' and parses YAML-style key: value pairs.
