@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllPosts, getAllCategories } from '../../utils/blogLoader'
+import { getAllPosts, getAllCategories } from '../../data/blogs'
 import logo from '../../assets/workkudosvg.svg'
 import './Blog.css'
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
-import { getPostBySlug, getAllPosts } from '../../utils/blogLoader'
+import { getPostBySlug, getAllPosts } from '../../data/blogs'
 import logo from '../../assets/workkudosvg.svg'
 import './Blog.css'
 
