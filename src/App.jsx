@@ -54,6 +54,8 @@ import HonorAchievements from './pages/Benefits/HonorAchievements'
 import RemoteWorkforce from './pages/Benefits/RemoteWorkforce'
 import VirtualAppreciation from './pages/Benefits/VirtualAppreciation'
 import Assistance from './pages/Assistance/Assistance'
+import BlogIndex from './pages/Blog/BlogIndex'
+import BlogPost from './pages/Blog/BlogPost'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -73,7 +75,6 @@ function ScrollToTop() {
   }, [pathname, hash])
   return null
 }
-
 function HomePage() {
   return (
     <>
@@ -274,6 +275,8 @@ export default function App() {
       <Route path="/benefits/remote-workforce" element={<RemoteWorkforce />} />
       <Route path="/benefits/virtual-appreciation" element={<VirtualAppreciation />} />
       <Route path="/learn/assistance" element={<Assistance />} />
+      <Route path="/blog" element={<><Navbar /><main><BlogIndex /></main><Footer /></>} />
+      <Route path="/blog/:slug" element={<><Navbar /><main><BlogPost /></main><Footer /></>} />
     </Routes>
     </>
   )

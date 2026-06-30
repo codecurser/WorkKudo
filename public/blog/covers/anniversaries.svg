@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F1C33"/>
+      <stop offset="55%" style="stop-color:#1A2B4A"/>
+      <stop offset="100%" style="stop-color:#2a3f6e"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.10"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.04"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8F5E"/>
+      <stop offset="100%" style="stop-color:#FF6B2C"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B2C;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#FF6B2C;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient glow blobs -->
+  <ellipse cx="250" cy="350" rx="350" ry="280" fill="url(#glow)" filter="url(#blur1)" opacity="0.7"/>
+  <ellipse cx="1050" cy="180" rx="280" ry="220" fill="#7C3AED" filter="url(#blur1)" opacity="0.15"/>
+
+  <!-- Subtle grid dots -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="white" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Main card group — centered slightly left -->
+  <g transform="translate(180, 100)" filter="url(#shadow)">
+    <!-- Base card -->
+    <rect x="0" y="0" width="460" height="300" rx="20" fill="url(#card1)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <!-- Card inner shine -->
+    <rect x="0" y="0" width="460" height="1" rx="0" fill="rgba(255,255,255,0.2)"/>
+
+    <!-- Avatar row -->
+    <circle cx="44" cy="50" r="22" fill="#FF6B2C" opacity="0.9"/>
+    <text x="44" y="57" text-anchor="middle" font-family="system-ui" font-size="18" fill="white" font-weight="700">S</text>
+    <circle cx="88" cy="50" r="22" fill="#3B82F6" opacity="0.9"/>
+    <text x="88" y="57" text-anchor="middle" font-family="system-ui" font-size="18" fill="white" font-weight="700">A</text>
+    <circle cx="132" cy="50" r="22" fill="#22C55E" opacity="0.9"/>
+    <text x="132" y="57" text-anchor="middle" font-family="system-ui" font-size="18" fill="white" font-weight="700">M</text>
+    <circle cx="176" cy="50" r="22" fill="#A78BFA" opacity="0.9"/>
+    <text x="176" y="57" text-anchor="middle" font-family="system-ui" font-size="18" fill="white" font-weight="700">R</text>
+
+    <!-- Badge: 5 years -->
+    <rect x="220" y="28" width="110" height="44" rx="12" fill="url(#orange)" opacity="0.95"/>
+    <text x="275" y="46" text-anchor="middle" font-family="system-ui" font-size="11" fill="white" font-weight="700" letter-spacing="0.05em">5 YEARS</text>
+    <text x="275" y="62" text-anchor="middle" font-family="system-ui" font-size="11" fill="white" opacity="0.85">Anniversary 🏆</text>
+
+    <!-- Message box 1 -->
+    <rect x="20" y="94" width="280" height="60" rx="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="36" y="116" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.9)">"Happy 5 years! Your impact on</text>
+    <text x="36" y="134" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.9)">this team is truly remarkable."</text>
+
+    <!-- Message box 2 -->
+    <rect x="20" y="164" width="220" height="44" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="36" y="182" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.75)">"Grateful to have you with us!</text>
+    <text x="36" y="198" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.75)">Here's to many more 🎉"</text>
+
+    <!-- Confetti particles -->
+    <rect x="370" y="100" width="10" height="10" rx="2" fill="#FF6B2C" opacity="0.8" transform="rotate(30 375 105)"/>
+    <rect x="400" y="140" width="8" height="8" rx="1" fill="#3B82F6" opacity="0.7" transform="rotate(-20 404 144)"/>
+    <rect x="340" y="160" width="6" height="12" rx="2" fill="#22C55E" opacity="0.7" transform="rotate(45 343 166)"/>
+    <circle cx="420" cy="190" r="5" fill="#A78BFA" opacity="0.8"/>
+    <rect x="380" y="240" width="10" height="6" rx="1" fill="#FF8F5E" opacity="0.7" transform="rotate(20 385 243)"/>
+    <circle cx="350" cy="270" r="4" fill="#FBBF24" opacity="0.9"/>
+
+    <!-- Sign Now button -->
+    <rect x="20" y="240" width="130" height="40" rx="20" fill="url(#orange)"/>
+    <text x="85" y="265" text-anchor="middle" font-family="system-ui" font-size="13" fill="white" font-weight="600">Sign the Card →</text>
+  </g>
+
+  <!-- Floating badge — top right -->
+  <g transform="translate(800, 80)">
+    <rect x="0" y="0" width="280" height="100" rx="16" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="24" y="35" font-family="system-ui" font-size="28">🏆</text>
+    <text x="64" y="30" font-family="system-ui" font-size="14" fill="white" font-weight="700">Work Anniversary</text>
+    <text x="64" y="50" font-family="system-ui" font-size="12" fill="rgba(255,255,255,0.55)">Milestone Recognition</text>
+    <rect x="24" y="64" width="80" height="24" rx="12" fill="rgba(255,107,44,0.25)" stroke="rgba(255,107,44,0.4)" stroke-width="1"/>
+    <text x="64" y="80" text-anchor="middle" font-family="system-ui" font-size="11" fill="#FF8F5E" font-weight="600">5 Years ✨</text>
+  </g>
+
+  <!-- Stat pills — right column -->
+  <g transform="translate(820, 220)">
+    <rect x="0" y="0" width="240" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="26" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="0.06em">TEAM MEMBERS SIGNED</text>
+    <text x="20" y="50" font-family="system-ui" font-size="26" fill="white" font-weight="800">24 <tspan font-size="14" fill="rgba(255,255,255,0.5)">colleagues</tspan></text>
+  </g>
+  <g transform="translate(820, 304)">
+    <rect x="0" y="0" width="240" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="26" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="0.06em">RETENTION IMPACT</text>
+    <text x="20" y="50" font-family="system-ui" font-size="26" fill="#22C55E" font-weight="800">+31% <tspan font-size="14" fill="rgba(255,255,255,0.5)">retention</tspan></text>
+  </g>
+  <g transform="translate(820, 388)">
+    <rect x="0" y="0" width="240" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="20" y="26" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="0.06em">ENGAGEMENT SCORE</text>
+    <text x="20" y="50" font-family="system-ui" font-size="26" fill="#FF8F5E" font-weight="800">9.2<tspan font-size="14" fill="rgba(255,255,255,0.5)">/10</tspan></text>
+  </g>
+
+  <!-- Bottom tagline area -->
+  <rect x="0" y="560" width="1200" height="70" fill="rgba(0,0,0,0.25)"/>
+  <text x="60" y="603" font-family="system-ui" font-size="15" fill="rgba(255,255,255,0.4)">WorkKudo · Recognition for Modern Teams</text>
+  <text x="1140" y="603" text-anchor="end" font-family="system-ui" font-size="13" fill="rgba(255,255,255,0.3)">workkudo.com</text>
+</svg>

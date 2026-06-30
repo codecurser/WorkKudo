@@ -28,6 +28,7 @@ const columns = [
   {
     heading: 'Learn',
     links: [
+      'Blog',
       'Support Hub',
       'Appreciation Handbook',
       'Reach Us',
@@ -105,7 +106,10 @@ export default function Footer() {
                   let href = '#'
                   let isRouterLink = false
 
-                  if (link === 'About Us') {
+                  if (link === 'Blog') {
+                    href = '/blog'
+                    isRouterLink = true
+                  } else if (link === 'About Us') {
                     href = '/about-us'
                     isRouterLink = true
                   } else if (link === 'Contact Us') {

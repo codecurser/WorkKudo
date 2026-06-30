@@ -15,6 +15,7 @@
     "framer-motion": "^11.18.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.16.0",
     "three": "^0.184.0"
   },
@@ -40,7 +41,10 @@
       "removeComments": false
     },
     "puppeteerExecutablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "crawl": false,
     "include": [
       "/",
@@ -89,7 +93,11 @@
       "/solutions/startups",
       "/learn/assistance",
       "/privacy",
-      "/terms"
+      "/terms",
+      "/blog",
+      "/blog/how-to-celebrate-work-anniversaries",
+      "/blog/remote-team-recognition-tips",
+      "/blog/building-a-culture-of-appreciation"
     ]
   }
 }

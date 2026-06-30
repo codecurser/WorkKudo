@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F1C33"/>
+      <stop offset="50%" style="stop-color:#1A2B4A"/>
+      <stop offset="100%" style="stop-color:#1e1a4a"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A78BFA"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8F5E"/>
+      <stop offset="100%" style="stop-color:#FF6B2C"/>
+    </linearGradient>
+    <filter id="gblur">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="24" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="600" cy="315" rx="400" ry="300" fill="#7C3AED" filter="url(#gblur)" opacity="0.18"/>
+  <ellipse cx="200" cy="200" rx="300" ry="250" fill="#FF6B2C" filter="url(#gblur)" opacity="0.12"/>
+  <ellipse cx="1000" cy="450" rx="350" ry="250" fill="#3B82F6" filter="url(#gblur)" opacity="0.12"/>
+
+  <!-- Dot grid pattern -->
+  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="white" opacity="0.05"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Globe / network background art -->
+  <!-- Large circle outline (globe) -->
+  <circle cx="600" cy="315" r="220" fill="none" stroke="rgba(167,139,250,0.12)" stroke-width="1" stroke-dasharray="4 8"/>
+  <circle cx="600" cy="315" r="290" fill="none" stroke="rgba(167,139,250,0.07)" stroke-width="1" stroke-dasharray="3 12"/>
+
+  <!-- Network nodes and connections -->
+  <!-- Central hub -->
+  <circle cx="600" cy="315" r="28" fill="url(#purple)" opacity="0.9" filter="url(#shadow)"/>
+  <text x="600" y="323" text-anchor="middle" font-family="system-ui" font-size="20" fill="white">🌐</text>
+
+  <!-- Node 1: top left -->
+  <line x1="600" y1="315" x2="320" y2="150" stroke="rgba(167,139,250,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="320" cy="150" r="18" fill="rgba(167,139,250,0.2)" stroke="rgba(167,139,250,0.4)" stroke-width="1.5"/>
+  <text x="320" y="157" text-anchor="middle" font-family="system-ui" font-size="14" fill="white">S</text>
+  <!-- Floating card near node 1 -->
+  <rect x="160" y="100" width="120" height="60" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="220" y="124" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">🎉 Great work!</text>
+  <text x="220" y="142" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)">— Sarah, NYC</text>
+
+  <!-- Node 2: top right -->
+  <line x1="600" y1="315" x2="880" y2="140" stroke="rgba(59,130,246,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="880" cy="140" r="18" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.4)" stroke-width="1.5"/>
+  <text x="880" y="147" text-anchor="middle" font-family="system-ui" font-size="14" fill="white">A</text>
+  <rect x="900" y="90" width="120" height="60" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="960" y="114" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">🏆 Amazing!</text>
+  <text x="960" y="132" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)">— Arjun, BLR</text>
+
+  <!-- Node 3: right -->
+  <line x1="600" y1="315" x2="940" y2="350" stroke="rgba(34,197,94,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="940" cy="350" r="18" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.4)" stroke-width="1.5"/>
+  <text x="940" y="357" text-anchor="middle" font-family="system-ui" font-size="14" fill="white">M</text>
+
+  <!-- Node 4: bottom left -->
+  <line x1="600" y1="315" x2="300" y2="460" stroke="rgba(255,107,44,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="300" cy="460" r="18" fill="rgba(255,107,44,0.2)" stroke="rgba(255,107,44,0.4)" stroke-width="1.5"/>
+  <text x="300" y="467" text-anchor="middle" font-family="system-ui" font-size="14" fill="white">R</text>
+  <rect x="140" y="430" width="120" height="60" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="200" y="454" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.7)">💬 You rock!</text>
+  <text x="200" y="472" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)">— Reza, LDN</text>
+
+  <!-- Node 5: bottom -->
+  <line x1="600" y1="315" x2="620" y2="530" stroke="rgba(251,191,36,0.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="620" cy="530" r="18" fill="rgba(251,191,36,0.2)" stroke="rgba(251,191,36,0.4)" stroke-width="1.5"/>
+  <text x="620" y="537" text-anchor="middle" font-family="system-ui" font-size="14" fill="white">K</text>
+
+  <!-- Right panel stats -->
+  <g transform="translate(1020, 130)">
+    <rect x="0" y="0" width="150" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="16" y="22" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)" letter-spacing="0.05em">TEAM MEMBERS</text>
+    <text x="16" y="50" font-family="system-ui" font-size="30" fill="white" font-weight="800">240+</text>
+  </g>
+  <g transform="translate(1020, 214)">
+    <rect x="0" y="0" width="150" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="16" y="22" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)" letter-spacing="0.05em">TIME ZONES</text>
+    <text x="16" y="50" font-family="system-ui" font-size="30" fill="#A78BFA" font-weight="800">12</text>
+  </g>
+  <g transform="translate(1020, 298)">
+    <rect x="0" y="0" width="150" height="64" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <text x="16" y="22" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.45)" letter-spacing="0.05em">RECOGNITION ↑</text>
+    <text x="16" y="50" font-family="system-ui" font-size="30" fill="#22C55E" font-weight="800">3x</text>
+  </g>
+
+  <!-- Floating badge -->
+  <rect x="1020" y="390" width="150" height="60" rx="14" fill="url(#orange)" opacity="0.9"/>
+  <text x="1095" y="415" text-anchor="middle" font-family="system-ui" font-size="12" fill="white" font-weight="700">Remote-First</text>
+  <text x="1095" y="435" text-anchor="middle" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.8)">Recognition ✓</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="rgba(0,0,0,0.25)"/>
+  <text x="60" y="603" font-family="system-ui" font-size="15" fill="rgba(255,255,255,0.4)">WorkKudo · Recognition for Modern Teams</text>
+  <text x="1140" y="603" text-anchor="end" font-family="system-ui" font-size="13" fill="rgba(255,255,255,0.3)">workkudo.com</text>
+</svg>

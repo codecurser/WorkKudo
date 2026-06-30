@@ -138,6 +138,7 @@ const customersData = {
 
 const resourcesData = {
   Guides: [
+    { emoji: '✍️', label: 'Blog', to: '/blog' },
     { emoji: '🛟', label: 'Support Hub', to: '/learn/assistance#support-hub' },
     { emoji: '📖', label: 'Appreciation Handbook', to: '/learn/assistance#appreciation-handbook' },
   ],
