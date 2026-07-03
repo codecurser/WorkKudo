@@ -343,14 +343,14 @@ export default function AboutUs() {
               <svg
                 className="au-logo-unit__svg"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 192 192"
+                viewBox="0 0 900 900"
                 width="36"
                 height="36"
                 aria-label={i === 0 ? 'WorkKudo' : undefined}
               >
-                <rect x="9.75"  y="9.75"   width="60" height="172.5" rx="6" fill="currentColor" className="au-logo-r1" />
-                <rect x="122.25" y="9.75"  width="60" height="93"    rx="6" fill="currentColor" className="au-logo-r2" />
-                <rect x="76.078" y="109.66" width="106.172" height="72.59" rx="6" fill="currentColor" className="au-logo-r3" />
+                <rect x="35.32" y="111.34" width="319.82" height="677.13" fill="currentColor" className="au-logo-r1" />
+                <rect x="694.72" y="111.34" width="169.95" height="302.07" fill="currentColor" className="au-logo-r2" />
+                <rect x="411.62" y="468.44" width="452.79" height="320.21" fill="currentColor" className="au-logo-r3" />
               </svg>
               <span className="au-logo-unit__name">WorkKudo</span>
               <span className="au-logo-unit__sep">·</span>
