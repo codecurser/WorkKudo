@@ -46,7 +46,7 @@ function RelatedCard({ post }) {
     <Link to={`/blog/${post.slug}`} className="blog-card">
       <div className="blog-card__cover">
         {post.coverImage
-          ? <img src={post.coverImage} alt={post.title} loading="lazy" />
+          ? <img src={post.coverImage} alt={post.title} loading="eager" />
           : <div className="blog-card__cover-placeholder">{catEmoji(post.category)}</div>
         }
       </div>

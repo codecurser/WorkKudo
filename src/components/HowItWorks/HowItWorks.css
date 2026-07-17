@@ -220,9 +220,7 @@
   right: 6px;
   bottom: 6px;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 14px;
   overflow: hidden;
   border: 1.5px solid rgba(255, 255, 255, 0.95);
@@ -302,7 +300,8 @@
   display: block;
   background: #FFF;
   flex: 1;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: top center;
 }
 
 /* ── Responsive ── */
