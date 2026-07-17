@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npx react-snap",
+    "build:docker": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

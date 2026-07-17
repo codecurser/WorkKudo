@@ -8,7 +8,7 @@ RUN npm ci
 
 # Copy codebase and compile the project
 COPY . .
-RUN npm run build
+RUN npm run build:docker
 
 # --- Stage 2: Serve using Nginx ---
 FROM nginx:alpine
