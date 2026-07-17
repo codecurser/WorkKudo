@@ -73,40 +73,7 @@ function RelatedCard({ post }) {
   )
 }
 
-/* ── Sidebar ─────────────────────────────────────────────── */
-function PostSidebar({ post }) {
-  return (
-    <aside className="post-sidebar">
-      <div className="post-sidebar__card">
-        <p className="post-sidebar__label">About this post</p>
 
-        <div className="post-sidebar__item">
-          <span className="post-sidebar__key">Published</span>
-          <span className="post-sidebar__val">{formatDate(post.date)}</span>
-        </div>
-
-        <div className="post-sidebar__item">
-          <span className="post-sidebar__key">Author</span>
-          <span className="post-sidebar__val">{post.author}</span>
-        </div>
-
-        <div className="post-sidebar__item">
-          <span className="post-sidebar__key">Read time</span>
-          <span className="post-sidebar__val">{post.readTime}</span>
-        </div>
-
-        <div className="post-sidebar__item">
-          <span className="post-sidebar__key">Category</span>
-          <span className={`post-sidebar__cat ${catClass(post.category)}`}>{post.category}</span>
-        </div>
-
-        <a href="https://workkudo.ai/signin" className="post-sidebar__cta">
-          Create a Board →
-        </a>
-      </div>
-    </aside>
-  )
-}
 
 /* ── Main Component ──────────────────────────────────────── */
 export default function BlogPost() {
@@ -188,19 +155,16 @@ export default function BlogPost() {
             </a>
           </div>
 
-          {/* Related posts */}
-          {relatedFilled.length > 0 && (
-            <div className="post-related">
-              <h2 className="post-related__title">More from the Blog</h2>
-              <div className="post-related__grid">
-                {relatedFilled.map(p => <RelatedCard key={p.slug} post={p} />)}
-              </div>
+        {/* Related posts */}
+        {relatedFilled.length > 0 && (
+          <div className="post-related">
+            <h2 className="post-related__title">More from the Blog</h2>
+            <div className="post-related__grid">
+              {relatedFilled.map(p => <RelatedCard key={p.slug} post={p} />)}
             </div>
-          )}
+          </div>
+        )}
         </div>
-
-        {/* Sticky sidebar */}
-        <PostSidebar post={post} />
       </div>
     </div>
   )
