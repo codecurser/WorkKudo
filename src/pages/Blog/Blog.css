@@ -332,6 +332,7 @@
 }
 
 .blog-card__author-name {
+  display: block;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-dark);
@@ -339,9 +340,11 @@
 }
 
 .blog-card__date {
+  display: block;
   font-size: 11px;
   color: var(--text-muted);
   line-height: 1.2;
+  margin-top: 2px;
 }
 
 .blog-card__arrow {
