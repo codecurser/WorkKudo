@@ -1,16 +1,61 @@
-# React + Vite
+# WorkKudo 🌟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WorkKudo is an interactive employee appreciation and recognition platform designed for modern, hybrid, and remote workforces.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite 8](https://vite.dev/)
+- **3D Graphics:** [Three.js](https://threejs.org/) & [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & PostCSS
+- **Static Pre-rendering:** [react-snap](https://github.com/stereobooster/react-snap)
 
-## React Compiler
+## 📦 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/codecurser/WorkKudo.git
+   cd WorkKudo
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📜 Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts Vite dev server |
+| `npm run build` | Builds app and runs static pre-rendering via `react-snap` |
+| `npm run build:docker` | Builds Vite application without `react-snap` (ideal for container builds) |
+| `npm run preview` | Previews production build locally |
+| `npm run lint` | Runs ESLint checks |
+
+## 🐳 Docker Deployment
+
+To build and run WorkKudo using Docker:
+
+```bash
+docker build -t workkudo:latest .
+docker run -d -p 80:80 workkudo:latest
+```
+
